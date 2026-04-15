@@ -1,15 +1,44 @@
 {
-  "hero": {
-    "title": "CAIO Academy",
-    "subtitle": "Former, certifier et placer les Chief AI Officers de demain.",
-    "cta": "Rejoindre la Beta"
+  "site": {
+    "name": "CAIO Academy",
+    "tagline": "Devenir Chief AI Officer"
   },
   "nav": {
     "vision": "Vision",
-    "businessPlan": "Business Plan",
+    "business": "Business",
     "avatars": "Avatars",
     "formations": "Formations",
     "roadmap": "Roadmap",
-    "podcast": "Podcast"
+    "podcast": "Podcast",
+    "playbook": "Playbook",
+    "beta": "Beta"
+  },
+  "hero": {
+    "title": "Former, certifier et placer les Chief AI Officers de demain.",
+    "lead": "L'école de référence pour le rôle CAIO en 2026-2028. Whitepaper transparent, business plan ouvert, formations bilingues.",
+    "cta_primary": "Rejoindre la Beta",
+    "cta_secondary": "Voir les formations"
+  },
+  "stats": {
+    "avatars": "Avatars clients",
+    "revenue": "Revenu An 3",
+    "phase": "Beta Phase"
+  },
+  "footer": {
+    "tagline": "La référence publique pour le rôle Chief AI Officer.",
+    "sitemap": "Sitemap",
+    "resources": "Ressources",
+    "legal": "Légal",
+    "rights": "Tous droits réservés",
+    "made": "Construit en autonomie par Agentik OS"
+  },
+  "legal": {
+    "privacy": "Confidentialité",
+    "terms": "Conditions",
+    "contact": "Contact"
+  },
+  "design": {
+    "title": "Design System",
+    "subtitle": "Playground interne — jamais indexé"
   }
 }
