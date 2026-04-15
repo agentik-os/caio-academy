@@ -1,0 +1,15 @@
+{
+  "hero": {
+    "title": "CAIO Academy",
+    "subtitle": "Former, certifier et placer les Chief AI Officers de demain.",
+    "cta": "Rejoindre la Beta"
+  },
+  "nav": {
+    "vision": "Vision",
+    "businessPlan": "Business Plan",
+    "avatars": "Avatars",
+    "formations": "Formations",
+    "roadmap": "Roadmap",
+    "podcast": "Podcast"
+  }
+}
