@@ -25,6 +25,7 @@ export type DocTree = {
 };
 
 const CAIO_ROOT = path.join(process.cwd(), "content", "caio");
+const BIZ_ROOT = path.join(process.cwd(), "content", "business");
 
 export const SECTION_META: Record<
   string,
@@ -100,19 +101,67 @@ export const SECTION_META: Record<
       en: "Legal structure, stack, scaling, metrics.",
     },
   },
+  "business-vision": {
+    title: { fr: "Business — Vision", en: "Business — Vision" },
+    tagline: {
+      fr: "Vision long-terme multi-business, positionnement, north star.",
+      en: "Long-term multi-business vision, positioning, north star.",
+    },
+  },
+  "business-strategy": {
+    title: { fr: "Business — Strategy", en: "Business — Strategy" },
+    tagline: {
+      fr: "Plans stratégiques, arbitrages, priorisation.",
+      en: "Strategic plans, trade-offs, prioritisation.",
+    },
+  },
+  "business-blueprint": {
+    title: { fr: "Business — Blueprint", en: "Business — Blueprint" },
+    tagline: {
+      fr: "Plan d'exécution master — blueprint opérationnel.",
+      en: "Master execution plan — operational blueprint.",
+    },
+  },
+  "business-execution": {
+    title: { fr: "Business — Execution", en: "Business — Execution" },
+    tagline: {
+      fr: "Sprints, milestones, cadences, rituels d'exécution.",
+      en: "Sprints, milestones, cadences, execution rituals.",
+    },
+  },
+  "business-marketing": {
+    title: { fr: "Business — Marketing", en: "Business — Marketing" },
+    tagline: {
+      fr: "Acquisition, contenu, growth, branding — arsenal complet.",
+      en: "Acquisition, content, growth, branding — full arsenal.",
+    },
+  },
+  "business-phantom-empire": {
+    title: { fr: "Phantom Empire", en: "Phantom Empire" },
+    tagline: {
+      fr: "Portfolio de marques, holding, structure capitalistique.",
+      en: "Brand portfolio, holding structure, capital stack.",
+    },
+  },
 };
 
-const SECTIONS: { raw: string; key: string; order: number }[] = [
-  { raw: "01-vision", key: "vision", order: 1 },
-  { raw: "02-avatars", key: "avatars", order: 2 },
-  { raw: "03-product", key: "product", order: 3 },
-  { raw: "04-c-suite-training", key: "c-suite-training", order: 4 },
-  { raw: "05-courses-en", key: "courses-en", order: 5 },
-  { raw: "06-formations-fr", key: "formations-fr", order: 6 },
-  { raw: "07-playbook", key: "playbook", order: 7 },
-  { raw: "08-marketing", key: "marketing", order: 8 },
-  { raw: "09-launch", key: "launch", order: 9 },
-  { raw: "10-operations", key: "operations", order: 10 },
+const SECTIONS: { raw: string; key: string; order: number; root: string }[] = [
+  { raw: "01-vision", key: "vision", order: 1, root: CAIO_ROOT },
+  { raw: "02-avatars", key: "avatars", order: 2, root: CAIO_ROOT },
+  { raw: "03-product", key: "product", order: 3, root: CAIO_ROOT },
+  { raw: "04-c-suite-training", key: "c-suite-training", order: 4, root: CAIO_ROOT },
+  { raw: "05-courses-en", key: "courses-en", order: 5, root: CAIO_ROOT },
+  { raw: "06-formations-fr", key: "formations-fr", order: 6, root: CAIO_ROOT },
+  { raw: "07-playbook", key: "playbook", order: 7, root: CAIO_ROOT },
+  { raw: "08-marketing", key: "marketing", order: 8, root: CAIO_ROOT },
+  { raw: "09-launch", key: "launch", order: 9, root: CAIO_ROOT },
+  { raw: "10-operations", key: "operations", order: 10, root: CAIO_ROOT },
+  { raw: "02-vision", key: "business-vision", order: 11, root: BIZ_ROOT },
+  { raw: "03-strategy", key: "business-strategy", order: 12, root: BIZ_ROOT },
+  { raw: "04-blueprint", key: "business-blueprint", order: 13, root: BIZ_ROOT },
+  { raw: "05-execution", key: "business-execution", order: 14, root: BIZ_ROOT },
+  { raw: "06-marketing", key: "business-marketing", order: 15, root: BIZ_ROOT },
+  { raw: "07-phantom-empire", key: "business-phantom-empire", order: 16, root: BIZ_ROOT },
 ];
 
 function slugify(name: string): string {
@@ -192,21 +241,40 @@ export function escapeMdx(source: string): string {
 
 let _cache: DocFile[] | null = null;
 
+const SKIP_FILE_NAMES = new Set(["CLAUDE.md", "AGENTS.md"]);
+
+function walkMdFiles(dir: string): string[] {
+  const out: string[] = [];
+  let entries: fs.Dirent[];
+  try {
+    entries = fs.readdirSync(dir, { withFileTypes: true });
+  } catch {
+    return out;
+  }
+  for (const entry of entries) {
+    if (entry.isDirectory()) {
+      out.push(...walkMdFiles(path.join(dir, entry.name)));
+      continue;
+    }
+    if (!entry.isFile()) continue;
+    if (!entry.name.endsWith(".md")) continue;
+    if (SKIP_FILE_NAMES.has(entry.name)) continue;
+    out.push(path.join(dir, entry.name));
+  }
+  return out;
+}
+
 export function getAllDocs(): DocFile[] {
   if (_cache) return _cache;
   const result: DocFile[] = [];
+  const seenSlugs = new Map<string, number>();
 
   for (const section of SECTIONS) {
-    const dir = path.join(CAIO_ROOT, section.raw);
-    let files: string[] = [];
-    try {
-      files = fs.readdirSync(dir).filter((f) => f.endsWith(".md") && f !== "CLAUDE.md");
-    } catch {
-      continue;
-    }
+    const dir = path.join(section.root, section.raw);
+    const filePaths = walkMdFiles(dir);
+    if (filePaths.length === 0) continue;
 
-    for (const file of files) {
-      const filePath = path.join(dir, file);
+    for (const filePath of filePaths) {
       let raw: string;
       try {
         raw = fs.readFileSync(filePath, "utf-8");
@@ -214,10 +282,19 @@ export function getAllDocs(): DocFile[] {
         continue;
       }
       const parsed = matter(raw);
+      const file = path.basename(filePath);
       const baseName = file.replace(/\.md$/, "");
       const { clean, order } = stripPrefix(baseName);
       const langSuffix = clean.replace(/-(FR|EN)$/i, "");
-      const slug = slugify(langSuffix);
+      const relDir = path.relative(dir, path.dirname(filePath));
+      const slugBase = relDir
+        ? `${slugify(relDir)}-${slugify(langSuffix)}`
+        : slugify(langSuffix);
+      // dedupe within section — append counter if multiple files collide on slug
+      const dedupeKey = `${section.key}/${slugBase}`;
+      const n = seenSlugs.get(dedupeKey) ?? 0;
+      seenSlugs.set(dedupeKey, n + 1);
+      const slug = n === 0 ? slugBase : `${slugBase}-${n + 1}`;
       const lang = detectLang(baseName, parsed.content);
       const title =
         (parsed.data.title as string) ||

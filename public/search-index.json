@@ -72,49 +72,49 @@
     "url": "/en/docs/avatars/dev-ambitieux"
   },
   {
-    "id": "en/avatars/dg-pme",
+    "id": "en/avatars/dg-pme-2",
     "title": "Avatar CAIO — la DG PME (EN)",
     "section": "Avatars",
     "sectionKey": "avatars",
     "lang": "en",
     "excerpt": "CAIO Academy — AI Exécutive Décision Maker Track Avatar 05 · la DG PME · SMB Executive",
-    "url": "/en/docs/avatars/dg-pme"
+    "url": "/en/docs/avatars/dg-pme-2"
   },
   {
-    "id": "fr/avatars/consultant-ai",
+    "id": "fr/avatars/consultant-ai-2",
     "title": "Avatar CAIO — le Consultant AI (FR)",
     "section": "Avatars",
     "sectionKey": "avatars",
     "lang": "fr",
     "excerpt": "CAIO Academy — CAIO Monetization Track Avatar 03 · le Consultant AI · Consultant Indépendant",
-    "url": "/fr/docs/avatars/consultant-ai"
+    "url": "/fr/docs/avatars/consultant-ai-2"
   },
   {
-    "id": "fr/avatars/dev-ambitieux",
+    "id": "fr/avatars/dev-ambitieux-2",
     "title": "Avatar CAIO — le Dev Ambitieux (FR)",
     "section": "Avatars",
     "sectionKey": "avatars",
     "lang": "fr",
     "excerpt": "CAIO Academy — From Dev to CAIO Track Avatar 04 · le Dev Ambitieux · Dev/PM ambitieux",
-    "url": "/fr/docs/avatars/dev-ambitieux"
+    "url": "/fr/docs/avatars/dev-ambitieux-2"
   },
   {
-    "id": "en/avatars/head-digital",
+    "id": "en/avatars/head-digital-2",
     "title": "Avatar CAIO — le Head of Digital (EN)",
     "section": "Avatars",
     "sectionKey": "avatars",
     "lang": "en",
     "excerpt": "CAIO Academy — AI Strategy Without Code Track Avatar 02 · le Head of Digital · Head of Digital",
-    "url": "/en/docs/avatars/head-digital"
+    "url": "/en/docs/avatars/head-digital-2"
   },
   {
-    "id": "fr/avatars/cto-saas",
+    "id": "fr/avatars/cto-saas-2",
     "title": "Avatar CAIO — le CTO SaaS (FR)",
     "section": "Avatars",
     "sectionKey": "avatars",
     "lang": "fr",
     "excerpt": "CAIO Academy — AI Systems Architect Track Avatar 01 · le CTO SaaS · CTO SaaS",
-    "url": "/fr/docs/avatars/cto-saas"
+    "url": "/fr/docs/avatars/cto-saas-2"
   },
   {
     "id": "fr/product/system-caio-whitepaper",
@@ -547,5 +547,743 @@
     "lang": "fr",
     "excerpt": "La SASU (Societe par Actions Simplifiee Unipersonnelle) est le statut qui correspond le mieux au projet CAIO Academy pour plusieurs raisons structurelles. Elle permet a Gareth de rester seul action...",
     "url": "/fr/docs/operations/legal-tax-structure"
+  },
+  {
+    "id": "fr/business-vision/push-million-timeline",
+    "title": "[ARCHIVE] Timeline Push Million",
+    "section": "Business — Vision",
+    "sectionKey": "business-vision",
+    "lang": "fr",
+    "excerpt": "La timeline Push Million prevoyait un cycle en quatre phases sur trente jours : Preparation (J-14 a J-7), Lancement (J-Day avec video YouTube et mint NFT), Momentum (J+1 a J+30 avec contenu quotidi...",
+    "url": "/fr/docs/business-vision/push-million-timeline"
+  },
+  {
+    "id": "fr/business-vision/push-million-strategie",
+    "title": "[ARCHIVE] Strategie Push Million",
+    "section": "Business — Vision",
+    "sectionKey": "business-vision",
+    "lang": "fr",
+    "excerpt": "La strategie Push Million etait un concept de janvier 2026 reposant sur la vente aux encheres d'apps SaaS avec redistribution de dix pour cent aux NFT holders. Le premier projet prevu etait Kommu.c...",
+    "url": "/fr/docs/business-vision/push-million-strategie"
+  },
+  {
+    "id": "fr/business-vision/push-million-nft-founding-member",
+    "title": "[ARCHIVE] NFT Founding Member",
+    "section": "Business — Vision",
+    "sectionKey": "business-vision",
+    "lang": "fr",
+    "excerpt": "Le programme NFT Founding Member prevoyait mille NFTs sur la blockchain Base, avec redistribution de dix pour cent des ventes d'apps aux holders. Quatre niveaux de droits : Profit Share, Early Acce...",
+    "url": "/fr/docs/business-vision/push-million-nft-founding-member"
+  },
+  {
+    "id": "fr/business-vision/push-million-gestion-risques",
+    "title": "[ARCHIVE] Gestion des Risques Push Million",
+    "section": "Business — Vision",
+    "sectionKey": "business-vision",
+    "lang": "fr",
+    "excerpt": "Ce document analysait sept risques lies a la strategie Push Million : absence d'acheteur a 1M EUR (impact eleve, probabilite moyenne), video qui ne performe pas (impact moyen-eleve), probleme legal...",
+    "url": "/fr/docs/business-vision/push-million-gestion-risques"
+  },
+  {
+    "id": "fr/business-vision/push-million-video-script",
+    "title": "[ARCHIVE] Video Script Push Million",
+    "section": "Business — Vision",
+    "sectionKey": "business-vision",
+    "lang": "fr",
+    "excerpt": "Ce document contenait le script complet de la video YouTube \"Push Million\" (3:30-4:00 minutes). Structure : Hook choc (\"Je mets en vente mon entreprise a 1 million d'euros\"), Setup personnel, Probl...",
+    "url": "/fr/docs/business-vision/push-million-video-script"
+  },
+  {
+    "id": "fr/business-vision/monetization-revenue-streams",
+    "title": "Revenue Streams -- Vue d'Ensemble des Revenus",
+    "section": "Business — Vision",
+    "sectionKey": "business-vision",
+    "lang": "fr",
+    "excerpt": "L'architecture des revenus repose sur trois piliers. Agentik OS porte la CAIO Academy en produit phare, avec un modele a trois etages : la communaute mensuelle (67 EUR par mois), la formation signa...",
+    "url": "/fr/docs/business-vision/monetization-revenue-streams"
+  },
+  {
+    "id": "fr/business-vision/monetization-private-community",
+    "title": "Communaute CAIO -- La Porte d'Entree du Monde CAIO",
+    "section": "Business — Vision",
+    "sectionKey": "business-vision",
+    "lang": "fr",
+    "excerpt": "La communaute CAIO est le premier etage du modele a trois etages de la CAIO Academy. Elle s'adresse aux professionnels qui veulent comprendre et operer l'IA en entreprise : CTO, consultants, dirige...",
+    "url": "/fr/docs/business-vision/monetization-private-community"
+  },
+  {
+    "id": "fr/business-vision/lifestyle-lifestyle-design",
+    "title": "Lifestyle Design -- La Vie Ideale",
+    "section": "Business — Vision",
+    "sectionKey": "business-vision",
+    "lang": "fr",
+    "excerpt": "La vie ideale repose sur trois piliers indissociables : le travail, le style et la liberte. Builder ce qui te passionne, vivre avec elegance et intention, et avoir la liberte de dire non. C'est la ...",
+    "url": "/fr/docs/business-vision/lifestyle-lifestyle-design"
+  },
+  {
+    "id": "fr/business-vision/lifestyle-financial-targets",
+    "title": "Financial Targets -- Objectifs Financiers",
+    "section": "Business — Vision",
+    "sectionKey": "business-vision",
+    "lang": "fr",
+    "excerpt": "Les 3 Signature Systems (lead magnets a 297, 497 et 997 EUR de valeur percue) generent les leads pour la CAIO Academy. Le CAIO Registry commence a se construire avec les premiers alumni beta.",
+    "url": "/fr/docs/business-vision/lifestyle-financial-targets"
+  },
+  {
+    "id": "fr/business-vision/business-strategy",
+    "title": "Business Strategy -- Les 3 Piliers",
+    "section": "Business — Vision",
+    "sectionKey": "business-vision",
+    "lang": "fr",
+    "excerpt": "L'empire business repose sur une architecture a trois piliers -- Agentik OS, Dafnck Studio, et Gareth Simono -- unis sous la banniere \"AI Systems Business Empire.\" La CAIO Academy (Chief AI Officer...",
+    "url": "/fr/docs/business-vision/business-strategy"
+  },
+  {
+    "id": "fr/business-vision/10-year-vision",
+    "title": "Vision 10 Ans -- Gareth (2026-2036)",
+    "section": "Business — Vision",
+    "sectionKey": "business-vision",
+    "lang": "fr",
+    "excerpt": "A quarante-trois ans, Gareth Simono incarne trois dimensions.",
+    "url": "/fr/docs/business-vision/10-year-vision"
+  },
+  {
+    "id": "fr/business-vision/empire-dafnck-studio",
+    "title": "Dafnck Studio -- Mes Clients",
+    "section": "Business — Vision",
+    "sectionKey": "business-vision",
+    "lang": "fr",
+    "excerpt": "Dafnck Studio est le pilier service de l'empire. La philosophie : \"Co-build avec les meilleurs clients.\" La mission consiste a accompagner des startups en tant que CTO technique, avec equity et cas...",
+    "url": "/fr/docs/business-vision/empire-dafnck-studio"
+  },
+  {
+    "id": "fr/business-vision/empire-agentik-os",
+    "title": "Agentik OS -- Mes Produits",
+    "section": "Business — Vision",
+    "sectionKey": "business-vision",
+    "lang": "fr",
+    "excerpt": "Agentik OS incarne la philosophie \"Build Smart, Scale with Knowledge.\" La mission : construire un ecosysteme de produits IA avec la CAIO Academy (Chief AI Officer Academy) comme produit phare. L'av...",
+    "url": "/fr/docs/business-vision/empire-agentik-os"
+  },
+  {
+    "id": "fr/business-vision/empire-gareth-simono",
+    "title": "Gareth Simono -- Ma Marque Personnelle",
+    "section": "Business — Vision",
+    "sectionKey": "business-vision",
+    "lang": "fr",
+    "excerpt": "Gareth Simono, \"The CAIO Builder.\" La mission : devenir la figure de reference du Chief AI Officer en France et en Europe francophone. L'identite repose sur quatre piliers : Expertise IA, Style, Ph...",
+    "url": "/fr/docs/business-vision/empire-gareth-simono"
+  },
+  {
+    "id": "fr/business-vision/content-content-calendar",
+    "title": "Content Calendar -- Planning de Publication",
+    "section": "Business — Vision",
+    "sectionKey": "business-vision",
+    "lang": "fr",
+    "excerpt": "Le batch creation consiste a creer plusieurs contenus en une seule session. Pourquoi cette approche fonctionne : le context switching coute cher en energie, le setup (lumiere, camera, mindset) ne s...",
+    "url": "/fr/docs/business-vision/content-content-calendar"
+  },
+  {
+    "id": "fr/business-vision/content-content-pillars",
+    "title": "Content Pillars -- Les 3 Piliers de Contenu",
+    "section": "Business — Vision",
+    "sectionKey": "business-vision",
+    "lang": "fr",
+    "excerpt": "Le contenu s'organise autour de trois piliers, chacun servant un objectif distinct dans la construction de la marque et du business :",
+    "url": "/fr/docs/business-vision/content-content-pillars"
+  },
+  {
+    "id": "fr/business-vision/content-personal-brand",
+    "title": "Personal Brand -- Gareth Simono",
+    "section": "Business — Vision",
+    "sectionKey": "business-vision",
+    "lang": "fr",
+    "excerpt": "Gareth Simono est \"The Gentleman Builder\" -- une fusion de trois dimensions :",
+    "url": "/fr/docs/business-vision/content-personal-brand"
+  },
+  {
+    "id": "fr/business-vision/content-content-youtube",
+    "title": "🎬 Du Live au Produit : Guide Complet de Production Vidéo Faceless",
+    "section": "Business — Vision",
+    "sectionKey": "business-vision",
+    "lang": "fr",
+    "excerpt": "``` LIVE (ce que tu sais faire) PRODUIT (ce que tu apprends) ───────────────────────────── ───────────────────────────── Tu parles en temps réel → Tu scriptes AVANT de parler",
+    "url": "/fr/docs/business-vision/content-content-youtube"
+  },
+  {
+    "id": "fr/business-vision/content-video-packaging",
+    "title": "Video Packaging -- L'Art du Hook et du Titre",
+    "section": "Business — Vision",
+    "sectionKey": "business-vision",
+    "lang": "fr",
+    "excerpt": "Le packaging video repose sur trois elements, chacun avec un poids different dans la decision du viewer :",
+    "url": "/fr/docs/business-vision/content-video-packaging"
+  },
+  {
+    "id": "fr/business-vision/content-youtube-inspiration",
+    "title": "Youtube Inspiration",
+    "section": "Business — Vision",
+    "sectionKey": "business-vision",
+    "lang": "neutral",
+    "excerpt": "",
+    "url": "/fr/docs/business-vision/content-youtube-inspiration"
+  },
+  {
+    "id": "en/business-vision/content-youtube-inspiration",
+    "title": "Youtube Inspiration",
+    "section": "Business — Vision",
+    "sectionKey": "business-vision",
+    "lang": "neutral",
+    "excerpt": "",
+    "url": "/en/docs/business-vision/content-youtube-inspiration"
+  },
+  {
+    "id": "en/business-vision/content-shorts-week-2026-03-30-scripts",
+    "title": "CAIO-Philosopher -- Short-Form Scripts (Week March 23-30, 2026)",
+    "section": "Business — Vision",
+    "sectionKey": "business-vision",
+    "lang": "en",
+    "excerpt": "Pillar: Hard Truth Hook (0-3s): \"OpenAI vient de tuer Sora. Un million de dollars par jour. Brule. Pour rien.\" Setup (3-15s): \"Sora, le generateur video qui devait revolutionner Hollywood. Moins de...",
+    "url": "/en/docs/business-vision/content-shorts-week-2026-03-30-scripts"
+  },
+  {
+    "id": "en/business-vision/content-scripts-03-30-the-week-ai-got-real",
+    "title": "VIDEO SCRIPT: The Week AI Got Real",
+    "section": "Business — Vision",
+    "sectionKey": "business-vision",
+    "lang": "en",
+    "excerpt": "Dark background. Calm intense face, slightly off-center. Bold white text: \"AI GOT REAL\" in condensed sans-serif. Small Sora logo with red X through it, bottom-right corner. No clutter.",
+    "url": "/en/docs/business-vision/content-scripts-03-30-the-week-ai-got-real"
+  },
+  {
+    "id": "fr/business-vision/sources-youtube-push-million",
+    "title": "Strategie \"Coup de Poker\" -- Kommu.co (Source)",
+    "section": "Business — Vision",
+    "sectionKey": "business-vision",
+    "lang": "fr",
+    "excerpt": "Tu es un entrepreneur tech avec quinze ans d'experience qui a developpe une plateforme communautaire tout-en-un appelee Kommu.co, concurrente de Discord, Circle, School et Patreon. Tu as une capaci...",
+    "url": "/fr/docs/business-vision/sources-youtube-push-million"
+  },
+  {
+    "id": "fr/business-vision/execution-plans-quarterly-goals",
+    "title": "Quarterly Goals -- Objectifs Trimestriels",
+    "section": "Business — Vision",
+    "sectionKey": "business-vision",
+    "lang": "fr",
+    "excerpt": "Lancer le calendrier LinkedIn avec trois posts par semaine : lundi cas concret de deploiement IA, mercredi prise de position sur le role du CAIO, vendredi breakdown de stack technique. Lancer la ne...",
+    "url": "/fr/docs/business-vision/execution-plans-quarterly-goals"
+  },
+  {
+    "id": "fr/business-vision/execution-plans-weekly-schedule",
+    "title": "Weekly Schedule -- Planning Hebdomadaire",
+    "section": "Business — Vision",
+    "sectionKey": "business-vision",
+    "lang": "fr",
+    "excerpt": "La semaine se structure autour de blocs clairement definis. Chaque jour suit le meme rythme de base, avec des variations selon le pilier prioritaire.",
+    "url": "/fr/docs/business-vision/execution-plans-weekly-schedule"
+  },
+  {
+    "id": "fr/business-vision/execution-plans-kpis-tracking",
+    "title": "KPIs Tracking -- Metriques a Suivre",
+    "section": "Business — Vision",
+    "sectionKey": "business-vision",
+    "lang": "fr",
+    "excerpt": "Le dashboard hebdomadaire capture l'essentiel en un coup d'oeil : revenus de la semaine, revenus du mois (year-to-date versus objectif), cash flow (entrees, sorties, net), et audience sur toutes le...",
+    "url": "/fr/docs/business-vision/execution-plans-kpis-tracking"
+  },
+  {
+    "id": "fr/business-vision/master-plan",
+    "title": "Master Plan -- Vision Business Empire",
+    "section": "Business — Vision",
+    "sectionKey": "business-vision",
+    "lang": "fr",
+    "excerpt": "L'empire Gareth Simono repose sur trois piliers complementaires. Chacun joue un role distinct dans la construction d'une machine a revenus diversifiee : un pilier produit, un pilier service, et un ...",
+    "url": "/fr/docs/business-vision/master-plan"
+  },
+  {
+    "id": "fr/business-strategy/millionaire-path",
+    "title": "Millionnaire Path 2026-2031 - Gareth Moison",
+    "section": "Business — Strategy",
+    "sectionKey": "business-strategy",
+    "lang": "fr",
+    "excerpt": "En decembre 2031, a trente-huit ans, Gareth Moison aura atteint la liberte financiere totale. Son net worth depassera 1.8 million d'euros. Ses revenus recurrents genereront 100 000 EUR par mois via...",
+    "url": "/fr/docs/business-strategy/millionaire-path"
+  },
+  {
+    "id": "fr/business-strategy/financial-system",
+    "title": "Système Financier - Gareth",
+    "section": "Business — Strategy",
+    "sectionKey": "business-strategy",
+    "lang": "fr",
+    "excerpt": "Le problème à résoudre est clair. Vénus en Bélier dans la 2ème maison astrologique signifie une tendance à la dépense impulsive. Tu crées de l'argent facilement, mais tu le dépenses aussi vite. Sur...",
+    "url": "/fr/docs/business-strategy/financial-system"
+  },
+  {
+    "id": "fr/business-strategy/daily-systems",
+    "title": "Systèmes Quotidiens - Gareth",
+    "section": "Business — Strategy",
+    "sectionKey": "business-strategy",
+    "lang": "fr",
+    "excerpt": "En tant que Manifestor, INFP, et porteur de ADHD, mon système optimal repose sur des principes clairs. Le Manifestor apporte une énergie en bursts plutôt que linéaire. L'INFP a besoin de sens profo...",
+    "url": "/fr/docs/business-strategy/daily-systems"
+  },
+  {
+    "id": "fr/business-strategy/q1-2026-action-plan",
+    "title": "Q1-Q2 2026 - Plan d'Action CAIO Academy",
+    "section": "Business — Strategy",
+    "sectionKey": "business-strategy",
+    "lang": "fr",
+    "excerpt": "Ce plan couvre les six premiers mois de CAIO Academy, divises en deux phases distinctes. La Phase Autorite (janvier a mars) etablit la credibilite de Gareth comme la voix francophone du Chief AI Of...",
+    "url": "/fr/docs/business-strategy/q1-2026-action-plan"
+  },
+  {
+    "id": "fr/business-strategy/money-mindset",
+    "title": "La Psychologie de la Richesse -- Reprogrammer ton Rapport a l'Argent",
+    "section": "Business — Strategy",
+    "sectionKey": "business-strategy",
+    "lang": "fr",
+    "excerpt": "Tout commence par un choix invisible, un filtre a travers lequel tu interpretes chaque situation financiere. D'un cote, le **mindset de rarete** murmure : *\"Il n'y a pas assez\"*, *\"L'argent est sal...",
+    "url": "/fr/docs/business-strategy/money-mindset"
+  },
+  {
+    "id": "fr/business-strategy/pricing-psychology",
+    "title": "La Psychologie du Prix - Comment Fixer et Augmenter ses Prix",
+    "section": "Business — Strategy",
+    "sectionKey": "business-strategy",
+    "lang": "fr",
+    "excerpt": "``` +------------------------------------------------------------------+ +------------------------------------------------------------------+ ```",
+    "url": "/fr/docs/business-strategy/pricing-psychology"
+  },
+  {
+    "id": "fr/business-blueprint/one-person-business",
+    "title": "ONE-PERSON BUSINESS : Le Blueprint du Solopreneur",
+    "section": "Business — Blueprint",
+    "sectionKey": "business-blueprint",
+    "lang": "fr",
+    "excerpt": "CE QUE C'EST : • Un business que TU contrôles entièrement • Optimisé pour liberté de temps, lieu, et décision • Marges de profit de 90-95% (digital products) • 2-4 heures de travail par jour une fo...",
+    "url": "/fr/docs/business-blueprint/one-person-business"
+  },
+  {
+    "id": "fr/business-execution/creator-blueprint",
+    "title": "Le Blueprint du Créateur-Entrepreneur",
+    "section": "Business — Execution",
+    "sectionKey": "business-execution",
+    "lang": "fr",
+    "excerpt": "1. Éducation traditionnelle 1. Apprendre en faisant 2. Trouver un job 2. Construire une audience 3. Travailler pour quelqu'un 3. Monétiser ton expertise 4. Retraite à 65 ans 4. Liberté avant 40 ans",
+    "url": "/fr/docs/business-execution/creator-blueprint"
+  },
+  {
+    "id": "fr/business-execution/standards-for-success",
+    "title": "Standards Pour Atteindre Mes Objectifs",
+    "section": "Business — Execution",
+    "sectionKey": "business-execution",
+    "lang": "fr",
+    "excerpt": "Actuel 15K€/mois 6 mois 30K€/mois 12 mois 50K€/mois 5 ans EXIT 1-15M€",
+    "url": "/fr/docs/business-execution/standards-for-success"
+  },
+  {
+    "id": "en/business-execution/life-standards",
+    "title": "Life Standards - Gareth's Non-Negotiables",
+    "section": "Business — Execution",
+    "sectionKey": "business-execution",
+    "lang": "en",
+    "excerpt": "Gareth Jean Aldo Moison 33 ans | INFP + ADHD | Poissons | O- | Childfree The Gentleman Lover | The Modern Entrepreneur",
+    "url": "/en/docs/business-execution/life-standards"
+  },
+  {
+    "id": "fr/business-execution/template",
+    "title": "QUARTERLY GOALS - Template",
+    "section": "Business — Execution",
+    "sectionKey": "business-execution",
+    "lang": "fr",
+    "excerpt": "``` À la fin de ce trimestre, je serai : _________________________________ ```",
+    "url": "/fr/docs/business-execution/template"
+  },
+  {
+    "id": "fr/business-execution/q1-2026",
+    "title": "Q1 2026 - OBJECTIFS TRIMESTRIELS",
+    "section": "Business — Execution",
+    "sectionKey": "business-execution",
+    "lang": "fr",
+    "excerpt": "``` A la fin de ce trimestre, j'aurai etabli ma credibilite de Chief AI Officer via 3 systemes signature construits publiquement, une newsletter lancee, et 50 abonnes Fondation generant les premier...",
+    "url": "/fr/docs/business-execution/q1-2026"
+  },
+  {
+    "id": "fr/business-execution/purpose-and-profit",
+    "title": "PURPOSE & PROFIT : Découvrir Ta Mission et La Monétiser",
+    "section": "Business — Execution",
+    "sectionKey": "business-execution",
+    "lang": "fr",
+    "excerpt": "• Travail désagréable pour quelqu'un d'autre • Purement pour la survie • Tu échanges ton temps contre de l'argent • Tu suis les instructions des autres",
+    "url": "/fr/docs/business-execution/purpose-and-profit"
+  },
+  {
+    "id": "fr/business-marketing/email-sequences",
+    "title": "L'Empire Newsletter - Sequences Email et Automatisation",
+    "section": "Business — Marketing",
+    "sectionKey": "business-marketing",
+    "lang": "fr",
+    "excerpt": "``` +----------------------------------------------------------------+ +----------------------------------------------------------------+ ```",
+    "url": "/fr/docs/business-marketing/email-sequences"
+  },
+  {
+    "id": "fr/business-marketing/twitter-domination",
+    "title": "Twitter Domination - Stratégie Complète",
+    "section": "Business — Marketing",
+    "sectionKey": "business-marketing",
+    "lang": "fr",
+    "excerpt": "Twitter represents the number one channel for tech founders. This is where your clients, peers, and future fans converge in a space designed for rapid idea exchange and network building.",
+    "url": "/fr/docs/business-marketing/twitter-domination"
+  },
+  {
+    "id": "en/business-marketing/twitter-strategy",
+    "title": "Twitter/X Strategy -- Agentik OS",
+    "section": "Business — Marketing",
+    "sectionKey": "business-marketing",
+    "lang": "en",
+    "excerpt": "The ideal bio follows a four-part formula: **Identity** plus **Credibility** plus **Value proposition** plus **Call to action.** For example: \"Building AI tools for developers | From 0 to $100K MRR...",
+    "url": "/en/docs/business-marketing/twitter-strategy"
+  },
+  {
+    "id": "fr/business-marketing/youtube-strategy",
+    "title": "Strategie YouTube -- CAIO Academy",
+    "section": "Business — Marketing",
+    "sectionKey": "business-marketing",
+    "lang": "fr",
+    "excerpt": "LinkedIn est le canal primaire parce que c'est la que les cinq avatars interagissent au quotidien dans leur contexte professionnel. YouTube joue un role different et complementaire.",
+    "url": "/fr/docs/business-marketing/youtube-strategy"
+  },
+  {
+    "id": "en/business-marketing/agentik-os-competitor-playbook",
+    "title": "Competitor Playbook - Agentik OS YouTube Strategy",
+    "section": "Business — Marketing",
+    "sectionKey": "business-marketing",
+    "lang": "en",
+    "excerpt": "Nate Herk [============================] +30K (fastest growing) Liam Ottley [==================] +18K (established, steady) David Ondrej [=============] +13K (trend-riding)",
+    "url": "/en/docs/business-marketing/agentik-os-competitor-playbook"
+  },
+  {
+    "id": "en/business-marketing/agentik-os-master-strategy",
+    "title": "Agentik OS - Master Marketing Strategy",
+    "section": "Business — Marketing",
+    "sectionKey": "business-marketing",
+    "lang": "en",
+    "excerpt": "Agentik OS is the first AI company that builds SaaS products with 198 AI agents, sells them at auction, and shares 10% of revenue with its community.",
+    "url": "/en/docs/business-marketing/agentik-os-master-strategy"
+  },
+  {
+    "id": "en/business-marketing/agentik-os-linkedin-b2b-strategy",
+    "title": "LinkedIn B2B Strategy - Dafnck Studio & Agentik OS",
+    "section": "Business — Marketing",
+    "sectionKey": "business-marketing",
+    "lang": "en",
+    "excerpt": "``` AI Systems Architect | Building AI Agent Teams for SMBs Co-Founder Dafnck Studio | 198 AI Agents | Shipped Kommu, LifePixels, DevLensPro ```",
+    "url": "/en/docs/business-marketing/agentik-os-linkedin-b2b-strategy"
+  },
+  {
+    "id": "en/business-marketing/agentik-os-youtube-content-calendar",
+    "title": "YouTube Content Calendar - Agentik OS (52 Weeks)",
+    "section": "Business — Marketing",
+    "sectionKey": "business-marketing",
+    "lang": "en",
+    "excerpt": "``` +-- 52-WEEK CONTENT CALENDAR ------------------------------+ +----------------------------------------------------------+ ```",
+    "url": "/en/docs/business-marketing/agentik-os-youtube-content-calendar"
+  },
+  {
+    "id": "en/business-marketing/agentik-os-youtube-long-form",
+    "title": "YouTube Long-Form Strategy - Agentik OS",
+    "section": "Business — Marketing",
+    "sectionKey": "business-marketing",
+    "lang": "en",
+    "excerpt": "``` HIGH TECHNICAL DEPTH Stephen G Pope | GARETH SIMONO (n8n deep dives) | (Full stack + business) LOW BUSINESS --------+-------- HIGH BUSINESS STRATEGY | STRATEGY",
+    "url": "/en/docs/business-marketing/agentik-os-youtube-long-form"
+  },
+  {
+    "id": "en/business-marketing/agentik-os-short-form-strategy",
+    "title": "Short-Form Video Strategy - Agentik OS",
+    "section": "Business — Marketing",
+    "sectionKey": "business-marketing",
+    "lang": "en",
+    "excerpt": "Short-form video is the single most powerful discovery mechanism in 2026. Unlike long-form content where you need subscribers or SEO to get views, short-form platforms push content to non-followers...",
+    "url": "/en/docs/business-marketing/agentik-os-short-form-strategy"
+  },
+  {
+    "id": "en/business-marketing/agentik-os-content-repurposing-system",
+    "title": "Content Repurposing System - Agentik OS",
+    "section": "Business — Marketing",
+    "sectionKey": "business-marketing",
+    "lang": "en",
+    "excerpt": "``` +-------------------------+ +------------+------------+ +-----------------+-----------------+ +-----+-----+ +------+------+ +-----+-----+ +-----+-----+ +------+------+ +-----+-----+ +----+----+...",
+    "url": "/en/docs/business-marketing/agentik-os-content-repurposing-system"
+  },
+  {
+    "id": "en/business-marketing/agentik-os-twitter-x-strategy",
+    "title": "Twitter/X Strategy - Agentik OS & The Gentleman Builder",
+    "section": "Business — Marketing",
+    "sectionKey": "business-marketing",
+    "lang": "en",
+    "excerpt": "``` The Gentleman Builder | Building AI apps & selling them at auction 198 AI agents | Shipped: Kommu, LifePixels, SagaForge, DevLensPro Building in public | Dafnck Studio co-founder [link to YouTu...",
+    "url": "/en/docs/business-marketing/agentik-os-twitter-x-strategy"
+  },
+  {
+    "id": "fr/business-marketing/psychology-neuroscience",
+    "title": "Psychologie & Neuroscience du Marketing",
+    "section": "Business — Marketing",
+    "sectionKey": "business-marketing",
+    "lang": "fr",
+    "excerpt": "1. Les 3 Cerveaux et Comment Ils Décident 2. Le Circuit de la Dopamine (Désir & Addiction) 3. Les 25 Biais Cognitifs à Maîtriser 4. Les 7 Péchés Capitaux du Marketing 5. Neuroscience de l'Attention...",
+    "url": "/fr/docs/business-marketing/psychology-neuroscience"
+  },
+  {
+    "id": "fr/business-marketing/conversion-landing-page-frameworks",
+    "title": "Landing Page Frameworks - Pages Qui Convertissent",
+    "section": "Business — Marketing",
+    "sectionKey": "business-marketing",
+    "lang": "fr",
+    "excerpt": "``` +------------------------------------------------------------------+ +------------------------------------------------------------------+ ```",
+    "url": "/fr/docs/business-marketing/conversion-landing-page-frameworks"
+  },
+  {
+    "id": "fr/business-marketing/conversion-sales-funnel",
+    "title": "L'Architecture du Funnel - De l'Inconnu au Client Fidele",
+    "section": "Business — Marketing",
+    "sectionKey": "business-marketing",
+    "lang": "fr",
+    "excerpt": "``` +------------------------------------------------------------------+ +------------------------------------------------------------------+ ```",
+    "url": "/fr/docs/business-marketing/conversion-sales-funnel"
+  },
+  {
+    "id": "fr/business-marketing/tiktok-reels-strategy",
+    "title": "Strategie Short-Form Video - TikTok, Reels et Shorts",
+    "section": "Business — Marketing",
+    "sectionKey": "business-marketing",
+    "lang": "fr",
+    "excerpt": "``` +----------------------------------------------------------------+ +----------------------------------------------------------------+ ```",
+    "url": "/fr/docs/business-marketing/tiktok-reels-strategy"
+  },
+  {
+    "id": "en/business-marketing/marketing-masterclass",
+    "title": "Marketing Masterclass -- Le Dossier Complet",
+    "section": "Business — Marketing",
+    "sectionKey": "business-marketing",
+    "lang": "en",
+    "excerpt": "Marketing is not advertising. Marketing is not manipulation. Marketing is not spam.",
+    "url": "/en/docs/business-marketing/marketing-masterclass"
+  },
+  {
+    "id": "en/business-marketing/reddit-strategy",
+    "title": "Reddit Strategy -- Agentik OS",
+    "section": "Business — Marketing",
+    "sectionKey": "business-marketing",
+    "lang": "en",
+    "excerpt": "Title: \"How I went from 0 to $X MRR in Y months -- detailed breakdown\"",
+    "url": "/en/docs/business-marketing/reddit-strategy"
+  },
+  {
+    "id": "en/business-marketing/copywriting-mastery",
+    "title": "Copywriting Mastery -- L'Art d'Ecrire pour Vendre",
+    "section": "Business — Marketing",
+    "sectionKey": "business-marketing",
+    "lang": "en",
+    "excerpt": "1. Fondamentaux du Copywriting 2. Psychologie des Mots 3. Les Formules Qui Marchent (20+ frameworks) 4. Headlines -- L'Art du Premier Contact 5. Storytelling -- Vendre par l'Histoire 6. Objections ...",
+    "url": "/en/docs/business-marketing/copywriting-mastery"
+  },
+  {
+    "id": "fr/business-marketing/actus-ia-semaine",
+    "title": "Actus IA en Bref -- Semaine du 14 Avril 2026",
+    "section": "Business — Marketing",
+    "sectionKey": "business-marketing",
+    "lang": "fr",
+    "excerpt": "PDF : `tools/pdf-generator/output/youtube-content-report.pdf`",
+    "url": "/fr/docs/business-marketing/actus-ia-semaine"
+  },
+  {
+    "id": "fr/business-marketing/content-strategy",
+    "title": "Content Strategy -- CAIO Academy",
+    "section": "Business — Marketing",
+    "sectionKey": "business-marketing",
+    "lang": "fr",
+    "excerpt": "CAIO Academy ne se vend pas avec des publicites agressives. Le produit cible un marche francophone qui n'a pas encore le vocabulaire pour comprendre ce qu'il achete. Personne en France, en Belgique...",
+    "url": "/fr/docs/business-marketing/content-strategy"
+  },
+  {
+    "id": "fr/business-marketing/growth-tactics",
+    "title": "Growth Tactics Encyclopedia - 200+ Tactiques",
+    "section": "Business — Marketing",
+    "sectionKey": "business-marketing",
+    "lang": "fr",
+    "excerpt": "1. ACQUISITION - Amener du trafic Organic Social SEO & Content Paid Advertising Partnerships & Collabs Viral & Referral",
+    "url": "/fr/docs/business-marketing/growth-tactics"
+  },
+  {
+    "id": "fr/business-marketing/twitter-reddit-growth",
+    "title": "Twitter (X) + Reddit Growth Strategy",
+    "section": "Business — Marketing",
+    "sectionKey": "business-marketing",
+    "lang": "fr",
+    "excerpt": "PROBLÈME 1: Trop de casquettes Tu as 3 marques: Agentik OS / Dafnck Studio / Gareth Simono → Tu ne sais pas LAQUELLE pousser sur les réseaux",
+    "url": "/fr/docs/business-marketing/twitter-reddit-growth"
+  },
+  {
+    "id": "en/business-marketing/research-twitter-x-research-2025-2026",
+    "title": "Twitter/X Strategy Research 2025-2026",
+    "section": "Business — Marketing",
+    "sectionKey": "business-marketing",
+    "lang": "en",
+    "excerpt": "``` DO: +-- Be conversational (not corporate) +-- Share personal stories with specific details +-- Use \"I\" and \"you\" liberally +-- Include failures alongside wins +-- Take clear positions (no fence...",
+    "url": "/en/docs/business-marketing/research-twitter-x-research-2025-2026"
+  },
+  {
+    "id": "en/business-marketing/research-youtube-strategy-2026-research",
+    "title": "YouTube Strategy Research 2025-2026",
+    "section": "Business — Marketing",
+    "sectionKey": "business-marketing",
+    "lang": "en",
+    "excerpt": "NEW (2025-2026): +-- Algorithm learns your posting pattern ```",
+    "url": "/en/docs/business-marketing/research-youtube-strategy-2026-research"
+  },
+  {
+    "id": "fr/business-marketing/research-audience-personas",
+    "title": "Audience Personas -- Les 5 Avatars CAIO Academy",
+    "section": "Business — Marketing",
+    "sectionKey": "business-marketing",
+    "lang": "fr",
+    "excerpt": "Ce document est le socle operationnel du marketing CAIO Academy. Il n'a pas vocation a etre exhaustif sur la theorie des personas -- des milliers d'articles le font deja mieux que nous. Son unique ...",
+    "url": "/fr/docs/business-marketing/research-audience-personas"
+  },
+  {
+    "id": "en/business-marketing/research-reddit-strategy-2025-research",
+    "title": "Reddit Strategy Research 2025-2026",
+    "section": "Business — Marketing",
+    "sectionKey": "business-marketing",
+    "lang": "en",
+    "excerpt": "Communities with 50,000-500,000 members offer the best balance:",
+    "url": "/en/docs/business-marketing/research-reddit-strategy-2025-research"
+  },
+  {
+    "id": "fr/business-marketing/research-competitor-analysis",
+    "title": "Competitor Analysis Framework - Connais Ton Ennemi",
+    "section": "Business — Marketing",
+    "sectionKey": "business-marketing",
+    "lang": "fr",
+    "excerpt": "``` +------------------------------------------------------------------+ +------------------------------------------------------------------+ ```",
+    "url": "/fr/docs/business-marketing/research-competitor-analysis"
+  },
+  {
+    "id": "fr/business-marketing/linkedin-strategy",
+    "title": "Strategie LinkedIn -- CAIO Academy",
+    "section": "Business — Marketing",
+    "sectionKey": "business-marketing",
+    "lang": "fr",
+    "excerpt": "LinkedIn n'est pas un reseau social parmi d'autres pour la CAIO Academy. C'est le seul canal ou les cinq avatars coexistent naturellement dans leur contexte professionnel.",
+    "url": "/fr/docs/business-marketing/linkedin-strategy"
+  },
+  {
+    "id": "fr/business-marketing/personal-brand-blueprint",
+    "title": "Personal Brand Blueprint -- Gareth Moison, Fondateur CAIO Academy",
+    "section": "Business — Marketing",
+    "sectionKey": "business-marketing",
+    "lang": "fr",
+    "excerpt": "Dans le marche des formations IA en 2026, il existe des dizaines de certifications en ligne, des centaines de cours Udemy, et des milliers de videos YouTube sur l'intelligence artificielle. Aucune ...",
+    "url": "/fr/docs/business-marketing/personal-brand-blueprint"
+  },
+  {
+    "id": "fr/business-marketing/newsletter-empire",
+    "title": "Newsletter Empire - Construire Ton Asset #1",
+    "section": "Business — Marketing",
+    "sectionKey": "business-marketing",
+    "lang": "fr",
+    "excerpt": "1. Pourquoi la Newsletter est Non-Négociable 2. Choisir Ta Plateforme 3. Définir Ta Newsletter 4. Lead Magnets Irrésistibles 5. Landing Page qui Convertit 6. Welcome Sequence (Les 5 Premiers Emails...",
+    "url": "/fr/docs/business-marketing/newsletter-empire"
+  },
+  {
+    "id": "fr/business-marketing/solo-ai-builder-solo-ai-builder-manifesto",
+    "title": "Solo AI Builder Manifesto - Le Playbook du Millionaire Automatise",
+    "section": "Business — Marketing",
+    "sectionKey": "business-marketing",
+    "lang": "neutral",
+    "excerpt": "``` +------------------------------------------------------------------+ +------------------------------------------------------------------+ ```",
+    "url": "/fr/docs/business-marketing/solo-ai-builder-solo-ai-builder-manifesto"
+  },
+  {
+    "id": "en/business-marketing/solo-ai-builder-solo-ai-builder-manifesto",
+    "title": "Solo AI Builder Manifesto - Le Playbook du Millionaire Automatise",
+    "section": "Business — Marketing",
+    "sectionKey": "business-marketing",
+    "lang": "neutral",
+    "excerpt": "``` +------------------------------------------------------------------+ +------------------------------------------------------------------+ ```",
+    "url": "/en/docs/business-marketing/solo-ai-builder-solo-ai-builder-manifesto"
+  },
+  {
+    "id": "en/business-marketing/automation-daily-posting-schedule",
+    "title": "Daily Posting Schedule - Multi-Platform Strategy",
+    "section": "Business — Marketing",
+    "sectionKey": "business-marketing",
+    "lang": "en",
+    "excerpt": "1. Nova generates 3 thread options based on content calendar 2. You review & pick one (or ask for revisions) 3. We iterate until perfect 4. Post + immediate engagement protocol",
+    "url": "/en/docs/business-marketing/automation-daily-posting-schedule"
+  },
+  {
+    "id": "en/business-marketing/automation-hooks-library",
+    "title": "Hooks Library - Ready-to-Use Twitter Hooks",
+    "section": "Business — Marketing",
+    "sectionKey": "business-marketing",
+    "lang": "en",
+    "excerpt": "1. \"2 years ago: UX designer grinding 60h/week. Today: Managing 3 AI agent teams. My income hasn't caught up yet. But my life quality? 10x better.\"",
+    "url": "/en/docs/business-marketing/automation-hooks-library"
+  },
+  {
+    "id": "en/business-marketing/automation-marketing-automation-plan",
+    "title": "Marketing Automation Plan - Agentik OS",
+    "section": "Business — Marketing",
+    "sectionKey": "business-marketing",
+    "lang": "en",
+    "excerpt": "1. Immediately reply to your own thread (continue conversation) 2. Monitor for ANY replies → respond within 5 min 3. Share in relevant communities/DMs 4. Self-engagement triggers algo boost",
+    "url": "/en/docs/business-marketing/automation-marketing-automation-plan"
+  },
+  {
+    "id": "fr/business-marketing/automation-ai-content-automation",
+    "title": "AI Content Automation - 1 Video = 30+ Pieces",
+    "section": "Business — Marketing",
+    "sectionKey": "business-marketing",
+    "lang": "fr",
+    "excerpt": "``` +------------------------------------------------------------------+ +------------------------------------------------------------------+ ```",
+    "url": "/fr/docs/business-marketing/automation-ai-content-automation"
+  },
+  {
+    "id": "fr/business-phantom-empire/vision",
+    "title": "Phantom Registry -- Le Pool Anonymise de Profils CAIO",
+    "section": "Phantom Empire",
+    "sectionKey": "business-phantom-empire",
+    "lang": "fr",
+    "excerpt": "``` +-- GARETH (public face) ----------------------+ +-----------------------------------------------+ v +-- REGISTRY (moat) ----------------------------+ +-----------------------------------------...",
+    "url": "/fr/docs/business-phantom-empire/vision"
+  },
+  {
+    "id": "en/business-phantom-empire/research-viral-psychology",
+    "title": "Psychologie de la Viralite -- Framework Complet",
+    "section": "Phantom Empire",
+    "sectionKey": "business-phantom-empire",
+    "lang": "en",
+    "excerpt": "Ce framework alimente le lancement de CAIO Academy et du Registry. Gareth est la face publique (LinkedIn primary), donc les leviers \"Mystery/Anti-Celebrity\" se transforment en **\"Founder Scarcity\"*...",
+    "url": "/en/docs/business-phantom-empire/research-viral-psychology"
+  },
+  {
+    "id": "en/business-phantom-empire/research-microsaas-opportunities",
+    "title": "Opportunites Micro-SaaS et Tendances 2026",
+    "section": "Phantom Empire",
+    "sectionKey": "business-phantom-empire",
+    "lang": "en",
+    "excerpt": "Ces donnees marche servent de toile de fond pour selectionner les **micro-SaaS que les profils CAIO du Registry vont construire**. Gareth n'est pas un founder anonyme : il est le formateur + operat...",
+    "url": "/en/docs/business-phantom-empire/research-microsaas-opportunities"
+  },
+  {
+    "id": "en/business-phantom-empire/research-opencode-analysis",
+    "title": "Analyse: Le Phenomene Viral OpenCode",
+    "section": "Phantom Empire",
+    "sectionKey": "business-phantom-empire",
+    "lang": "en",
+    "excerpt": "OpenCode est un benchmark de croissance **non-anonyme** : Jay V et Frank Wang (SST, YC) ont scale sans cacher leur identite, en combinant produit open-source + founder presence publique. C'est exac...",
+    "url": "/en/docs/business-phantom-empire/research-opencode-analysis"
   }
 ]
