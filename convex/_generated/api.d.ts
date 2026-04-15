@@ -9,6 +9,7 @@
  */
 
 import type * as adminGenerations from "../adminGenerations.js";
+import type * as podcasts from "../podcasts.js";
 
 import type {
   ApiFromModules,
@@ -18,6 +19,7 @@ import type {
 
 declare const fullApi: ApiFromModules<{
   adminGenerations: typeof adminGenerations;
+  podcasts: typeof podcasts;
 }>;
 
 /**
