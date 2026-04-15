@@ -1,15 +1,25 @@
+import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 import createIntlMiddleware from "next-intl/middleware";
-import { type NextRequest, NextResponse } from "next/server";
 import { routing } from "@/i18n/routing";
 
 const intlMiddleware = createIntlMiddleware(routing);
+const isProtected = createRouteMatcher([
+  "/(fr|en)/admin(.*)",
+  "/api/admin(.*)",
+]);
 
-export default function proxy(req: NextRequest) {
-  return intlMiddleware(req) ?? NextResponse.next();
-}
+export default clerkMiddleware(async (auth, req) => {
+  if (isProtected(req)) {
+    await auth.protect();
+  }
+  if (req.nextUrl.pathname.startsWith("/api/")) {
+    return;
+  }
+  return intlMiddleware(req);
+});
 
 export const config = {
   matcher: [
-    "/((?!api|_next/static|_next/image|_vercel|favicon.ico|.*\\..*).*)",
+    "/((?!_next/static|_next/image|_vercel|favicon.ico|.*\\..*).*)",
   ],
 };

@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { Analytics } from "@vercel/analytics/next";
+import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "@/components/theme-provider";
 import { routing } from "@/i18n/routing";
 import "../globals.css";
@@ -58,14 +59,31 @@ export default async function LocaleLayout({
       suppressHydrationWarning
     >
       <body className="min-h-screen font-sans antialiased">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem={false}
-          disableTransitionOnChange
+        <ClerkProvider
+          appearance={{
+            elements: {
+              card: "border border-line shadow-none rounded-none bg-paper",
+              rootBox: "font-sans",
+              formButtonPrimary:
+                "bg-ink text-paper rounded-none hover:bg-ink/90 normal-case",
+              footerActionLink: "text-ink underline",
+            },
+            variables: {
+              colorPrimary: "#000000",
+              borderRadius: "0",
+              fontFamily: "var(--font-sans)",
+            },
+          }}
         >
-          <NextIntlClientProvider>{children}</NextIntlClientProvider>
-        </ThemeProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="light"
+            enableSystem={false}
+            disableTransitionOnChange
+          >
+            <NextIntlClientProvider>{children}</NextIntlClientProvider>
+          </ThemeProvider>
+        </ClerkProvider>
         <Analytics />
       </body>
     </html>
