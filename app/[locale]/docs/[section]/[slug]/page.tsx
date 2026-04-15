@@ -129,7 +129,7 @@ export default async function DocDetail({
       </header>
 
       <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_220px]">
-        <Prose className="max-w-none">{content}</Prose>
+        <Prose className="min-w-0 max-w-none break-words">{content}</Prose>
 
         {toc.length > 0 && (
           <aside className="order-first lg:order-last">

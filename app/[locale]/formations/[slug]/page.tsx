@@ -131,8 +131,8 @@ export default async function FormationDetail({
       </section>
 
       <section className="border-b border-[color:var(--color-line)]">
-        <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-[1fr_280px]">
-          <Prose className="max-w-none">{content}</Prose>
+        <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:gap-12 sm:px-6 sm:py-20 lg:grid-cols-[1fr_280px]">
+          <Prose className="min-w-0 max-w-none break-words">{content}</Prose>
 
           <aside className="order-first lg:order-last">
             <div className="sticky top-24 flex flex-col gap-8 border-t-2 border-[color:var(--color-ink)] pt-8">
