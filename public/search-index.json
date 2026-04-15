@@ -1285,5 +1285,1373 @@
     "lang": "en",
     "excerpt": "OpenCode est un benchmark de croissance **non-anonyme** : Jay V et Frank Wang (SST, YC) ont scale sans cacher leur identite, en combinant produit open-source + founder presence publique. C'est exac...",
     "url": "/en/docs/business-phantom-empire/research-opencode-analysis"
+  },
+  {
+    "id": "en/business-archive/01-caio-legacy-formation-roadmap",
+    "title": "Roadmap -- De Developpeur Web a AI/ML Engineer",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "en",
+    "excerpt": "Your current profile as a TypeScript/JavaScript developer with React/Next.js, API calls to Claude, Convex/Supabase backends, Vercel deployment, and MCP usage needs to evolve into fluency with Pytho...",
+    "url": "/en/docs/business-archive/01-caio-legacy-formation-roadmap"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-formation-07-mcp-advanced-mcp-protocol-deep-dive",
+    "title": "MCP (Model Context Protocol) - Deep Dive",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "Tu utilises déjà MCP quotidiennement - maintenant comprends-le en profondeur",
+    "url": "/fr/docs/business-archive/01-caio-legacy-formation-07-mcp-advanced-mcp-protocol-deep-dive"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-formation-05-llm-training-rlhf",
+    "title": "RLHF - Reinforcement Learning from Human Feedback",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "``` Modèle pré-entraîné ↓ Supervised Fine-Tuning (SFT) ← Ton focus principal ↓ Reward Model Training ← Apprend les préférences humaines ↓ RL Fine-Tuning (PPO) ← Optimise pour la reward ↓ Modèle ali...",
+    "url": "/fr/docs/business-archive/01-caio-legacy-formation-05-llm-training-rlhf"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-formation-05-llm-training-pretrained-models",
+    "title": "Modèles Pré-entraînés",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "Pourquoi et comment utiliser des modèles existants au lieu de partir de zéro",
+    "url": "/fr/docs/business-archive/01-caio-legacy-formation-05-llm-training-pretrained-models"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-formation-05-llm-training-transformer-architecture",
+    "title": "Architecture Transformer",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "Le cœur de tous les LLMs modernes (GPT, BERT, Claude, Mistral, Llama...)",
+    "url": "/fr/docs/business-archive/01-caio-legacy-formation-05-llm-training-transformer-architecture"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-formation-05-llm-training-fine-tuning-basics",
+    "title": "Fine-Tuning Basics",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "``` Modèle pré-entraîné (général) ↓ + Dataset spécifique ↓ Modèle fine-tuned (spécialisé) ```",
+    "url": "/fr/docs/business-archive/01-caio-legacy-formation-05-llm-training-fine-tuning-basics"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-formation-05-llm-training-lora-qlora",
+    "title": "LoRA et QLoRA",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "Au lieu de modifier directement les poids W, on ajoute une \"mise à jour\" de faible rang.",
+    "url": "/fr/docs/business-archive/01-caio-legacy-formation-05-llm-training-lora-qlora"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-formation-04-datasets-data-qualification",
+    "title": "Qualification des Données",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "La qualification des données est une étape critique pour garantir la qualité du modèle final. Elle consiste à définir et mesurer la qualité des données avant de les utiliser pour l'entraînement.",
+    "url": "/fr/docs/business-archive/01-caio-legacy-formation-04-datasets-data-qualification"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-formation-04-datasets-dataset-creation",
+    "title": "Création de Datasets",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "Même le meilleur modèle ne peut pas compenser un mauvais dataset. Pour la mission: le dataset QUALIFIÉ est le cœur du projet. ```",
+    "url": "/fr/docs/business-archive/01-caio-legacy-formation-04-datasets-dataset-creation"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-formation-04-datasets-data-cleaning",
+    "title": "Nettoyage de Données",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "neutral",
+    "excerpt": "df = df.drop_duplicates(subset=['instruction', 'output']) ```",
+    "url": "/fr/docs/business-archive/01-caio-legacy-formation-04-datasets-data-cleaning"
+  },
+  {
+    "id": "en/business-archive/01-caio-legacy-formation-04-datasets-data-cleaning",
+    "title": "Nettoyage de Données",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "neutral",
+    "excerpt": "df = df.drop_duplicates(subset=['instruction', 'output']) ```",
+    "url": "/en/docs/business-archive/01-caio-legacy-formation-04-datasets-data-cleaning"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-formation-04-datasets-train-test-split",
+    "title": "Train/Test Split Strategies",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "La séparation des données est fondamentale pour évaluer correctement un modèle. Le dataset complet est divisé en trois parties : l'ensemble d'entraînement (train) représente typiquement 80% des don...",
+    "url": "/fr/docs/business-archive/01-caio-legacy-formation-04-datasets-train-test-split"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-formation-08-project-setup-project-structure",
+    "title": "Structure de Projet ML",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "Organisation professionnelle pour un projet de fine-tuning LLM",
+    "url": "/fr/docs/business-archive/01-caio-legacy-formation-08-project-setup-project-structure"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-formation-06-evaluation-metrics-overview",
+    "title": "Métriques d'Évaluation",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "L'évaluation est fondamentale en machine learning. Comme le dit l'adage : \"Si tu ne peux pas le mesurer, tu ne peux pas l'améliorer.\" Pour la mission, définir des critères de qualité clairs et mesu...",
+    "url": "/fr/docs/business-archive/01-caio-legacy-formation-06-evaluation-metrics-overview"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-formation-06-evaluation-llm-benchmarks",
+    "title": "Benchmarks LLM Standards",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "``` Permettent de: 1. Comparer objectivement les modèles 2. Suivre les progrès dans le domaine 3. Identifier les forces/faiblesses 4. Valider que le fine-tuning n'a pas dégradé les capacités généra...",
+    "url": "/fr/docs/business-archive/01-caio-legacy-formation-06-evaluation-llm-benchmarks"
+  },
+  {
+    "id": "en/business-archive/01-caio-legacy-formation-01-python-fundamentals-async-python",
+    "title": "Async Python",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "en",
+    "excerpt": "```typescript // TypeScript async function fetchData(url: string): Promise<Data> { const response = await fetch(url); return response.json(); }",
+    "url": "/en/docs/business-archive/01-caio-legacy-formation-01-python-fundamentals-async-python"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-formation-01-python-fundamentals-essential-libraries",
+    "title": "Bibliotheques Python Essentielles pour ML/AI",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "The essential Python libraries for ML/AI fall into three categories:",
+    "url": "/fr/docs/business-archive/01-caio-legacy-formation-01-python-fundamentals-essential-libraries"
+  },
+  {
+    "id": "en/business-archive/01-caio-legacy-formation-01-python-fundamentals-syntax-for-ts-devs",
+    "title": "Python pour Developpeurs TypeScript",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "en",
+    "excerpt": "The philosophical differences between TypeScript and Python set the tone for everything that follows. TypeScript demands explicit types everywhere, requires compilation, uses `npm` or `bun` for pac...",
+    "url": "/en/docs/business-archive/01-caio-legacy-formation-01-python-fundamentals-syntax-for-ts-devs"
+  },
+  {
+    "id": "en/business-archive/01-caio-legacy-formation-01-python-fundamentals-virtual-environments",
+    "title": "Virtual Environments Python",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "en",
+    "excerpt": "Python virtual environments serve the same purpose as `node_modules` in Node.js – they isolate dependencies for each project.",
+    "url": "/en/docs/business-archive/01-caio-legacy-formation-01-python-fundamentals-virtual-environments"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-formation-01-python-fundamentals-type-hints",
+    "title": "Type Hints en Python",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "add(\"hello\", \"world\") # Pas d'erreur! Retourne \"helloworld\" ```",
+    "url": "/fr/docs/business-archive/01-caio-legacy-formation-01-python-fundamentals-type-hints"
+  },
+  {
+    "id": "en/business-archive/01-caio-legacy-formation-02-ml-basics-neural-networks",
+    "title": "Réseaux de Neurones",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "en",
+    "excerpt": "A biological neuron receives signals through its **dendrites**, processes them in the **cell body**, and transmits the result through its **axon**. The artificial counterpart mirrors this structure...",
+    "url": "/en/docs/business-archive/01-caio-legacy-formation-02-ml-basics-neural-networks"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-formation-02-ml-basics-math-essentials",
+    "title": "Mathématiques Essentielles pour ML",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "Tu n'as pas besoin de maîtriser les maths pour UTILISER le ML moderne. Les frameworks (PyTorch, Transformers) cachent la complexité.",
+    "url": "/fr/docs/business-archive/01-caio-legacy-formation-02-ml-basics-math-essentials"
+  },
+  {
+    "id": "en/business-archive/01-caio-legacy-formation-02-ml-basics-overfitting-regularization",
+    "title": "Overfitting and Regularization",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "en",
+    "excerpt": "A model that achieves 99% accuracy on training data but only 60% on test data has learned by heart instead of understanding the underlying patterns.",
+    "url": "/en/docs/business-archive/01-caio-legacy-formation-02-ml-basics-overfitting-regularization"
+  },
+  {
+    "id": "en/business-archive/01-caio-legacy-formation-02-ml-basics-training-concepts",
+    "title": "Training Concepts",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "en",
+    "excerpt": "Understanding loss functions, optimizers, epochs, and batches – everything that makes a model learn.",
+    "url": "/en/docs/business-archive/01-caio-legacy-formation-02-ml-basics-training-concepts"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-formation-02-ml-basics-what-is-ml",
+    "title": "Qu'est-ce que le Machine Learning?",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "In traditional programming, you supply the **input** along with **explicit rules**, and the program produces an output. You write every conditional yourself -- if the temperature exceeds 30, return...",
+    "url": "/fr/docs/business-archive/01-caio-legacy-formation-02-ml-basics-what-is-ml"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-formation-03-pytorch-amd-pytorch-basics",
+    "title": "PyTorch Basics",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "import numpy as np arr = np.array([1, 2, 3]) tensor = torch.from_numpy(arr)",
+    "url": "/fr/docs/business-archive/01-caio-legacy-formation-03-pytorch-amd-pytorch-basics"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-formation-03-pytorch-amd-distributed-training",
+    "title": "Distributed Training (Multi-GPU)",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "``` 1 GPU: [=========] 10 heures 4 GPUs: [==] 2.5 heures (idéal) [===] 3 heures (réaliste avec overhead) ```",
+    "url": "/fr/docs/business-archive/01-caio-legacy-formation-03-pytorch-amd-distributed-training"
+  },
+  {
+    "id": "en/business-archive/01-caio-legacy-formation-03-pytorch-amd-data-loaders",
+    "title": "Data Loaders PyTorch",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "en",
+    "excerpt": "The data flow follows this pattern: Dataset defines how to access a single sample, DataLoader groups samples into batches with shuffling, parallel loading, and prefetching. The batches are then fed...",
+    "url": "/en/docs/business-archive/01-caio-legacy-formation-03-pytorch-amd-data-loaders"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-formation-03-pytorch-amd-training-loop",
+    "title": "Training Loop PyTorch",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "```python import torch import torch.nn as nn import torch.optim as optim from torch.utils.data import DataLoader from tqdm import tqdm",
+    "url": "/fr/docs/business-archive/01-caio-legacy-formation-03-pytorch-amd-training-loop"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-formation-03-pytorch-amd-amd-rocm-setup",
+    "title": "AMD ROCm Setup pour PyTorch",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "PyTorch utilise `cuda` comme device même pour AMD ROCm. Ton code reste le même!",
+    "url": "/fr/docs/business-archive/01-caio-legacy-formation-03-pytorch-amd-amd-rocm-setup"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ai-era-industries-reconversions",
+    "title": "Industries et Reconversions",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "IMPACT FAIBLE IMPACT MOYEN IMPACT EXTREME IMMEDIAT | Artisanat | Retail | Call Centers (2024-26)| Luxe manuel | Logistique | Data Entry PROCHE | Construction | Finance | Juridique",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ai-era-industries-reconversions"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ai-era-week1-script",
+    "title": "Script Semaine 1 - Tweets Exacts",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "``` [ ] Compte Twitter créé: @Agentik_os [ ] Bio en place: \"No hype. Just build. $0 → $1M MRR. Solo + AI only.\" [ ] Avatar: Logo Agentik (voir doc Visual Identity) [ ] Banner: Minimaliste noir ou g...",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ai-era-week1-script"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ai-era-complete-vision",
+    "title": "The AI Era - Complete Vision Map",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "1. [Les Shifts Fondamentaux](#1-les-shifts-fondamentaux) 2. [Psychologie de l'Humain face a l'IA](#2-psychologie-de-lhumain-face-a-lia) 3. [Psychologie de la Machine](#3-psychologie-de-la-machine) ...",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ai-era-complete-vision"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ai-era-visual-identity-guide",
+    "title": "Visual Identity Guide - Agentik OS",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "``` DARK mais pas edgy MINIMAL mais pas vide TECH mais pas froid MYSTÉRIEUX mais pas gothique PREMIUM mais pas luxe tape-à-l'œil ```",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ai-era-visual-identity-guide"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ai-era-the-game-arg",
+    "title": "The Game - ARG & Hidden Universe",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "Pas un humain. Pas vraiment une machine. Quelque chose entre les deux.",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ai-era-the-game-arg"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ai-era-your-position",
+    "title": "Ta Position: OpenClaw, Agentik, VibeCoding",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "L'ECOSYSTEME GARETH INFRASTRUCTURE TECHNIQUE +----------------------------------------------------------+ +----------------------------------------------------------+ v METHODE +-------------------...",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ai-era-your-position"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ai-era-human-psychology",
+    "title": "Psychologie de l'Humain face a l'IA",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "``` +------------------------------------------------------------------+ +------------------------------------------------------------------+",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ai-era-human-psychology"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ai-era-deep-psychology-neuroscience",
+    "title": "Deep Psychology & Neuroscience of Cult Brands",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "QUAND LES DEUX SE COMBINENT: Dopamine (anticipation) + Oxytocine (appartenance) = REORGANISATION NEURALE autour du nouvel attachement = Le cerveau se RECÂBLE pour cette chose/groupe = ADDICTION au ...",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ai-era-deep-psychology-neuroscience"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ai-era-viral-mechanics-brainstorm",
+    "title": "Viral Mechanics Brainstorm - 200+ Idées",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "``` 001. Pixel caché sur une page (1x1, cliquable, mène quelque part) 002. Page 404 custom avec un indice secret 003. /secret sur ton site = page cachée 004. /void = écran noir avec texte qui appar...",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ai-era-viral-mechanics-brainstorm"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ai-era-machine-psychology",
+    "title": "Psychologie de la Machine",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "CE QUE L'AI EST: +-- Un systeme de prediction de tokens (mots) +-- Base sur des patterns statistiques massifs +-- Capable de generalisation impressionnante +-- Sans \"comprehension\" au sens humain +...",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ai-era-machine-psychology"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ai-era-pak-ai-strategy",
+    "title": "PAK x AI - La Strategie Complete",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "``` +------------------------------------------------------------------+ +------------------------------------------------------------------+",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ai-era-pak-ai-strategy"
+  },
+  {
+    "id": "en/business-archive/01-caio-legacy-ai-era-week2-4-scripts",
+    "title": "Scripts Semaines 2-4 - Tweets Exacts",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "en",
+    "excerpt": "``` OBJECTIF: Montrer que quelque chose se CONSTRUIT vraiment TONE: Un peu plus de substance, toujours mystérieux REVEAL: Premier indice concret (screenshot flou, métrique) ```",
+    "url": "/en/docs/business-archive/01-caio-legacy-ai-era-week2-4-scripts"
+  },
+  {
+    "id": "en/business-archive/01-caio-legacy-ai-era-agentik-launch-strategy",
+    "title": "Agentik OS - Stratégie de Lancement Complete",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "en",
+    "excerpt": "ACTIONS: [ ] Compte Twitter actif avec la bio: \"No hype. Just build. $0 → $1M MRR. Solo + AI only.\"",
+    "url": "/en/docs/business-archive/01-caio-legacy-ai-era-agentik-launch-strategy"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ai-era-twitter-analysis",
+    "title": "Twitter Analysis - Vibe Coding Era",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "``` +------------------------------------------------------------------+ +------------------------------------------------------------------+",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ai-era-twitter-analysis"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ai-era-authority-building",
+    "title": "Devenir LA Référence - Authority Building",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "``` MYSTÈRE SEUL = Curiosité temporaire → Les gens regardent → Puis oublient → Pas de valeur durable",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ai-era-authority-building"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ai-era-tone-of-voice-guide",
+    "title": "Tone of Voice Guide - Agentik OS",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "``` CRYPTIQUE mais PAS prétentieux. CONFIANT mais PAS arrogant. MYSTÉRIEUX mais PAS vide. MINIMALISTE mais PAS paresseux. ```",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ai-era-tone-of-voice-guide"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-explosion-implementation-guide",
+    "title": "Guide d'Implementation - Explosion Framework",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "``` +------------------------------------------------------------------+ +------------------------------------------------------------------+ +------------------------------------------------------...",
+    "url": "/fr/docs/business-archive/01-caio-legacy-explosion-implementation-guide"
+  },
+  {
+    "id": "en/business-archive/01-caio-legacy-explosion-master-framework",
+    "title": "The Explosion Framework - Master Document",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "en",
+    "excerpt": "The conventional path moves from problem to solution to marketing. Companies ask \"People need X\" and decide \"We'll solve Y.\" The result: useful but ignored product.",
+    "url": "/en/docs/business-archive/01-caio-legacy-explosion-master-framework"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-explosion-face-vs-anonymous",
+    "title": "Face-Forward vs Anonyme: Analyse Strategique Complete",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "``` +------------------------------------------------------------------+ +------------------------------------------------------------------+ +------------------------------------------------------...",
+    "url": "/fr/docs/business-archive/01-caio-legacy-explosion-face-vs-anonymous"
+  },
+  {
+    "id": "en/business-archive/01-caio-legacy-explosion-psychology-deep-dive",
+    "title": "Psychology of Billion-Dollar Movements",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "en",
+    "excerpt": "The formula for a billion-dollar movement equals identity plus enemy, multiplied by scarcity and shared suffering, all divided by accessibility (inversely proportional).",
+    "url": "/en/docs/business-archive/01-caio-legacy-explosion-psychology-deep-dive"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-explosion-ideas-great-unbundling",
+    "title": "The Great Unbundling",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "``` +------------------------------------------------------------------+ +------------------------------------------------------------------+ ```",
+    "url": "/fr/docs/business-archive/01-caio-legacy-explosion-ideas-great-unbundling"
+  },
+  {
+    "id": "en/business-archive/01-caio-legacy-explosion-ideas-drop-culture-digital",
+    "title": "Drop Culture for Digital Products",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "en",
+    "excerpt": "``` +------------------------------------------------------------------+ +------------------------------------------------------------------+ ```",
+    "url": "/en/docs/business-archive/01-caio-legacy-explosion-ideas-drop-culture-digital"
+  },
+  {
+    "id": "en/business-archive/01-caio-legacy-explosion-ideas-oracle-network",
+    "title": "The Oracle Network",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "en",
+    "excerpt": "``` +------------------------------------------------------------------+ +------------------------------------------------------------------+ ```",
+    "url": "/en/docs/business-archive/01-caio-legacy-explosion-ideas-oracle-network"
+  },
+  {
+    "id": "en/business-archive/01-caio-legacy-explosion-ideas-time-machine-index",
+    "title": "The Time Machine Index",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "en",
+    "excerpt": "``` +------------------------------------------------------------------+ +------------------------------------------------------------------+ ```",
+    "url": "/en/docs/business-archive/01-caio-legacy-explosion-ideas-time-machine-index"
+  },
+  {
+    "id": "en/business-archive/01-caio-legacy-explosion-ideas-builders-guild",
+    "title": "The Builder's Guild",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "en",
+    "excerpt": "``` +------------------------------------------------------------------+ +------------------------------------------------------------------+ ```",
+    "url": "/en/docs/business-archive/01-caio-legacy-explosion-ideas-builders-guild"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-explosion-ideas-anonymous-founder-collective",
+    "title": "Anonymous Founder Collective",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "``` +------------------------------------------------------------------+ +------------------------------------------------------------------+ ```",
+    "url": "/fr/docs/business-archive/01-caio-legacy-explosion-ideas-anonymous-founder-collective"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-explosion-ideas-personal-ai-sovereignty-stack",
+    "title": "Personal AI Sovereignty Stack",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "``` +------------------------------------------------------------------+ +------------------------------------------------------------------+ ```",
+    "url": "/fr/docs/business-archive/01-caio-legacy-explosion-ideas-personal-ai-sovereignty-stack"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-explosion-ideas-black-box-project",
+    "title": "The Black Box Project",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "neutral",
+    "excerpt": "``` +------------------------------------------------------------------+ +------------------------------------------------------------------+ ```",
+    "url": "/fr/docs/business-archive/01-caio-legacy-explosion-ideas-black-box-project"
+  },
+  {
+    "id": "en/business-archive/01-caio-legacy-explosion-ideas-black-box-project",
+    "title": "The Black Box Project",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "neutral",
+    "excerpt": "``` +------------------------------------------------------------------+ +------------------------------------------------------------------+ ```",
+    "url": "/en/docs/business-archive/01-caio-legacy-explosion-ideas-black-box-project"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-explosion-ideas-genius-certification",
+    "title": "Genius Certification Protocol",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "``` +------------------------------------------------------------------+ +------------------------------------------------------------------+ ```",
+    "url": "/fr/docs/business-archive/01-caio-legacy-explosion-ideas-genius-certification"
+  },
+  {
+    "id": "en/business-archive/01-caio-legacy-explosion-ideas-future-archaeology",
+    "title": "Future Archaeology Institute",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "en",
+    "excerpt": "``` +------------------------------------------------------------------+ +------------------------------------------------------------------+ ```",
+    "url": "/en/docs/business-archive/01-caio-legacy-explosion-ideas-future-archaeology"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-explosion-ideas-ai-resistance-network",
+    "title": "AI Resistance Network",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "``` +------------------------------------------------------------------+ +------------------------------------------------------------------+ ```",
+    "url": "/fr/docs/business-archive/01-caio-legacy-explosion-ideas-ai-resistance-network"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-explosion-ideas-ai-dead-mans-switch",
+    "title": "AI Dead Man's Switch - Legacy AI",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "``` +------------------------------------------------------------------+ +------------------------------------------------------------------+ ```",
+    "url": "/fr/docs/business-archive/01-caio-legacy-explosion-ideas-ai-dead-mans-switch"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-explosion-visionary-ideas",
+    "title": "Idees Visionnaires 2026-2027 - Emotion-First",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "``` +------------------------------------------------------------------+ +------------------------------------------------------------------+ ```",
+    "url": "/fr/docs/business-archive/01-caio-legacy-explosion-visionary-ideas"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-core-sales-playbook",
+    "title": "Sales Playbook -- Process de Vente",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "Envoyer la proposition **sous 24-48h** apres le call. Plus c'est rapide, plus le taux de closing est eleve.",
+    "url": "/fr/docs/business-archive/01-caio-legacy-core-sales-playbook"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-core-pricing-psychology",
+    "title": "Pricing & Packaging -- Psychologie du Prix",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "La psychologie du pricing dit : toujours 3 options. L'option du milieu est celle que tu veux vendre. Les deux autres existent pour l'encadrer.",
+    "url": "/fr/docs/business-archive/01-caio-legacy-core-pricing-psychology"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-core-million-dollar-strategy",
+    "title": "La Strategie du Million: De l'Idee aux Revenus",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "``` +-- #1 GAGNANT: \"FORMATION CENTAURE\" + COMMUNAUTE --------------------+ +----------------------------------------------------------------------+",
+    "url": "/fr/docs/business-archive/01-caio-legacy-core-million-dollar-strategy"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-core-master-vision",
+    "title": "AI Agents Business -- Master Vision",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "Plus les couts caches : bureaux, management, meetings, conflits, turnover (cout remplacement = 6-9 mois de salaire), onboarding, dette technique humaine.",
+    "url": "/fr/docs/business-archive/01-caio-legacy-core-master-vision"
+  },
+  {
+    "id": "en/business-archive/01-caio-legacy-core-vision-ai-original",
+    "title": "Vision AI Original",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "en",
+    "excerpt": "People need to learn and get access to easy solution and thing about the future with AI",
+    "url": "/en/docs/business-archive/01-caio-legacy-core-vision-ai-original"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ideas-yc-application-ai",
+    "title": "Entrer a Y Combinator avec un Projet IA en 2026",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "``` +-- DEAL STANDARD YC 2026 ------------------------------------------+ +---------------------------------------------------------------------+ ```",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ideas-yc-application-ai"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ideas-ai-valuations-2026",
+    "title": "Valorisations IA en 2026 : Combien Vaut Quoi",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "``` +-- EVOLUTION DES MULTIPLES IA ------------------------------------+ +--------------------------------------------------------------------+ ```",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ideas-ai-valuations-2026"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ideas-french-ai-ecosystem",
+    "title": "Ecosysteme IA Francais : La Carte Complete 2026",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "``` +-- AIDES PUBLIQUES POUR STARTUPS IA EN FRANCE --------------------+ +--------------------------------------------------------------------+ ```",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ideas-french-ai-ecosystem"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ideas-paid-community-blueprint",
+    "title": "Communaute Payante: De 0 a 1000 Membres a 67 EUR/mois",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "Format: 60-90 minutes, chaque semaine, meme jour/heure Structure:",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ideas-paid-community-blueprint"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ideas-cap-table-founder-value",
+    "title": "Cap Table : Comment Garder le Maximum de ta Boite",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "``` +-- EVOLUTION CAP TABLE (SCENARIO TYPE) ---------------------------+ +--------------------------------------------------------------------+ ```",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ideas-cap-table-founder-value"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ideas-cold-outreach-ai-services",
+    "title": "Outreach: Signer 5 Clients IA/Mois en Autopilot",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "J'ai regarde [nom_entreprise] et j'ai remarque que [observation specifique].",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ideas-cold-outreach-ai-services"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ideas-personal-brand-builder-ai",
+    "title": "AI Personal Brand Builder: De l'Inconnu a l'Autorite en 90 Jours",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "Il y a des milliers de consultants, fondateurs et experts brillants qui sont invisibles en ligne. Ils savent qu'ils devraient construire une presence, mais :",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ideas-personal-brand-builder-ai"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ideas-youtube-ai-niche-playbook",
+    "title": "YouTube: Dominer la Niche IA en 12 Mois",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "``` THUMBNAIL = Contraste + Visage/Icone + Texte (max 4 mots) + Declencheur Emotionnel",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ideas-youtube-ai-niche-playbook"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ideas-centaur-os-product",
+    "title": "Centaur OS: Plateforme d'Intelligence Decisionnelle",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "La plupart des gens prennent des decisions majeures avec leur instinct, puis rationalisent apres coup. Les meilleurs decideurs au monde (Bezos, Dalio, Munger) utilisent des frameworks systematiques...",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ideas-centaur-os-product"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ideas-personal-brand-gentleman-builder",
+    "title": "Personal Branding: Le Gentleman Builder Francais",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "``` EXPERTISE IA (systemes, agents, automatisation) GENTLEMAN BUILDER / | \\ / | \\ PHILOSOPHIE LIFESTYLE BUILDING STOIQUE DESIGN IN PUBLIC (profondeur) (liberte) (authenticite)",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ideas-personal-brand-gentleman-builder"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ideas-twitter-tech-domination",
+    "title": "Twitter/X: De 0 a 50K Followers Tech/IA",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "``` LIGNE 1: Ce que tu fais + pour qui (proposition de valeur) LIGNE 2: Preuve sociale ou resultat concret LIGNE 3: CTA (newsletter, communaute, produit)",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ideas-twitter-tech-domination"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ideas-micro-saas-factory",
+    "title": "Micro-SaaS Factory: Build, Grow, Flip x5",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "La Micro-SaaS Factory est un modele de creation en serie. Au lieu de construire UN gros produit et tout miser dessus, tu construis 3 a 5 petits SaaS en parallele. Chacun cible un probleme de niche ...",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ideas-micro-saas-factory"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ideas-linkedin-b2b-authority",
+    "title": "LinkedIn: L'Arme Secrete pour Vendre des Services IA B2B",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "``` PARAGRAPHE 1 (LE PROBLEME): \"Les PME perdent en moyenne 40% de leur temps sur des taches repetitives. Emails, rapports, qualification de leads, suivi client -- tout ca peut etre automatise. Mai...",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ideas-linkedin-b2b-authority"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ideas-seo-ai-products",
+    "title": "SEO pour Produits IA: Dominer Google et les AI Search",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "\"AI for accountants\" ......... 8K/mois, competition faible \"AI for real estate agents\" .. 12K/mois, competition faible \"AI for lawyers\" ............. 15K/mois, competition moyenne \"AI for marketing...",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ideas-seo-ai-products"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ideas-referral-viral-loops",
+    "title": "Boucles Virales: Chaque Client Amene le Suivant",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "``` CHAQUE FOIS QU'UN UTILISATEUR UTILISE TON PRODUIT IA, LE RESULTAT GENERE CONTIENT UNE TRACE DE TON BRAND.",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ideas-referral-viral-loops"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ideas-ai-consulting-productized",
+    "title": "Le Service Productise a 10K qui se Vend Tout Seul",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "Le consulting traditionnel est un piege: tu vends ton temps, tu negocies chaque projet, et tu ne peux pas scaler. Le service productise est l'inverse: tu definis UN package precis avec un prix fixe...",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ideas-ai-consulting-productized"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ideas-taste-graph-product",
+    "title": "Taste Graph: Le Curateur Personnel Cross-Domaine",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "Les algorithmes de recommandation sont brises. Spotify te recommande plus du meme artiste. Netflix te montre plus du meme genre. Chaque plateforme vit dans son silo.",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ideas-taste-graph-product"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ideas-revenue-before-fundraise",
+    "title": "Revenue d'Abord, Levee Ensuite : La Strategie Superieure",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "``` +-- DEUX SCENARIOS : MEME FONDATEUR, MEME PRODUIT -----------------+ +--------------------------------------------------------------------+ ```",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ideas-revenue-before-fundraise"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ideas-pitch-deck-life-os",
+    "title": "Pitch Deck Complet : Le Life OS Souverain Anti-Big-Tech",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "``` +-- STRUCTURE 12 SLIDES -------------------------------------------+ +--------------------------------------------------------------------+ ```",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ideas-pitch-deck-life-os"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ideas-ai-marketplace-builder",
+    "title": "Marketplace d'Agents IA: L'App Store de 2027",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "Le GPT Store d'OpenAI a echoue parce qu'il est trop generique, sans controle qualite, et sans monetisation reelle pour les createurs. L'opportunite: construire la VRAIE marketplace d'agents IA -- a...",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ideas-ai-marketplace-builder"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ideas-ai-agency-build-bill",
+    "title": "AI Agency: De 0 a 100K/mois en 18 Mois",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "L'agence de transformation IA est le modele le plus rapide pour atteindre 100K/mois en partant de zero. Le principe est simple: les PMEs francophones savent qu'elles doivent adopter l'IA mais n'ont...",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ideas-ai-agency-build-bill"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ideas-ai-content-empire",
+    "title": "Empire de Contenu IA: YouTube Faceless a Scale",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "Le modele \"faceless YouTube\" consiste a creer des chaines YouTube ou personne n'apparait a l'ecran. Tout le contenu est genere ou assiste par l'IA: scripts (Claude), voiceover (ElevenLabs), visuels...",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ideas-ai-content-empire"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ideas-solo-founder-advantage",
+    "title": "L'Avantage Injuste du Fondateur Solo en 2026",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "``` +-- L'EVOLUTION DU COUT DE CREATION D'UNE STARTUP -----------------+ +--------------------------------------------------------------------+ ```",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ideas-solo-founder-advantage"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ideas-seed-round-europe-ai",
+    "title": "Lever 1-5M Seed en Europe pour un Projet IA",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "``` +-- BPI FRANCE -- PROGRAMMES POUR STARTUPS IA ---------------------+ +--------------------------------------------------------------------+ ```",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ideas-seed-round-europe-ai"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ideas-second-brain-beyond-notion",
+    "title": "Au-Dela de Notion: Le Second Brain qui Pense Pour Toi",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "Le Personal Knowledge Management (PKM) est casse. Notion, Obsidian, Roam, Logseq - tous partent du meme principe : tu ecris, tu organises, tu retrouves. Meme avec l'IA (Notion AI, Mem), ca reste de...",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ideas-second-brain-beyond-notion"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ideas-ai-education-revolution",
+    "title": "Revolution Education : Le Tuteur IA Personnel pour Tous",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "``` +------------------------------------------------------------------+ +------------------------------------------------------------------+ ```",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ideas-ai-education-revolution"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ideas-ai-ghostwriting-agency",
+    "title": "Agence de Ghostwriting IA : Ecrire pour les Leaders",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "``` +------------------------------------------------------------------+ +------------------------------------------------------------------+ ```",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ideas-ai-ghostwriting-agency"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ideas-privacy-first-ai-movement",
+    "title": "L'Anti-Google : Construire l'IA Privacy-First",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "``` +------------------------------------------------------------------+ +------------------------------------------------------------------+ ```",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ideas-privacy-first-ai-movement"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ideas-newsletter-empire",
+    "title": "Newsletter Empire: De 0 a 50K Abonnes Monetises",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "``` POURQUOI BEEHIIV: 1. SparkLoop natif = croissance payante a 1-3 EUR/sub (ROI prouve) 2. Boost Network = revenus passifs des le debut (recommandations payees) 3. Ad network = monetisation sans c...",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ideas-newsletter-empire"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ideas-billion-dollar-vision",
+    "title": "De Zero a Licorne : Les Patterns des Startups IA a 1 Milliard",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "``` +-- TAILLE DU PROBLEME RESOLU -------------------------------------+ +--------------------------------------------------------------------+ ```",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ideas-billion-dollar-vision"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ideas-ai-client-management",
+    "title": "CRM IA pour Freelances: Simple, Intelligent, Automatise",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "Le freelance est un paradoxe : il gere des clients comme une entreprise, mais n'a pas les outils d'une entreprise. Salesforce coute 75 EUR/mois/utilisateur et demande un admin. HubSpot gratuit est ...",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ideas-ai-client-management"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ideas-ai-acquisition-transform",
+    "title": "Racheter + Transformer: Le Search Fund IA",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "Le \"Search Fund IA\" est un modele d'acquisition ou tu achetes des entreprises profitables mais sous-optimisees, puis tu utilises l'IA pour transformer radicalement leurs operations. Le delta entre ...",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ideas-ai-acquisition-transform"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ideas-digital-products-ai-scale",
+    "title": "Produits Digitaux : Creer une Fois, Vendre pour Toujours",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "``` +------------------------------------------------------------------+ +------------------------------------------------------------------+ ```",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ideas-digital-products-ai-scale"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ideas-ai-agent-marketplace",
+    "title": "Marketplace d'Agents : Le Fiverr de l'IA",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "``` +------------------------------------------------------------------+ +------------------------------------------------------------------+ ```",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ideas-ai-agent-marketplace"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ideas-ai-financial-advisor-mass",
+    "title": "Conseiller Financier IA pour les 99%",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "Le conseil financier de qualite est reserve aux gens qui ont deja de l'argent. Un conseiller en gestion de patrimoine demande 100K+ d'actifs minimum et facture 1-2% par an. Pour les 99%, il reste Y...",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ideas-ai-financial-advisor-mass"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ideas-ai-influencer-economy",
+    "title": "L'Economie de l'Influenceur IA : La Nouvelle Celebrite",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "``` +------------------------------------------------------------------+ +------------------------------------------------------------------+ ```",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ideas-ai-influencer-economy"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ideas-holistic-health-ai",
+    "title": "Coach Sante IA Holistique: Tout-en-Un",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "Le probleme de la sante connectee : tout est fragmente. Oura pour le sommeil. MyFitnessPal pour la nutrition. Strava pour l'exercice. Headspace pour la meditation. Aucun ne parle aux autres. Aucun ...",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ideas-holistic-health-ai"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ideas-white-label-ai-products",
+    "title": "White-Label IA: Build Once, Vend 100 Fois",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "Le white-label est le modele ultime du \"build once, sell many\". Tu construis une plateforme IA complete, puis tu la vends sous forme de licence mensuelle a des agences et revendeurs qui la personna...",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ideas-white-label-ai-products"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ideas-picks-and-shovels-ai",
+    "title": "Picks and Shovels: L'Infrastructure IA qui Fait des Milliards",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "Pendant la ruee vers l'or, ce sont les vendeurs de pioches et de pelles qui sont devenus riches, pas les chercheurs d'or. Le meme principe s'applique a la ruee vers l'IA. Au lieu de construire la 1...",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ideas-picks-and-shovels-ai"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ideas-metacognition-training-market",
+    "title": "Metacognition : Apprendre a Penser Avec l'IA (Pas a Deleguer)",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "``` +------------------------------------------------------------------+ +------------------------------------------------------------------+ ```",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ideas-metacognition-training-market"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ideas-ai-real-estate-investing",
+    "title": "Investissement Immobilier Augmente par l'IA",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "``` +------------------------------------------------------------------+ +------------------------------------------------------------------+ ```",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ideas-ai-real-estate-investing"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ideas-ai-chief-staff-entrepreneur",
+    "title": "AI Chief of Staff pour Entrepreneurs Solo",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "Un entrepreneur solo porte 12 casquettes : CEO, CTO, CMO, CFO, commercial, support, comptable, RH de lui-meme. Il n'a pas de directeur de cabinet pour synthetiser, prioriser, et rappeler ce qui est...",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ideas-ai-chief-staff-entrepreneur"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ideas-ai-training-academy",
+    "title": "Academie IA: Vendre du Savoir a 2000 EUR",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "L'Academie IA est un business d'education qui monetise ton expertise en intelligence artificielle a travers plusieurs niveaux de produits. Le modele repose sur un principe simple: donner de la vale...",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ideas-ai-training-academy"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ideas-ai-content-studio",
+    "title": "Studio de Contenu IA: Une Idee, 7 Plateformes",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "Le createur solo passe 80% de son temps a REFORMATER du contenu pour differentes plateformes. Un bon thread Twitter ne fait pas un bon article LinkedIn. Un script YouTube ne se copie-colle pas en n...",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ideas-ai-content-studio"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ideas-communication-coach-ai",
+    "title": "Coach Communication IA: Parler Mieux, Seduire Mieux",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "La communication est la competence la plus sous-estimee et la plus determinante. Un email mal formule perd un client. Un message maladroit tue une attraction. Une negociation mal preparee coute des...",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ideas-communication-coach-ai"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ideas-podcast-ai-thought-leader",
+    "title": "Podcast IA: Devenir la Reference en 6 Mois",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "Video complete YouTube ................... 1 piece Episode audio (toutes plateformes) ....... 1 piece Clips courts (Shorts/Reels) .............. 3-5 pieces Thread Twitter .............................",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ideas-podcast-ai-thought-leader"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ideas-ai-legal-structure",
+    "title": "Structure Juridique IA : SAS, Ltd, ou C-Corp ?",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "``` +-- COMPARAISON RAPIDE --------------------------------------------+ +--------------------------------------------------------------------+ ```",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ideas-ai-legal-structure"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ideas-ai-crypto-defi",
+    "title": "IA + Crypto : High Risk, High Reward",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "``` +------------------------------------------------------------------+ +------------------------------------------------------------------+ ```",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ideas-ai-crypto-defi"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ideas-reverse-engineering-2030",
+    "title": "2030 : Comment un Francais est Devenu Multi-Millionnaire avec l'IA",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "En mars 2026, Gareth Moison vivait sur un serveur VPS a 72.61 euros par mois. Il codait avec Claude, un assistant IA d'Anthropic, et possedait exactement zero euros de revenus recurents. Quatre ans...",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ideas-reverse-engineering-2030"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-ideas-service-arbitrage-global",
+    "title": "Arbitrage IA: Facturer Paris, Livrer avec des Agents",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "L'arbitrage de service IA est le modele le plus simple et le plus rapide pour generer du cash. Tu vends des livrables professionnels (copie de site web, campagnes publicitaires, business plans, etu...",
+    "url": "/fr/docs/business-archive/01-caio-legacy-ideas-service-arbitrage-global"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-research-yjstacked-ai-agent-strategy",
+    "title": "ANALYSE @YJSTACKED ET STRATEGIE AI AGENT SWARM",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "``` PARTIE 1 : ANALYSE @YJSTACKED 01. Qui est @yjstacked 02. Sa philosophie fondamentale 03. Ses 7 piliers d'enseignement 04. Les \"48 Laws of Automation\" 05. Critique et filtre de valeur",
+    "url": "/fr/docs/business-archive/01-caio-legacy-research-yjstacked-ai-agent-strategy"
+  },
+  {
+    "id": "en/business-archive/01-caio-legacy-research-ralph-loop-explosion",
+    "title": "The Ralph Loop: Viral Explosion Framework",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "en",
+    "excerpt": "The Ralph Loop represents a self-reinforcing viral spiral where each element feeds into the others, creating exponential growth. At its core, the loop connects FOMO (Fear Of Missing Out) to Identit...",
+    "url": "/en/docs/business-archive/01-caio-legacy-research-ralph-loop-explosion"
+  },
+  {
+    "id": "en/business-archive/01-caio-legacy-research-ai-influencers-mentors-2026",
+    "title": "AI Influencers & Mentors to Follow (2026)",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "en",
+    "excerpt": "This list focuses on **ACTION-ORIENTED** AI influencers who provide:",
+    "url": "/en/docs/business-archive/01-caio-legacy-research-ai-influencers-mentors-2026"
+  },
+  {
+    "id": "en/business-archive/01-caio-legacy-research-ai-agent-empire",
+    "title": "THE AI AGENT EMPIRE - One-Person Company Powered by Agent Swarms",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "en",
+    "excerpt": "``` PART 1 : THE VISION 01. The One-Person Unicorn Thesis 02. Industry Leaders Say It Will Happen 03. Why 2026 Is Year Zero",
+    "url": "/en/docs/business-archive/01-caio-legacy-research-ai-agent-empire"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-research-ai-stack-offering",
+    "title": "AI Agent Stack -- Ce Que Tu Livres Concretement",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "\"J'ai teste 15+ stacks differentes sur 30+ projets. Celle-ci est la plus rapide a deployer, la plus fiable, et la moins chere a maintenir.\"",
+    "url": "/fr/docs/business-archive/01-caio-legacy-research-ai-stack-offering"
+  },
+  {
+    "id": "en/business-archive/01-caio-legacy-research-one-person-10k-month-blueprint",
+    "title": "One-Person $10K/Month Blueprint (2026)",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "en",
+    "excerpt": "[!] **CRITICAL INSIGHT**: You cannot build a $10K/month business by being a generalist in 2026. You MUST go deep into a niche where clients won't trust a generic solution.",
+    "url": "/en/docs/business-archive/01-caio-legacy-research-one-person-10k-month-blueprint"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-research-value-based-pricing-framework",
+    "title": "Value-Based Pricing Framework",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "Pour chaque service, pose la question : \"Combien le client paierait-il avec les alternatives traditionnelles?\"",
+    "url": "/fr/docs/business-archive/01-caio-legacy-research-value-based-pricing-framework"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-research-content-strategy-deep",
+    "title": "Content Strategy Deep Dive",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "neutral",
+    "excerpt": "Ton contenu n'est pas du \"thought leadership\" vide. C'est de la **preuve de travail visible**.",
+    "url": "/fr/docs/business-archive/01-caio-legacy-research-content-strategy-deep"
+  },
+  {
+    "id": "en/business-archive/01-caio-legacy-research-content-strategy-deep",
+    "title": "Content Strategy Deep Dive",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "neutral",
+    "excerpt": "Ton contenu n'est pas du \"thought leadership\" vide. C'est de la **preuve de travail visible**.",
+    "url": "/en/docs/business-archive/01-caio-legacy-research-content-strategy-deep"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-research-ai-life-os-second-brain-future",
+    "title": "Du Second Brain au Life OS: Le Futur de l'IA Personnelle",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "Forte a identifie un vrai probleme: les professionnels du savoir accumulent sans restituer. Son systeme CODE a la bonne intention. Mais trois failles structurelles l'ont limite:",
+    "url": "/fr/docs/business-archive/01-caio-legacy-research-ai-life-os-second-brain-future"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-research-ai-consciousness-shift-research",
+    "title": "L'IA comme Oracle : Le Grand Basculement et les Produits de Demain",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "Un basculement paradigmatique est en cours. L'IA n'est plus un outil qu'on utilise pour une tache specifique - elle devient le systeme nerveux central par lequel des millions de personnes pensent, ...",
+    "url": "/fr/docs/business-archive/01-caio-legacy-research-ai-consciousness-shift-research"
+  },
+  {
+    "id": "en/business-archive/01-caio-legacy-research-ai-gold-rush-wealth",
+    "title": "GENERATIONAL WEALTH IN THE AI GOLD RUSH",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "en",
+    "excerpt": "``` 01. The Landscape: $650B Spending, $52B Agent Market 02. Five Layers of Value Capture 03. The 7 Wealth Strategies (Ranked for Solo Operators) 04. Strategy Deep Dives A. Picks and Shovels (Tools...",
+    "url": "/en/docs/business-archive/01-caio-legacy-research-ai-gold-rush-wealth"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-research-financial-model",
+    "title": "Financial Model Detaille",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "",
+    "url": "/fr/docs/business-archive/01-caio-legacy-research-financial-model"
+  },
+  {
+    "id": "en/business-archive/01-caio-legacy-research-ai-voice-agents-platforms",
+    "title": "AI Voice Agent Platforms: Complete Comparison Guide (2026)",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "en",
+    "excerpt": "[!] **CRITICAL INSIGHT**: Voice AI has transformed from experimental technology to mainstream sales tool in 2026. Personalized cold calls achieve 36% higher meeting conversion rates. The AI in sale...",
+    "url": "/en/docs/business-archive/01-caio-legacy-research-ai-voice-agents-platforms"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-research-ai-curation-smart-discovery",
+    "title": "AI Curation & Smart Discovery: La Prochaine Frontiere",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "Le monde produit 403 millions de terabytes de donnees chaque jour. Le stockage total mondial atteindra 181 zettabytes en 2025. Plus de 90% de toutes les donnees existantes ont ete creees durant les...",
+    "url": "/fr/docs/business-archive/01-caio-legacy-research-ai-curation-smart-discovery"
+  },
+  {
+    "id": "en/business-archive/01-caio-legacy-research-solo-founders-ai-agents",
+    "title": "Solo Founders Beating Enterprises with AI Agents",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "en",
+    "excerpt": "[!] **CRITICAL INSIGHT**: 85% of organizations want to become \"agentic enterprises\" but only 11% have deployed agents in production. Meanwhile, solo founders are shipping AI agents in weekends.",
+    "url": "/en/docs/business-archive/01-caio-legacy-research-solo-founders-ai-agents"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-research-competitive-landscape",
+    "title": "Competitive Landscape -- Analyse Concurrentielle",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "Le marche se divise en quatre quadrants selon deux axes : le niveau de prix (bas a eleve) et le niveau d'accompagnement (low touch a high touch).",
+    "url": "/fr/docs/business-archive/01-caio-legacy-research-competitive-landscape"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-research-full-ai-team-services",
+    "title": "Full AI Team Services -- Beyond Just Development",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "1. **STRATEGY** : Decisions business/tech 2. **RELATIONSHIP** : Calls client, confiance 3. **ORCHESTRATION** : Diriger les agents 4. **QUALITY** : Review final avant livraison 5. **SALES** : Closer...",
+    "url": "/fr/docs/business-archive/01-caio-legacy-research-full-ai-team-services"
+  },
+  {
+    "id": "fr/business-archive/01-caio-legacy-research-90-day-launch-plan",
+    "title": "90-Day Launch Plan -- Du Zero au Premier 50K",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "1. Optimiser ton profil LinkedIn 2. Ecrire ton premier message d'outreach 3. L'envoyer a 10 personnes",
+    "url": "/fr/docs/business-archive/01-caio-legacy-research-90-day-launch-plan"
+  },
+  {
+    "id": "en/business-archive/07-phantom-empire-legacy-vision",
+    "title": "Phantom Empire - Anonymous Business Strategy",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "en",
+    "excerpt": "The core question driving this entire strategy is deceptively simple: How does one become a visionary entrepreneur who anticipates trends before anyone else, creates products that explode virally, ...",
+    "url": "/en/docs/business-archive/07-phantom-empire-legacy-vision"
+  },
+  {
+    "id": "en/business-archive/07-phantom-empire-legacy-strategy-anonymous-founder-playbook",
+    "title": "Playbook: Comment Etre un Fondateur Anonyme",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "en",
+    "excerpt": "1. **Let the work speak.** Quality over personality, always. 2. **Build a track record.** Previous successes -- even anonymous ones -- create credibility. 3. **Embrace the mystery.** Make anonymity...",
+    "url": "/en/docs/business-archive/07-phantom-empire-legacy-strategy-anonymous-founder-playbook"
+  },
+  {
+    "id": "en/business-archive/07-phantom-empire-legacy-ideas-ideas-pipeline",
+    "title": "Pipeline d'Idees: Produits a Lancer",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "en",
+    "excerpt": "Every idea in this pipeline is scored on four dimensions, each rated from 1 to 5:",
+    "url": "/en/docs/business-archive/07-phantom-empire-legacy-ideas-ideas-pipeline"
+  },
+  {
+    "id": "en/business-archive/07-phantom-empire-legacy-research-anonymous-millionaires",
+    "title": "Recherche: Fondateurs Anonymes Multi-Millionnaires",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "en",
+    "excerpt": "The evidence is overwhelming: anonymity is not a barrier to building wealth -- in many cases, it is the accelerant. The top earners who have operated under pseudonyms or complete anonymity represen...",
+    "url": "/en/docs/business-archive/07-phantom-empire-legacy-research-anonymous-millionaires"
+  },
+  {
+    "id": "fr/business-archive/07-phantom-empire-legacy-comparison-twopathscomparison",
+    "title": "Comparaison: 1-Life (Gareth) vs Phantom Empire (Anonyme)",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "neutral",
+    "excerpt": "Two fundamentally different paths lead to the same destination -- multi-millionaire status -- but the journey, the risks, and the lifestyle could not be more different.",
+    "url": "/fr/docs/business-archive/07-phantom-empire-legacy-comparison-twopathscomparison"
+  },
+  {
+    "id": "en/business-archive/07-phantom-empire-legacy-comparison-twopathscomparison",
+    "title": "Comparaison: 1-Life (Gareth) vs Phantom Empire (Anonyme)",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "neutral",
+    "excerpt": "Two fundamentally different paths lead to the same destination -- multi-millionaire status -- but the journey, the risks, and the lifestyle could not be more different.",
+    "url": "/en/docs/business-archive/07-phantom-empire-legacy-comparison-twopathscomparison"
+  },
+  {
+    "id": "en/business-archive/00-plan-legacy-vision-ai",
+    "title": "Vision AI",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "en",
+    "excerpt": "People need to learn and get access to easy solution and thing about the future with AI",
+    "url": "/en/docs/business-archive/00-plan-legacy-vision-ai"
+  },
+  {
+    "id": "en/business-archive/00-plan-legacy-revenue-model-premium",
+    "title": "Revenue Model - Honest Numbers",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "en",
+    "excerpt": "Everything else is future options that depend on proving the core works first.",
+    "url": "/en/docs/business-archive/00-plan-legacy-revenue-model-premium"
+  },
+  {
+    "id": "en/business-archive/00-plan-legacy-platform-architecture",
+    "title": "Platform Architecture - Simple and Focused",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "en",
+    "excerpt": "That is it. Four platforms. No Patreon. No Discord. No 6-tier funnel.",
+    "url": "/en/docs/business-archive/00-plan-legacy-platform-architecture"
+  },
+  {
+    "id": "en/business-archive/00-plan-legacy-creator-pivot-strategy",
+    "title": "The Movement - AI Liberates Humans",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "en",
+    "excerpt": "When machines handle productivity, optimization, and repetitive work, what remains is everything that makes us human: creativity, art, self-discovery, travel, connection, presence, and meaning.",
+    "url": "/en/docs/business-archive/00-plan-legacy-creator-pivot-strategy"
+  },
+  {
+    "id": "en/business-archive/00-plan-legacy-content-strategy",
+    "title": "Content Strategy - Two Pillars",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "en",
+    "excerpt": "Raw, philosophical content about being human in the AI era. Not tutorials. Not hacks. Deep reflections on identity, consciousness, freedom, creativity, and what it means to exist when machines can ...",
+    "url": "/en/docs/business-archive/00-plan-legacy-content-strategy"
+  },
+  {
+    "id": "en/business-archive/00-plan-legacy-market-research",
+    "title": "Market Research - Creator Economy 2026",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "en",
+    "excerpt": "This is a genuine white space. The \"AI liberates humans\" philosophy has no competitor because nobody is saying it.",
+    "url": "/en/docs/business-archive/00-plan-legacy-market-research"
+  },
+  {
+    "id": "en/business-archive/00-plan-legacy-action-plan",
+    "title": "Action Plan - From Zero to First 10 Believers",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "en",
+    "excerpt": "This leaves time for Dafnck Studio client work during weekdays.",
+    "url": "/en/docs/business-archive/00-plan-legacy-action-plan"
+  },
+  {
+    "id": "fr/business-root/audit-2026-04-14",
+    "title": "Audit Business CAIO Academy -- 14 avril 2026",
+    "section": "Business — Index",
+    "sectionKey": "business-root",
+    "lang": "fr",
+    "excerpt": "Le dossier contient un excellent travail de positionnement (CAIO Academy, 5 avatars, 3 tiers) et une narration coherente sur les documents d'ancrage. Le modele economique est solide sur le papier, ...",
+    "url": "/fr/docs/business-root/audit-2026-04-14"
   }
 ]

@@ -143,6 +143,20 @@ export const SECTION_META: Record<
       en: "Brand portfolio, holding structure, capital stack.",
     },
   },
+  "business-archive": {
+    title: { fr: "Archive", en: "Archive" },
+    tagline: {
+      fr: "Legacy — plans, CAIO, frameworks, Phantom Empire (147 docs).",
+      en: "Legacy — plans, CAIO, frameworks, Phantom Empire (147 docs).",
+    },
+  },
+  "business-root": {
+    title: { fr: "Business — Index", en: "Business — Index" },
+    tagline: {
+      fr: "Notes et audits racine du dossier business.",
+      en: "Root-level notes and audits from the business folder.",
+    },
+  },
 };
 
 const SECTIONS: { raw: string; key: string; order: number; root: string }[] = [
@@ -162,6 +176,8 @@ const SECTIONS: { raw: string; key: string; order: number; root: string }[] = [
   { raw: "05-execution", key: "business-execution", order: 14, root: BIZ_ROOT },
   { raw: "06-marketing", key: "business-marketing", order: 15, root: BIZ_ROOT },
   { raw: "07-phantom-empire", key: "business-phantom-empire", order: 16, root: BIZ_ROOT },
+  { raw: "99-archive", key: "business-archive", order: 17, root: BIZ_ROOT },
+  { raw: "_root", key: "business-root", order: 18, root: BIZ_ROOT },
 ];
 
 function slugify(name: string): string {
