@@ -5,11 +5,7 @@ export const siteTagline = "Former, certifier et placer les Chief AI Officers de
 export const navItems = [
   { key: "vision", href: "/vision" },
   { key: "business", href: "/business-plan" },
-  { key: "avatars", href: "/avatars" },
-  { key: "formations", href: "/formations" },
   { key: "roadmap", href: "/roadmap" },
-  { key: "podcast", href: "/podcast" },
-  { key: "playbook", href: "/playbook" },
 ] as const;
 
 export const socialLinks = [
