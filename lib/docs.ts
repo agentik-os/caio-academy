@@ -24,7 +24,7 @@ export type DocTree = {
   docs: DocFile[];
 };
 
-const CAIO_ROOT = "/home/hacker/VibeCoding/1-life/05-business/01-caio";
+const CAIO_ROOT = path.join(process.cwd(), "content", "caio");
 
 export const SECTION_META: Record<
   string,

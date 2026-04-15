@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack -p 22020",
-    "prebuild": "bun scripts/build-search-index.ts",
+    "dev": "bun scripts/sync-content.ts && next dev --turbopack -p 22020",
+    "prebuild": "bun scripts/sync-content.ts && bun scripts/build-search-index.ts",
+    "sync-content": "bun scripts/sync-content.ts",
     "build": "next build",
     "search-index": "bun scripts/build-search-index.ts",
     "start": "next start -p 22020",

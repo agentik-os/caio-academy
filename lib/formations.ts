@@ -15,7 +15,7 @@ export type Formation = {
   filePath: string;
 };
 
-const CAIO_ROOT = "/home/hacker/VibeCoding/1-life/05-business/01-caio";
+const CAIO_ROOT = path.join(process.cwd(), "content", "caio");
 const DIRS: { track: Track; lang: Lang; dir: string; prefix: string }[] = [
   { track: "c-suite", lang: "fr", dir: `${CAIO_ROOT}/04-c-suite-training`, prefix: "c-suite" },
   { track: "course-en", lang: "en", dir: `${CAIO_ROOT}/05-courses-en`, prefix: "course" },

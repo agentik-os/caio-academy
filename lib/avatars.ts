@@ -15,8 +15,7 @@ export type AvatarMeta = {
   summary: { fr: string; en: string };
 };
 
-const AVATAR_ROOT =
-  "/home/hacker/VibeCoding/1-life/05-business/01-caio/02-avatars";
+const AVATAR_ROOT = path.join(process.cwd(), "content", "caio", "02-avatars");
 
 export const AVATARS: AvatarMeta[] = [
   {
