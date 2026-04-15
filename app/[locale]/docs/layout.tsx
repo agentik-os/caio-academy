@@ -4,6 +4,7 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { DocsSidebar, type DocsSidebarSection } from "@/components/docs/docs-sidebar";
 import { DocsSearch } from "@/components/docs/docs-search";
+import { DocsMobileNav } from "@/components/docs/docs-mobile-nav";
 import { SECTION_META, getDocsTree, getSectionDocs } from "@/lib/docs";
 
 type Locale = "fr" | "en";
@@ -15,6 +16,8 @@ const T = {
     placeholder: "Chercher un article, une section…",
     empty: "Aucun résultat.",
     hint: "⌘K pour ouvrir · Échap pour fermer",
+    open: "Menu",
+    close: "Fermer",
   },
   en: {
     eyebrow: "Documentation",
@@ -22,6 +25,8 @@ const T = {
     placeholder: "Search articles, sections…",
     empty: "No results.",
     hint: "⌘K to open · Esc to close",
+    open: "Menu",
+    close: "Close",
   },
 } as const;
 
@@ -71,7 +76,22 @@ export default async function DocsLayout({
           </div>
           <DocsSidebar sections={sections} eyebrow={t.eyebrow} />
         </aside>
-        <main className="min-w-0 flex-1 py-4">{children}</main>
+        <main className="min-w-0 flex-1 py-4">
+          <DocsMobileNav
+            sections={sections}
+            locale={key}
+            strings={{
+              search: t.search,
+              placeholder: t.placeholder,
+              empty: t.empty,
+              hint: t.hint,
+              eyebrow: t.eyebrow,
+              open: t.open,
+              close: t.close,
+            }}
+          />
+          {children}
+        </main>
       </div>
       <SiteFooter />
     </div>

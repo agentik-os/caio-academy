@@ -136,7 +136,7 @@ export default async function PodcastHub({
   return (
     <PageShell>
       <section className="border-b border-[color:var(--color-line)]">
-        <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
+        <div className="mx-auto max-w-7xl px-5 py-14 sm:px-6 sm:py-20 md:py-28">
           <p className="mb-6 font-sans text-xs font-semibold uppercase tracking-[0.3em] text-[color:var(--color-muted)]">
             {t.eyebrow}
           </p>

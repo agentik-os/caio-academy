@@ -117,11 +117,11 @@ export default async function FormationDetail({
   return (
     <PageShell>
       <section className="border-b border-[color:var(--color-line)]">
-        <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
+        <div className="mx-auto max-w-7xl px-5 py-14 sm:px-6 sm:py-20 md:py-28">
           <p className="mb-6 font-sans text-xs font-semibold uppercase tracking-[0.3em] text-[color:var(--color-muted)]">
             {trackLabel}
           </p>
-          <h1 className="max-w-5xl font-serif text-4xl font-black leading-[1.1] tracking-tight md:text-6xl">
+          <h1 className="max-w-5xl font-serif text-3xl font-black leading-[1.1] tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
             {formation.title}
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-[1.7] text-[color:var(--color-muted)]">

@@ -173,10 +173,10 @@ export default async function HomePage({
           <p className="mb-6 font-sans text-xs font-semibold uppercase tracking-[0.3em] text-[color:var(--color-muted)]">
             {c.hero.eyebrow}
           </p>
-          <h1 className="max-w-5xl font-serif text-5xl font-black leading-[1.05] tracking-tight md:text-7xl">
+          <h1 className="max-w-5xl font-serif text-4xl font-black leading-[1.08] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
             {c.hero.title}
           </h1>
-          <p className="mt-8 max-w-2xl text-lg leading-[1.7] text-[color:var(--color-muted)] md:text-xl">
+          <p className="mt-8 max-w-2xl text-base leading-[1.65] text-[color:var(--color-muted)] sm:text-lg md:text-xl">
             {c.hero.lead}
           </p>
           <div className="mt-12 flex flex-wrap gap-4">
@@ -252,8 +252,8 @@ export default async function HomePage({
       </Section>
 
       <section className="border-b border-[color:var(--color-line)]">
-        <div className="mx-auto max-w-3xl px-6 py-28 text-center">
-          <h2 className="font-serif text-4xl font-bold tracking-tight md:text-5xl">
+        <div className="mx-auto max-w-3xl px-5 py-16 sm:px-6 sm:py-24 md:py-28 text-center">
+          <h2 className="font-serif text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             {c.finalCta.title}
           </h2>
           <p className="mt-6 text-base leading-[1.7] text-[color:var(--color-muted)]">

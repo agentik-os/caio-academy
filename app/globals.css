@@ -130,4 +130,23 @@
     outline: 2px solid var(--color-ink);
     outline-offset: 2px;
   }
+
+  /* Prevent horizontal scroll on small viewports */
+  html, body {
+    overflow-x: hidden;
+  }
+
+  /* Responsive image defaults */
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Long-form tables: let callers opt in via overflow-x-auto wrappers.
+     Base style prevents overflow on unwrapped tables. */
+  table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+  }
 }
