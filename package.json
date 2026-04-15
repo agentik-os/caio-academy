@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack -p 22020",
+    "prebuild": "bun scripts/build-search-index.ts",
     "build": "next build",
+    "search-index": "bun scripts/build-search-index.ts",
     "start": "next start -p 22020",
     "lint": "eslint",
     "typecheck": "tsc --noEmit"

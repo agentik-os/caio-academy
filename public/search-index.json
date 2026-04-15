@@ -1,0 +1,551 @@
+[
+  {
+    "id": "fr/vision/million-path-an3",
+    "title": "Path to €1M -- An 3 (2028) -- CAIO Academy",
+    "section": "Vision",
+    "sectionKey": "vision",
+    "lang": "fr",
+    "excerpt": "``` An 1 (2026) : €215-250k --> An 2 (2027) : €620k --> An 3 (2028) : €1,050k PMF Scale Founding Registry + Premium ```",
+    "url": "/fr/docs/vision/million-path-an3"
+  },
+  {
+    "id": "fr/vision/exit-strategy-math",
+    "title": "Strategie de sortie -- valorisation et scenarios exit -- CAIO Academy",
+    "section": "Vision",
+    "sectionKey": "vision",
+    "lang": "fr",
+    "excerpt": "``` Option A -- Vente complete 2031 : €2-10M selon multiple applique sur ARR et EBITDA Option B -- Conservation + dividendes : €250-400k/an nets personnels a partir d'An 4 Option C -- Hybride : ven...",
+    "url": "/fr/docs/vision/exit-strategy-math"
+  },
+  {
+    "id": "fr/vision/business-plan-2025",
+    "title": "CAIO Academy — Business Plan & Vision 2025",
+    "section": "Vision",
+    "sectionKey": "vision",
+    "lang": "fr",
+    "excerpt": "Modèle Modèle Économique 5 Avatars Clients Curriculum €67/mois Projections Financières",
+    "url": "/fr/docs/vision/business-plan-2025"
+  },
+  {
+    "id": "fr/avatars/dg-pme",
+    "title": "Avatar CAIO — la DG PME (FR)",
+    "section": "Avatars",
+    "sectionKey": "avatars",
+    "lang": "fr",
+    "excerpt": "CAIO Academy — AI Exécutive Décision Maker Track Avatar 05 · la DG PME · Dirigeante PME",
+    "url": "/fr/docs/avatars/dg-pme"
+  },
+  {
+    "id": "en/avatars/cto-saas",
+    "title": "Avatar CAIO — le CTO SaaS (EN)",
+    "section": "Avatars",
+    "sectionKey": "avatars",
+    "lang": "en",
+    "excerpt": "CAIO Academy — AI Systems Architect Track Avatar 01 · le CTO SaaS · SaaS CTO",
+    "url": "/en/docs/avatars/cto-saas"
+  },
+  {
+    "id": "en/avatars/consultant-ai",
+    "title": "Avatar CAIO — le Consultant AI (EN)",
+    "section": "Avatars",
+    "sectionKey": "avatars",
+    "lang": "en",
+    "excerpt": "CAIO Academy — CAIO Monetization Track Avatar 03 · le Consultant AI · Independent Consultant",
+    "url": "/en/docs/avatars/consultant-ai"
+  },
+  {
+    "id": "fr/avatars/head-digital",
+    "title": "Avatar CAIO — le Head of Digital (FR)",
+    "section": "Avatars",
+    "sectionKey": "avatars",
+    "lang": "fr",
+    "excerpt": "CAIO Academy — AI Strategy Without Code Track Avatar 02 · le Head of Digital · Head of Digital",
+    "url": "/fr/docs/avatars/head-digital"
+  },
+  {
+    "id": "en/avatars/dev-ambitieux",
+    "title": "Avatar CAIO — le Dev Ambitieux (EN)",
+    "section": "Avatars",
+    "sectionKey": "avatars",
+    "lang": "en",
+    "excerpt": "CAIO Academy — From Dev to CAIO Track Avatar 04 · le Dev Ambitieux · Ambitious Dev/PM",
+    "url": "/en/docs/avatars/dev-ambitieux"
+  },
+  {
+    "id": "en/avatars/dg-pme",
+    "title": "Avatar CAIO — la DG PME (EN)",
+    "section": "Avatars",
+    "sectionKey": "avatars",
+    "lang": "en",
+    "excerpt": "CAIO Academy — AI Exécutive Décision Maker Track Avatar 05 · la DG PME · SMB Executive",
+    "url": "/en/docs/avatars/dg-pme"
+  },
+  {
+    "id": "fr/avatars/consultant-ai",
+    "title": "Avatar CAIO — le Consultant AI (FR)",
+    "section": "Avatars",
+    "sectionKey": "avatars",
+    "lang": "fr",
+    "excerpt": "CAIO Academy — CAIO Monetization Track Avatar 03 · le Consultant AI · Consultant Indépendant",
+    "url": "/fr/docs/avatars/consultant-ai"
+  },
+  {
+    "id": "fr/avatars/dev-ambitieux",
+    "title": "Avatar CAIO — le Dev Ambitieux (FR)",
+    "section": "Avatars",
+    "sectionKey": "avatars",
+    "lang": "fr",
+    "excerpt": "CAIO Academy — From Dev to CAIO Track Avatar 04 · le Dev Ambitieux · Dev/PM ambitieux",
+    "url": "/fr/docs/avatars/dev-ambitieux"
+  },
+  {
+    "id": "en/avatars/head-digital",
+    "title": "Avatar CAIO — le Head of Digital (EN)",
+    "section": "Avatars",
+    "sectionKey": "avatars",
+    "lang": "en",
+    "excerpt": "CAIO Academy — AI Strategy Without Code Track Avatar 02 · le Head of Digital · Head of Digital",
+    "url": "/en/docs/avatars/head-digital"
+  },
+  {
+    "id": "fr/avatars/cto-saas",
+    "title": "Avatar CAIO — le CTO SaaS (FR)",
+    "section": "Avatars",
+    "sectionKey": "avatars",
+    "lang": "fr",
+    "excerpt": "CAIO Academy — AI Systems Architect Track Avatar 01 · le CTO SaaS · CTO SaaS",
+    "url": "/fr/docs/avatars/cto-saas"
+  },
+  {
+    "id": "fr/product/system-caio-whitepaper",
+    "title": "Architecture Système et Orchestration IA par Role C-Suite",
+    "section": "Produit",
+    "sectionKey": "product",
+    "lang": "fr",
+    "excerpt": "Document de formation avancee destine aux Chief AI Officers (CAIO) et dirigeants C-Suite. Ce guide detaille l'architecture complète d'un ecosysteme de 267 agents IA autonomes, leur orchestration pa...",
+    "url": "/fr/docs/product/system-caio-whitepaper"
+  },
+  {
+    "id": "fr/product/orchestration-claude-code",
+    "title": "Orchestration Enterprise avec Claude Code — Le Système d'IA Autonome pour le CAIO",
+    "section": "Produit",
+    "sectionKey": "product",
+    "lang": "fr",
+    "excerpt": "Ce document est le manuel technique opérationnel que tout Chief AI Officer doit maîtriser pour déployer un système d'IA autonome à l'échelle de l'entreprise en 2026. Il ne s'agit pas d'une introduc...",
+    "url": "/fr/docs/product/orchestration-claude-code"
+  },
+  {
+    "id": "fr/product/caio-systeme",
+    "title": "Le Système du CAIO — Comment le Chief AI Officer Orchestre l'Intelligence Artificielle dans l'Entreprise",
+    "section": "Produit",
+    "sectionKey": "product",
+    "lang": "fr",
+    "excerpt": "Le Chief AI Officer (CAIO) est le plus récent et peut-être le plus stratégique des postes de la C-Suite moderne. Contrairement au CTO qui gère l'infrastructure technologique ou au CDO qui gouverne ...",
+    "url": "/fr/docs/product/caio-systeme"
+  },
+  {
+    "id": "fr/c-suite-training/cfo",
+    "title": "Le CAIO au Service du CFO — L'Intelligence Artificielle au Coeur de la Performance Financière",
+    "section": "C-Suite Training",
+    "sectionKey": "c-suite-training",
+    "lang": "fr",
+    "excerpt": "1. Introduction : Le Duo Stratégique CAIO-CFO 2. Prévisions Financières Augmentées par l'IA 3. Audit, Conformité et Contrôle Interne 4. Optimisation des Coûts par l'Intelligence Artificielle 5. Ris...",
+    "url": "/fr/docs/c-suite-training/cfo"
+  },
+  {
+    "id": "fr/c-suite-training/chro",
+    "title": "Le CAIO au Service du CHRO — L'Intelligence Artificielle au Service du Capital Humain",
+    "section": "C-Suite Training",
+    "sectionKey": "c-suite-training",
+    "lang": "fr",
+    "excerpt": "1. Introduction : Le Partenariat CAIO-CHRO et l'Impératif Éthique 2. Dynamique CAIO-CHRO et Impératif Éthique 3. EU AI Act : Usages RH Classifiés « Haut Risque » 4. Recrutement Augmenté par l'IA 5....",
+    "url": "/fr/docs/c-suite-training/chro"
+  },
+  {
+    "id": "fr/c-suite-training/cohesion",
+    "title": "Intégrer le CAIO dans l'Équipe Dirigeante — Le Guide de la Cohésion Parfaite",
+    "section": "C-Suite Training",
+    "sectionKey": "c-suite-training",
+    "lang": "fr",
+    "excerpt": "1. Le défi de l'intégration : comprendre les résistances 2. Préparation avant l'arrivée du CAIO 3. Matrice RACI complète : IA × C-Suite 4. Plan des 100 premiers jours 5. Système de relations CAIO ×...",
+    "url": "/fr/docs/c-suite-training/cohesion"
+  },
+  {
+    "id": "fr/c-suite-training/ceo",
+    "title": "Le CAIO au Service du CEO -- Comment l'Intelligence Artificielle Transforme le Leadership Exécutif",
+    "section": "C-Suite Training",
+    "sectionKey": "c-suite-training",
+    "lang": "fr",
+    "excerpt": "Formation professionnelle destinée aux dirigeants d'entreprise et cadres de la C-Suite",
+    "url": "/fr/docs/c-suite-training/ceo"
+  },
+  {
+    "id": "fr/c-suite-training/coo",
+    "title": "Le CAIO au Service du COO -- L'Intelligence Artificielle comme Moteur d'Excellence Opérationnelle",
+    "section": "C-Suite Training",
+    "sectionKey": "c-suite-training",
+    "lang": "fr",
+    "excerpt": "Le Chief AI Officer (CAIO) et le Chief Operating Officer (COO) forment un tandem stratégique dont la synergie détermine la capacité d'une organisation à transformer ses opérations par l'intelligenc...",
+    "url": "/fr/docs/c-suite-training/coo"
+  },
+  {
+    "id": "fr/c-suite-training/cio",
+    "title": "Le CAIO au Service du CIO — Synergie entre Intelligence Artificielle et Systèmes d'Information",
+    "section": "C-Suite Training",
+    "sectionKey": "c-suite-training",
+    "lang": "fr",
+    "excerpt": "L'émergence du rôle de Chief AI Officer (CAIO) dans les organisations contemporaines soulève une question fondamentale pour la direction générale : comment ce nouveau poste s'insère-t-il dans l'org...",
+    "url": "/fr/docs/c-suite-training/cio"
+  },
+  {
+    "id": "fr/c-suite-training/clo",
+    "title": "Le CAIO au Service du CLO — L'Intelligence Artificielle et l'Excellence Juridique",
+    "section": "C-Suite Training",
+    "sectionKey": "c-suite-training",
+    "lang": "fr",
+    "excerpt": "Le département juridique traverse une métamorphose sans précédent dans l'histoire des organisations modernes. Pendant des décennies, la direction juridique a été perçue comme un centre de coûts néc...",
+    "url": "/fr/docs/c-suite-training/clo"
+  },
+  {
+    "id": "fr/c-suite-training/cro",
+    "title": "Le CAIO au Service du CRO — L'Intelligence Artificielle comme Moteur de Croissance du Revenu",
+    "section": "C-Suite Training",
+    "sectionKey": "c-suite-training",
+    "lang": "fr",
+    "excerpt": "La croissance du revenu constitue la métrique ultime de toute entreprise. Chaque initiative stratégique, chaque investissement technologique, chaque recrutement se justifie in fine par sa contribut...",
+    "url": "/fr/docs/c-suite-training/cro"
+  },
+  {
+    "id": "fr/c-suite-training/cto",
+    "title": "Le CAIO au Service du CTO -- Fusion de l'Intelligence Artificielle et de l'Excellence Technique",
+    "section": "C-Suite Training",
+    "sectionKey": "c-suite-training",
+    "lang": "fr",
+    "excerpt": "L'émergence du rôle de Chief AI Officer (CAIO) dans les organisations modernes répond à un besoin fondamental : l'intelligence artificielle ne peut plus être traitée comme un simple composant techn...",
+    "url": "/fr/docs/c-suite-training/cto"
+  },
+  {
+    "id": "fr/c-suite-training/cpo",
+    "title": "Le CAIO au Service du CPO — L'Intelligence Artificielle au Coeur de la Stratégie Produit",
+    "section": "C-Suite Training",
+    "sectionKey": "c-suite-training",
+    "lang": "fr",
+    "excerpt": "L'accélération de l'adoption de l'intelligence artificielle dans les organisations crée un besoin structurel d'alignement entre la vision produit et les capacités technologiques de l'IA. Le Chief A...",
+    "url": "/fr/docs/c-suite-training/cpo"
+  },
+  {
+    "id": "fr/c-suite-training/cmo",
+    "title": "Le CAIO au Service du CMO -- L'Intelligence Artificielle comme Arme Marketing Ultime",
+    "section": "C-Suite Training",
+    "sectionKey": "c-suite-training",
+    "lang": "fr",
+    "excerpt": "Le marketing est, sans aucun doute, la fonction d'entreprise la plus profondément transformée par l'intelligence artificielle. Chaque sous-discipline -- de la stratégie de contenu à la publicité pr...",
+    "url": "/fr/docs/c-suite-training/cmo"
+  },
+  {
+    "id": "en/courses-en/agentik-stack-setup",
+    "title": "Course — The Agentik Stack: Setup, Build & Ship",
+    "section": "Courses (EN)",
+    "sectionKey": "courses-en",
+    "lang": "en",
+    "excerpt": "Step-by-step for each: create account, verify email, complète onboarding.",
+    "url": "/en/docs/courses-en/agentik-stack-setup"
+  },
+  {
+    "id": "en/courses-en/claude-code-masterclass",
+    "title": "Course — Claude Code Masterclass",
+    "section": "Courses (EN)",
+    "sectionKey": "courses-en",
+    "lang": "en",
+    "excerpt": "1.2 **Claude Code — The Development Agent** 1. Direct filesystem access (read, write, edit files) 2. Shell command execution (bash, git, npm, etc.) 3. Intelligent code search (grep, glob) 4. Spawni...",
+    "url": "/en/docs/courses-en/claude-code-masterclass"
+  },
+  {
+    "id": "en/courses-en/mcp-api-mastery",
+    "title": "Course 6 — MCP & API Mastery",
+    "section": "Courses (EN)",
+    "sectionKey": "courses-en",
+    "lang": "en",
+    "excerpt": "A well-designed integration system operates across four complementary layers. The **MCP Layer** handles AI-native connections between models and external services. The **API Layer** manages direct ...",
+    "url": "/en/docs/courses-en/mcp-api-mastery"
+  },
+  {
+    "id": "en/courses-en/tools-arbitrage",
+    "title": "Course 3 — Tools Arbitrage: Connect, Orchestrate & Scale",
+    "section": "Courses (EN)",
+    "sectionKey": "courses-en",
+    "lang": "en",
+    "excerpt": "Arbitrage in finance = buy where it's cheap, sell where it's expensive. AI tools arbitrage = identify undervalued tools, connect them intelligently, and create value greater than the sum of its parts.",
+    "url": "/en/docs/courses-en/tools-arbitrage"
+  },
+  {
+    "id": "en/courses-en/ai-for-business-owners",
+    "title": "Course 5 — AI for Business Owners",
+    "section": "Courses (EN)",
+    "sectionKey": "courses-en",
+    "lang": "en",
+    "excerpt": "",
+    "url": "/en/docs/courses-en/ai-for-business-owners"
+  },
+  {
+    "id": "en/courses-en/caio-sales-mastery",
+    "title": "Course 1 — Become a CAIO: Sales Mastery",
+    "section": "Courses (EN)",
+    "sectionKey": "courses-en",
+    "lang": "en",
+    "excerpt": "",
+    "url": "/en/docs/courses-en/caio-sales-mastery"
+  },
+  {
+    "id": "en/courses-en/ai-creator",
+    "title": "Course — The Power of Tomorrow: AI Creator Mastery",
+    "section": "Courses (EN)",
+    "sectionKey": "courses-en",
+    "lang": "en",
+    "excerpt": "In 2026, the barrier to entry for création has never been lower. One individual with a laptop and ideas can:",
+    "url": "/en/docs/courses-en/ai-creator"
+  },
+  {
+    "id": "en/courses-en/building-ai-systems",
+    "title": "Course — Building AI Systems",
+    "section": "Courses (EN)",
+    "sectionKey": "courses-en",
+    "lang": "en",
+    "excerpt": "3.1 **SDK setup and authentication** ```typescript import Anthropic from \"@anthropic-ai/sdk\";",
+    "url": "/en/docs/courses-en/building-ai-systems"
+  },
+  {
+    "id": "en/courses-en/ai-seo-digital-growth",
+    "title": "Course 7 — AI SEO & Digital Growth",
+    "section": "Courses (EN)",
+    "sectionKey": "courses-en",
+    "lang": "en",
+    "excerpt": "1.3 **How AI search engines work (ChatGPT, Perplexity, etc.)**",
+    "url": "/en/docs/courses-en/ai-seo-digital-growth"
+  },
+  {
+    "id": "en/courses-en/agentic-coding-systems-builder",
+    "title": "Course 2 — Agentic Coding: Systems Builder",
+    "section": "Courses (EN)",
+    "sectionKey": "courses-en",
+    "lang": "en",
+    "excerpt": "4.5 **Inngest & Pipedream — Alternatives and complementary tools**",
+    "url": "/en/docs/courses-en/agentic-coding-systems-builder"
+  },
+  {
+    "id": "fr/formations-fr/formation-agentik-stack-setup-and-pipeline",
+    "title": "Formation — Le Stack Agentik : Setup, Build & Ship",
+    "section": "Formations (FR)",
+    "sectionKey": "formations-fr",
+    "lang": "fr",
+    "excerpt": "Étape par étape pour chacun : créer le compte, verifier l'email, completer l'onboarding.",
+    "url": "/fr/docs/formations-fr/formation-agentik-stack-setup-and-pipeline"
+  },
+  {
+    "id": "fr/formations-fr/formation-6-mcp-api-mastery",
+    "title": "Formation 6 — MCP & API Mastery : Connecte Tout a Tout",
+    "section": "Formations (FR)",
+    "sectionKey": "formations-fr",
+    "lang": "fr",
+    "excerpt": "L'architecture d'integration d'un système IA repose sur quatre couches complementaires. La **couche MCP** gere les connexions AI-native entre le modèle et les services externes. La **couche API** a...",
+    "url": "/fr/docs/formations-fr/formation-6-mcp-api-mastery"
+  },
+  {
+    "id": "fr/formations-fr/formation-power-of-tomorrow-ai-creator",
+    "title": "Formation — The Power of Tomorrow : AI Creator Mastery",
+    "section": "Formations (FR)",
+    "sectionKey": "formations-fr",
+    "lang": "fr",
+    "excerpt": "En 2026, la barriere a l'entree de la création n'a jamais ete aussi basse. Un individu avec un laptop et des idees peut :",
+    "url": "/fr/docs/formations-fr/formation-power-of-tomorrow-ai-creator"
+  },
+  {
+    "id": "fr/formations-fr/formation-1-caio-sales-mastery",
+    "title": "Formation 1 — Devenir CAIO : Sales Mastery",
+    "section": "Formations (FR)",
+    "sectionKey": "formations-fr",
+    "lang": "fr",
+    "excerpt": "2.4 **Construire un portfolio quand tu n'as pas encore de clients**",
+    "url": "/fr/docs/formations-fr/formation-1-caio-sales-mastery"
+  },
+  {
+    "id": "fr/formations-fr/formation-building-ai-systems",
+    "title": "Formation — Construire des Systèmes IA",
+    "section": "Formations (FR)",
+    "sectionKey": "formations-fr",
+    "lang": "fr",
+    "excerpt": "1.1 **Qu'est-ce qu'un système IA (vs un logiciel traditionnel)**",
+    "url": "/fr/docs/formations-fr/formation-building-ai-systems"
+  },
+  {
+    "id": "fr/formations-fr/formation-7-ai-seo-digital-growth",
+    "title": "Formation 7 — SEO IA & Croissance Digitale",
+    "section": "Formations (FR)",
+    "sectionKey": "formations-fr",
+    "lang": "fr",
+    "excerpt": "1.3 **Comment fonctionnent les moteurs de recherche IA (ChatGPT, Perplexity, etc.)**",
+    "url": "/fr/docs/formations-fr/formation-7-ai-seo-digital-growth"
+  },
+  {
+    "id": "fr/formations-fr/formation-prompt-engineering",
+    "title": "Formation — Prompt Engineering : De Zero a Expert",
+    "section": "Formations (FR)",
+    "sectionKey": "formations-fr",
+    "lang": "fr",
+    "excerpt": "Le Prompt Engineering, c'est l'art et la science de formuler des instructions pour obtenir exactement ce que tu veux d'un LLM. Pas \"a peu pres\". Pas \"des fois ca marche\". Exactement.",
+    "url": "/fr/docs/formations-fr/formation-prompt-engineering"
+  },
+  {
+    "id": "fr/formations-fr/formation-3-tools-arbitrage",
+    "title": "Formation 3 — Tools Arbitrage : Connect, Orchestrate & Scale",
+    "section": "Formations (FR)",
+    "sectionKey": "formations-fr",
+    "lang": "fr",
+    "excerpt": "L'arbitrage en finance = acheter la ou c'est pas cher, vendre la ou c'est cher. L'arbitrage d'outils IA = identifier des outils sous-evalues, les connecter intelligemment, et créer une valeur super...",
+    "url": "/fr/docs/formations-fr/formation-3-tools-arbitrage"
+  },
+  {
+    "id": "fr/formations-fr/formation-oracle-aisb-setup-complet",
+    "title": "Formation — Setup Complet d'Oracle, AISB, Telegram et tmux",
+    "section": "Formations (FR)",
+    "sectionKey": "formations-fr",
+    "lang": "fr",
+    "excerpt": "mkdir -p ~/VibeCoding/work ~/VibeCoding/clients ~/VibeCoding/1-life mkdir -p ~/.claude/config ~/.claude/rules ~/.claude/agents mkdir -p ~/.aisb/lib ~/.aisb/docs ~/.aisb/prompts ~/.aisb/heartbeats 2...",
+    "url": "/fr/docs/formations-fr/formation-oracle-aisb-setup-complet"
+  },
+  {
+    "id": "fr/formations-fr/formation-context-engineering",
+    "title": "Formation — Context Engineering : L'Architecture Invisible de l'IA",
+    "section": "Formations (FR)",
+    "sectionKey": "formations-fr",
+    "lang": "fr",
+    "excerpt": "Le Context Engineering, c'est l'art et la science de **designer, assembler et gerer l'ensemble des informations** qu'un système IA recoit pour accomplir une tache.",
+    "url": "/fr/docs/formations-fr/formation-context-engineering"
+  },
+  {
+    "id": "fr/formations-fr/formation-claude-code-masterclass",
+    "title": "Formation — Claude Code Masterclass",
+    "section": "Formations (FR)",
+    "sectionKey": "formations-fr",
+    "lang": "fr",
+    "excerpt": "1.2 **Claude Code — L'agent de développement** 1. Acces direct au filesystem (lire, ecrire, editer des fichiers) 2. Execution de commandes shell (bash, git, npm, etc.) 3. Recherche intelligente dan...",
+    "url": "/fr/docs/formations-fr/formation-claude-code-masterclass"
+  },
+  {
+    "id": "fr/formations-fr/formation-2-agentic-coding-systems-builder",
+    "title": "Formation 2 — Agentic Coding : Systems Builder",
+    "section": "Formations (FR)",
+    "sectionKey": "formations-fr",
+    "lang": "fr",
+    "excerpt": "1.1 **Qu'est-ce que Claude Code et pourquoi c'est différent**",
+    "url": "/fr/docs/formations-fr/formation-2-agentic-coding-systems-builder"
+  },
+  {
+    "id": "fr/formations-fr/formation-5-ai-for-business-owners",
+    "title": "Formation 5 — L'IA pour les Dirigeants d'Entreprise",
+    "section": "Formations (FR)",
+    "sectionKey": "formations-fr",
+    "lang": "fr",
+    "excerpt": "3.2 **Comparaison des couts : Equipe traditionnelle vs système IA**",
+    "url": "/fr/docs/formations-fr/formation-5-ai-for-business-owners"
+  },
+  {
+    "id": "en/playbook/training-program",
+    "title": "CAIO Training Program",
+    "section": "Playbook",
+    "sectionKey": "playbook",
+    "lang": "en",
+    "excerpt": "This training program teaches you everything you need to become a CAIO (Chief AI Officer) — the most in-demand role of 2026. You will learn to sell AI services, build production-grade AI systems, a...",
+    "url": "/en/docs/playbook/training-program"
+  },
+  {
+    "id": "fr/playbook/training-plans",
+    "title": "CAIO Training Plans par Avatar",
+    "section": "Playbook",
+    "sectionKey": "playbook",
+    "lang": "fr",
+    "excerpt": "Chaque avatar a son propre chemin. Chaque chemin est conçu pour créer une frustration productive qui mène naturellement vers Founding Cohort à €3,500 (ou Beta Phase II à €1,500 pour les 15 early va...",
+    "url": "/fr/docs/playbook/training-plans"
+  },
+  {
+    "id": "fr/marketing/marketing-tools-arsenal",
+    "title": "Arsenal Marketing CAIO Academy -- Playbook Complet des Outils et Commandes",
+    "section": "Marketing",
+    "sectionKey": "marketing",
+    "lang": "fr",
+    "excerpt": "Document stratégique -- Confidentiel Version 1.0 -- Avril 2025",
+    "url": "/fr/docs/marketing/marketing-tools-arsenal"
+  },
+  {
+    "id": "fr/launch/sales-funnel-par-avatar",
+    "title": "Funnel de Vente Par Avatar -- De la Decouverte au Paiement de 2 000 Euros",
+    "section": "Launch",
+    "sectionKey": "launch",
+    "lang": "fr",
+    "excerpt": "Document stratégique -- Confidentiel Version 1.0 -- Avril 2025",
+    "url": "/fr/docs/launch/sales-funnel-par-avatar"
+  },
+  {
+    "id": "fr/launch/funnel-math-cac-ltv",
+    "title": "Funnel Math, CAC et LTV -- CAIO Academy",
+    "section": "Launch",
+    "sectionKey": "launch",
+    "lang": "fr",
+    "excerpt": "L'audit 2026-04-14 a releve une absence totale de math funnel dans le dossier CAIO. Tous les documents disent \"3 posts LinkedIn par semaine, 50 ventes formation An 1\" sans jamais relier les deux ch...",
+    "url": "/fr/docs/launch/funnel-math-cac-ltv"
+  },
+  {
+    "id": "fr/launch/beta-launch-roadmap",
+    "title": "Plan de Lancement Beta CAIO Academy -- Roadmap 12 Semaines",
+    "section": "Launch",
+    "sectionKey": "launch",
+    "lang": "fr",
+    "excerpt": "Document stratégique -- Confidentiel Version 1.0 -- Avril 2025",
+    "url": "/fr/docs/launch/beta-launch-roadmap"
+  },
+  {
+    "id": "fr/operations/scaling-plan",
+    "title": "Plan de scaling -- solo vers equipe -- CAIO Academy",
+    "section": "Operations",
+    "sectionKey": "operations",
+    "lang": "fr",
+    "excerpt": "La tentation de l'operateur surcharge est d'embaucher \"parce que je n'en peux plus\". C'est le meilleur moyen de creer une charge fixe qui empoisonne la marge. La regle inverse est appliquee ici : *...",
+    "url": "/fr/docs/operations/scaling-plan"
+  },
+  {
+    "id": "fr/operations/metrics-dashboard",
+    "title": "Metrics Dashboard hebdomadaire -- CAIO Academy",
+    "section": "Operations",
+    "sectionKey": "operations",
+    "lang": "fr",
+    "excerpt": "Les revues mensuelles sont trop tardives. En 30 jours, une derive d'audience ou de conversion devient une situation critique. La cadence hebdomadaire capture les signaux faibles 4x plus tot et perm...",
+    "url": "/fr/docs/operations/metrics-dashboard"
+  },
+  {
+    "id": "fr/operations/tech-stack-choice",
+    "title": "Choix de la plateforme technique -- CAIO Academy",
+    "section": "Operations",
+    "sectionKey": "operations",
+    "lang": "fr",
+    "excerpt": "La tentation du founder-builder est de tout coder soi-meme des le Jour 1. Pour CAIO Academy, c'est une erreur strategique. Le premier risque a mitiger n'est pas \"l'outil n'est pas assez beau\", c'es...",
+    "url": "/fr/docs/operations/tech-stack-choice"
+  },
+  {
+    "id": "fr/operations/risk-mitigation",
+    "title": "Mitigation des risques -- CAIO Academy",
+    "section": "Operations",
+    "sectionKey": "operations",
+    "lang": "fr",
+    "excerpt": "LinkedIn est l'unique canal d'acquisition principal des 12 premiers mois. Un bannissement du compte Gareth, un changement d'algorithme defavorable, ou une saturation de niche sur le terme CAIO en f...",
+    "url": "/fr/docs/operations/risk-mitigation"
+  },
+  {
+    "id": "fr/operations/legal-tax-structure",
+    "title": "Structure juridique, fiscale et IP -- CAIO Academy",
+    "section": "Operations",
+    "sectionKey": "operations",
+    "lang": "fr",
+    "excerpt": "La SASU (Societe par Actions Simplifiee Unipersonnelle) est le statut qui correspond le mieux au projet CAIO Academy pour plusieurs raisons structurelles. Elle permet a Gareth de rester seul action...",
+    "url": "/fr/docs/operations/legal-tax-structure"
+  }
+]
