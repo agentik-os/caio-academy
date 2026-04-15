@@ -4,10 +4,16 @@ import { navItems } from "@/lib/site";
 import { DarkModeToggle } from "./dark-mode-toggle";
 import { LocaleToggle } from "./locale-toggle";
 import { CtaLink } from "./cta-button";
+import { SiteHeaderMobileMenu } from "./site-header-mobile-menu";
 
 export async function SiteHeader() {
   const t = await getTranslations("nav");
   const tSite = await getTranslations("site");
+  const mobileItems = navItems.map((item) => ({
+    key: item.key,
+    href: item.href,
+    label: t(item.key),
+  }));
 
   return (
     <header className="sticky top-0 z-40 border-b border-[color:var(--color-line)] bg-[color:var(--color-paper)]/90 backdrop-blur supports-[backdrop-filter]:bg-[color:var(--color-paper)]/75">
@@ -41,6 +47,12 @@ export async function SiteHeader() {
           <CtaLink href="/beta" size="sm" variant="ink" className="hidden sm:inline-flex">
             {t("beta")}
           </CtaLink>
+          <SiteHeaderMobileMenu
+            items={mobileItems}
+            beta={{ href: "/beta", label: t("beta") }}
+            openLabel="Menu"
+            closeLabel="Close"
+          />
         </div>
       </div>
     </header>
