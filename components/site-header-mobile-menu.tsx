@@ -51,19 +51,19 @@ export function SiteHeaderMobileMenu({
       </button>
 
       {open ? (
-        <div
-          id="site-mobile-drawer"
-          role="dialog"
-          aria-modal="true"
-          aria-label={openLabel}
-          className="fixed inset-0 z-50 flex md:hidden"
-        >
+        <>
           <div
-            className="absolute inset-0 bg-black/60"
+            className="fixed inset-0 z-[90] bg-black/60 md:hidden"
             onClick={() => setOpen(false)}
             aria-hidden
           />
-          <div className="relative ml-auto flex h-full w-full max-w-xs flex-col overflow-y-auto bg-[color:var(--color-paper)] px-5 py-5">
+          <div
+            id="site-mobile-drawer"
+            role="dialog"
+            aria-modal="true"
+            aria-label={openLabel}
+            className="fixed inset-y-0 right-0 z-[100] flex h-full w-[85vw] max-w-xs flex-col overflow-y-auto border-l border-[color:var(--color-line)] bg-[color:var(--color-paper)] px-5 py-5 shadow-2xl md:hidden"
+          >
             <div className="mb-6 flex items-center justify-between">
               <p className="font-sans text-[0.7rem] font-semibold uppercase tracking-[0.25em] text-[color:var(--color-muted)]">
                 Menu
@@ -102,7 +102,7 @@ export function SiteHeaderMobileMenu({
               </Link>
             </div>
           </div>
-        </div>
+        </>
       ) : null}
     </>
   );
