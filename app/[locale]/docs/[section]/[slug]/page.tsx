@@ -5,16 +5,13 @@ import remarkGfm from "remark-gfm";
 import rehypePrettyCode from "rehype-pretty-code";
 import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { SiteHeader } from "@/components/site-header";
-import { SiteFooter } from "@/components/site-footer";
-import { SidebarNav, type SidebarNode } from "@/components/sidebar-nav";
 import { Prose } from "@/components/prose";
+import { DocsToc, type TocItem } from "@/components/docs/docs-toc";
 import { routing } from "@/i18n/routing";
 import {
   SECTION_META,
   escapeMdx,
   getDoc,
-  getDocsTree,
   getNeighbors,
   getStaticDocParams,
 } from "@/lib/docs";
@@ -24,13 +21,6 @@ export function generateStaticParams() {
   const out: { locale: string; section: string; slug: string }[] = [];
   for (const locale of routing.locales) {
     for (const d of docs) {
-      // neutral and matching-locale docs render on both locales via fallback
-      // skip opposite-locale-only docs for a given locale (they won't resolve here)
-      if (d.lang !== "neutral" && d.lang !== locale) {
-        // check if a neutral or matching variant exists for this (section, slug)
-        // since docs from getStaticDocParams are unique per (section,slug), we
-        // still render the page on the other locale via fallback in getDoc.
-      }
       out.push({ locale, section: d.section, slug: d.slug });
     }
   }
@@ -44,20 +34,18 @@ const T = {
     prev: "Précédent",
     next: "Suivant",
     onThisPage: "Sur cette page",
-    eyebrow: "Documentation",
     backToSection: "Retour",
   },
   en: {
     prev: "Previous",
     next: "Next",
     onThisPage: "On this page",
-    eyebrow: "Documentation",
     backToSection: "Back",
   },
 } as const;
 
-function extractToc(content: string): { level: 2 | 3; id: string; text: string }[] {
-  const toc: { level: 2 | 3; id: string; text: string }[] = [];
+function extractToc(content: string): TocItem[] {
+  const toc: TocItem[] = [];
   const lines = content.split("\n");
   let inCode = false;
   for (const line of lines) {
@@ -80,27 +68,6 @@ function extractToc(content: string): { level: 2 | 3; id: string; text: string }
     toc.push({ level, id, text });
   }
   return toc.slice(0, 40);
-}
-
-function buildSidebar(locale: Locale, activeSection: string): SidebarNode[] {
-  const tree = getDocsTree();
-  return tree.map((t) => ({
-    label: SECTION_META[t.section]?.title[locale] ?? t.section,
-    href: `/${locale}/docs/${t.section}`,
-    children:
-      t.section === activeSection
-        ? t.docs
-            // unique slugs — prefer locale variant if duplicates exist
-            .reduce<typeof t.docs>((acc, d) => {
-              if (!acc.find((x) => x.slug === d.slug)) acc.push(d);
-              return acc;
-            }, [])
-            .map((d) => ({
-              label: d.title,
-              href: `/${locale}/docs/${t.section}/${d.slug}`,
-            }))
-        : undefined,
-  }));
 }
 
 export async function generateMetadata({
@@ -143,93 +110,62 @@ export default async function DocDetail({
 
   const toc = extractToc(doc.content);
   const { prev, next } = getNeighbors(section, slug, key);
-  const sidebar = buildSidebar(key, section);
 
   return (
-    <div className="flex min-h-screen flex-col bg-[color:var(--color-paper)] text-[color:var(--color-ink)]">
-      <SiteHeader />
-      <div className="mx-auto flex w-full max-w-7xl flex-1 gap-10 px-6 py-10 md:py-14">
-        <aside className="sticky top-20 hidden h-[calc(100vh-6rem)] w-72 shrink-0 overflow-y-auto border-r border-[color:var(--color-line)] pr-6 md:block">
-          <p className="mb-6 font-sans text-[0.7rem] font-semibold uppercase tracking-[0.25em] text-[color:var(--color-muted)]">
-            {t.eyebrow}
-          </p>
-          <SidebarNav items={sidebar} />
-        </aside>
+    <article className="flex flex-col">
+      <header className="mb-8 border-b border-[color:var(--color-line)] pb-6">
+        <nav className="mb-4 flex flex-wrap items-center gap-2 font-sans text-[0.7rem] font-semibold uppercase tracking-[0.25em] text-[color:var(--color-muted)]">
+          <Link href="/docs" className="hover:text-[color:var(--color-ink)]">
+            Docs
+          </Link>
+          <span aria-hidden>/</span>
+          <Link href={`/docs/${section}`} className="hover:text-[color:var(--color-ink)]">
+            {meta.title[key]}
+          </Link>
+        </nav>
+        <h1 className="font-serif text-3xl font-black leading-[1.1] tracking-tight md:text-4xl">
+          {doc.title}
+        </h1>
+      </header>
 
-        <main className="min-w-0 flex-1">
-          <div className="mb-8">
-            <Link
-              href={`/docs/${section}`}
-              className="mb-3 inline-flex font-sans text-xs font-semibold uppercase tracking-[0.25em] text-[color:var(--color-muted)] transition-colors duration-150 hover:text-[color:var(--color-ink)]"
-            >
-              {meta.title[key]} ·{" "}
-              <span className="ml-2 underline-offset-4 hover:underline">← {t.backToSection}</span>
-            </Link>
-            <h1 className="mt-2 font-serif text-3xl font-black leading-[1.1] tracking-tight md:text-5xl">
-              {doc.title}
-            </h1>
-          </div>
+      <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_220px]">
+        <Prose className="max-w-none">{content}</Prose>
 
-          <div className="grid gap-10 lg:grid-cols-[1fr_240px]">
-            <Prose className="max-w-none">{content}</Prose>
-
-            {toc.length > 0 && (
-              <aside className="order-first lg:order-last">
-                <div className="sticky top-24 border-t-2 border-[color:var(--color-ink)] pt-6">
-                  <p className="mb-4 font-sans text-[0.7rem] font-semibold uppercase tracking-[0.25em] text-[color:var(--color-muted)]">
-                    {t.onThisPage}
-                  </p>
-                  <ul className="flex flex-col gap-2 border-l border-[color:var(--color-line)]">
-                    {toc.map((item, i) => (
-                      <li
-                        key={`${item.id}-${i}`}
-                        className={item.level === 3 ? "pl-6" : "pl-3"}
-                      >
-                        <a
-                          href={`#${item.id}`}
-                          className="font-sans text-xs leading-relaxed text-[color:var(--color-muted)] transition-colors duration-150 hover:text-[color:var(--color-ink)]"
-                        >
-                          {item.text}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </aside>
-            )}
-          </div>
-
-          <nav className="mt-16 grid gap-px border-t border-[color:var(--color-line)] bg-[color:var(--color-line)] md:grid-cols-2">
-            {prev ? (
-              <Link
-                href={`/docs/${section}/${prev.slug}`}
-                className="bg-[color:var(--color-paper)] p-6 transition-colors duration-150 hover:bg-[color:var(--color-secondary)]"
-              >
-                <p className="font-sans text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--color-muted)]">
-                  ← {t.prev}
-                </p>
-                <p className="mt-2 font-serif text-lg font-bold leading-tight">{prev.title}</p>
-              </Link>
-            ) : (
-              <span className="bg-[color:var(--color-paper)] p-6" />
-            )}
-            {next ? (
-              <Link
-                href={`/docs/${section}/${next.slug}`}
-                className="bg-[color:var(--color-paper)] p-6 text-right transition-colors duration-150 hover:bg-[color:var(--color-secondary)]"
-              >
-                <p className="font-sans text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--color-muted)]">
-                  {t.next} →
-                </p>
-                <p className="mt-2 font-serif text-lg font-bold leading-tight">{next.title}</p>
-              </Link>
-            ) : (
-              <span className="bg-[color:var(--color-paper)] p-6" />
-            )}
-          </nav>
-        </main>
+        {toc.length > 0 && (
+          <aside className="order-first lg:order-last">
+            <DocsToc items={toc} label={t.onThisPage} />
+          </aside>
+        )}
       </div>
-      <SiteFooter />
-    </div>
+
+      <nav className="mt-16 grid gap-px border-t border-[color:var(--color-line)] bg-[color:var(--color-line)] md:grid-cols-2">
+        {prev ? (
+          <Link
+            href={`/docs/${section}/${prev.slug}`}
+            className="bg-[color:var(--color-paper)] p-6 transition-colors duration-150 hover:bg-[color:var(--color-secondary)]"
+          >
+            <p className="font-sans text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--color-muted)]">
+              ← {t.prev}
+            </p>
+            <p className="mt-2 font-serif text-base font-bold leading-tight">{prev.title}</p>
+          </Link>
+        ) : (
+          <span className="bg-[color:var(--color-paper)] p-6" />
+        )}
+        {next ? (
+          <Link
+            href={`/docs/${section}/${next.slug}`}
+            className="bg-[color:var(--color-paper)] p-6 text-right transition-colors duration-150 hover:bg-[color:var(--color-secondary)]"
+          >
+            <p className="font-sans text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--color-muted)]">
+              {t.next} →
+            </p>
+            <p className="mt-2 font-serif text-base font-bold leading-tight">{next.title}</p>
+          </Link>
+        ) : (
+          <span className="bg-[color:var(--color-paper)] p-6" />
+        )}
+      </nav>
+    </article>
   );
 }
