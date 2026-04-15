@@ -1,0 +1,59 @@
+=== BUILD ===
+  Collecting page data using 5 workers ...
+  Generating static pages using 5 workers (0/5) ...
+  Generating static pages using 5 workers (1/5) 
+  Generating static pages using 5 workers (2/5) 
+  Generating static pages using 5 workers (3/5) 
+✓ Generating static pages using 5 workers (5/5) in 522ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /_not-found
+└ ● /[locale]
+  ├ /fr
+  └ /en
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)  prerendered as static content
+●  (SSG)     prerendered as static HTML (uses generateStaticParams)
+
+
+=== LINT ===
+$ eslint
+
+=== TSC ===
+$ tsc --noEmit
+
+=== GIT ===
+9575b29 chore: initial scaffold (Next.js 16 + Tailwind v4 + shadcn + Convex + next-intl)
+9496273 feat: initial commit
+
+=== GH ===
+{"defaultBranchRef":{"name":"main"},"name":"caio-academy","url":"https://github.com/agentik-os/caio-academy","visibility":"PUBLIC"}
+
+=== VERCEL ===
+{"projectId":"prj_ZIGtA05d7f6aBps4sociQNvbaDtt","orgId":"team_WrIUaFWi6SG4SUo5yK0NpHjc","projectName":"caio-academy"}
+=== FILES ===
+app/[locale]/:
+total 16
+drwxrwsr-t+ 2 hacker hacker 4096 Apr 15 13:09 .
+drwxrwxr-x+ 3 hacker hacker 4096 Apr 15 13:05 ..
+-rw-rw-r-- 1 hacker hacker 1486 Apr 15 13:09 layout.tsx
+-rw-rw-r-- 1 hacker hacker  610 Apr 15 13:04 page.tsx
+
+i18n/:
+total 20
+drwxrwsr-x+  2 hacker hacker 4096 Apr 15 13:03 .
+drwxrwsr-t+ 15 hacker hacker 4096 Apr 15 13:12 ..
+-rw-rw-r--  1 hacker hacker  195 Apr 15 13:03 navigation.ts
+-rw-rw-r--  1 hacker hacker  435 Apr 15 13:03 request.ts
+-rw-rw-r--  1 hacker hacker  169 Apr 15 13:03 routing.ts
+
+messages/:
+total 16
+drwxrwsr-x+  2 hacker hacker 4096 Apr 15 13:03 .
+drwxrwsr-t+ 15 hacker hacker 4096 Apr 15 13:12 ..
+-rw-rw-r--  1 hacker hacker  334 Apr 15 13:03 en.json
+-rw-rw-r--  1 hacker hacker  346 Apr 15 13:03 fr.json
