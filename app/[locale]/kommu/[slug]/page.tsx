@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import { compileMDX } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import rehypePrettyCode from "rehype-pretty-code";
+import { remarkMermaid } from "@/lib/remark-mermaid";
+import { MermaidDiagram } from "@/components/mermaid-diagram";
 import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { PageShell } from "@/components/page-shell";
@@ -110,10 +112,11 @@ export default async function KommuModuleDetail({
     getKommuModuleContent(slug) ?? `# ${mod.title}\n\n${mod.summary}`;
   const { content } = await compileMDX({
     source,
+    components: { MermaidDiagram },
     options: {
       parseFrontmatter: false,
       mdxOptions: {
-        remarkPlugins: [remarkGfm],
+        remarkPlugins: [remarkMermaid, remarkGfm],
         rehypePlugins: [
           [rehypePrettyCode, { theme: "github-light", keepBackground: false }],
         ],
