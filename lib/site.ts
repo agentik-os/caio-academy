@@ -7,6 +7,7 @@ export const navItems = [
   { key: "business", href: "/business-plan" },
   { key: "avatars", href: "/avatars" },
   { key: "formations", href: "/formations" },
+  { key: "kommu", href: "/kommu" },
   { key: "blog", href: "/blog" },
   { key: "docs", href: "/docs" },
   { key: "podcast", href: "/podcast" },
