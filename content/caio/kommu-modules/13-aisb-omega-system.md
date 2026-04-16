@@ -29,29 +29,51 @@ L'architecture complete du systeme AISB en 4 niveaux hierarchiques. Pourquoi cet
 
 **Les 4 niveaux d'architecture AISB :**
 
+```mermaid
+graph TB
+    subgraph N1["NIVEAU 1 — AISB (AI Super Brain)"]
+        direction LR
+        A1[Bot Telegram] --> A2[Enrichissement de prompt]
+        A2 --> A3[Classification]
+        A3 --> A4[Dispatch]
+    end
+
+    subgraph N2["NIVEAU 2 — ORACLES (Chefs de projet)"]
+        direction LR
+        B1[Analyse] --> B2[Decomposition]
+        B2 --> B3[Coordination]
+        B3 --> B4[Verification]
+    end
+
+    subgraph N3["NIVEAU 3 — WORKERS (Executants)"]
+        direction LR
+        C1[Code] --> C2[Fix]
+        C2 --> C3[Audit]
+        C3 --> C4[Deploy]
+    end
+
+    subgraph N4["NIVEAU 4 — AGENTS & SKILLS (Specialistes)"]
+        direction LR
+        D1[281 agents] --> D2[130+ skills]
+        D2 --> D3[16 audits forensiques]
+    end
+
+    N1 -->|"dispatch-to-session.sh"| N2
+    N2 -->|"tmux sessions"| N3
+    N3 -->|"Skill tool / Agent tool"| N4
+    N4 -->|"Resultats"| N3
+    N3 -->|".done.json"| N2
+    N2 -->|"Signal file"| N1
 ```
-┌─────────────────────────────────────────────────────────┐
-│  NIVEAU 1 — AISB (AI Super Brain)                       │
-│  Bot Telegram → Point d'entree unique                   │
-│  Enrichissement de prompt, classification, dispatch     │
-│  1 instance permanente                                  │
-├─────────────────────────────────────────────────────────┤
-│  NIVEAU 2 — ORACLES (Chefs de projet)                   │
-│  1 Oracle par mission → decompose, coordonne, verifie   │
-│  Sessions tmux ephemeres ou persistantes                │
-│  Parallelisme : multi-oracles par projet possible       │
-├─────────────────────────────────────────────────────────┤
-│  NIVEAU 3 — WORKERS (Executants)                        │
-│  1 Worker par tache atomique → code, fixe, audite       │
-│  Sessions tmux enfants de l'Oracle                      │
-│  Sequentiels (code) ou paralleles (audits)              │
-├─────────────────────────────────────────────────────────┤
-│  NIVEAU 4 — AGENTS & SKILLS (Specialistes)              │
-│  281 agents dans ~/.claude/agents/                      │
-│  130+ skills dans ~/.claude/commands/                   │
-│  Invocables par n'importe quel Worker via Skill tool    │
-└─────────────────────────────────────────────────────────┘
-```
+
+**Le detail de chaque niveau :**
+
+| Niveau | Composant | Nombre d'instances | Duree de vie | Communication |
+|--------|-----------|-------------------|--------------|---------------|
+| 1 | AISB Bot (Python) | 1 permanent | 24/7 via systemd | Telegram API |
+| 2 | Oracles (Claude Code) | 1-3 simultanees | A la demande | tmux + signal files |
+| 3 | Workers (Claude Code) | 1-6 par Oracle | Ephemere (tue apres tache) | tmux + .done.json |
+| 4 | Agents/Skills | 281 disponibles | Invocables a la demande | Skill tool / Agent tool |
 
 **Pourquoi 4 niveaux ?**
 
@@ -61,6 +83,32 @@ L'architecture complete du systeme AISB en 4 niveaux hierarchiques. Pourquoi cet
 | "Les missions complexes ont besoin d'un chef" | Oracle (Niv. 2) decompose et coordonne |
 | "Chaque tache a besoin d'un contexte frais" | Worker (Niv. 3) = contexte isole et propre |
 | "Il faut des competences specifiques" | Agents/Skills (Niv. 4) = expertise a la demande |
+
+**Le principe fondamental : separation des responsabilites**
+
+Chaque niveau parle UNIQUEMENT au niveau adjacent. Jamais de communication directe N1 vers N3.
+
+```mermaid
+graph LR
+    T[Toi - Telegram] <-->|Messages| AISB
+    AISB <-->|dispatch| Oracle
+    Oracle <-->|tmux| Worker
+    Worker <-->|Skill tool| Agent
+
+    style T fill:#4a9eff,color:white
+    style AISB fill:#ff6b6b,color:white
+    style Oracle fill:#ffa726,color:white
+    style Worker fill:#66bb6a,color:white
+    style Agent fill:#ab47bc,color:white
+```
+
+**Les regles d'or :**
+
+- AISB ne code JAMAIS — il route et enrichit
+- Les Oracles ne codent JAMAIS — ils decomposent, coordonnent et verifient
+- Seuls les Workers touchent le code
+- Les resultats REMONTENT : Worker -> Oracle -> AISB -> Telegram -> Toi
+- Maximum 3 Oracles simultanees (au-dela, le bot refuse)
 
 **Ce qui differencie AISB des autres systemes multi-agents :**
 
@@ -74,16 +122,8 @@ L'architecture complete du systeme AISB en 4 niveaux hierarchiques. Pourquoi cet
 | Projets simultanes | 1 | 11+ |
 | Autonomie | Limitee (boucle infinie frequente) | Controlee (3 Lois, done.json) |
 | Communication | stdout/stderr | Fichiers JSON + tmux + Telegram |
-
-**Le principe fondamental : separation des responsabilites**
-
-Chaque niveau parle UNIQUEMENT au niveau adjacent. Jamais de communication N1→N3 directe.
-
-```
-AISB ←→ Oracle ←→ Worker ←→ Agent/Skill
-  ↕         ↕          ↕
-Telegram  .done.json  Skill tool
-```
+| Deploiement | Aucun | Ship pipeline complet (build, push, deploy, verify) |
+| Apprentissage | Aucun | SMITH analyse les patterns et ameliore le systeme |
 
 ### Exercice pratique
 
@@ -99,111 +139,149 @@ Le parcours complet d'un message utilisateur, depuis l'envoi sur Telegram jusqu'
 
 ### Contenu detaille
 
-**Le parcours d'un message — exemple reel :**
+**Le parcours d'un message — diagramme de sequence :**
 
-```
-Gareth (Telegram) : "Fix le bug d'auth sur Causio — les utilisateurs
-                     ne peuvent pas se connecter avec Google"
+```mermaid
+sequenceDiagram
+    participant G as Gareth (Telegram)
+    participant B as AISB Bot (Python)
+    participant E as enhance_prompt (Claude SDK)
+    participant O as Oracle (tmux)
+    participant W as Worker (tmux)
+    participant V as Vercel (Deploy)
+
+    G->>B: "Fix le bug d'auth sur Causio"
+    B->>B: Detecte projet: Causio
+    B->>E: Message brut + contexte projet
+    E-->>B: Prompt enrichi (fichiers, git, criteres)
+    B->>B: Classifie: MEDIUM
+    B->>O: dispatch-to-session.sh oracle-Causio
+    B-->>G: "Oracle dispatche, je te notifie"
+
+    O->>O: Analyse CLAUDE.md + git log
+    O->>O: Decompose en sous-taches
+    O->>W: dispatch Worker Causio-1
+    W->>W: Lit le code, identifie le bug
+    W->>W: Applique le fix
+    W->>W: npm run build = OK
+    W-->>O: .done.json (done_clean)
+
+    O->>O: Verifie le build
+    O->>O: git commit + push
+    O->>V: Deploy Vercel
+    V-->>O: Deploy READY
+    O->>O: Ecrit signal file
+
+    B->>B: Detecte signal file (poll 3s)
+    B-->>G: "Bug auth fixe. Deploye en prod."
 ```
 
 **Etape 1 — Reception par AISB (bot Python)**
 
+Le bot Telegram tourne en permanent via systemd. Quand un message arrive :
+
 ```python
-# ~/VibeCoding/work/agentik-monitor/bot/main.py
-@bot.message_handler(func=lambda m: True)
-async def handle_message(message):
-    user_id = message.from_user.id
+# Pseudo-code simplifie du routing
+async def process_message(message):
     text = message.text
-    
-    # Enrichissement du prompt
-    enriched = await enrich_prompt(text, user_id)
-    # → Ajoute : projet detecte, fichiers recents, contexte utilisateur
-    
-    # Classification
-    complexity = classify(enriched)  # SIMPLE | MEDIUM | COMPLEX | EPIC
-    
-    # Dispatch
-    if complexity == "SIMPLE":
-        response = await handle_directly(enriched)
+    topic_id = message.message_thread_id  # None si DM
+
+    # 1. Commande directe oracle ? (/dent, /kommu, etc.)
+    if text.startswith('/'):
+        project = match_direct_command(text)
+        if project:
+            dispatch_to_oracle(project, text)
+            return
+
+    # 2. Reponse a un rapport AISB ?
+    if message.reply_to_message:
+        project = report_message_map.get(message.reply_to_message.id)
+        if project:
+            dispatch_to_oracle(project, text)
+            return
+
+    # 3. Message dans un topic ? → Identifier le projet
+    if topic_id:
+        project = projects_json.get(topic_id)
+        if project:
+            enhanced = await enhance_prompt(text, project)
+            dispatch_to_oracle(project, enhanced)
+            return
+
+    # 4. DM avec keyword projet ?
+    projects = detect_multi_project(text)
+    if len(projects) == 1:
+        dispatch_to_oracle(projects[0], text)
+    elif len(projects) > 1:
+        for p in projects:  # Parallele !
+            dispatch_to_oracle(p, text)
     else:
-        session = await dispatch_to_oracle(enriched, project="Causio")
-        await bot.reply_to(message, f"Oracle dispatche : {session}")
+        # Pas de projet detecte → AISB repond directement
+        response = await aisb_direct_answer(text)
+        send_telegram(chat_id, response)
 ```
 
-**Etape 2 — Dispatch vers un Oracle (tmux)**
+**Etape 2 — enhance_prompt : l'intelligence N+1**
 
-```bash
-#!/bin/bash
-# ~/.claude/lib/dispatch-to-session.sh
-PROJECT="Causio"
-SESSION="oracle-Causio-1"
+Le secret d'AISB : il ne transmet JAMAIS le message brut aux oracles. Il le reformule d'abord via Claude SDK.
 
-# Creer la session tmux
-tmux new-session -d -s "$SESSION" -x 220 -y 50
-
-# Lancer Claude Code avec le prompt enrichi
-tmux send-keys -t "$SESSION" "claude --model opus \
-  --prompt-file /tmp/oracle-prompt-$SESSION.md" Enter
 ```
+Ton message : "fix le login" (15 caracteres, vague)
+↓
+enhance_prompt : Claude SDK reformule + analyse git
+↓
+Prompt oracle :
+  "## Objectif technique
+   Corriger le flux d'authentification login.
+   ## Fichiers concernes
+   src/auth/login.ts, src/middleware.ts
+   ## Criteres de succes
+   - Login flow works end-to-end
+   - npm run build = 0 errors
+   ## Contexte git
+   Branch: main, dernier commit: fix token refresh"
+```
+
+Caracteristiques techniques :
+- Utilise `claude --print` via stdin pipe
+- Force OAuth (Claude Max, unlimited) en vidant `ANTHROPIC_API_KEY`
+- Timeout 60s, fallback sur template structure si Claude echoue
+- Inputs/outputs sauves dans `.oracles/aisb-reformat-*.md`
 
 **Etape 3 — L'Oracle decompose la mission**
 
-```
-Oracle recoit :
-  "Fix le bug d'auth Google sur Causio"
-  + contexte : Clerk auth, Next.js 15, Convex backend
+L'Oracle recoit le prompt enrichi et suit un protocole strict en 5 etapes (detail en Lecon 4).
 
-Oracle analyse :
-  1. Classification : MEDIUM (un seul bug, scope connu)
-  2. Fichiers probables : src/app/auth/*, middleware.ts
-  3. Plan : 1 Worker recherche → 1 Worker fix → 1 Worker audit
+**Etape 4 — Le Worker execute**
 
-Oracle dispatche Worker 1 :
-  Session : Causio-fix-auth-research
-  Mission : "Identifie la cause du bug Google OAuth dans Causio.
-             Fichiers : src/app/auth/, middleware.ts
-             DONE CRITERIA : Root cause identifiee avec fichier:ligne
-             VERIFY : cat /tmp/causio-auth-research.md | grep 'ROOT CAUSE'"
-```
+Le Worker recoit une mission atomique avec :
+- Description precise + fichiers + criteres de succes
+- Done criteria mesurables (ex: "npm run build exits 0")
+- Verify command (ex: "npm run build 2>&1 | tail -1")
+- Les 3 Lois injectees dans le prompt
 
-**Etape 4 — Worker execute**
+**Etape 5 — Le report pipeline**
 
-```
-Worker 1 (Research) :
-  → Lit src/app/auth/google/callback/route.ts
-  → Identifie : ligne 42, redirect_uri incorrect en prod
-  → Ecrit findings dans /tmp/causio-auth-research.md
-  → Ecrit .done.json : status=done_clean
+```mermaid
+graph LR
+    O[Oracle] -->|"ecrit"| SF["/tmp/aisb-oracle-result-Projet.md"]
+    W[Watcher thread] -->|"poll 3s"| SF
+    W -->|"detecte"| FMT[markdown_to_telegram_html]
+    FMT -->|"formate"| TG[Telegram DM]
+    TG -->|"message_id tracke"| MAP[report_message_map]
+    MAP -->|"reply routing"| O2[Meme Oracle]
 
-Oracle lit les findings, synthetise, dispatche Worker 2 :
-  Session : Causio-fix-auth-implement
-  Mission : "Fix src/app/auth/google/callback/route.ts:42
-             Le redirect_uri utilise localhost au lieu de NEXT_PUBLIC_URL
-             Change : redirect_uri = process.env.NEXT_PUBLIC_URL + '/auth/google/callback'
-             DONE CRITERIA : npm run build exits 0
-             VERIFY : npm run build 2>&1 | tail -1"
-
-Worker 2 :
-  → Edit le fichier
-  → npm run build → OK
-  → .done.json : status=done_clean
+    style SF fill:#fff3e0
+    style TG fill:#4a9eff,color:white
 ```
 
-**Etape 5 — Oracle verifie, ship, notifie**
+Le watcher est un thread background dans le bot qui poll `/tmp/` toutes les 3 secondes. Quand il detecte un signal file :
+1. Il lit le contenu Markdown
+2. Le convertit en HTML Telegram via `markdown_to_telegram_html`
+3. L'envoie en DM a Gareth
+4. Tracke le `message_id` dans `report_message_map` pour le reply-routing
 
-```
-Oracle :
-  → Verifie le build passe
-  → Declenche le ship pipeline (git add, commit, push, deploy)
-  → Attend le deploiement Vercel
-  → Notifie AISB : "Bug auth Google fixe, deploye, en prod"
-
-AISB → Telegram : "Fix deploye sur Causio. Le bug d'auth Google
-                    etait un redirect_uri incorrect (localhost en prod).
-                    Corrige dans route.ts:42. Build OK, deploye."
-```
-
-**Temps total : 8-15 minutes** (vs 1-3 heures manuellement)
+**Temps total typique : 8-15 minutes** (vs 1-3 heures manuellement)
 
 ### Exercice pratique
 
@@ -229,6 +307,43 @@ Comment construire le bot Telegram qui sert de point d'entree a AISB. Configurat
 | Persistance | JSON files + SQLite | Etat des oracles, memoire utilisateur |
 | Monitoring | cron + health checks | Surveillance des sessions actives |
 
+**Architecture modulaire du bot :**
+
+```mermaid
+graph TB
+    subgraph BOT["Bot AISB (Python)"]
+        direction TB
+        MAIN[main.py] --> HANDLERS[handlers.py]
+        MAIN --> COMMANDS[commands.py]
+        MAIN --> MONITOR[monitor.py]
+
+        HANDLERS --> PROCESS[process_prompt.py]
+        PROCESS --> AUTH[auth.py]
+        PROCESS --> SESSIONS[sessions.py]
+        PROCESS --> PROMPTS[prompts.py]
+
+        SESSIONS --> TMUX[tmux_dispatch.py]
+        SESSIONS --> CLAUDE[claude_runner.py]
+
+        MONITOR --> NERVE[nerve.py]
+        MONITOR --> ROUTINES[routines.py]
+
+        MAIN --> FORMATTING[formatting.py]
+        MAIN --> VOICE[voice.py]
+        MAIN --> INTELLIGENCE[intelligence.py]
+        MAIN --> TELEGRAM_UTILS[telegram_utils.py]
+    end
+
+    TG[Telegram API] <--> MAIN
+    TMUX_SYS[Sessions tmux] <--> TMUX
+    CLAUDE_SDK[Claude SDK] <--> CLAUDE
+
+    style BOT fill:#f5f5f5
+    style TG fill:#4a9eff,color:white
+    style TMUX_SYS fill:#66bb6a,color:white
+    style CLAUDE_SDK fill:#ab47bc,color:white
+```
+
 **Structure du projet bot :**
 
 ```
@@ -237,20 +352,28 @@ agentik-monitor/
 │   ├── main.py              # Point d'entree du bot
 │   ├── SOUL.md              # Identite et personnalite du bot
 │   ├── MEMORY.md            # Memoire persistante utilisateur
-│   ├── handlers/
-│   │   ├── message.py       # Handler principal des messages
-│   │   ├── commands.py      # /start, /status, /cancel
-│   │   └── callbacks.py     # Boutons inline Telegram
-│   ├── core/
-│   │   ├── classifier.py    # Classification SIMPLE/MEDIUM/COMPLEX/EPIC
-│   │   ├── enricher.py      # Enrichissement de prompt
-│   │   ├── dispatcher.py    # Dispatch vers Oracle (tmux)
-│   │   └── notifier.py      # Notifications retour Telegram
-│   └── lib/
-│       ├── claude_client.py  # Wrapper Claude SDK
-│       ├── tmux_manager.py   # Gestion sessions tmux
-│       └── state.py          # Gestion etat (JSON/SQLite)
-├── .env                      # TELEGRAM_TOKEN, ANTHROPIC_API_KEY
+│   ├── aisb/
+│   │   ├── __init__.py
+│   │   ├── config.py        # Chargement de la config
+│   │   ├── state.py         # Etat global du bot
+│   │   ├── auth.py          # Verification des users autorises
+│   │   ├── handlers.py      # Handlers Telegram (messages, callbacks)
+│   │   ├── commands.py      # Commandes Telegram (/start, /status)
+│   │   ├── oracle_commands.py # Commandes directes (/dent, /kommu)
+│   │   ├── process_prompt.py  # Routing des messages vers oracles
+│   │   ├── prompts.py       # Templates de prompts
+│   │   ├── sessions.py      # Gestion des sessions tmux
+│   │   ├── tmux_dispatch.py # Interface avec tmux
+│   │   ├── claude_runner.py # Interface avec Claude SDK
+│   │   ├── formatting.py    # Markdown → HTML Telegram
+│   │   ├── telegram_utils.py # Utilitaires Telegram
+│   │   ├── voice.py         # Transcription vocale (Whisper)
+│   │   ├── intelligence.py  # God Mode, evaluation des taches
+│   │   ├── monitor.py       # Boucle de monitoring (30s)
+│   │   ├── nerve.py         # Tracking des taches (AISB Nerve)
+│   │   ├── routines.py      # Taches planifiees
+│   │   └── app.py           # Application Telegram (setup)
+├── .env                     # TELEGRAM_TOKEN, ANTHROPIC_API_KEY
 └── requirements.txt
 ```
 
@@ -278,7 +401,7 @@ Reponds avec UNIQUEMENT un mot : SIMPLE, MEDIUM, COMPLEX, ou EPIC
 
 def classify(task: str, project: str = None) -> str:
     context = get_project_context(project) if project else ""
-    
+
     response = client.messages.create(
         model="claude-sonnet-4-20250514",
         max_tokens=10,
@@ -290,7 +413,7 @@ def classify(task: str, project: str = None) -> str:
             )
         }]
     )
-    
+
     result = response.content[0].text.strip().upper()
     return result if result in ["SIMPLE", "MEDIUM", "COMPLEX", "EPIC"] else "MEDIUM"
 ```
@@ -301,17 +424,17 @@ def classify(task: str, project: str = None) -> str:
 # bot/core/enricher.py
 def enrich_prompt(raw_message: str, user_id: int) -> str:
     """Ajoute le contexte necessaire au message brut."""
-    
+
     # 1. Detecter le projet mentionne
     project = detect_project(raw_message)
-    
+
     # 2. Charger le contexte projet
     project_dir = get_project_dir(project)
     recent_files = get_recent_modified_files(project_dir, limit=10)
-    
+
     # 3. Charger la memoire utilisateur
     user_prefs = load_user_memory(user_id)
-    
+
     # 4. Construire le prompt enrichi
     enriched = f"""
 ## Mission
@@ -334,42 +457,47 @@ def enrich_prompt(raw_message: str, user_id: int) -> str:
     return enriched
 ```
 
-**Le dispatcher vers tmux :**
+**Le service systemd : toujours running**
 
-```python
-# bot/core/dispatcher.py
-import subprocess
+```ini
+# /etc/systemd/system/agentik-monitor-bot.service
+[Unit]
+Description=AISB Telegram Bot
+After=network.target
 
-def dispatch_to_oracle(enriched_prompt: str, project: str) -> str:
-    """Cree une session tmux Oracle et lance Claude Code."""
-    
-    # Generer un nom de session unique
-    session_name = f"oracle-{project}-{get_next_id(project)}"
-    
-    # Ecrire le prompt dans un fichier temporaire
-    prompt_file = f"/tmp/oracle-prompt-{session_name}.md"
-    with open(prompt_file, "w") as f:
-        f.write(enriched_prompt)
-    
-    # Creer la session tmux
-    subprocess.run([
-        "tmux", "new-session", "-d",
-        "-s", session_name,
-        "-x", "220", "-y", "50"
-    ])
-    
-    # Lancer Claude Code
-    cmd = f"claude --model opus --prompt-file {prompt_file}"
-    subprocess.run([
-        "tmux", "send-keys", "-t", session_name,
-        cmd, "Enter"
-    ])
-    
-    # Enregistrer l'oracle dans le registre
-    register_oracle(session_name, project, enriched_prompt)
-    
-    return session_name
+[Service]
+Type=simple
+User=hacker
+WorkingDirectory=/home/hacker/VibeCoding/work/agentik-monitor/bot
+ExecStart=/usr/bin/python3 main.py
+Restart=always
+RestartSec=10
+Environment=PYTHONPATH=/home/hacker/VibeCoding/work/agentik-monitor/bot
+
+[Install]
+WantedBy=multi-user.target
 ```
+
+```bash
+sudo systemctl enable agentik-monitor-bot
+sudo systemctl start agentik-monitor-bot
+sudo systemctl status agentik-monitor-bot  # Verifier
+journalctl -u agentik-monitor-bot -f       # Logs en temps reel
+```
+
+**Configuration Telegram avec Topics :**
+
+Le groupe Telegram avec Topics actives = votre tableau de bord projet.
+
+| Topic | Projet | Usage |
+|-------|--------|-------|
+| General | AISB | Messages systeme, statuts |
+| Topic 27 | DentistryGPT | Tout ce qui concerne DentistryGPT |
+| Topic 28 | Causio | Tout ce qui concerne Causio |
+| Topic 31 | Kommu | Tout ce qui concerne Kommu |
+| Topic 32 | AgentikOS | Tout ce qui concerne AgentikOS |
+
+Chaque projet = 1 topic = 1 fil de conversation isole. Le bot detecte automatiquement le projet a partir du `topic_id`.
 
 ### Exercice pratique
 
@@ -387,21 +515,25 @@ Comment fonctionne le systeme Oracle : creation de sessions tmux a la demande, g
 
 **Le cycle de vie d'un Oracle :**
 
-```
-CREATION          EXECUTION             SHIP              CLOSE
-   │                  │                   │                 │
-   ▼                  ▼                   ▼                 ▼
-dispatch →      decompose →         build OK? →      .done.json →
-tmux new →      spawn workers →     git commit →     AISB patrol →
-register →      coordinate →        git push →       grace window →
-                verify →            deploy →         tmux kill
-                                    verify prod
+```mermaid
+stateDiagram-v2
+    [*] --> Created: dispatch-to-session.sh
+    Created --> Analyzing: Claude Code demarre
+    Analyzing --> Dispatching: Tache decomposee
+    Dispatching --> Monitoring: Workers lances
+    Monitoring --> Verifying: Workers termines
+    Monitoring --> Monitoring: capture-pane (30s)
+    Verifying --> Shipping: /xoxo OK
+    Verifying --> Dispatching: Erreurs trouvees
+    Shipping --> Done: Build + Push + Deploy OK
+    Shipping --> Failed: Deploy echoue
+    Done --> [*]: .done.json (done_clean)
+    Failed --> [*]: .done.json (failed) + freeze
 ```
 
 **Le registre Oracle (JSON) :**
 
 ```json
-// ~/.aisb/oracles/Causio-1.json
 {
   "id": "Causio-1",
   "session": "oracle-Causio-1",
@@ -422,6 +554,45 @@ register →      coordinate →        git push →       grace window →
 }
 ```
 
+**Le workflow Oracle en 5 etapes :**
+
+```mermaid
+graph TB
+    subgraph E1["ETAPE 1 — ANALYSE"]
+        A1[Lire CLAUDE.md] --> A2[Comprendre la tache]
+        A2 --> A3[Decomposer en sous-taches]
+        A3 --> A4[Definir criteres de succes]
+    end
+
+    subgraph E2["ETAPE 2 — DISPATCH"]
+        B1["dispatch-to-session.sh {Projet}-1"] --> B2["Prompt avec contexte complet"]
+        B2 --> B3["Done criteria + verify command"]
+    end
+
+    subgraph E3["ETAPE 3 — MONITORING"]
+        C1["tmux capture-pane (30s)"] --> C2{Status?}
+        C2 -->|"En cours"| C1
+        C2 -->|"Termine"| E4
+        C2 -->|"Erreur"| C3[Intervention]
+    end
+
+    subgraph E4["ETAPE 4 — CLEANUP + VERIFICATION"]
+        D1[Kill workers] --> D2["/xoxo verification"]
+        D2 --> D3{Erreurs?}
+        D3 -->|"Oui (max 3x)"| E2
+        D3 -->|"Non"| E5
+    end
+
+    subgraph E5["ETAPE 5 — GATE + RAPPORT"]
+        F1[npm run build] --> F2[git commit + push]
+        F2 --> F3[Ecrire signal file]
+        F3 --> F4["/exit"]
+    end
+
+    E1 --> E2
+    E2 --> E3
+```
+
 **File ownership — eviter les conflits entre Oracles :**
 
 ```
@@ -436,40 +607,59 @@ Si Oracle 2 essaie de toucher middleware.ts → CONFLIT DETECTE
 → Ou negocier via le registre
 ```
 
-**Le script dispatch-to-session.sh :**
+**Le script dispatch-to-session.sh (le plus important du systeme) :**
 
 ```bash
 #!/bin/bash
-# ~/.claude/lib/dispatch-to-session.sh
-# Usage: dispatch-to-session.sh <session-name> <prompt-file> [model]
-
+# ~/.aisb/lib/dispatch-to-session.sh
+# Usage: dispatch-to-session.sh SESSION_NAME "prompt text" [workdir]
 SESSION="$1"
-PROMPT_FILE="$2"
-MODEL="${3:-opus}"
+PROMPT="$2"
+WORKDIR="${3:-$(pwd)}"
 
-# Verifier si la session existe deja
-if tmux has-session -t "$SESSION" 2>/dev/null; then
-    echo "Session $SESSION existe deja"
-    # Verifier si elle est idle
-    if ~/.claude/lib/worker-alive-check.sh "$SESSION"; then
-        echo "Session active, envoi du message"
-        tmux send-keys -t "$SESSION" "$(cat $PROMPT_FILE)" Enter
-    else
-        echo "Session idle, re-dispatch"
-        tmux kill-session -t "$SESSION"
-        tmux new-session -d -s "$SESSION" -x 220 -y 50
-        tmux send-keys -t "$SESSION" \
-            "claude --model $MODEL --prompt-file $PROMPT_FILE" Enter
-    fi
-else
-    # Creer une nouvelle session
-    tmux new-session -d -s "$SESSION" -x 220 -y 50
-    tmux send-keys -t "$SESSION" \
-        "claude --model $MODEL --prompt-file $PROMPT_FILE" Enter
+# 1. Creer la session si elle n'existe pas
+if ! tmux has-session -t "$SESSION" 2>/dev/null; then
+    tmux new-session -d -s "$SESSION" -c "$WORKDIR"
+    sleep 1
 fi
 
-echo "Dispatched to $SESSION"
+# 2. Lancer Claude Code si pas deja running
+PANE_CMD=$(tmux list-panes -t "$SESSION" -F '#{pane_current_command}')
+if [ "$PANE_CMD" != "claude" ]; then
+    tmux send-keys -t "$SESSION" "claude --dangerously-skip-permissions" Enter
+    sleep 7  # Claude met ~7s a boot
+fi
+
+# 3. Attendre que Claude soit idle (le prompt ">" visible)
+for i in $(seq 1 60); do
+    CAPTURE=$(tmux capture-pane -t "$SESSION" -p -S -3)
+    if echo "$CAPTURE" | grep -q ">"; then
+        break
+    fi
+    sleep 2
+done
+
+# 4. Ecrire le prompt dans un fichier temp
+TMPFILE=$(mktemp /tmp/dispatch-XXXXXX.txt)
+printf '%s' "$PROMPT" > "$TMPFILE"
+
+# 5. Coller via load-buffer (fiable pour les longs prompts)
+tmux send-keys -t "$SESSION" Escape
+tmux send-keys -t "$SESSION" "C-u"  # Clear input
+tmux load-buffer "$TMPFILE"
+tmux paste-buffer -p -t "$SESSION"  # -p = paste literal
+sleep 0.5
+tmux send-keys -t "$SESSION" Enter  # Envoyer !
+
+rm -f "$TMPFILE"
+echo "Dispatched to $SESSION (${#PROMPT} chars)"
 ```
+
+**Points critiques :**
+- `load-buffer` + `paste-buffer -p` au lieu de `send-keys` : `send-keys` tronque apres ~500 chars
+- Sleep 7s apres le demarrage de Claude : le CLI met du temps a boot
+- Detection du prompt ">" pour savoir quand Claude est pret
+- `-p` flag sur `paste-buffer` : preserve les newlines sans les executer
 
 **Le worker-alive-check.sh :**
 
@@ -481,18 +671,15 @@ echo "Dispatched to $SESSION"
 
 SESSION="$1"
 
-# Verifier si la session existe
 if ! tmux has-session -t "$SESSION" 2>/dev/null; then
     exit 0  # Session n'existe pas = safe
 fi
 
-# Verifier l'activite CPU du processus
 PANE_PID=$(tmux list-panes -t "$SESSION" -F '#{pane_pid}' 2>/dev/null)
 if [ -z "$PANE_PID" ]; then
     exit 0
 fi
 
-# Verifier si Claude Code est actif (CPU > 1%)
 CPU=$(ps -p "$PANE_PID" -o %cpu --no-headers 2>/dev/null | tr -d ' ')
 if [ -z "$CPU" ] || (( $(echo "$CPU < 1.0" | bc -l) )); then
     exit 0  # Idle
@@ -511,9 +698,52 @@ exit 1  # Still working
 
 # oracle-list : voir tous les oracles actifs
 ~/.claude/lib/oracle-list.sh
-# oracle-Causio-1    active   "Fix auth Google"    2h15m
-# oracle-DentistryGPT-1  active   "36 tickets Linear"  5h30m
-# oracle-Kommu-1     idle     "Build page Kommu"   done
+# oracle-Causio-1        active   "Fix auth Google"       2h15m
+# oracle-DentistryGPT-1  active   "36 tickets Linear"     5h30m
+# oracle-Kommu-1         idle     "Build page Kommu"      done
+```
+
+**Tableau des Oracles disponibles (configuration reelle Agentik OS) :**
+
+| Session Oracle | Projet | Topic ID | Commande Directe |
+|---------------|--------|----------|------------------|
+| oracle-DentistryGPT | DentistryGPT | 27 | `/dent` |
+| oracle-Causio | Causio | 28 | `/causio` |
+| oracle-Loumna | Loumna | 29 | `/loumna` |
+| oracle-L34D | L34D | 30 | `/l34d` |
+| oracle-Kommu | Kommu | 31 | `/kommu` |
+| oracle-AgentikOS | AgentikOS | 32 | `/agentikos` |
+| oracle-AgentikMonitor | Dashboard | 293 | `/monitor` |
+| oracle-OneLife | OneLife | 303 | `/onelife` |
+| oracle-AI-GenX | AI-GenX | 1925 | `/aigenx` |
+| oracle-AGKT | AGKT | 2103 | `/agkt` |
+| oracle-LaSphere | LaSphere | 2110 | `/lasphere` |
+
+Alias pratiques : `/lawyer` → Causio, `/moon` → Loumna, `/lead` → L34D, `/aos` → AgentikOS
+
+**Ajouter un nouveau projet au systeme :**
+
+```bash
+# 1. Creer le topic dans le groupe Telegram
+#    → Nouveau topic, nommer "MonProjet"
+#    → Noter le topic_id
+
+# 2. Ajouter dans projects.json
+{
+  "topic_id": 999,
+  "name": "MonProjet",
+  "path": "/home/hacker/VibeCoding/work/monprojet",
+  "oracle_session": "oracle-MonProjet",
+  "icon": "rocket",
+  "aliases": ["monprojet", "mp"],
+  "direct_command": "/monprojet"
+}
+
+# 3. Creer le CLAUDE.md du projet
+# 4. Generer le prompt oracle
+~/.aisb/lib/oracle-prompt.sh MonProjet /path/to/monprojet MonProjet
+
+# 5. Tester le flow complet
 ```
 
 ### Exercice pratique
@@ -532,22 +762,54 @@ L'organigramme complet des 281 agents, organises en departements avec une hierar
 
 **L'organigramme Agentik OS :**
 
-```
-                          ┌─────────┐
-                          │   CEO   │
-                          │ /ceo    │
-                          └────┬────┘
-              ┌───────────────┼───────────────┐
-         ┌────┴────┐    ┌────┴────┐    ┌────┴────┐
-         │   CTO   │    │   CMO   │    │   CPO   │
-         │  /cto   │    │  /cmo   │    │  /cpo   │
-         └────┬────┘    └────┬────┘    └────┬────┘
-              │              │              │
-    ┌─────────┼──────┐   ┌──┼──────┐   ┌───┼───────┐
-    │         │      │   │  │      │   │   │       │
- Dev Team  Quality  Sec  Content  Ads  Product  Analytics
- ~50       ~30     ~20  ~40     ~30   ~25      ~20
- agents    agents  agents agents agents agents  agents
+```mermaid
+graph TB
+    CEO["CEO<br/>Coordination strategique"]
+
+    CEO --> CTO["CTO<br/>~117 agents"]
+    CEO --> CMO["CMO<br/>~43 agents"]
+    CEO --> CPO["CPO<br/>~32 agents"]
+
+    CTO --> DEV["dev-lead<br/>~50 agents"]
+    CTO --> QA["qa-lead<br/>~30 agents"]
+    CTO --> SEC["security-lead<br/>~20 agents"]
+    CTO --> DESIGN["design-lead<br/>~17 agents"]
+
+    CMO --> CONTENT["marketing-lead<br/>~28 agents"]
+    CMO --> CREATIVE["creative-lead<br/>~15 agents"]
+
+    CPO --> STRATEGY["strategy-lead<br/>~32 agents"]
+
+    DEV --> D1[react-specialist]
+    DEV --> D2[nextjs-developer]
+    DEV --> D3[convex-expert]
+    DEV --> D4[database-architect]
+    DEV --> D5["+ 46 autres"]
+
+    QA --> Q1[e2e-runner]
+    QA --> Q2[lighthouse-auditor]
+    QA --> Q3[accessibility-auditor]
+    QA --> Q4["+ 27 autres"]
+
+    SEC --> S1[pentester]
+    SEC --> S2[owasp-checker]
+    SEC --> S3[secret-scanner]
+    SEC --> S4["+ 17 autres"]
+
+    CONTENT --> M1[blog-writer]
+    CONTENT --> M2[seo-expert]
+    CONTENT --> M3[email-copywriter]
+    CONTENT --> M4["+ 25 autres"]
+
+    STRATEGY --> ST1[competitor-analyzer]
+    STRATEGY --> ST2[data-analyst]
+    STRATEGY --> ST3[pricing-optimizer]
+    STRATEGY --> ST4["+ 29 autres"]
+
+    style CEO fill:#ff6b6b,color:white
+    style CTO fill:#ffa726,color:white
+    style CMO fill:#4a9eff,color:white
+    style CPO fill:#66bb6a,color:white
 ```
 
 **Les departements et leurs specialistes :**
@@ -557,12 +819,36 @@ L'organigramme complet des 281 agents, organises en departements avec une hierar
 | **Development** | CTO | ~50 | react-specialist, nextjs-developer, convex-expert, database-architect |
 | **Quality** | CTO | ~30 | 16 auditeurs forensiques (code, UX, flow, perf, sec...) |
 | **Security** | CTO | ~20 | pentester, owasp-auditor, secret-scanner |
-| **Content** | CMO | ~40 | seo-expert, blog-writer, copywriter, social-content |
-| **Advertising** | CMO | ~30 | ads-strategist, creative-director, campaign-planner |
-| **Product** | CPO | ~25 | ux-researcher, product-analyst, feature-designer |
-| **Analytics** | CPO | ~20 | data-analyst, roi-calculator, ab-test-designer |
-| **Design** | CTO | ~25 | ui-designer, motion-designer, brand-designer |
-| **DevOps** | CTO | ~15 | deployer, vercel-expert, dns-manager |
+| **Design** | CTO | ~17 | ui-designer, motion-designer, brand-designer |
+| **Content** | CMO | ~28 | seo-expert, blog-writer, copywriter, social-content |
+| **Creative** | CMO | ~15 | ads-strategist, creative-director, campaign-planner |
+| **Strategy** | CPO | ~32 | competitor-analyzer, data-analyst, pricing-optimizer |
+
+**Les 12 agents core AISB (theme Matrix) :**
+
+| Agent | Role | Modele | Tier |
+|-------|------|--------|------|
+| **ORACLE** | Classification et routing des taches | Opus | Core |
+| **MORPHEUS** | Execution et coordination | Opus | Core |
+| **KEYMAKER** | Planification d'implementation | Sonnet | Core |
+| **SERAPH** | Gates de qualite et verification | Sonnet | Core |
+| **SMITH** | Auto-amelioration et apprentissage | Sonnet | Specialiste |
+| **NIOBE** | Recherche profonde et intelligence | Sonnet | Specialiste |
+| **Architect** | Design systeme et infrastructure | Sonnet | Specialiste |
+| **MEROVINGIAN** | Consolidation de connaissances | Haiku | Support |
+| **NEO** | Monitoring de sessions et sante | Haiku | Support |
+| **ZION** | Dashboard metriques et statut | Haiku | Support |
+| **LINK** | Relay de communication (Telegram) | Haiku | Support |
+| **CONSTRUCT** | Setup d'environnement et outils | Haiku | Support |
+
+**Classification des taches :**
+
+| Niveau | Signaux | Action |
+|--------|---------|--------|
+| **SIMPLE** | Typo, config, question rapide | Oracle fait lui-meme (lecture seule) |
+| **MEDIUM** | Multi-fichiers, pattern connu | 1 worker + /team |
+| **COMPLEX** | Multi-domaine, 30min+ | /team avec specialistes |
+| **EPIC** | Cross-departement, heures+ | /aisb full ou /godmode |
 
 **Anatomie d'un agent :**
 
@@ -574,24 +860,16 @@ You are a senior React specialist with 10+ years of experience.
 
 ## Expertise
 - React 19+ (Server Components, Actions, use() hook)
-- Next.js 15+ (App Router, RSC, Streaming)
+- Next.js 16+ (App Router, RSC, Streaming)
 - State management (Zustand, Jotai, React Query)
-- Testing (Vitest, Playwright, React Testing Library)
 
 ## Rules
 1. Always use Server Components by default
 2. Client Components only when interactivity is required
-3. Prefer composition over configuration
-4. TypeScript strict mode mandatory
+3. TypeScript strict mode mandatory
 
 ## Tools
 - Read, Edit, Write, Bash, Grep, Glob
-- Context7 for up-to-date documentation
-
-## Output Format
-- Code changes with explanations
-- Build verification mandatory
-- Git diff summary at the end
 ```
 
 **Anatomie d'un skill :**
@@ -608,51 +886,30 @@ Phase 2: Dependency Dissection (outdated, vulnerable)
 ...
 Phase 23: Final Scoring (/420, normalized /100)
 
-## Scoring Matrix
-| Phase | Weight | Max Score |
-|-------|--------|-----------|
-| Phantom Detection | 2x | 40 |
-| Dependency Health | 3x | 60 |
-...
-
 ## Invocation
 Via Skill tool : /codeaudit --files=src/ --scope="auth module"
 ```
 
-**Creer un nouvel agent :**
+**Les slash commands (arsenal du worker) :**
 
-```bash
-# 1. Creer le repertoire
-mkdir -p ~/.claude/agents/mon-agent/
-
-# 2. Creer le fichier CLAUDE.md
-cat > ~/.claude/agents/mon-agent/CLAUDE.md << 'EOF'
-## Identity
-You are [role] specializing in [domain].
-
-## Expertise
-- [Competence 1]
-- [Competence 2]
-
-## Rules
-1. [Regle 1]
-2. [Regle 2]
-
-## Output Format
-[Format de sortie attendu]
-EOF
-
-# 3. Tester l'agent
-claude --agent mon-agent "Test avec une tache simple"
-```
+| Commande | Agents | Usage |
+|----------|--------|-------|
+| `/team [tache]` | 3-6 senior | DEFAULT — 90% des taches |
+| `/ralph [tache]` | 1 autonome | Tache simple ou longue en background |
+| `/godmode [tache]` | Autonomie totale | Missions de plusieurs heures |
+| `/hunt-all` | 13 hunters | Audit complet de bugs |
+| `/xoxo [scope]` | Verification profonde | Avant production |
+| `/verify [scope]` | Verification rapide | Apres fix |
+| `/build` | Pipeline | Build + deploy en prod |
+| `/planner` | DAG | Planification step-by-step |
 
 ### Exercice pratique
 
-Creez 3 agents specialises pour vos besoins : un developpeur (adapte a votre stack), un auditeur qualite (avec grille de scoring), et un redacteur (avec votre tone of voice). Testez chacun avec une tache representive de votre quotidien.
+Creez 3 agents specialises pour vos besoins : un developpeur (adapte a votre stack), un auditeur qualite (avec grille de scoring), et un redacteur (avec votre tone of voice). Testez chacun avec une tache representative de votre quotidien.
 
 ---
 
-## Lecon 6 — Le pipeline AISB : ROUTE → KEYMAKER → MORPHEUS → SERAPH → SMITH
+## Lecon 6 — Le pipeline AISB : ROUTE, KEYMAKER, MORPHEUS, SERAPH, SMITH
 
 ### Ce que vous allez apprendre
 
@@ -662,12 +919,19 @@ Le pipeline complet d'execution d'AISB, inspire de la matrice. Chaque etape du p
 
 **Le pipeline AISB en 5 etapes :**
 
-```
-┌──────────┐    ┌───────────┐    ┌──────────┐    ┌────────┐    ┌───────┐
-│  ROUTE   │ →  │ KEYMAKER  │ →  │ MORPHEUS │ →  │ SERAPH │ →  │ SMITH │
-│ Classify │    │   Plan    │    │ Execute  │    │ Audit  │    │ Learn │
-│ & Route  │    │ & Design  │    │ & Build  │    │& Verify│    │& Store│
-└──────────┘    └───────────┘    └──────────┘    └────────┘    └───────┘
+```mermaid
+graph LR
+    R["ROUTE<br/>(ORACLE)<br/>Classify & Route"] --> K["KEYMAKER<br/>Plan & Design<br/>DAG de taches"]
+    K --> M["MORPHEUS<br/>Execute & Build<br/>/team dispatch"]
+    M --> SE["SERAPH<br/>Audit & Verify<br/>Default = FAIL"]
+    SE -->|"PASS"| SM["SMITH<br/>Learn & Store<br/>Patterns"]
+    SE -->|"FAIL"| M
+
+    style R fill:#ff6b6b,color:white
+    style K fill:#ffa726,color:white
+    style M fill:#4a9eff,color:white
+    style SE fill:#66bb6a,color:white
+    style SM fill:#ab47bc,color:white
 ```
 
 **ROUTE — Le classificateur intelligent :**
@@ -675,18 +939,18 @@ Le pipeline complet d'execution d'AISB, inspire de la matrice. Chaque etape du p
 ```python
 def route(message: str) -> dict:
     """Classifie et route la tache."""
-    
+
     classification = classify(message)  # SIMPLE/MEDIUM/COMPLEX/EPIC
     project = detect_project(message)
     intent = detect_intent(message)     # fix, build, audit, deploy, research
-    
+
     routing = {
         "SIMPLE": {"handler": "direct", "agents": 0},
         "MEDIUM": {"handler": "single_oracle", "agents": 1},
-        "COMPLEX": {"handler": "oracle_team", "agents": 3-5},
-        "EPIC": {"handler": "multi_oracle", "agents": 5-15},
+        "COMPLEX": {"handler": "oracle_team", "agents": "3-5"},
+        "EPIC": {"handler": "multi_oracle", "agents": "5-15"},
     }
-    
+
     return {
         "classification": classification,
         "project": project,
@@ -708,16 +972,16 @@ Keymaker decompose :
     Task 1.1 : Schema Convex (notifications table) → convex-expert
     Task 1.2 : Mutation createNotification → convex-expert
     Task 1.3 : Query getUnreadNotifications → convex-expert
-  
+
   Milestone 2 : Frontend notifications
     Task 2.1 : NotificationBell component → react-specialist
     Task 2.2 : NotificationPanel dropdown → react-specialist
     Task 2.3 : Real-time subscription hook → react-specialist
-  
+
   Milestone 3 : Integration et tests
-    Task 3.1 : Integration backend ↔ frontend → fullstack
+    Task 3.1 : Integration backend <-> frontend → fullstack
     Task 3.2 : Tests E2E → testing-specialist
-  
+
   Milestone 4 : Audit et deploy
     Task 4.1 : Code audit → /codeaudit
     Task 4.2 : UX audit → /uiuxaudit
@@ -734,20 +998,16 @@ Morpheus dispatche les taches du plan Keymaker, une par une (code) ou en paralle
 ```
 Execution sequentielle (code) :
   Task 1.1 → build OK → Task 1.2 → build OK → Task 1.3 → build OK
-  Task 2.1 → build OK → Task 2.2 → build OK → Task 2.3 → build OK
 
 Execution parallele (audits) :
   Task 4.1 ──┐
-  Task 4.2 ──┼── Tous en parallele
-  Task 4.3 ──┘   (chacun dans sa session tmux)
+  Task 4.2 ──┼── Tous en parallele (chacun dans sa session tmux)
+  Task 4.3 ──┘
 ```
 
 **SERAPH — L'auditeur final :**
 
-Seraph execute les audits forensiques et verifie que TOUT est correct avant le ship.
-
-```
-Audits SERAPH par type de mission :
+Seraph execute les audits forensiques et verifie que TOUT est correct avant le ship. Son default verdict est FAIL — il faut prouver la qualite, pas l'absence de problemes.
 
 | Type de mission | Audits obligatoires | Seuil minimum |
 |-----------------|--------------------|--------------:|
@@ -756,7 +1016,6 @@ Audits SERAPH par type de mission :
 | Refactoring     | codeaudit          | 85/100        |
 | Full build      | les 16 audits      | 70/100 chacun |
 | Linear tickets  | codeaudit + uiuxaudit + flowaudit + perfaudit | 80/100 chacun |
-```
 
 **SMITH — L'apprenant :**
 
@@ -765,7 +1024,7 @@ Smith analyse les resultats de chaque mission et stocke les apprentissages pour 
 ```python
 def smith_learn(mission_report: dict):
     """Analyse une mission terminee et extrait les apprentissages."""
-    
+
     learnings = {
         "project": mission_report["project"],
         "duration": mission_report["duration_sec"],
@@ -773,10 +1032,10 @@ def smith_learn(mission_report: dict):
         "patterns_detected": detect_patterns(mission_report),
         "improvements": suggest_improvements(mission_report),
     }
-    
+
     # Stocker dans la memoire agent
     save_to_memory(f"~/.aisb/memory/project/{learnings['project']}/", learnings)
-    
+
     # Mettre a jour les regles si necessaire
     if learnings["errors_encountered"]:
         update_rules(learnings)
@@ -798,37 +1057,55 @@ Les 3 Lois fondamentales qui gouvernent le comportement de chaque agent dans AIS
 
 **Les 3 Lois d'Agentik OS :**
 
-```
-┌─────────────────────────────────────────────────────┐
-│  1ere LOI — RUNTIME TRUTH                           │
-│  "Le code ment. Les commentaires mentent.           │
-│   Seul le runtime dit la verite."                   │
-│                                                     │
-│  → Toujours verifier avec des preuves concretes     │
-│  → Logs > code, screenshots > descriptions          │
-│  → Avant le 3eme changement sur un meme bug :       │
-│    OBLIGATOIRE d'avoir des preuves runtime           │
-├─────────────────────────────────────────────────────┤
-│  2eme LOI — RESEARCH MINDSET                        │
-│  "Etre un chercheur, pas un sycophante."            │
-│                                                     │
-│  → Challenger les hypotheses avant de coder          │
-│  → Pousser back avec du raisonnement                │
-│  → Trouver les causes racines, pas les symptomes    │
-│  → Test de Popper : "Qu'est-ce qui falsifierait     │
-│    ma conclusion ?"                                 │
-├─────────────────────────────────────────────────────┤
-│  3eme LOI — AUTONOMOUS EXECUTION                    │
-│  "Challenger + DECIDER + Executer. JAMAIS attendre."│
-│                                                     │
-│  → Un agent qui pose une question et attend = casse │
-│  → Detecter le probleme → Decider la meilleure      │
-│    approche → Executer immediatement                │
-│  → Le SEUL arret legal : .done.json                 │
-└─────────────────────────────────────────────────────┘
+```mermaid
+graph TB
+    subgraph L1["1ere LOI — RUNTIME TRUTH"]
+        direction LR
+        L1A["Le code ment"] --> L1B["Les commentaires mentent"]
+        L1B --> L1C["Seul le runtime dit la verite"]
+    end
+
+    subgraph L2["2eme LOI — RESEARCH MINDSET"]
+        direction LR
+        L2A["Challenger les hypotheses"] --> L2B["Trouver les causes racines"]
+        L2B --> L2C["Test de Popper sur chaque conclusion"]
+    end
+
+    subgraph L3["3eme LOI — AUTONOMOUS EXECUTION"]
+        direction LR
+        L3A["Detecter le probleme"] --> L3B["DECIDER la meilleure approche"]
+        L3B --> L3C["Executer IMMEDIATEMENT"]
+    end
+
+    L1 --> L2
+    L2 --> L3
+
+    style L1 fill:#ff6b6b,color:white
+    style L2 fill:#ffa726,color:white
+    style L3 fill:#66bb6a,color:white
 ```
 
-**L'incident de la 3eme Loi (15 avril 2026) :**
+**1ere Loi — Runtime Truth**
+
+- Toujours verifier avec des preuves concretes
+- Logs > code, screenshots > descriptions
+- Avant le 3eme changement sur un meme bug : OBLIGATOIRE d'avoir des preuves runtime
+- `npm run build` pour verifier les erreurs
+- `console.log` / logs serveur pour le comportement reel
+- Screenshots Playwright pour l'etat visuel
+- NE JAMAIS faire confiance aux commentaires ou a la doc
+
+**2eme Loi — Research Mindset**
+
+- Etre un chercheur, pas un sycophante
+- Challenger les hypotheses avant de coder
+- Pousser back avec du raisonnement
+- Trouver les causes racines, pas les symptomes
+- Test de Popper : "Qu'est-ce qui falsifierait ma conclusion ?"
+
+**3eme Loi — Autonomous Execution**
+
+**L'incident fondateur (15 avril 2026) :**
 
 Un Worker recoit la mission "Fix les 36 tickets Linear sur DentistryGPT". Il detecte correctement (2eme Loi) que 25 des tickets sont deja resolus et en attente de review manuelle. Au lieu de decider quoi faire et d'executer, il poste :
 
@@ -844,51 +1121,19 @@ Et attend. Pendant 10+ minutes. Gareth ne regarde pas le tmux. Le systeme est bl
 
 **La regle qui en decoule :**
 
-```python
-# Dans chaque prompt Worker, cette instruction est injectee :
+```mermaid
+graph TD
+    START[Agent detecte un probleme] --> ANALYZE[Analyser le probleme]
+    ANALYZE --> STATE["Enoncer le probleme corrige<br/>(1-3 lignes)"]
+    STATE --> DECIDE["Choisir la meilleure approche<br/>(votre recommandation gagne)"]
+    DECIDE --> EXECUTE[Executer IMMEDIATEMENT]
+    EXECUTE --> REPORT["Rapporter APRES<br/>(pas avant)"]
 
-AUTONOMY_RULE = """
-INTERDIT dans les sessions Worker :
-- "Quelle option ?" / "Confirmer ?" / "Dois-je continuer ?"
-- Toute pause qui attend une reponse humaine
+    FORBIDDEN["INTERDIT :<br/>- 'Quelle option ?'<br/>- 'Confirmer ?'<br/>- 'Dois-je continuer ?'<br/>- Toute pause"]
 
-OBLIGATOIRE :
-1. Detecter le probleme
-2. Enoncer le probleme corrige (1-3 lignes)
-3. Choisir la meilleure approche (votre recommandation gagne par defaut)
-4. Executer immediatement
-5. Rapporter APRES que le travail est fait
-
-En cas de doute : DECIDER. Une mauvaise decision qui produit des preuves
-vaut 100x mieux qu'une pause qui ne produit rien.
-"""
-```
-
-**Implementation des 3 Lois dans les prompts agents :**
-
-```markdown
-# Template de prompt Worker (injecte automatiquement)
-
-## Les 3 Lois (NON NEGOCIABLES)
-
-### Loi 1 — Runtime Truth
-Avant toute conclusion, observe le runtime :
-- `npm run build` pour verifier les erreurs
-- `console.log` / logs serveur pour le comportement reel
-- Screenshots Playwright pour l'etat visuel
-- NE JAMAIS faire confiance aux commentaires ou a la doc
-
-### Loi 2 — Research Mindset
-- Lis le code AVANT de modifier
-- Forme une hypothese AVANT de coder
-- Si l'approche du user est mauvaise, dis-le AVANT
-- Chaque conclusion doit passer le test de Popper
-
-### Loi 3 — Autonomous Execution
-- Tu es dispatche. L'utilisateur ne regarde PAS.
-- JAMAIS de question. JAMAIS d'attente.
-- Detecte → Decide → Execute → Rapporte
-- Seul arret legal : .done.json avec status
+    style FORBIDDEN fill:#ff0000,color:white
+    style DECIDE fill:#66bb6a,color:white
+    style EXECUTE fill:#4a9eff,color:white
 ```
 
 **Les defaults de decision (quand un Worker hesite) :**
@@ -899,6 +1144,23 @@ Avant toute conclusion, observe le runtime :
 | Petit batch safe vs grand batch risque | Petit batch | Minimise les risques |
 | Ma recommandation vs l'alternative | Ma recommandation | L'agent est l'expert |
 | Logger + continuer vs pauser + demander | Logger + continuer | L'autonomie est non-negociable |
+
+**Le fallback protocol (cas vraiment ambigu) :**
+
+Si un agent est genuinement bloque (credentials manquants, operation destructive), il ecrit un fichier JSON :
+
+```json
+{
+  "session": "Causio-fix-auth",
+  "blocked_at": "2026-04-16T10:30:00Z",
+  "question": "Ce qui est ambigu",
+  "best_guess": "Ce que je pense etre la bonne reponse",
+  "fallback_action": "Ce que je fais en attendant",
+  "can_resume_without_answer": true
+}
+```
+
+Puis execute le fallback. Le patrol AISB detecte le fichier et notifie l'utilisateur. L'agent ne s'arrete JAMAIS.
 
 ### Exercice pratique
 
@@ -916,19 +1178,34 @@ Le pipeline de deploiement automatise (ship pipeline), le protocole de fin de mi
 
 **Le ship pipeline en 12 etapes :**
 
-```
-┌─ 1. npm run build (ou script projet) ─── FAIL → status=failed, EXIT
-├─ 2. git add (fichiers declares dans files_owned) ─── extra file → ABORT
-├─ 3. gitleaks detect --staged ─── secret detecte → ABORT + alerte
-├─ 4. git diff --cached --check ─── whitespace → fix ou abort
-├─ 5. git commit -m "conventional commit message"
-├─ 6. flock ship-<project>.lock ─── serialise entre oracles
-├─ 7. Check ship-<project>.frozen ─── frozen → ABORT + alerte
-├─ 8. git pull --rebase ─── conflit → ABORT, garde le commit local
-├─ 9. git push
-├─ 10. Deploy (Vercel / script projet)  ─── FAIL → freeze + alerte
-├─ 11. Poll deploy status (max 10min) ─── READY → OK ; ERROR → freeze
-└─ 12. Write .done.json avec commit, URL, status
+```mermaid
+graph TB
+    S1["1. npm run build"] -->|FAIL| FAILED["status=failed, EXIT"]
+    S1 -->|OK| S2["2. git add (files_owned)"]
+    S2 -->|"extra file"| ABORT1["ABORT"]
+    S2 -->|OK| S3["3. gitleaks detect --staged"]
+    S3 -->|"secret detecte"| ABORT2["ABORT + alerte"]
+    S3 -->|OK| S4["4. git diff --cached --check"]
+    S4 -->|OK| S5["5. git commit"]
+    S5 --> S6["6. flock ship-project.lock"]
+    S6 --> S7{"7. ship-project.frozen?"}
+    S7 -->|"OUI"| ABORT3["ABORT + alerte"]
+    S7 -->|"NON"| S8["8. git pull --rebase"]
+    S8 -->|"conflit"| ABORT4["ABORT, garde commit"]
+    S8 -->|OK| S9["9. git push"]
+    S9 --> S10["10. Deploy Vercel"]
+    S10 -->|FAIL| FREEZE["FREEZE + alerte"]
+    S10 -->|OK| S11["11. Poll deploy (max 10min)"]
+    S11 -->|READY| S12["12. Write .done.json"]
+    S11 -->|ERROR| FREEZE
+
+    style FAILED fill:#ff0000,color:white
+    style ABORT1 fill:#ff6b6b,color:white
+    style ABORT2 fill:#ff6b6b,color:white
+    style ABORT3 fill:#ff6b6b,color:white
+    style ABORT4 fill:#ff6b6b,color:white
+    style FREEZE fill:#ff9800,color:white
+    style S12 fill:#66bb6a,color:white
 ```
 
 **Le schema done.json :**
@@ -966,49 +1243,55 @@ Le pipeline de deploiement automatise (ship pipeline), le protocole de fin de mi
 
 **L'arbre de decision de fermeture (AISB patrol) :**
 
-```
-AISB patrol (boucle toutes les 60s) :
-  │
-  ├─ Lit ~/.aisb/state/oracle-*.done.json
-  │
-  ├─ status == done_clean && ship.result == ok|skipped ?
-  │   ├─ OUI → Envoyer rapport Telegram
-  │   │        → Verifier skip-close conditions :
-  │   │            lifecycle == ephemeral ? → Close immediatement
-  │   │            > 3 oracles sur le projet ? → Close immediatement
-  │   │            RAM libre < 2GB ? → Close immediatement
-  │   │        → Sinon : grace window = now + 5 minutes
-  │   │            Si user envoie un message pendant la window → +15min
-  │   │            Sinon → tmux kill-session
-  │   │
-  │   └─ NON → ship.result == failed|frozen ?
-  │       ├─ OUI → Rapport + alerte freeze → GARDER l'Oracle vivant
-  │       └─ NON → status == pending ?
-  │           ├─ OUI → Rapport + pending_actions → bouton "continuer"
-  │           └─ NON → status == failed ?
-  │               └─ OUI → Logs d'erreur → GARDER vivant
-  │
-  └─ Pas de .done.json ? → L'Oracle travaille encore, ne rien faire
+```mermaid
+graph TD
+    PATROL["AISB Patrol<br/>(boucle 60s)"] --> READ["Lire oracle-*.done.json"]
+    READ --> CHECK{status?}
+
+    CHECK -->|done_clean| SHIP_CHECK{"ship.result?"}
+    SHIP_CHECK -->|"ok/skipped"| REPORT["Envoyer rapport Telegram"]
+    SHIP_CHECK -->|"failed/frozen"| KEEP_ALIVE["GARDER Oracle vivant<br/>+ alerte freeze"]
+
+    REPORT --> SKIP{"Skip-close?"}
+    SKIP -->|"lifecycle=ephemeral"| CLOSE_NOW["Close immediatement"]
+    SKIP -->|">3 oracles"| CLOSE_NOW
+    SKIP -->|"RAM < 2GB"| CLOSE_NOW
+    SKIP -->|"Normal"| GRACE["Grace window 5min"]
+
+    GRACE --> USER_MSG{"User message<br/>pendant window?"}
+    USER_MSG -->|"OUI"| EXTEND["+15min"]
+    USER_MSG -->|"NON"| KILL["tmux kill-session"]
+
+    CHECK -->|pending| PENDING["Rapport + pending_actions<br/>+ bouton 'continuer'"]
+    CHECK -->|failed| ERROR["Logs d'erreur<br/>GARDER vivant"]
+
+    style CLOSE_NOW fill:#66bb6a,color:white
+    style KILL fill:#66bb6a,color:white
+    style KEEP_ALIVE fill:#ff6b6b,color:white
+    style ERROR fill:#ff6b6b,color:white
 ```
 
 **Le systeme de freeze :**
 
+En cas d'echec de deploiement :
 ```bash
-# En cas d'echec de deploiement :
 touch ~/.aisb/locks/ship-Causio.frozen
 
 # Tous les oracles sur Causio sont bloques de push
-# Jusqu'a ce que :
-#   1. Le freeze soit leve manuellement
-#   2. Ou le probleme soit resolu et le fichier supprime
-
-# Verification dans le ship pipeline :
-if [ -f ~/.aisb/locks/ship-${PROJECT}.frozen ]; then
-    echo "FROZEN: Deploy precedent a echoue. Push interdit."
-    echo "Lever le freeze : rm ~/.aisb/locks/ship-${PROJECT}.frozen"
-    exit 1
-fi
+# Jusqu'a ce que le freeze soit leve manuellement :
+rm ~/.aisb/locks/ship-Causio.frozen
 ```
+
+Politique par defaut : **freeze, ne pas rollback**. Le rollback automatique est lui-meme destructif et peut masquer la vraie cause (variable d'environnement manquante, panne Vercel, etc.).
+
+**Quand le ship pipeline est active :**
+
+| Mission contient | ship = true |
+|-----------------|-------------|
+| `ship`, `deploy`, `push`, `merge` | Oui |
+| `/linear fix` (resolution tickets) | Oui (toujours) |
+| Audits (`/codeaudit`, `/uiuxaudit`) | Non (lecture seule) |
+| Recherche, exploration, planning | Non |
 
 ### Exercice pratique
 
@@ -1047,37 +1330,49 @@ Les 16 audits forensiques du Quality Arsenal, leur methodologie commune (Gestalt
 
 **La methodologie Gestalt-Popper :**
 
-```
-GESTALT (perception holistique) :
-  → Regarder le systeme comme un tout
-  → Identifier les patterns visuels, structurels, comportementaux
-  → "L'ensemble est plus que la somme des parties"
-  → Chaque phase evalue un aspect du tout
+```mermaid
+graph LR
+    subgraph GESTALT["GESTALT (perception holistique)"]
+        G1["Regarder le systeme<br/>comme un tout"]
+        G2["Identifier les patterns<br/>visuels, structurels"]
+        G3["L'ensemble > somme<br/>des parties"]
+    end
 
-POPPER (falsification scientifique) :
-  → Pour chaque affirmation positive, chercher ce qui la falsifierait
-  → "Ce code est securise" → "Qu'est-ce qui prouverait le contraire ?"
-  → Pas de "ca a l'air bon" — des preuves refutables
-  → Le Hinge Point : le point unique qui changerait tout le score
+    subgraph POPPER["POPPER (falsification)"]
+        P1["Pour chaque affirmation<br/>positive"]
+        P2["Chercher ce qui<br/>la falsifierait"]
+        P3["Pas de 'ca a l'air bon'<br/>— des preuves"]
+    end
 
-Combine :
-  Gestalt repere les problemes → Popper les prouve → Score objectif
+    subgraph HINGE["HINGE POINT"]
+        H1["Le point unique<br/>qui changerait tout"]
+        H2["10x scrutiny sur<br/>ce point"]
+    end
+
+    GESTALT --> |"repere les problemes"| POPPER
+    POPPER --> |"les prouve"| HINGE
+    HINGE --> SCORE["Score objectif /100"]
+
+    style GESTALT fill:#4a9eff,color:white
+    style POPPER fill:#ff6b6b,color:white
+    style HINGE fill:#ffa726,color:white
+    style SCORE fill:#66bb6a,color:white
 ```
 
 **Le systeme de scoring normalise :**
 
 ```
 Score brut = Somme des scores par phase (chacune ponderee)
-Score normalise = (score_brut / score_max) × 100
+Score normalise = (score_brut / score_max) x 100
 
 Exemple /codeaudit :
-  Phase 1: Phantom Detection     → 35/40  (poids 2x)
-  Phase 2: Dependency Health      → 50/60  (poids 3x)
+  Phase 1:  Phantom Detection     → 35/40  (poids 2x)
+  Phase 2:  Dependency Health      → 50/60  (poids 3x)
   ...
   Phase 23: Final Integration     → 15/20  (poids 1x)
-  
+
   Score brut : 340/420
-  Score normalise : (340/420) × 100 = 80.9/100
+  Score normalise : (340/420) x 100 = 80.9/100
 
 Interpretation :
   90-100 : Excellent — production-ready
@@ -1094,10 +1389,9 @@ Audit initial → Score 72/100
   │
   ├─ Problemes identifies (avec fichier:ligne:fix)
   │
-  ├─ Auto-fix : l'audit corrige automatiquement les problemes
-  │              qu'il peut resoudre sans risque
+  ├─ Auto-fix : l'audit corrige les problemes sans risque
   │
-  ├─ Re-audit : relance les phases impactees par les fixes
+  ├─ Re-audit : relance les phases impactees
   │
   └─ Score final : 88/100 (amelioration de +16 points)
 ```
@@ -1112,7 +1406,7 @@ for audit in audits_to_run:
     session = f"{project}-audit-{audit}"
     prompt = f"""
     /{audit} --files={files_changed} --scope="{scope}"
-    
+
     DONE CRITERIA: Audit complete avec score /100
     VERIFY: cat /tmp/{audit}-report.json | jq '.score'
     """
@@ -1134,11 +1428,244 @@ Lancez 3 audits sur votre projet : `/codeaudit`, `/perfaudit`, et `/secaudit`. A
 
 ---
 
-## Lecon 10 — Deployer ton propre AISB : de zero a l'autonomie complete
+## Lecon 10 — Monitoring, heartbeat et God Mode
 
 ### Ce que vous allez apprendre
 
-Le guide pas-a-pas pour deployer votre propre systeme AISB sur un VPS, de l'installation initiale au premier message Telegram qui declenche un deploiement automatique. Checklist complete, erreurs courantes, et optimisations.
+Le systeme de monitoring en temps reel d'AISB, le heartbeat pour detecter les agents defaillants, le God Mode pour les missions autonomes de plusieurs heures, et le reply-based routing pour les conversations multi-projets.
+
+### Contenu detaille
+
+**Le systeme de monitoring :**
+
+```mermaid
+graph TB
+    subgraph MONITOR["Boucle de monitoring (30s)"]
+        M1["Scanner sessions tmux"] --> M2["Mettre a jour le registry"]
+        M2 --> M3["Verifier les heartbeats"]
+        M3 --> M4["Detecter transitions working → idle"]
+        M4 --> M5["Envoyer notifications"]
+        M5 -->|"sleep 30s"| M1
+    end
+
+    REG["/tmp/aisb-sessions.json"] <--> M2
+    HB["~/.aisb/heartbeats/*.beat"] <--> M3
+    TG["Telegram DM"] <-- M5
+
+    style MONITOR fill:#f5f5f5
+    style TG fill:#4a9eff,color:white
+```
+
+**Le Session Registry :**
+
+```json
+{
+  "oracle-Kommu": {
+    "status": "working",
+    "project": "Kommu",
+    "started": "2026-04-02T10:30:00",
+    "workers": ["Kommu-1", "Kommu-2"]
+  }
+}
+```
+
+**Le systeme de heartbeat :**
+
+```bash
+# Chaque oracle envoie un heartbeat toutes les 30s
+~/.aisb/lib/heartbeat.sh beat oracle-Kommu
+
+# Timeout : 2 minutes sans beat = session consideree morte
+~/.aisb/lib/heartbeat.sh status
+```
+
+**God Mode — l'autonomie totale :**
+
+God Mode transforme l'oracle en agent 100% autonome. Il planifie, execute, verifie, itere — sans aucune intervention humaine.
+
+| Mode | Intervention | Duree | Usage |
+|------|-------------|-------|-------|
+| Normal | L'utilisateur envoie chaque tache | Minutes | Taches ponctuelles |
+| God Mode | Zero input apres lancement | Heures | Features completes, refactoring |
+
+**La machine a etats de God Mode :**
+
+```mermaid
+stateDiagram-v2
+    [*] --> PLANNING: Lancement God Mode
+    PLANNING --> WORKING: Plan cree par /planner
+
+    WORKING --> VERIFYING: Phase terminee
+    VERIFYING --> WORKING: Erreurs trouvees (max 3x)
+    VERIFYING --> NEXT_PHASE: /xoxo OK
+
+    NEXT_PHASE --> WORKING: Phase suivante
+    NEXT_PHASE --> SHIPPING: Toutes phases terminees
+
+    SHIPPING --> DONE: Build + Push + Deploy OK
+    SHIPPING --> FAILED: Echec deploy
+
+    DONE --> [*]: .done.json (done_clean)
+    FAILED --> [*]: .done.json (failed)
+```
+
+Le flow God Mode :
+1. READ : cat CLAUDE.md + Vision/*.md
+2. PLAN : /planner (25 taches/phase, description 80+ chars)
+3. EXECUTE phase par phase :
+   a) Dispatch chaque tache via dispatch-to-session.sh
+   b) Monitor workers
+   c) KILL TOUTES les sessions workers quand done
+   d) Verifier /xoxo, kill verify session
+   e) npm run build, git commit
+   f) Phase suivante
+4. FINISH : signal file + /exit
+
+**Reply-based routing (conversations multi-projets) :**
+
+```python
+# Quand AISB envoie un rapport, il tracke le message_id
+report_message_map = {}
+
+# Apres envoi du rapport :
+msg = await send_telegram(gareth_id, report_html)
+report_message_map[msg.message_id] = "Kommu"
+
+# Quand l'utilisateur repond au rapport :
+if message.reply_to_message:
+    project = report_message_map.get(message.reply_to_message.id)
+    if project:
+        dispatch_to_oracle(project, message.text)
+```
+
+Cela permet des conversations multi-projets en DM : chaque reply est automatiquement route au bon oracle, sans besoin de repeter le nom du projet.
+
+**Dispatch multi-projet en parallele :**
+
+```
+"Mettez a jour l'auth dans Kommu, DentistryGPT et L34D"
+↓
+detect_multi_project detecte 3 keywords
+↓
+dispatch en parallele :
+→ oracle-Kommu : "Update auth system"
+→ oracle-DentistryGPT : "Update auth system"
+→ oracle-L34D : "Update auth system"
+↓
+3 rapports arrivent en DM, reply-routable individuellement
+```
+
+### Exercice pratique
+
+Implementez un heartbeat basique et un session registry scanner. Testez la detection de signal file. Simulez un oracle mort et verifiez la detection. Configurez God Mode sur un projet simple et observez le cycle complet.
+
+---
+
+## Lecon 11 — Hooks, MCP et scheduling : l'automatisation avancee
+
+### Ce que vous allez apprendre
+
+Le systeme de hooks de Claude Code pour intercepter et automatiser chaque action, le protocole MCP pour connecter Claude a des systemes externes, et les 3 modes de scheduling pour les taches recurrentes.
+
+### Contenu detaille
+
+**Le systeme de hooks :**
+
+Les hooks sont le mecanisme de controle le plus puissant de Claude Code. Ils interceptent chaque evenement du cycle de vie d'un agent.
+
+```json
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [{
+          "type": "command",
+          "command": "~/.claude/hooks/validate-bash.sh"
+        }]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [{
+          "type": "command",
+          "command": "~/.claude/hooks/log-file-changes.sh",
+          "async": true
+        }]
+      }
+    ]
+  }
+}
+```
+
+**Les evenements de hooks disponibles :**
+
+| Evenement | Declenchement | Usage |
+|-----------|---------------|-------|
+| `SessionStart` | Demarrage ou reprise | Injection de contexte |
+| `UserPromptSubmit` | Soumission d'un prompt | Validation de conformite |
+| `PreToolUse` | Avant execution d'un outil | Validation, blocage |
+| `PostToolUse` | Apres execution reussie | Formatting, tests, logs |
+| `PostToolUseFailure` | Apres echec d'un outil | Alerting, retry |
+| `Stop` | Claude termine sa reponse | Gate qualite |
+| `SubagentStart` | Lancement d'un sous-agent | Tracking des couts |
+| `TaskCompleted` | Completion d'une tache | Validation |
+
+**Le protocole MCP (Model Context Protocol) :**
+
+MCP est le protocole standard d'Anthropic pour connecter Claude a des sources de donnees externes.
+
+```json
+{
+  "mcpServers": {
+    "slack": {
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-slack"],
+      "env": { "SLACK_BOT_TOKEN": "$SLACK_BOT_TOKEN" }
+    },
+    "linear": {
+      "command": "npx",
+      "args": ["@linear/linear-mcp-server"],
+      "env": { "LINEAR_API_KEY": "$LINEAR_API_KEY" }
+    },
+    "postgres": {
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-postgres",
+               "postgresql://user:pass@localhost/db"]
+    }
+  }
+}
+```
+
+**Les 3 modes de scheduling :**
+
+| Mode | Intervalle min | Machine requise | Persistance |
+|------|---------------|----------------|-------------|
+| Cloud (`/schedule`) | 1 heure | Non | Permanente |
+| Desktop | 1 minute | Oui | Permanente |
+| `/loop` (session) | 1 minute | Oui | Session uniquement |
+
+**Patterns d'automatisation enterprise :**
+
+| Pattern | Mode | Frequence | Action |
+|---------|------|-----------|--------|
+| Morning Briefing | Cloud | Quotidien 7h | Synthese multi-departement |
+| Audit securite | Cloud | Hebdo lundi 2h | Scanner deps NPM/Python |
+| Monitoring KPI | /loop | 30 min | Verifier KPIs, alerter si hors seuil |
+| Doc auto-sync | Cloud | Sur merge main | Mettre a jour la documentation |
+
+### Exercice pratique
+
+Configurez 3 hooks pour votre projet : un `PreToolUse` qui bloque les commandes destructives, un `PostToolUse` qui log les modifications de fichiers, et un `Stop` qui verifie que le build passe. Testez chaque hook et verifiez qu'il fonctionne correctement.
+
+---
+
+## Lecon 12 — Deployer ton propre AISB : de zero a l'autonomie complete
+
+### Ce que vous allez apprendre
+
+Le guide pas-a-pas pour deployer votre propre systeme AISB sur un VPS, de l'installation initiale au premier message Telegram qui declenche un deploiement automatique.
 
 ### Contenu detaille
 
@@ -1149,31 +1676,25 @@ Le guide pas-a-pas pour deployer votre propre systeme AISB sur un VPS, de l'inst
 | **VPS** | 4 CPU, 16GB RAM | 8 CPU, 32GB RAM | 8 CPU, 64GB RAM |
 | **Stockage** | 100GB SSD | 250GB NVMe | 500GB NVMe |
 | **OS** | Ubuntu 22.04+ | Ubuntu 24.04 | Ubuntu 24.04 |
-| **Reseau** | 100Mbps | 1Gbps | 1Gbps |
 | **SSH** | Port custom, key-only | Port custom, key-only | Port 42820, key-only |
 
 **Le plan d'installation en 10 etapes :**
 
-```
-Etape 1 : Setup VPS (securite, SSH, utilisateur)
-  ↓
-Etape 2 : Installer les outils (Node.js, Python, Claude Code, tmux)
-  ↓
-Etape 3 : Configurer Claude Code (API key, modele, permissions)
-  ↓
-Etape 4 : Creer la structure de fichiers AISB
-  ↓
-Etape 5 : Ecrire les agents de base (3-5 pour commencer)
-  ↓
-Etape 6 : Creer le bot Telegram
-  ↓
-Etape 7 : Implementer le classificateur et le dispatcher
-  ↓
-Etape 8 : Ecrire le ship pipeline
-  ↓
-Etape 9 : Configurer le patrol (cron)
-  ↓
-Etape 10 : Premier test end-to-end
+```mermaid
+graph TB
+    S1["1. Setup VPS<br/>(securite, SSH, user)"] --> S2["2. Installer outils<br/>(Node, Python, Claude, tmux)"]
+    S2 --> S3["3. Configurer Claude Code<br/>(API key, permissions)"]
+    S3 --> S4["4. Creer structure AISB<br/>(~/.aisb/, ~/.claude/)"]
+    S4 --> S5["5. Ecrire agents de base<br/>(3-5 pour commencer)"]
+    S5 --> S6["6. Creer bot Telegram<br/>(handlers, routing)"]
+    S6 --> S7["7. Implementer classifier<br/>+ dispatcher"]
+    S7 --> S8["8. Ecrire ship pipeline<br/>(oracle-ship.sh)"]
+    S8 --> S9["9. Configurer patrol<br/>(cron)"]
+    S9 --> S10["10. Test end-to-end<br/>(Telegram → code → deploy)"]
+
+    style S1 fill:#ff6b6b,color:white
+    style S6 fill:#4a9eff,color:white
+    style S10 fill:#66bb6a,color:white
 ```
 
 **Etape 1 — Setup VPS :**
@@ -1193,28 +1714,46 @@ sudo ufw allow 42820/tcp
 sudo ufw enable
 ```
 
+**Etape 2 — Installer les outils :**
+
+```bash
+# Claude Code CLI
+curl -fsSL https://claude.ai/install.sh | sh
+# tmux (version recente)
+sudo apt install tmux
+# Python 3.11+
+sudo apt install python3 python3-pip python3-venv
+# Node.js 20+
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+sudo apt install nodejs
+# jq (parsing JSON)
+sudo apt install jq
+# Outils supplementaires
+pip install python-telegram-bot anthropic
+```
+
 **Etape 4 — Structure de fichiers AISB :**
 
 ```
 ~/.aisb/
 ├── docs/
-│   ├── ARCHITECTURE.md        # Ce document
-│   ├── ORCHESTRATION.md       # Comment les taches circulent
-│   └── CLOUD.md               # Infrastructure cloud
+│   ├── ARCHITECTURE.md
+│   ├── ORCHESTRATION.md
+│   └── CLOUD.md
 ├── state/
 │   ├── oracle-Causio-1.done.json
 │   └── worker-blocked-*.json
 ├── oracles/
-│   ├── Causio-1.json          # Registre Oracle
+│   ├── Causio-1.json
 │   └── DentistryGPT-1.json
 ├── locks/
-│   ├── ship-Causio.lock       # Serialisation des push
-│   └── ship-Causio.frozen     # Freeze apres echec deploy
+│   ├── ship-Causio.lock
+│   └── ship-Causio.frozen
 ├── memory/
-│   ├── user/                  # Memoire cross-projet
-│   ├── project/{name}/        # Memoire par projet
-│   └── agent-memory/{type}/   # Memoire par type d'agent
-├── scratchpad/                # Echange inter-agents
+│   ├── user/
+│   ├── project/{name}/
+│   └── agent-memory/{type}/
+├── scratchpad/
 └── lib/
     ├── dispatch-to-session.sh
     ├── worker-alive-check.sh
@@ -1224,76 +1763,21 @@ sudo ufw enable
     └── oracle-cleanup.sh
 
 ~/.claude/
-├── CLAUDE.md                  # Instructions globales
-├── rules/                     # Regles always-loaded
+├── CLAUDE.md
+├── rules/
 │   ├── 000-verification.md
 │   ├── 001-smart-routing.md
 │   └── ...
-├── agents/                    # 281 agents
+├── agents/
 │   ├── react-specialist/
 │   ├── seo-expert/
 │   └── ...
-├── commands/                  # 130+ skills
+├── commands/
 │   ├── codeaudit.md
 │   ├── uiuxaudit.md
 │   └── ...
-└── lib/                       # Scripts utilitaires
-    ├── clerk-auth-browse.sh
-    └── ...
-```
-
-**Etape 6 — Bot Telegram minimal :**
-
-```python
-#!/usr/bin/env python3
-# bot/main.py — Bot AISB minimal
-
-import os
-import asyncio
-import telebot
-from telebot.async_telebot import AsyncTeleBot
-from core.classifier import classify
-from core.dispatcher import dispatch_to_oracle
-from core.enricher import enrich_prompt
-
-TOKEN = os.environ["TELEGRAM_BOT_TOKEN"]
-ALLOWED_USERS = [int(os.environ["TELEGRAM_USER_ID"])]
-
-bot = AsyncTeleBot(TOKEN)
-
-@bot.message_handler(func=lambda m: m.from_user.id in ALLOWED_USERS)
-async def handle(message):
-    text = message.text
-    
-    # Classifier
-    level = classify(text)
-    
-    if level == "SIMPLE":
-        # Traiter directement via Claude SDK
-        response = await handle_simple(text)
-        await bot.reply_to(message, response)
-    else:
-        # Enrichir et dispatcher
-        enriched = enrich_prompt(text, message.from_user.id)
-        project = detect_project(text)
-        session = dispatch_to_oracle(enriched, project)
-        await bot.reply_to(message, 
-            f"Oracle dispatche : `{session}`\n"
-            f"Complexite : {level}\n"
-            f"Je te notifie quand c'est termine.",
-            parse_mode="Markdown"
-        )
-
-@bot.message_handler(commands=["status"])
-async def status(message):
-    """Affiche l'etat de tous les oracles actifs."""
-    oracles = get_active_oracles()
-    text = "Oracles actifs :\n"
-    for o in oracles:
-        text += f"- `{o['session']}` : {o['mission']} ({o['duration']})\n"
-    await bot.reply_to(message, text, parse_mode="Markdown")
-
-asyncio.run(bot.polling())
+└── lib/
+    └── clerk-auth-browse.sh
 ```
 
 **Etape 9 — Le patrol AISB (cron) :**
@@ -1304,19 +1788,14 @@ asyncio.run(bot.polling())
 
 # patrol.sh
 #!/bin/bash
-# Verifie les .done.json et notifie via Telegram
-
 for done_file in ~/.aisb/state/oracle-*.done.json; do
     [ -f "$done_file" ] || continue
-    
     status=$(jq -r '.status' "$done_file")
     oracle=$(jq -r '.oracle' "$done_file")
-    
     case "$status" in
         "done_clean")
-            # Envoyer rapport et programmer la fermeture
             send_telegram_report "$done_file"
-            schedule_close "$oracle" 300  # 5 minutes grace
+            schedule_close "$oracle" 300
             ;;
         "pending")
             send_telegram_pending "$done_file"
@@ -1326,8 +1805,6 @@ for done_file in ~/.aisb/state/oracle-*.done.json; do
             ;;
     esac
 done
-
-# Nettoyer les sessions mortes
 ~/.aisb/lib/oracle-cleanup.sh
 ```
 
@@ -1339,15 +1816,13 @@ done
 2. Verifier :
    - AISB classifie comme SIMPLE → traite directement
    - Reponse Telegram : "Fichier cree"
-   - cat /tmp/hello.txt → "Hello AISB"
 
 3. Envoyer : "Fix le bug de la page d'accueil sur [ton projet]"
 
 4. Verifier :
    - AISB classifie comme MEDIUM → dispatche Oracle
    - tmux ls → oracle-[projet]-1 existe
-   - L'Oracle cree un Worker
-   - Le Worker fixe le bug, build passe
+   - L'Oracle cree un Worker, le Worker fixe le bug
    - .done.json avec status=done_clean
    - Notification Telegram avec rapport
 ```
@@ -1356,15 +1831,159 @@ done
 
 | Erreur | Cause | Solution |
 |--------|-------|---------|
-| "Claude not found" | Claude Code pas dans PATH | `export PATH="$HOME/.claude/bin:$PATH"` dans .zshrc |
-| Session tmux vide | Prompt file mal ecrit | Verifier le contenu de /tmp/oracle-prompt-*.md |
-| Worker bloque qui attend | 3eme Loi non injectee | Ajouter l'autonomy rule dans le template Worker |
-| Deploy freeze permanent | Fichier .frozen pas supprime | `rm ~/.aisb/locks/ship-*.frozen` apres resolution |
-| Build fail en boucle | Stuck detection absente | Implementer : meme erreur 3x → approche differente |
+| "Claude not found" | Pas dans PATH | `export PATH="$HOME/.claude/bin:$PATH"` dans .zshrc |
+| Session tmux vide | Prompt file mal ecrit | Verifier /tmp/oracle-prompt-*.md |
+| Worker bloque qui attend | 3eme Loi non injectee | Ajouter l'autonomy rule dans le template |
+| Deploy freeze permanent | .frozen pas supprime | `rm ~/.aisb/locks/ship-*.frozen` |
+| Build fail en boucle | Stuck detection absente | Meme erreur 3x → approche differente |
+
+**Niveaux de maturite du systeme :**
+
+| Niveau | Periode | Description |
+|--------|---------|-------------|
+| 1 — Assiste | 0-3 mois | 1 agent par tache, validation humaine, hooks de base |
+| 2 — Semi-autonome | 3-6 mois | Equipes 3-5 agents, scheduling quotidien, 1er pipeline |
+| 3 — Autonome | 6-12 mois | Architecture AISB complete, God Mode, dashboard monitoring |
+| 4 — IA Enterprise | 12+ mois | 281 agents, scheduling cloud 24/7, SMITH en production |
 
 ### Exercice pratique
 
-Deploiement complet : suivez les 10 etapes pour installer votre propre AISB sur un VPS. Objectif minimal viable : un bot Telegram qui recoit un message, dispatche un Oracle via tmux, et vous notifie quand le travail est termine. Bonus : ajoutez le ship pipeline et le patrol cron.
+Deploiement complet : suivez les 10 etapes pour installer votre propre AISB sur un VPS. Objectif minimal viable : un bot Telegram qui recoit un message, dispatche un Oracle via tmux, et vous notifie quand le travail est termine.
+
+---
+
+## Les 10 principes du CAIO orchestrateur
+
+Ces principes sont le resultat de mois d'operation du systeme AISB en production. Ils s'appliquent a tout systeme d'orchestration IA multi-agents.
+
+**1. Separation des responsabilites.**
+Aucun agent ne fait tout. Planifier, executer, auditer, et apprendre sont des roles distincts. L'Oracle ne code pas. MORPHEUS ne planifie pas. SERAPH n'implemente pas.
+
+**2. Hierarchie stricte.**
+Les messages montent et descendent dans la chaine. Pas de sauts de niveaux. Un Worker ne rapporte jamais directement a AISB.
+
+**3. Verification avant completion.**
+Jamais de "c'est fait" sans preuve. Build = 0 erreurs, tests passes, deploiement verifie. Le done.json contient le commit hash, l'URL de deploy, et le status.
+
+**4. Propriete des fichiers.**
+Dans un systeme multi-agents, chaque fichier appartient a un seul agent. Pas de conflits. Le registre Oracle declare `files_owned` pour chaque mission.
+
+**5. Hooks pour la gouvernance.**
+Toute action critique passe par un hook de validation. L'IA n'est jamais sans garde-fous. `PreToolUse` sur Bash = validation obligatoire.
+
+**6. MCP pour l'integration.**
+Les systemes metiers ne s'interrogent pas directement. MCP est le protocole universel. Un seul MCP Composio peut connecter 500+ applications.
+
+**7. Scheduling pour la continuite.**
+Les taches recurrentes ne dependent pas de la presence humaine. Morning briefings, audits de securite, monitoring KPI — tout tourne en automatique.
+
+**8. Logs pour la conformite.**
+Chaque action est tracee en JSONL immuable pour l'audit et la regulation. Le trail d'audit est append-only et horodate.
+
+**9. Alerting intelligent.**
+Les notifications Telegram ne polluent pas. Elles alertent sur les anomalies reelles. Le reply-routing permet des conversations contextuelles sans bruit.
+
+**10. Apprentissage continu.**
+SMITH analyse les patterns et ameliore le systeme. Chaque tache completee rend la suivante meilleure. Les learnings sont stockes par projet et par categorie.
+
+---
+
+## Glossaire AISB
+
+| Terme | Definition |
+|-------|-----------|
+| **AISB** | AI Super Brain — le cerveau central du systeme, bot Python tournant en permanent |
+| **Oracle** | Chef de projet IA, session tmux qui decompose, coordonne et verifie les missions |
+| **Worker** | Session tmux ephemere qui execute le code, creee par un Oracle |
+| **Signal file** | Fichier `/tmp/aisb-oracle-result-{Projet}.md` qui notifie AISB qu'un oracle a termine |
+| **dispatch-to-session.sh** | Script qui envoie un prompt a une session tmux via `load-buffer` |
+| **enhance_prompt** | Reformulation intelligente des messages utilisateur via Claude SDK |
+| **God Mode** | Mode autonomie totale pour les missions longues, avec heartbeat et kill switch |
+| **Heartbeat** | Signal regulier (30s) prouvant qu'une session est vivante, timeout a 2 minutes |
+| **Topic** | Fil de discussion Telegram = 1 projet. Le bot detecte le projet a partir du topic_id |
+| **done.json** | Fichier JSON ecrit par l'Oracle a la fin de sa mission (status: done_clean/pending/failed) |
+| **Ship pipeline** | Pipeline de deploiement en 12 etapes : build, test, commit, push, deploy, verify |
+| **Freeze** | Blocage des deploys apres un echec. Leve manuellement apres resolution |
+| **Quality Arsenal** | 16 audits forensiques Gestalt-Popper couvrant code, UX, perf, securite, etc. |
+| **Hinge Point** | Dans un audit, le point unique dont la correction a le plus grand impact sur le score |
+| **Gestalt-Popper** | Methodologie combinant perception holistique (Gestalt) et falsification (Popper) |
+| **/team** | Commande qui lance 3-6 agents en parallele avec liste de taches partagee |
+| **/xoxo** | Verification ultra-profonde avant production (post-fix quality gate) |
+| **ROUTE** | Phase 1 du pipeline — classification et routing des taches par ORACLE |
+| **KEYMAKER** | Phase 2 du pipeline — planification et decomposition en DAG de taches |
+| **MORPHEUS** | Phase 3 du pipeline — execution parallele avec equipes d'agents |
+| **SERAPH** | Phase 4 du pipeline — audit qualite, verdict par defaut = FAIL |
+| **SMITH** | Phase 5 du pipeline — apprentissage et consolidation memoire |
+| **File ownership** | Declaration des fichiers possedes par chaque Oracle pour eviter les conflits |
+| **Worker-alive-check** | Script qui verifie si un worker est actif (CPU > 1%) avant de le tuer |
+| **Patrol** | Boucle cron (60s) qui lit les done.json et decide de la fermeture des sessions |
+| **Grace window** | Delai de 5 minutes avant fermeture d'une session done_clean |
+| **Claude Max** | Abonnement Claude illimite via OAuth, utilise pour tous les agents |
+| **MCP** | Model Context Protocol — standard Anthropic pour connecter Claude a des outils externes |
+| **Hook** | Script execute automatiquement sur un evenement Claude Code (PreToolUse, PostToolUse, etc.) |
+| **Composio** | Plateforme d'integration exposant 500+ applications via un seul serveur MCP |
+| **reply-routing** | Mecanisme ou la reponse a un rapport Telegram est automatiquement routee au bon Oracle |
+| **3 Lois** | Runtime Truth, Research Mindset, Autonomous Execution — regles non-negociables |
+
+---
+
+## Fichiers cles du systeme
+
+| Fichier | Role |
+|---------|------|
+| `~/.claude/config/telegram.json` | Config Telegram (token, IDs, topics) |
+| `~/.aisb/lib/dispatch-to-session.sh` | Dispatch tmux fiable (load-buffer) |
+| `~/.aisb/lib/oracle-ship.sh` | Pipeline de deploiement en 12 etapes |
+| `~/.aisb/lib/oracle-prompt.sh` | Generateur de prompts oracle par projet |
+| `~/.aisb/lib/heartbeat.sh` | Systeme de heartbeat (beat/check/status) |
+| `~/.aisb/lib/worker-alive-check.sh` | Verification activite CPU d'un worker |
+| `~/.aisb/lib/oracle-check.sh` | Disponibilite oracle (reuse vs new) |
+| `~/.aisb/lib/oracle-cleanup.sh` | Nettoyage des sessions orphelines |
+| `~/.aisb/lib/patrol.sh` | Boucle cron de surveillance des done.json |
+| `/tmp/aisb-sessions.json` | Registry des sessions actives |
+| `/tmp/aisb-oracle-result-*.md` | Signal files des oracles |
+| `~/.aisb/oracles/{Projet}-{id}.json` | Registre Oracle avec files_owned |
+| `~/.aisb/state/oracle-*.done.json` | Status de completion des oracles |
+| `~/.aisb/locks/ship-{Projet}.lock` | Lock de serialisation des push |
+| `~/.aisb/locks/ship-{Projet}.frozen` | Freeze apres echec deploy |
+| `~/.aisb/prompts/oracle-*.md` | Prompts generes par projet |
+| `~/.aisb/heartbeats/{session}.beat` | Fichiers de heartbeat |
+| `~/.aisb/status/godmode-sessions.json` | Etat God Mode persistant |
+| `~/.aisb/memory/project/{name}/` | Memoire persistante par projet |
+| `~/.aisb/smith/learnings.jsonl` | Apprentissages SMITH |
+
+---
+
+## Commandes essentielles
+
+```bash
+# Bot
+sudo systemctl status agentik-monitor-bot
+sudo systemctl restart agentik-monitor-bot
+journalctl -u agentik-monitor-bot -f
+
+# tmux
+tmux list-sessions
+tmux capture-pane -t "session" -p -S -50
+tmux kill-session -t "session"
+
+# Telegram CLI
+telegram send <chat_id> "message"
+telegram file <chat_id> /path/to/file "caption"
+
+# Oracle dispatch
+~/.aisb/lib/dispatch-to-session.sh SESSION "prompt" /path
+
+# Monitoring
+cat /tmp/aisb-sessions.json | jq .
+~/.aisb/lib/heartbeat.sh status
+~/.aisb/lib/oracle-list.sh
+
+# Cleanup
+~/.aisb/lib/oracle-cleanup.sh
+rm -f /tmp/aisb-oracle-result-*.md
+rm -f /tmp/dispatch-*.txt
+```
 
 ---
 
@@ -1379,6 +1998,7 @@ Deploiement complet : suivez les 10 etapes pour installer votre propre AISB sur 
 - Integration des 3 Lois dans chaque agent pour garantir l'autonomie
 - Implementation du ship pipeline avec freeze et recovery
 - Connaissance operationnelle des 16 audits forensiques Gestalt-Popper
+- Maitrise des hooks, MCP et scheduling pour l'automatisation avancee
 - Un VPS fonctionnel avec votre propre AISB deploye
 
 ---
