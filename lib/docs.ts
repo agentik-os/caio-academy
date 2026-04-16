@@ -101,6 +101,13 @@ export const SECTION_META: Record<
       en: "Legal structure, stack, scaling, metrics.",
     },
   },
+  content: {
+    title: { fr: "Blog & Réflexions", en: "Blog & Insights" },
+    tagline: {
+      fr: "Perspectives philosophiques sur l'IA, le leadership et la transformation digitale.",
+      en: "Philosophical perspectives on AI, leadership, and digital transformation.",
+    },
+  },
   "business-vision": {
     title: { fr: "Business — Vision", en: "Business — Vision" },
     tagline: {
@@ -170,14 +177,15 @@ const SECTIONS: { raw: string; key: string; order: number; root: string }[] = [
   { raw: "08-marketing", key: "marketing", order: 8, root: CAIO_ROOT },
   { raw: "09-launch", key: "launch", order: 9, root: CAIO_ROOT },
   { raw: "10-operations", key: "operations", order: 10, root: CAIO_ROOT },
-  { raw: "02-vision", key: "business-vision", order: 11, root: BIZ_ROOT },
-  { raw: "03-strategy", key: "business-strategy", order: 12, root: BIZ_ROOT },
-  { raw: "04-blueprint", key: "business-blueprint", order: 13, root: BIZ_ROOT },
-  { raw: "05-execution", key: "business-execution", order: 14, root: BIZ_ROOT },
-  { raw: "06-marketing", key: "business-marketing", order: 15, root: BIZ_ROOT },
-  { raw: "07-phantom-empire", key: "business-phantom-empire", order: 16, root: BIZ_ROOT },
-  { raw: "99-archive", key: "business-archive", order: 17, root: BIZ_ROOT },
-  { raw: "_root", key: "business-root", order: 18, root: BIZ_ROOT },
+  { raw: "11-content", key: "content", order: 11, root: CAIO_ROOT },
+  { raw: "02-vision", key: "business-vision", order: 12, root: BIZ_ROOT },
+  { raw: "03-strategy", key: "business-strategy", order: 13, root: BIZ_ROOT },
+  { raw: "04-blueprint", key: "business-blueprint", order: 14, root: BIZ_ROOT },
+  { raw: "05-execution", key: "business-execution", order: 15, root: BIZ_ROOT },
+  { raw: "06-marketing", key: "business-marketing", order: 16, root: BIZ_ROOT },
+  { raw: "07-phantom-empire", key: "business-phantom-empire", order: 17, root: BIZ_ROOT },
+  { raw: "99-archive", key: "business-archive", order: 18, root: BIZ_ROOT },
+  { raw: "_root", key: "business-root", order: 19, root: BIZ_ROOT },
 ];
 
 function slugify(name: string): string {

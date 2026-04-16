@@ -3,7 +3,12 @@
 import * as React from "react";
 import { Play, Pause, Volume2 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { formatDuration } from "@/lib/podcast";
+
+function formatDuration(sec: number): string {
+  const m = Math.floor(sec / 60);
+  const s = Math.round(sec % 60);
+  return `${m}:${String(s).padStart(2, "0")}`;
+}
 
 type Props = {
   src: string;

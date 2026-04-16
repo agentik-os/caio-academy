@@ -549,6 +549,132 @@
     "url": "/fr/docs/operations/legal-tax-structure"
   },
   {
+    "id": "en/content/philosophy-human-ai-collaboration",
+    "title": "The Philosophy of Human-AI Collaboration",
+    "section": "Blog & Insights",
+    "sectionKey": "content",
+    "lang": "en",
+    "excerpt": "AI isn't replacing humans — it's creating a new species of collaboration. Like jazz improvisation, the magic happens in the interplay.",
+    "url": "/en/docs/content/philosophy-human-ai-collaboration"
+  },
+  {
+    "id": "fr/content/ethics-ai-leadership",
+    "title": "L'ethique du leadership IA : un cadre philosophique",
+    "section": "Blog & Réflexions",
+    "sectionKey": "content",
+    "lang": "fr",
+    "excerpt": "Le CAIO n'est pas seulement un technologue — c'est un ethicien, un philosophe, un gardien des valeurs humaines dans les systemes IA. Voici le cadre.",
+    "url": "/fr/docs/content/ethics-ai-leadership"
+  },
+  {
+    "id": "fr/content/philosophy-human-ai-collaboration-2",
+    "title": "La philosophie de la collaboration humain-IA",
+    "section": "Blog & Réflexions",
+    "sectionKey": "content",
+    "lang": "fr",
+    "excerpt": "L'IA ne remplace pas l'humain — elle cree une nouvelle espece de collaboration. Comme l'improvisation jazz, la magie nait de l'interplay.",
+    "url": "/fr/docs/content/philosophy-human-ai-collaboration-2"
+  },
+  {
+    "id": "en/content/automation-to-augmentation",
+    "title": "From Automation to Augmentation: The CAIO Mindset Shift",
+    "section": "Blog & Insights",
+    "sectionKey": "content",
+    "lang": "en",
+    "excerpt": "Automation saves time. Augmentation creates new capabilities. The CAIO knows the difference — and it changes everything about AI strategy.",
+    "url": "/en/docs/content/automation-to-augmentation"
+  },
+  {
+    "id": "fr/content/ai-systems-thinking",
+    "title": "Pensee systemique et IA : pourquoi les outils ne comptent pas, les frameworks si",
+    "section": "Blog & Réflexions",
+    "sectionKey": "content",
+    "lang": "fr",
+    "excerpt": "Tout le monde s'obsede sur ChatGPT vs Claude vs Gemini. Le CAIO pense en systemes, pas en outils. Voici pourquoi la pensee framework gagne a chaque fois.",
+    "url": "/fr/docs/content/ai-systems-thinking"
+  },
+  {
+    "id": "en/content/ethics-ai-leadership-2",
+    "title": "The Ethics of AI Leadership: A Philosophical Framework",
+    "section": "Blog & Insights",
+    "sectionKey": "content",
+    "lang": "en",
+    "excerpt": "The CAIO isn't just a technologist — they're an ethicist, a philosopher, a guardian of human values in AI systems. Here's the framework.",
+    "url": "/en/docs/content/ethics-ai-leadership-2"
+  },
+  {
+    "id": "en/content/invisible-revolution",
+    "title": "The Invisible Revolution: How AI is Rewriting Business DNA",
+    "section": "Blog & Insights",
+    "sectionKey": "content",
+    "lang": "en",
+    "excerpt": "The real AI revolution isn't in chatbots and dashboards. It's in decision-making patterns, workflow architecture, and organizational nervous systems.",
+    "url": "/en/docs/content/invisible-revolution"
+  },
+  {
+    "id": "en/content/why-ai-transformations-fail",
+    "title": "Why Most AI Transformations Fail (And How to Be the Exception)",
+    "section": "Blog & Insights",
+    "sectionKey": "content",
+    "lang": "en",
+    "excerpt": "80% of AI projects fail. Not because of technology — because of leadership, culture, and strategy gaps. Here are the three killers and how to defeat them.",
+    "url": "/en/docs/content/why-ai-transformations-fail"
+  },
+  {
+    "id": "en/content/why-csuite-needs-ai-officer",
+    "title": "Why Every C-Suite Needs an AI Officer (Not Just a CTO)",
+    "section": "Blog & Insights",
+    "sectionKey": "content",
+    "lang": "en",
+    "excerpt": "The CTO manages tech infrastructure. The CAIO manages AI transformation strategy. Different roles, different mindsets — and your board needs both.",
+    "url": "/en/docs/content/why-csuite-needs-ai-officer"
+  },
+  {
+    "id": "fr/content/automation-to-augmentation-2",
+    "title": "De l'automatisation a l'augmentation : le changement de paradigme du CAIO",
+    "section": "Blog & Réflexions",
+    "sectionKey": "content",
+    "lang": "fr",
+    "excerpt": "L'automatisation economise du temps. L'augmentation cree de nouvelles capacites. Le CAIO connait la difference — et ca change tout dans la strategie IA.",
+    "url": "/fr/docs/content/automation-to-augmentation-2"
+  },
+  {
+    "id": "fr/content/why-ai-transformations-fail-2",
+    "title": "Pourquoi la plupart des transformations IA echouent (et comment faire exception)",
+    "section": "Blog & Réflexions",
+    "sectionKey": "content",
+    "lang": "fr",
+    "excerpt": "80% des projets IA echouent. Pas a cause de la technologie — a cause de lacunes en leadership, culture et strategie. Voici les trois tueurs et comment les vaincre.",
+    "url": "/fr/docs/content/why-ai-transformations-fail-2"
+  },
+  {
+    "id": "fr/content/invisible-revolution-2",
+    "title": "La revolution invisible : comment l'IA reecrit l'ADN des entreprises",
+    "section": "Blog & Réflexions",
+    "sectionKey": "content",
+    "lang": "fr",
+    "excerpt": "La vraie revolution IA n'est pas dans les chatbots et les dashboards. Elle est dans les schemas decisionnels, l'architecture des flux et le systeme nerveux organisationnel.",
+    "url": "/fr/docs/content/invisible-revolution-2"
+  },
+  {
+    "id": "en/content/ai-systems-thinking-2",
+    "title": "AI Systems Thinking: Why Tools Don't Matter, Frameworks Do",
+    "section": "Blog & Insights",
+    "sectionKey": "content",
+    "lang": "en",
+    "excerpt": "Everyone obsesses over ChatGPT vs Claude vs Gemini. The CAIO thinks in systems, not tools. Here's why framework thinking wins every time.",
+    "url": "/en/docs/content/ai-systems-thinking-2"
+  },
+  {
+    "id": "fr/content/why-csuite-needs-ai-officer-2",
+    "title": "Pourquoi chaque comite de direction a besoin d'un AI Officer (et pas seulement d'un CTO)",
+    "section": "Blog & Réflexions",
+    "sectionKey": "content",
+    "lang": "fr",
+    "excerpt": "Le CTO gere l'infrastructure technologique. Le CAIO pilote la strategie de transformation IA. Deux roles, deux visions — votre conseil d'administration a besoin des deux.",
+    "url": "/fr/docs/content/why-csuite-needs-ai-officer-2"
+  },
+  {
     "id": "fr/business-vision/push-million-timeline",
     "title": "[ARCHIVE] Timeline Push Million",
     "section": "Business — Vision",
@@ -1090,7 +1216,7 @@
   },
   {
     "id": "fr/business-marketing/actus-ia-semaine",
-    "title": "Actus IA en Bref -- Semaine du 14 Avril 2026",
+    "title": "Actus IA en Bref -- Semaine du 16 Avril 2026",
     "section": "Business — Marketing",
     "sectionKey": "business-marketing",
     "lang": "fr",
