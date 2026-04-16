@@ -3,12 +3,12 @@ import { ConvexHttpClient } from "convex/browser";
 import { getDoc } from "@/lib/docs";
 import {
   VOICES,
-  ELEVEN_MODEL,
   isApiKeyConfigured,
   isBlobTokenConfigured,
   stripMarkdown,
   estimateDurationSec,
   podcastBlobKey,
+  generatePodcastMp3,
 } from "@/lib/podcast";
 import { api } from "@/convex/_generated/api";
 
@@ -46,20 +46,14 @@ export async function POST(req: Request) {
 
   if (!isApiKeyConfigured()) {
     return NextResponse.json(
-      {
-        error:
-          "ELEVENLABS_API_KEY not configured. Set a real key in Vercel env vars.",
-      },
+      { error: "OPENAI_API_KEY not configured." },
       { status: 503 },
     );
   }
 
   if (!isBlobTokenConfigured()) {
     return NextResponse.json(
-      {
-        error:
-          "BLOB_READ_WRITE_TOKEN not configured. Set a real Vercel Blob token in env vars.",
-      },
+      { error: "BLOB_READ_WRITE_TOKEN not configured." },
       { status: 503 },
     );
   }
@@ -74,8 +68,7 @@ export async function POST(req: Request) {
 
   const script = stripMarkdown(doc.content);
   const charCount = script.length;
-  const voiceId = VOICES[lang];
-
+  const voice = VOICES[lang];
   const convex = new ConvexHttpClient(convexUrl);
 
   try {
@@ -83,7 +76,7 @@ export async function POST(req: Request) {
       docSlug,
       lang,
       charCount,
-      voiceId,
+      voiceId: voice,
     });
   } catch (e) {
     return NextResponse.json(
@@ -93,30 +86,11 @@ export async function POST(req: Request) {
   }
 
   try {
-    const ttsRes = await fetch(
-      `https://api.elevenlabs.io/v1/text-to-speech/${voiceId}`,
-      {
-        method: "POST",
-        headers: {
-          "xi-api-key": process.env.ELEVENLABS_API_KEY as string,
-          "content-type": "application/json",
-          accept: "audio/mpeg",
-        },
-        body: JSON.stringify({
-          text: script,
-          model_id: ELEVEN_MODEL,
-          voice_settings: { stability: 0.5, similarity_boost: 0.75 },
-        }),
-      },
-    );
-    if (!ttsRes.ok || !ttsRes.body) {
-      const msg = await ttsRes.text().catch(() => "");
-      throw new Error(`ElevenLabs ${ttsRes.status}: ${msg.slice(0, 200)}`);
-    }
+    const mp3Buffer = await generatePodcastMp3(script, voice);
 
     const { put } = await import("@vercel/blob");
     const blobKey = podcastBlobKey(docSlug, lang);
-    const blob = await put(blobKey, ttsRes.body, {
+    const blob = await put(blobKey, mp3Buffer, {
       access: "public",
       contentType: "audio/mpeg",
       token: process.env.BLOB_READ_WRITE_TOKEN,

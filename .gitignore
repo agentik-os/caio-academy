@@ -46,3 +46,4 @@ next-env.d.ts
 # orchestrator local state
 /.orchestrator/*.local.*
 .env*.local
+public/podcasts/
