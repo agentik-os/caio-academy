@@ -13,6 +13,17 @@ export default defineSchema({
     createdAt: v.number(),
   }).index("by_createdAt", ["createdAt"]),
 
+  youtubeScripts: defineTable({
+    topic: v.string(),
+    angle: v.string(),
+    avatar: v.string(),
+    length: v.string(),
+    language: v.string(),
+    output: v.string(),
+    userId: v.string(),
+    createdAt: v.number(),
+  }).index("by_createdAt", ["createdAt"]),
+
   podcasts: defineTable({
     docSlug: v.string(),
     lang: v.union(v.literal("fr"), v.literal("en")),

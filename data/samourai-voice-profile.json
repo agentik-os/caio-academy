@@ -1,0 +1,292 @@
+{
+  "channel": "IA et Stratégie | Le SamourAI",
+  "url": "https://www.youtube.com/@SamouraiDansant",
+  "subscribers": 66700,
+  "total_videos": 23,
+  "total_views": 630000,
+  "avg_views": 27733,
+  "median_views": 22994,
+  "content_tier": "primary_voice_model",
+  "positioning_statement": "IA et Stratégie\n\nJe ne teste pas les gadgets de la semaine. J'analyse le système qui les produit. L'IA n'est pas qu'une liste d'applications, c'est une restructuration complète et une révolution.\n\nQuatre axes pour garder un coup d'avance :\n• Stratégie : Qui détient la puissance de calcul et les modèles\n• Carrière : S'adapter structurellement, pas juste apprendre des \"prompts\"\n• Finance : Suivre l'argent pour anticiper le marché\n• Technologie : Architecture, outils, intégration. Ce qui marche vraiment\n\nPour les décideurs, stratèges et professionnels qui pensent en années, pas en semaines. \n\nAnticiper les impacts. Garder un coup d'avance.\n\n📧 Contact : samouraidansant@gmail.com\n\nLiens :\nPatreon : https://www.patreon.com/SamouraiDansant\nInstagram : https://www.instagram.com/samourai_dansant",
+  "pacing_signature": {
+    "avg_duration_minutes": 29.4,
+    "min_duration_minutes": 11.9,
+    "max_duration_minutes": 50.5,
+    "pacing_note": "Long-form essays, 20-30min typical. NOT short-form. Philosophical depth requires runway."
+  },
+  "top_outliers": [
+    {
+      "id": "Nd2pavAegx4",
+      "title": "285 billion gone up in smoke: how Anthropic is killing SaaS (and junior developers)",
+      "views": 97197
+    },
+    {
+      "id": "YPEvrpzz72w",
+      "title": "Apple capitulates! The trap that will kill OpenAI.",
+      "views": 55632
+    },
+    {
+      "id": "XfkRd7w69dE",
+      "title": "40 million views in 12 hours: Is Claude \"Computer Use\" burying office work?",
+      "views": 51283
+    },
+    {
+      "id": "9DFgHyWl64A",
+      "title": "Why the best are leaving LinkedIn (and where they're going)",
+      "views": 48334
+    },
+    {
+      "id": "eztHlHwBeZ8",
+      "title": "Artificial Intelligence is destroying the knowledge economy (and the diploma is no longer worth a...",
+      "views": 42653
+    },
+    {
+      "id": "nyWMYy4j5HM",
+      "title": "The vocabulary of AI. 30 concepts. 5 levels.",
+      "views": 34326
+    },
+    {
+      "id": "VIKUxaFyXWc",
+      "title": "La crise de l’IA a commencé",
+      "views": 28421
+    },
+    {
+      "id": "UdkxFiZhY6Y",
+      "title": "Rationing is coming: Why your AI agents will be disconnected (how to secure your access)",
+      "views": 26454
+    },
+    {
+      "id": "ZIJuTk1VDuE",
+      "title": "55,000 jobs cut: The collapse of middle management and the average intellectual level",
+      "views": 23731
+    },
+    {
+      "id": "oeEYl1TT8H0",
+      "title": "The unspeakable secret behind the strikes in Iran",
+      "views": 23563
+    }
+  ],
+  "flop_videos": [
+    {
+      "id": "_2dMM0PtkMI",
+      "title": "The real obstacle to your progress in AI is not the technique.",
+      "views": 10427
+    },
+    {
+      "id": "10xnIMsViSg",
+      "title": "What they don't tell you about Mistral AI's 830 million",
+      "views": 8627
+    },
+    {
+      "id": "cdtn3IRjTVI",
+      "title": "Rapid Growth of AI Capabilities: Market Analysis and Gain Distribution",
+      "views": 7431
+    },
+    {
+      "id": "xEj4QdVBKa8",
+      "title": "2026: Being 'average' is dangerous: The lesson everyone misses.",
+      "views": 6587
+    },
+    {
+      "id": "ZAn71J_0vn0",
+      "title": "Opus 4.7 : L'arbre qui cache la forêt.",
+      "views": 3434
+    }
+  ],
+  "rhetorical_patterns": {
+    "numeric_hook_big_number": {
+      "description": "Open with a shocking specific number (billion/million/%) anchoring a macro claim. Forces \"why that number?\" curiosity.",
+      "examples": [
+        "285 billion gone up in smoke: how Anthropic is killing SaaS (and junior developers)",
+        "40 million views in 12 hours: Is Claude \"Computer Use\" burying office work?",
+        "96% failure rate: the lie of AI that works for you",
+        "10 billion gone: The AI ​​illusion that traps your management (and how to secure your position)",
+        "+70% more \"Founders\" on LinkedIn: The fatal mistake of an entire generation in the face of AI",
+        "What they don't tell you about Mistral AI's 830 million"
+      ],
+      "usage_rate": "6/23 titles (26%)"
+    },
+    "contrarian_reveal": {
+      "description": "Positions speaker as the one with insider/hidden knowledge. \"What they don't tell you\", \"secret\", \"unspeakable\".",
+      "examples": [
+        "The unspeakable secret behind the strikes in Iran",
+        "96% failure rate: the lie of AI that works for you",
+        "Claude Mythos: The secret model and the tragic error that is shaking Anthropic",
+        "What they don't tell you about Mistral AI's 830 million"
+      ],
+      "usage_rate": "4/23"
+    },
+    "dead_industry": {
+      "description": "Announces the demise of something established. \"killing SaaS\", \"destroying knowledge economy\", \"burying office work\", \"collapse of middle management\".",
+      "examples": [
+        "285 billion gone up in smoke: how Anthropic is killing SaaS (and junior developers)",
+        "Apple capitulates! The trap that will kill OpenAI.",
+        "40 million views in 12 hours: Is Claude \"Computer Use\" burying office work?",
+        "Artificial Intelligence is destroying the knowledge economy (and the diploma is no longer worth a...",
+        "55,000 jobs cut: The collapse of middle management and the average intellectual level",
+        "10 billion gone: The AI ​​illusion that traps your management (and how to secure your position)"
+      ],
+      "usage_rate": "6/23"
+    },
+    "philosophical_statement": {
+      "description": "Meta-declarative, zen-like. \"The real obstacle is not the technique.\" Sets cerebral frame.",
+      "examples": [
+        "The vocabulary of AI. 30 concepts. 5 levels.",
+        "Two Philosophies, Two Trajectories, and a Shift Towards an Agent-Based Economy",
+        "The real obstacle to your progress in AI is not the technique.",
+        "2026: Being 'average' is dangerous: The lesson everyone misses."
+      ],
+      "usage_rate": "4/23"
+    },
+    "mythos_trap_illusion": {
+      "description": "Frames competitor/tool as a trap, illusion, myth. Reveals hidden mechanism. \"Trap that will kill\", \"illusion that traps management\".",
+      "examples": [
+        "Apple capitulates! The trap that will kill OpenAI.",
+        "96% failure rate: the lie of AI that works for you",
+        "10 billion gone: The AI ​​illusion that traps your management (and how to secure your position)",
+        "+70% more \"Founders\" on LinkedIn: The fatal mistake of an entire generation in the face of AI",
+        "Claude Mythos: The secret model and the tragic error that is shaking Anthropic"
+      ],
+      "usage_rate": "5/23"
+    },
+    "future_shock": {
+      "description": "Names an imminent systemic shift. \"Rationing is coming\", \"Agent-Based Economy\", \"2026: Being average is dangerous\".",
+      "examples": [
+        "Rationing is coming: Why your AI agents will be disconnected (how to secure your access)",
+        "Two Philosophies, Two Trajectories, and a Shift Towards an Agent-Based Economy",
+        "State of AI 2026: Comparative Assessment and Recomposition of the Competitive Landscape of LLMs",
+        "2026: Being 'average' is dangerous: The lesson everyone misses."
+      ],
+      "usage_rate": "4/23"
+    }
+  },
+  "tonal_signature": {
+    "register": "Philosophical + C-level strategic. Never beginner. Assumes reader operates or invests above the execution layer.",
+    "voice": "Analytical observer of systems, not user of tools. Talks about the system producing the tools.",
+    "stance": "Contrarian by default. Refuses hype framing. Re-frames news events through power/capital/labor lenses.",
+    "lexicon_words": [
+      "restructuration",
+      "système",
+      "mécanisme",
+      "capitulation",
+      "mythos",
+      "bascule",
+      "trajectoire",
+      "écosystème",
+      "abstraction",
+      "pivot silencieux",
+      "capital",
+      "labor",
+      "stratification",
+      "rationing",
+      "capitulates",
+      "illusion",
+      "trap",
+      "fatal mistake",
+      "collapse",
+      "trajectory",
+      "philosophy"
+    ],
+    "forbidden_lexicon": [
+      "awesome",
+      "super cool",
+      "check this out",
+      "guys",
+      "smash the like",
+      "beginner",
+      "easy",
+      "simple trick",
+      "step by step tutorial",
+      "just do this",
+      "ChatGPT hacks",
+      "AI prompts 101",
+      "top 10 tools"
+    ],
+    "sentence_rhythm": "Short declarative. Then one long explanatory. Then a single-sentence paragraph that lands. Like prose essays.",
+    "opening_energy": "Low-key but loaded. Does NOT shout. Drops a weight on the table and walks around it.",
+    "example_opening_cadence": [
+      "X. [Specific number]. [Time unit]. [The implication, single line].",
+      "They want you to believe Y. The reality is the opposite. And it is worse than you think.",
+      "Name a topic. State the dominant interpretation. Announce you will destroy it. Begin."
+    ]
+  },
+  "structural_template": {
+    "hook_0_30s": {
+      "pattern": "Specific number + dramatic outcome + \"And this is not what you think.\" Reframing promise.",
+      "length_seconds": 30,
+      "must_include": [
+        "A specific verifiable number",
+        "A macro claim that feels too bold",
+        "A promise that the real reason is hidden"
+      ]
+    },
+    "reframing_1_3min": "Establish that the obvious reading of the news is wrong. Name the 2-3 things most commentators got wrong. Position speaker as above the discourse.",
+    "mechanism_reveal_3_12min": "Walk through the actual system/mechanism. Use concrete numbers, company names, dollar figures. Name specific actors (Anthropic, OpenAI, specific exec names). Connect economic/political dots.",
+    "philosophical_zoom_out_12_20min": "Connect the specific event to a broader thesis about AI reshaping capital, labor, knowledge, or power. This is the signature move — the episode isn't really about the news item.",
+    "cta_and_landing_20_end": "Close with a re-statement of the thesis. Invite subscribers with a philosophical offer (\"To keep a move ahead\") rather than a CTA-marketing push."
+  },
+  "recurring_themes_named": [
+    {
+      "name": "The Capital-Compute-Labor Triangle",
+      "description": "Who owns the compute, who trains the models, who loses jobs. Samourai sees every AI news event as a triangle restructure.",
+      "videos": [
+        "285 billion gone up in smoke",
+        "55,000 jobs cut",
+        "Rationing is coming"
+      ]
+    },
+    {
+      "name": "The Silent Pivot",
+      "description": "Companies present a new release as innovation. The real move is a pricing / economic model pivot hidden underneath.",
+      "videos": [
+        "Opus 4.7 : L'arbre qui cache la forêt",
+        "Apple capitulates!",
+        "Claude Mythos"
+      ]
+    },
+    {
+      "name": "The End of the Intermediate Expert",
+      "description": "Middle management, junior devs, average knowledge workers are structurally priced out by AI.",
+      "videos": [
+        "55,000 jobs cut",
+        "2026: Being 'average' is dangerous",
+        "Artificial Intelligence is destroying the knowledge economy"
+      ]
+    },
+    {
+      "name": "The Elite Departure Signal",
+      "description": "Observes where sophisticated operators are moving (leaving LinkedIn, exiting SaaS, pivoting from engineering). That signal is the forecast.",
+      "videos": [
+        "Why the best are leaving LinkedIn",
+        "+70% more \"Founders\" on LinkedIn (fatal mistake)"
+      ]
+    },
+    {
+      "name": "Philosophy Over Tools",
+      "description": "The channel bio: \"Je ne teste pas les gadgets de la semaine. J'analyse le système qui les produit.\" Explicitly rejects tool-review format.",
+      "videos": [
+        "The real obstacle to your progress in AI is not the technique",
+        "Two Philosophies, Two Trajectories",
+        "The vocabulary of AI. 30 concepts."
+      ]
+    },
+    {
+      "name": "The Agent-Based Economy",
+      "description": "Frames 2025-2027 as the transition period where single-purpose SaaS is absorbed into agent-native economic flows.",
+      "videos": [
+        "Two Philosophies, Two Trajectories, and a Shift Towards an Agent-Based Economy",
+        "285 billion gone up in smoke",
+        "Rationing is coming"
+      ]
+    }
+  ],
+  "hook_formulas": [
+    "[Big specific number] + [Dramatic outcome verb: vanished/gone/killed] + [Short second-sentence reframe]",
+    "[Company/Figure] [decisive action]: [The trap/illusion/mechanism] that will [consequence]",
+    "[%] failure rate: [The lie/illusion/reality] of [hyped category]",
+    "What they don't tell you about [funded / famous thing]: [concrete counter-fact]",
+    "[X] is coming: Why [your asset / tool / job] will be [destabilized]",
+    "The real [obstacle / reason / problem] for your [X] is not [surface diagnosis]"
+  ],
+  "cta_style": "Philosophical invitation, not a sales pitch. \"Keep a move ahead.\" Subscribers come for the next essay, not a product."
+}

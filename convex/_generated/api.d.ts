@@ -10,6 +10,7 @@
 
 import type * as adminGenerations from "../adminGenerations.js";
 import type * as podcasts from "../podcasts.js";
+import type * as youtubeScripts from "../youtubeScripts.js";
 
 import type {
   ApiFromModules,
@@ -20,6 +21,7 @@ import type {
 declare const fullApi: ApiFromModules<{
   adminGenerations: typeof adminGenerations;
   podcasts: typeof podcasts;
+  youtubeScripts: typeof youtubeScripts;
 }>;
 
 /**

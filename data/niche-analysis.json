@@ -1,0 +1,1272 @@
+{
+  "updatedAt": "2026-04-17",
+  "kpis": {
+    "channelsAnalyzed": 7,
+    "videosScanned": 322,
+    "outliersIdentified": 63,
+    "totalViewsAnalyzed": 22491869,
+    "niche": "AI tools / Claude / SaaS-AI / French-speaking AI",
+    "gapIdentified": "Chief AI Officer / C-Suite AI leadership (zero competitors)",
+    "primaryVoiceModel": "Le SamourAI (philosophical C-level analyst)"
+  },
+  "iceTips": [
+    {
+      "rank": 1,
+      "ice": 27,
+      "action": "Create a 'Chief AI Officer' positioning as the executive alternative to tool reviews",
+      "reasoning": "Every competitor targets builders/solopreneurs. Zero address C-suite AI leadership. Gareth's CAIO angle is a wide-open niche with enterprise LTV.",
+      "impact": 10,
+      "confidence": 8,
+      "ease": 9
+    },
+    {
+      "rank": 2,
+      "ice": 25,
+      "action": "Use contrarian/hype title patterns: 'Don't X', 'Y sucks, actually'",
+      "reasoning": "Contrarian titles produce the highest outlier rates. 'Don't Start An AI Agency' got 16.9x, 'Clawdbot Sucks, Actually' got 5.42x.",
+      "impact": 8,
+      "confidence": 9,
+      "ease": 9
+    },
+    {
+      "rank": 3,
+      "ice": 24,
+      "action": "Include money/revenue figures in titles and thumbnails",
+      "reasoning": "Videos with monetary claims ('$2.6M agency', '$5K automation') consistently outperform. Income/money title pattern drives clicks.",
+      "impact": 7,
+      "confidence": 8,
+      "ease": 9
+    },
+    {
+      "rank": 4,
+      "ice": 23,
+      "action": "Create a comprehensive Claude Code course (2-4 hours)",
+      "reasoning": "nicksaraev's 4-hour Claude Code course got 1.28M views (31.56x outlier). Long-form courses are the #1 outlier format in this niche.",
+      "impact": 10,
+      "confidence": 9,
+      "ease": 4
+    },
+    {
+      "rank": 5,
+      "ice": 23,
+      "action": "Position CAIO Academy as the executive/strategic AI channel",
+      "reasoning": "All competitors target developers and solopreneurs. Zero channels address C-suite AI leadership. This is a wide open gap.",
+      "impact": 9,
+      "confidence": 7,
+      "ease": 7
+    },
+    {
+      "rank": 6,
+      "ice": 23,
+      "action": "Create tool comparison videos (X vs Y format)",
+      "reasoning": "'Make vs n8n' got 10.89x outlier ratio. Comparison content drives search traffic and high engagement.",
+      "impact": 7,
+      "confidence": 8,
+      "ease": 8
+    },
+    {
+      "rank": 7,
+      "ice": 22,
+      "action": "Use numbered listicles for discovery content: '5 Ways...', '7 Tools...'",
+      "reasoning": "Listicle/Best-of pattern averages well across channels. AILABS '5 Ways To Build Websites' got 4.51x outlier ratio.",
+      "impact": 6,
+      "confidence": 7,
+      "ease": 9
+    },
+    {
+      "rank": 8,
+      "ice": 21,
+      "action": "Publish 'complete guide' content for trending AI tools",
+      "reasoning": "Comprehensive tutorials on specific tools (OpenClaw, Claude Code) consistently outperform. AlexFinn's OpenClaw tutorial got 367K views.",
+      "impact": 8,
+      "confidence": 8,
+      "ease": 5
+    },
+    {
+      "rank": 9,
+      "ice": 21,
+      "action": "Build 'AI for Business Leaders' series distinct from technical tutorials",
+      "reasoning": "No competitor addresses non-technical executives. CAIO's Chief AI Officer positioning is uniquely suited for this underserved audience.",
+      "impact": 9,
+      "confidence": 6,
+      "ease": 6
+    },
+    {
+      "rank": 10,
+      "ice": 21,
+      "action": "Optimize video length: 10-22 minutes for tutorials, 1-4 hours for courses",
+      "reasoning": "Two distinct sweet spots emerge: short punchy tutorials (10-15 min) for regular content, marathon courses (1-4 hrs) for tentpole content.",
+      "impact": 6,
+      "confidence": 7,
+      "ease": 8
+    },
+    {
+      "rank": 11,
+      "ice": 20,
+      "action": "Post 2-3 videos per week minimum",
+      "reasoning": "Channels with higher posting frequency have more total outliers and faster growth.",
+      "impact": 7,
+      "confidence": 8,
+      "ease": 5
+    },
+    {
+      "rank": 12,
+      "ice": 20,
+      "action": "React to major AI announcements within 48 hours",
+      "reasoning": "News/update content gets initial traffic spikes. Docker release video (AILABS) got 6.19x as an outlier by being early.",
+      "impact": 6,
+      "confidence": 7,
+      "ease": 7
+    },
+    {
+      "rank": 13,
+      "ice": 19,
+      "action": "Create bilingual content (English + French)",
+      "reasoning": "yassine-sdiri and SamouraiDansant show strong French AI audience. CAIO could capture both markets.",
+      "impact": 7,
+      "confidence": 7,
+      "ease": 5
+    },
+    {
+      "rank": 14,
+      "ice": 19,
+      "action": "Create a 'CAIO Certification Roadmap' video series",
+      "reasoning": "yassine-sdiri's 'Formation IA' video got 515K views - the #2 outlier overall. Structured education content has massive demand.",
+      "impact": 8,
+      "confidence": 7,
+      "ease": 4
+    }
+  ],
+  "topicPerformance": [
+    {
+      "topic": "AI workflows",
+      "count": 1,
+      "outliers": 1,
+      "rate": 100.0,
+      "avgViews": 87919
+    },
+    {
+      "topic": "Google AI / Gemini",
+      "count": 9,
+      "outliers": 3,
+      "rate": 33.3,
+      "avgViews": 75118
+    },
+    {
+      "topic": "AI development",
+      "count": 10,
+      "outliers": 3,
+      "rate": 30.0,
+      "avgViews": 30332
+    },
+    {
+      "topic": "AI tool reviews",
+      "count": 11,
+      "outliers": 3,
+      "rate": 27.3,
+      "avgViews": 171293
+    },
+    {
+      "topic": "AI business / monetization",
+      "count": 24,
+      "outliers": 6,
+      "rate": 25.0,
+      "avgViews": 46357
+    },
+    {
+      "topic": "General AI",
+      "count": 50,
+      "outliers": 12,
+      "rate": 24.0,
+      "avgViews": 69138
+    },
+    {
+      "topic": "AI automation",
+      "count": 23,
+      "outliers": 5,
+      "rate": 21.7,
+      "avgViews": 41954
+    },
+    {
+      "topic": "Other",
+      "count": 42,
+      "outliers": 8,
+      "rate": 19.0,
+      "avgViews": 61975
+    },
+    {
+      "topic": "Building AI products",
+      "count": 23,
+      "outliers": 4,
+      "rate": 17.4,
+      "avgViews": 37974
+    },
+    {
+      "topic": "Claude Code / Anthropic",
+      "count": 82,
+      "outliers": 14,
+      "rate": 17.1,
+      "avgViews": 98836
+    },
+    {
+      "topic": "ChatGPT / OpenAI",
+      "count": 7,
+      "outliers": 1,
+      "rate": 14.3,
+      "avgViews": 48221
+    },
+    {
+      "topic": "AI agents",
+      "count": 28,
+      "outliers": 3,
+      "rate": 10.7,
+      "avgViews": 55695
+    },
+    {
+      "topic": "AI strategy / career",
+      "count": 3,
+      "outliers": 0,
+      "rate": 0.0,
+      "avgViews": 30682
+    },
+    {
+      "topic": "Vibe coding",
+      "count": 2,
+      "outliers": 0,
+      "rate": 0.0,
+      "avgViews": 99750
+    },
+    {
+      "topic": "Content creation / marketing",
+      "count": 4,
+      "outliers": 0,
+      "rate": 0.0,
+      "avgViews": 39040
+    },
+    {
+      "topic": "AI coding tools",
+      "count": 2,
+      "outliers": 0,
+      "rate": 0.0,
+      "avgViews": 18317
+    },
+    {
+      "topic": "Prompting",
+      "count": 1,
+      "outliers": 0,
+      "rate": 0.0,
+      "avgViews": 43660
+    }
+  ],
+  "titlePatterns": [
+    {
+      "pattern": "Comprehensive course",
+      "count": 17,
+      "outliers": 0,
+      "rate": 0.0,
+      "avgViews": 196916
+    },
+    {
+      "pattern": "Tutorial / How-to",
+      "count": 56,
+      "outliers": 0,
+      "rate": 0.0,
+      "avgViews": 84628
+    },
+    {
+      "pattern": "Personal story / Challenge",
+      "count": 5,
+      "outliers": 0,
+      "rate": 0.0,
+      "avgViews": 81262
+    },
+    {
+      "pattern": "News / Update",
+      "count": 14,
+      "outliers": 0,
+      "rate": 0.0,
+      "avgViews": 73736
+    },
+    {
+      "pattern": "Comparison",
+      "count": 3,
+      "outliers": 0,
+      "rate": 0.0,
+      "avgViews": 62756
+    },
+    {
+      "pattern": "Hype / Contrarian",
+      "count": 25,
+      "outliers": 0,
+      "rate": 0.0,
+      "avgViews": 62436
+    },
+    {
+      "pattern": "Listicle / Best-of",
+      "count": 18,
+      "outliers": 0,
+      "rate": 0.0,
+      "avgViews": 60333
+    },
+    {
+      "pattern": "Statement / Opinion",
+      "count": 157,
+      "outliers": 0,
+      "rate": 0.0,
+      "avgViews": 57522
+    },
+    {
+      "pattern": "Review",
+      "count": 8,
+      "outliers": 0,
+      "rate": 0.0,
+      "avgViews": 44495
+    },
+    {
+      "pattern": "Income / Money",
+      "count": 16,
+      "outliers": 0,
+      "rate": 0.0,
+      "avgViews": 40842
+    },
+    {
+      "pattern": "Free resource",
+      "count": 2,
+      "outliers": 0,
+      "rate": 0.0,
+      "avgViews": 36624
+    },
+    {
+      "pattern": "Case study",
+      "count": 1,
+      "outliers": 0,
+      "rate": 0.0,
+      "avgViews": 17767
+    }
+  ],
+  "top30Outliers": [
+    {
+      "rank": 1,
+      "title": "CLAUDE CODE FULL COURSE 4 HOURS: Build & Sell (2026)",
+      "channel": "nicksaraev",
+      "views": 1282583,
+      "ratio": 31.56,
+      "url": "https://www.youtube.com/watch?v=QoQBzR1NIqI",
+      "thumbnail": "https://i.ytimg.com/vi/QoQBzR1NIqI/hqdefault.jpg",
+      "id": "QoQBzR1NIqI"
+    },
+    {
+      "rank": 2,
+      "title": "Formation Intelligence Artificielle: Comment Devenir un Expert IA en 2026 | Guide Complet Débutant",
+      "channel": "yassine-sdiri",
+      "views": 515228,
+      "ratio": 17.33,
+      "url": "https://www.youtube.com/watch?v=Oi_sweaa0EE",
+      "thumbnail": "https://i.ytimg.com/vi/Oi_sweaa0EE/hqdefault.jpg",
+      "id": "Oi_sweaa0EE"
+    },
+    {
+      "rank": 3,
+      "title": "Don't Start An AI Agency (Do This Instead)",
+      "channel": "StephenGPope",
+      "views": 115167,
+      "ratio": 16.9,
+      "url": "https://www.youtube.com/watch?v=SDYm5bpqKt8",
+      "thumbnail": "https://i.ytimg.com/vi/SDYm5bpqKt8/hqdefault.jpg",
+      "id": "SDYm5bpqKt8"
+    },
+    {
+      "rank": 4,
+      "title": "OpenClaw is the most powerful AI tool I’ve ever used in my life. Here’s how to set it up",
+      "channel": "AlexFinnOfficial",
+      "views": 1087892,
+      "ratio": 13.48,
+      "url": "https://www.youtube.com/watch?v=Qkqe-uRhQJE",
+      "thumbnail": "https://i.ytimg.com/vi/Qkqe-uRhQJE/hqdefault.jpg",
+      "id": "Qkqe-uRhQJE"
+    },
+    {
+      "rank": 5,
+      "title": "I Built a FREE OpenClaw (no Mac Mini or API Fees)",
+      "channel": "StephenGPope",
+      "views": 167834,
+      "ratio": 12.64,
+      "url": "https://www.youtube.com/watch?v=8uP2IrP3IG8",
+      "thumbnail": "https://i.ytimg.com/vi/8uP2IrP3IG8/hqdefault.jpg",
+      "id": "8uP2IrP3IG8"
+    },
+    {
+      "rank": 6,
+      "title": "Make vs n8n—The Wrong Choice Will Cost You",
+      "channel": "StephenGPope",
+      "views": 107857,
+      "ratio": 10.89,
+      "url": "https://www.youtube.com/watch?v=L4uST6vOTac",
+      "thumbnail": "https://i.ytimg.com/vi/L4uST6vOTac/hqdefault.jpg",
+      "id": "L4uST6vOTac"
+    },
+    {
+      "rank": 7,
+      "title": "Cancel ALL Your API Subscriptions (FREE Alternative)",
+      "channel": "StephenGPope",
+      "views": 77644,
+      "ratio": 8.89,
+      "url": "https://www.youtube.com/watch?v=kHPcBNp82W0",
+      "thumbnail": "https://i.ytimg.com/vi/kHPcBNp82W0/hqdefault.jpg",
+      "id": "kHPcBNp82W0"
+    },
+    {
+      "rank": 8,
+      "title": "Everything You Need to Know About Claude AI in 22 Minutes",
+      "channel": "yassine-sdiri",
+      "views": 344217,
+      "ratio": 8.65,
+      "url": "https://www.youtube.com/watch?v=-50BGEYgMr4",
+      "thumbnail": "https://i.ytimg.com/vi/-50BGEYgMr4/hqdefault.jpg",
+      "id": "-50BGEYgMr4"
+    },
+    {
+      "rank": 9,
+      "title": "Google Antigravity: From Beginner to Expert in 14 Minutes",
+      "channel": "AlexFinnOfficial",
+      "views": 190108,
+      "ratio": 7.32,
+      "url": "https://www.youtube.com/watch?v=mbxq88TOxp4",
+      "thumbnail": "https://i.ytimg.com/vi/mbxq88TOxp4/hqdefault.jpg",
+      "id": "mbxq88TOxp4"
+    },
+    {
+      "rank": 10,
+      "title": "AGENTIC WORKFLOWS 6 HOUR COURSE: Beginner to Pro (2026)",
+      "channel": "nicksaraev",
+      "views": 235195,
+      "ratio": 6.62,
+      "url": "https://www.youtube.com/watch?v=MxyRjL7NG18",
+      "thumbnail": "https://i.ytimg.com/vi/MxyRjL7NG18/hqdefault.jpg",
+      "id": "MxyRjL7NG18"
+    },
+    {
+      "rank": 11,
+      "title": "Claude Code for Desktop is the BEST way to build apps with AI EVER",
+      "channel": "AlexFinnOfficial",
+      "views": 140341,
+      "ratio": 6.44,
+      "url": "https://www.youtube.com/watch?v=pZ2N7CJFbBk",
+      "thumbnail": "https://i.ytimg.com/vi/pZ2N7CJFbBk/hqdefault.jpg",
+      "id": "pZ2N7CJFbBk"
+    },
+    {
+      "rank": 12,
+      "title": "Claude Code's Creator Does This Before Every Single Project",
+      "channel": "AILABS-393",
+      "views": 192831,
+      "ratio": 6.29,
+      "url": "https://www.youtube.com/watch?v=B-UXpneKw6M",
+      "thumbnail": "https://i.ytimg.com/vi/B-UXpneKw6M/hqdefault.jpg",
+      "id": "B-UXpneKw6M"
+    },
+    {
+      "rank": 13,
+      "title": "Docker Just Fixed 90% of AI Coding By Releasing This",
+      "channel": "AILABS-393",
+      "views": 84185,
+      "ratio": 6.19,
+      "url": "https://www.youtube.com/watch?v=ZOutBmRai2M",
+      "thumbnail": "https://i.ytimg.com/vi/ZOutBmRai2M/hqdefault.jpg",
+      "id": "ZOutBmRai2M"
+    },
+    {
+      "rank": 14,
+      "title": "the n8n killer? AGENTIC WORKFLOWS: Full Beginner's Guide",
+      "channel": "nicksaraev",
+      "views": 136986,
+      "ratio": 6.06,
+      "url": "https://www.youtube.com/watch?v=bA-WmidVSGo",
+      "thumbnail": "https://i.ytimg.com/vi/bA-WmidVSGo/hqdefault.jpg",
+      "id": "bA-WmidVSGo"
+    },
+    {
+      "rank": 15,
+      "title": "Clawdbot Sucks, Actually",
+      "channel": "nicksaraev",
+      "views": 192643,
+      "ratio": 5.42,
+      "url": "https://www.youtube.com/watch?v=esXXuejofgk",
+      "thumbnail": "https://i.ytimg.com/vi/esXXuejofgk/hqdefault.jpg",
+      "id": "esXXuejofgk"
+    },
+    {
+      "rank": 16,
+      "title": "The only OpenClaw tutorial you’ll ever need (March 2026 edition)",
+      "channel": "AlexFinnOfficial",
+      "views": 367504,
+      "ratio": 5.11,
+      "url": "https://www.youtube.com/watch?v=CxErCGVo-oo",
+      "thumbnail": "https://i.ytimg.com/vi/CxErCGVo-oo/hqdefault.jpg",
+      "id": "CxErCGVo-oo"
+    },
+    {
+      "rank": 17,
+      "title": "Building Beautiful Websites with Claude Code Is Too Easy",
+      "channel": "nateherk",
+      "views": 317184,
+      "ratio": 4.84,
+      "url": "https://www.youtube.com/watch?v=86HM0RUWhCk",
+      "thumbnail": "https://i.ytimg.com/vi/86HM0RUWhCk/hqdefault.jpg",
+      "id": "86HM0RUWhCk"
+    },
+    {
+      "rank": 18,
+      "title": "5 Ways To Build Beautiful Websites Using Claude Code",
+      "channel": "AILABS-393",
+      "views": 83570,
+      "ratio": 4.51,
+      "url": "https://www.youtube.com/watch?v=VGYsHicpp34",
+      "thumbnail": "https://i.ytimg.com/vi/VGYsHicpp34/hqdefault.jpg",
+      "id": "VGYsHicpp34"
+    },
+    {
+      "rank": 19,
+      "title": "L’IA vient de franchir un cap flippant (Guide Complet Claude)",
+      "channel": "yassine-sdiri",
+      "views": 223119,
+      "ratio": 4.48,
+      "url": "https://www.youtube.com/watch?v=z0Hxx4gutBE",
+      "thumbnail": "https://i.ytimg.com/vi/z0Hxx4gutBE/hqdefault.jpg",
+      "id": "z0Hxx4gutBE"
+    },
+    {
+      "rank": 20,
+      "title": "Build A SaaS Startup With Claude Code (22-Min Crash Course)",
+      "channel": "StephenGPope",
+      "views": 29854,
+      "ratio": 4.35,
+      "url": "https://www.youtube.com/watch?v=s47C9_qDvJs",
+      "thumbnail": "https://i.ytimg.com/vi/s47C9_qDvJs/hqdefault.jpg",
+      "id": "s47C9_qDvJs"
+    },
+    {
+      "rank": 21,
+      "title": "100 hours of OpenClaw lessons in 35 minutes",
+      "channel": "AlexFinnOfficial",
+      "views": 267981,
+      "ratio": 4.34,
+      "url": "https://www.youtube.com/watch?v=_kZCoW-Qxnc",
+      "thumbnail": "https://i.ytimg.com/vi/_kZCoW-Qxnc/hqdefault.jpg",
+      "id": "_kZCoW-Qxnc"
+    },
+    {
+      "rank": 22,
+      "title": "Je Crée un Business en 20 min avec 4 IA GRATUITE de Google",
+      "channel": "yassine-sdiri",
+      "views": 148237,
+      "ratio": 4.19,
+      "url": "https://www.youtube.com/watch?v=JG1TcUROLDE",
+      "thumbnail": "https://i.ytimg.com/vi/JG1TcUROLDE/hqdefault.jpg",
+      "id": "JG1TcUROLDE"
+    },
+    {
+      "rank": 23,
+      "title": "285 billion gone up in smoke: how Anthropic is killing SaaS (and junior developers)",
+      "channel": "SamouraiDansant",
+      "views": 97131,
+      "ratio": 4.18,
+      "url": "https://www.youtube.com/watch?v=Nd2pavAegx4",
+      "thumbnail": "https://i.ytimg.com/vi/Nd2pavAegx4/hqdefault.jpg",
+      "id": "Nd2pavAegx4"
+    },
+    {
+      "rank": 24,
+      "title": "Comment Créer & Vendre des Agents IA: Formation Complète Débutant",
+      "channel": "yassine-sdiri",
+      "views": 152812,
+      "ratio": 4.17,
+      "url": "https://www.youtube.com/watch?v=nboNlCGFKw4",
+      "thumbnail": "https://i.ytimg.com/vi/nboNlCGFKw4/hqdefault.jpg",
+      "id": "nboNlCGFKw4"
+    },
+    {
+      "rank": 25,
+      "title": "I Tried to Sell a New AI Service in 3 Hours (RAW RESULTS)",
+      "channel": "nicksaraev",
+      "views": 77292,
+      "ratio": 4.14,
+      "url": "https://www.youtube.com/watch?v=LQMAnCIIPgM",
+      "thumbnail": "https://i.ytimg.com/vi/LQMAnCIIPgM/hqdefault.jpg",
+      "id": "LQMAnCIIPgM"
+    },
+    {
+      "rank": 26,
+      "title": "Build & Sell with Claude Code (10+ Hour Course)",
+      "channel": "nateherk",
+      "views": 437867,
+      "ratio": 3.97,
+      "url": "https://www.youtube.com/watch?v=mpALXah_PBg",
+      "thumbnail": "https://i.ytimg.com/vi/mpALXah_PBg/hqdefault.jpg",
+      "id": "mpALXah_PBg"
+    },
+    {
+      "rank": 27,
+      "title": "I Built My Own Clawdbot (It’s ACTUALLY Safe)",
+      "channel": "StephenGPope",
+      "views": 42325,
+      "ratio": 3.79,
+      "url": "https://www.youtube.com/watch?v=zeJ4whgLELE",
+      "thumbnail": "https://i.ytimg.com/vi/zeJ4whgLELE/hqdefault.jpg",
+      "id": "zeJ4whgLELE"
+    },
+    {
+      "rank": 28,
+      "title": "I Wasn't Ready For What This Does",
+      "channel": "AILABS-393",
+      "views": 113780,
+      "ratio": 3.67,
+      "url": "https://www.youtube.com/watch?v=XP6TJRbOdGo",
+      "thumbnail": "https://i.ytimg.com/vi/XP6TJRbOdGo/hqdefault.jpg",
+      "id": "XP6TJRbOdGo"
+    },
+    {
+      "rank": 29,
+      "title": "Gemini 3.1 Pro + Antigravity Destroys Every Site Designer",
+      "channel": "nicksaraev",
+      "views": 245181,
+      "ratio": 3.57,
+      "url": "https://www.youtube.com/watch?v=czLrUyA_Bh4",
+      "thumbnail": "https://i.ytimg.com/vi/czLrUyA_Bh4/hqdefault.jpg",
+      "id": "czLrUyA_Bh4"
+    },
+    {
+      "rank": 30,
+      "title": "The only Claude Code guide you'll ever need (Opus 4.5)",
+      "channel": "AlexFinnOfficial",
+      "views": 111102,
+      "ratio": 3.48,
+      "url": "https://www.youtube.com/watch?v=UVJXh57MgI0",
+      "thumbnail": "https://i.ytimg.com/vi/UVJXh57MgI0/hqdefault.jpg",
+      "id": "UVJXh57MgI0"
+    }
+  ],
+  "thumbnailPatterns": {
+    "winning_patterns": [
+      "Dark background with single bright contrast color (orange/green/yellow)",
+      "Large face with strong expression (surprise, tension, concentration) occupying 1/3 of frame",
+      "Three- to four-word sans-serif overlay, readable on phone",
+      "Contextual prop (code screenshot for build, graph for analysis, tool logo for comparison)",
+      "CAIO Academy: black-and-white, serif title, restraint. Stands out visually against loud tool-tutorial thumbnails."
+    ],
+    "losing_patterns": [
+      "Busy collages with multiple AI tool logos",
+      "Arrow-to-face shock memes (overdone in the niche)",
+      "All-caps yellow text on red (Mr Beast style works less for C-level)"
+    ]
+  },
+  "hookAnalysis": {
+    "winning_structures": [
+      {
+        "name": "The Nuclear Number",
+        "description": "Open with a specific dollar/percent/view figure that seems too big to be real.",
+        "example": "\"$285 billion. Vanished in a week. Not a general crash. Surgical.\" — SamouraiDansant"
+      },
+      {
+        "name": "The Mythos Break",
+        "description": "Name the official narrative. Declare it false. Promise the real mechanism.",
+        "example": "\"Apple has just been brought to its knees... or at least, that's what they want you to believe.\""
+      },
+      {
+        "name": "The Contrarian Prescription",
+        "description": "Tell the viewer NOT to do the thing everyone is telling them to do.",
+        "example": "\"Don't Start An AI Agency (Do This Instead)\" — StephenGPope, 16.9x outlier"
+      },
+      {
+        "name": "The Live Build Promise",
+        "description": "State the outcome and the time. Show the final result in 3 seconds. Transition.",
+        "example": "\"I built this in 2 hours. Here is the code.\" — nateherk/nicksaraev pattern"
+      },
+      {
+        "name": "The Philosophical Meta",
+        "description": "State a counter-intuitive principle. Then systematically unfold it.",
+        "example": "\"The real obstacle to your progress in AI is not the technique.\" — SamouraiDansant"
+      }
+    ],
+    "avoid": [
+      "Generic \"today we're going to look at\" openers",
+      "Energy-level performative greetings",
+      "Tool-first framing (\"In this video I'll show you ChatGPT prompts...\")"
+    ]
+  },
+  "channelSummaries": {
+    "SamouraiDansant": {
+      "name": "IA et Stratégie | Le SamourAI",
+      "subscribers": 66700,
+      "totalVideos": 22,
+      "totalViews": 610131,
+      "avgViews": 27733,
+      "medianViews": 22994,
+      "tier": "primary",
+      "description": "IA et Stratégie\n\nJe ne teste pas les gadgets de la semaine. J'analyse le système qui les produit. L'IA n'est pas qu'une liste d'applications, c'est une restructuration complète et une révolution.\n\nQuatre axes pour garder un coup d'avance :\n• Stratégie : Qui détient la puissance de calcul et les modè",
+      "whatWorks": [
+        "\"285 billion gone up in smoke: how Anthropic is killing SaaS (and junior developers)\" (97,131 views, 4.18x local median)",
+        "\"Artificial Intelligence is destroying the knowledge economy (and the diploma is no longer worth a...\" (42,609 views, 3.06x local median)",
+        "\"40 million views in 12 hours: Is Claude \"Computer Use\" burying office work?\" (51,128 views, 2.69x local median)",
+        "\"Apple capitulates! The trap that will kill OpenAI.\" (55,620 views, 2.34x local median)",
+        "\"Why the best are leaving LinkedIn (and where they're going)\" (48,247 views, 2.16x local median)"
+      ],
+      "whatDoesntWork": [
+        "\"Claude Mythos: The secret model and the tragic error that is shaking Anthropic\" (11,629 views, 0.6x local median)",
+        "\"State of AI 2026: Comparative Assessment and Recomposition of the Competitive Landscape of LLMs\" (13,931 views, 0.56x local median)",
+        "\"What they don't tell you about Mistral AI's 830 million\" (8,582 views, 0.37x local median)",
+        "\"Rapid Growth of AI Capabilities: Market Analysis and Gain Distribution\" (7,424 views, 0.24x local median)",
+        "\"2026: Being 'average' is dangerous: The lesson everyone misses.\" (6,571 views, 0.23x local median)"
+      ],
+      "topOutliers": [
+        {
+          "title": "285 billion gone up in smoke: how Anthropic is killing SaaS (and junior developers)",
+          "views": 97131,
+          "ratio": 4.18,
+          "id": "Nd2pavAegx4"
+        },
+        {
+          "title": "Artificial Intelligence is destroying the knowledge economy (and the diploma is no longer worth a...",
+          "views": 42609,
+          "ratio": 3.06,
+          "id": "eztHlHwBeZ8"
+        },
+        {
+          "title": "40 million views in 12 hours: Is Claude \"Computer Use\" burying office work?",
+          "views": 51128,
+          "ratio": 2.69,
+          "id": "XfkRd7w69dE"
+        },
+        {
+          "title": "Apple capitulates! The trap that will kill OpenAI.",
+          "views": 55620,
+          "ratio": 2.34,
+          "id": "YPEvrpzz72w"
+        },
+        {
+          "title": "Why the best are leaving LinkedIn (and where they're going)",
+          "views": 48247,
+          "ratio": 2.16,
+          "id": "9DFgHyWl64A"
+        }
+      ],
+      "uniqueAngle": "IA et Stratégie\n\nJe ne teste pas les gadgets de la semaine. J'analyse le système qui les produit. L'IA n'est pas qu'une liste d'applications, c'est une restructuration complète et une révolution.\n\nQua",
+      "evolution": {
+        "recentAvgViews": 21426,
+        "olderAvgViews": 34041,
+        "growthDirection": "declining",
+        "recentTopTopics": {
+          "General AI": 5,
+          "Other": 2,
+          "Claude Code / Anthropic": 1
+        },
+        "olderTopTopics": {
+          "General AI": 4,
+          "Claude Code / Anthropic": 1,
+          "AI tool reviews": 1
+        }
+      }
+    },
+    "StephenGPope": {
+      "name": "Stephen G. Pope",
+      "subscribers": 88500,
+      "totalVideos": 50,
+      "totalViews": 1026752,
+      "avgViews": 20535,
+      "medianViews": 9728,
+      "tier": "primary",
+      "description": "",
+      "whatWorks": [
+        "\"Don't Start An AI Agency (Do This Instead)\" (115,167 views, 16.9x local median)",
+        "\"I Built a FREE OpenClaw (no Mac Mini or API Fees)\" (167,834 views, 12.64x local median)",
+        "\"Make vs n8n—The Wrong Choice Will Cost You\" (107,857 views, 10.89x local median)",
+        "\"Cancel ALL Your API Subscriptions (FREE Alternative)\" (77,644 views, 8.89x local median)",
+        "\"Build A SaaS Startup With Claude Code (22-Min Crash Course)\" (29,854 views, 4.35x local median)",
+        "\"I Built My Own Clawdbot (It’s ACTUALLY Safe)\" (42,325 views, 3.79x local median)",
+        "\"Build A Telegram AI Voice Agent (n8n)\" (28,706 views, 3.21x local median)",
+        "\"Stop Wasting Money on Faceless Video APIs (FREE Alternative)\" (20,547 views, 2.66x local median)",
+        "\"CHEAT CODE: Building AI Agents (n8n)\" (30,409 views, 2.41x local median)"
+      ],
+      "whatDoesntWork": [
+        "\"The FASTEST Way To Launch A Full SaaS (in 9 minutes)\" (3,753 views, 0.32x local median)",
+        "\"STOP Building AI Apps the Hard Way (Do This Instead)\" (3,156 views, 0.28x local median)",
+        "\"7-Figure Sales Script For AI Automation\" (5,349 views, 0.25x local median)",
+        "\"FREE Tool—5X Your Team's Efficiency (Frame.io Replacement)\" (3,955 views, 0.25x local median)",
+        "\"I Built A Gmail Assistant That Handles Customer Questions On Autopilot\" (2,202 views, 0.24x local median)"
+      ],
+      "topOutliers": [
+        {
+          "title": "Don't Start An AI Agency (Do This Instead)",
+          "views": 115167,
+          "ratio": 16.9,
+          "id": "SDYm5bpqKt8"
+        },
+        {
+          "title": "I Built a FREE OpenClaw (no Mac Mini or API Fees)",
+          "views": 167834,
+          "ratio": 12.64,
+          "id": "8uP2IrP3IG8"
+        },
+        {
+          "title": "Make vs n8n—The Wrong Choice Will Cost You",
+          "views": 107857,
+          "ratio": 10.89,
+          "id": "L4uST6vOTac"
+        },
+        {
+          "title": "Cancel ALL Your API Subscriptions (FREE Alternative)",
+          "views": 77644,
+          "ratio": 8.89,
+          "id": "kHPcBNp82W0"
+        },
+        {
+          "title": "Build A SaaS Startup With Claude Code (22-Min Crash Course)",
+          "views": 29854,
+          "ratio": 4.35,
+          "id": "s47C9_qDvJs"
+        }
+      ],
+      "uniqueAngle": "Focuses on AI automation niche.",
+      "evolution": {
+        "recentAvgViews": 21828,
+        "olderAvgViews": 19242,
+        "growthDirection": "growing",
+        "recentTopTopics": {
+          "Building AI products": 8,
+          "Claude Code / Anthropic": 4,
+          "AI automation": 4
+        },
+        "olderTopTopics": {
+          "AI automation": 10,
+          "Building AI products": 5,
+          "AI agents": 2
+        }
+      }
+    },
+    "nateherk": {
+      "name": "Nate Herk | AI Automation",
+      "subscribers": 658000,
+      "totalVideos": 50,
+      "totalViews": 5851255,
+      "avgViews": 117025,
+      "medianViews": 106700,
+      "tier": "primary",
+      "description": "Hi 👋 I'm Nate Herk. I’m passionate about helping businesses unlock the power of AI Automations to save time, cut costs, and stay competitive. \n\nI believe that businesses that don’t adopt AI will struggle to keep up, and I’m here to make sure you’re ahead of the curve. Whether you’re new to AI or loo",
+      "whatWorks": [
+        "\"Building Beautiful Websites with Claude Code Is Too Easy\" (317,184 views, 4.84x local median)",
+        "\"Build & Sell with Claude Code (10+ Hour Course)\" (437,867 views, 3.97x local median)",
+        "\"How I’d Teach a 10 Year Old to Build Agentic Workflows (Claude Code)\" (133,285 views, 3.37x local median)",
+        "\"Andrej Karpathy Just 10x’d Everyone’s Claude Code\" (347,462 views, 2.9x local median)"
+      ],
+      "whatDoesntWork": [
+        "\"Claude Code + iMessage is Finally Here.\" (39,291 views, 0.3x local median)",
+        "\"Generate Content for 9 Socials on Autopilot with Claude Code\" (36,486 views, 0.27x local median)",
+        "\"Claude Code Just Gave Everyone Virtual Pets (April Fools?)\" (24,210 views, 0.16x local median)",
+        "\"Cursor Automations Clearly Explained (worth learning?)\" (16,897 views, 0.13x local median)",
+        "\"I Taught Claude Code to Play Tetris... It Broke the World Record\" (8,801 views, 0.07x local median)"
+      ],
+      "topOutliers": [
+        {
+          "title": "Building Beautiful Websites with Claude Code Is Too Easy",
+          "views": 317184,
+          "ratio": 4.84,
+          "id": "86HM0RUWhCk"
+        },
+        {
+          "title": "Build & Sell with Claude Code (10+ Hour Course)",
+          "views": 437867,
+          "ratio": 3.97,
+          "id": "mpALXah_PBg"
+        },
+        {
+          "title": "How I’d Teach a 10 Year Old to Build Agentic Workflows (Claude Code)",
+          "views": 133285,
+          "ratio": 3.37,
+          "id": "3GAxd90fEE4"
+        },
+        {
+          "title": "Andrej Karpathy Just 10x’d Everyone’s Claude Code",
+          "views": 347462,
+          "ratio": 2.9,
+          "id": "sboNwYmH3AY"
+        }
+      ],
+      "uniqueAngle": "Hi 👋 I'm Nate Herk. I’m passionate about helping businesses unlock the power of AI Automations to save time, cut costs, and stay competitive. \n\nI believe that businesses that don’t adopt AI will strug",
+      "evolution": {
+        "recentAvgViews": 114301,
+        "olderAvgViews": 119750,
+        "growthDirection": "declining",
+        "recentTopTopics": {
+          "Claude Code / Anthropic": 15,
+          "AI agents": 3,
+          "AI tool reviews": 2
+        },
+        "olderTopTopics": {
+          "Claude Code / Anthropic": 17,
+          "AI automation": 2,
+          "AI business / monetization": 2
+        }
+      }
+    },
+    "yassine-sdiri": {
+      "name": "Yassine Sdiri",
+      "subscribers": 206000,
+      "totalVideos": 50,
+      "totalViews": 3863083,
+      "avgViews": 77262,
+      "medianViews": 49858,
+      "tier": "secondary",
+      "description": "En savoir plus sur moi\n\nÀ l'âge de 19 ans, j'ai décidé d’interrompre mes études à l’université afin de poursuivre ma passion grandissante pour l’entrepreneuriat.\n\nEn 2020, cette passion m'a conduit à lever plus de 500 000€ pour ma première Start-Up, POWK, et à sponsoriser une voiture de Formule 2 du",
+      "whatWorks": [
+        "\"Formation Intelligence Artificielle: Comment Devenir un Expert IA en 2026 | Guide Complet Débutant\" (515,228 views, 17.33x local median)",
+        "\"Everything You Need to Know About Claude AI in 22 Minutes\" (344,217 views, 8.65x local median)",
+        "\"L’IA vient de franchir un cap flippant (Guide Complet Claude)\" (223,119 views, 4.48x local median)",
+        "\"Je Crée un Business en 20 min avec 4 IA GRATUITE de Google\" (148,237 views, 4.19x local median)",
+        "\"Comment Créer & Vendre des Agents IA: Formation Complète Débutant\" (152,812 views, 4.17x local median)",
+        "\"This AI Technology Is Exploding Businesses (with Zero Employees)\" (150,340 views, 2.91x local median)",
+        "\"How to Create a €10,000 Website with AI in 23 Minutes\" (137,441 views, 2.73x local median)",
+        "\"13 AI Tools That Are Exploding Businesses (with Zero Employees)\" (95,015 views, 2.59x local median)",
+        "\"The foolproof method to learn EVERYTHING with AI\" (122,408 views, 2.37x local median)",
+        "\"Comprendre le NOUVEAU Google AI Studio en 20 Minutes\" (131,929 views, 2.35x local median)"
+      ],
+      "whatDoesntWork": [
+        "\"What are the 7 levels of AI evolution? (only 3 left)\" (18,727 views, 0.31x local median)",
+        "\"Comment Trouver Son Premier Client IA (Étape Par Étape)\" (18,530 views, 0.26x local median)",
+        "\"Why You Need to Think Like an Entrepreneur in the AI ​​Age\" (15,532 views, 0.22x local median)",
+        "\"11 erreurs que j’ai faites en levant 500’000€ à 20 ans\" (8,014 views, 0.16x local median)",
+        "\"From Non-Technical to €6,900 for a SINGLE AI Automation\" (9,125 views, 0.14x local median)"
+      ],
+      "topOutliers": [
+        {
+          "title": "Formation Intelligence Artificielle: Comment Devenir un Expert IA en 2026 | Guide Complet Débutant",
+          "views": 515228,
+          "ratio": 17.33,
+          "id": "Oi_sweaa0EE"
+        },
+        {
+          "title": "Everything You Need to Know About Claude AI in 22 Minutes",
+          "views": 344217,
+          "ratio": 8.65,
+          "id": "-50BGEYgMr4"
+        },
+        {
+          "title": "L’IA vient de franchir un cap flippant (Guide Complet Claude)",
+          "views": 223119,
+          "ratio": 4.48,
+          "id": "z0Hxx4gutBE"
+        },
+        {
+          "title": "Je Crée un Business en 20 min avec 4 IA GRATUITE de Google",
+          "views": 148237,
+          "ratio": 4.19,
+          "id": "JG1TcUROLDE"
+        },
+        {
+          "title": "Comment Créer & Vendre des Agents IA: Formation Complète Débutant",
+          "views": 152812,
+          "ratio": 4.17,
+          "id": "nboNlCGFKw4"
+        }
+      ],
+      "uniqueAngle": "En savoir plus sur moi\n\nÀ l'âge de 19 ans, j'ai décidé d’interrompre mes études à l’université afin de poursuivre ma passion grandissante pour l’entrepreneuriat.\n\nEn 2020, cette passion m'a conduit à ",
+      "evolution": {
+        "recentAvgViews": 72014,
+        "olderAvgViews": 82510,
+        "growthDirection": "declining",
+        "recentTopTopics": {
+          "General AI": 11,
+          "AI business / monetization": 4,
+          "AI automation": 2
+        },
+        "olderTopTopics": {
+          "General AI": 9,
+          "AI business / monetization": 5,
+          "ChatGPT / OpenAI": 2
+        }
+      }
+    },
+    "AlexFinnOfficial": {
+      "name": "Alex Finn",
+      "subscribers": 186000,
+      "totalVideos": 50,
+      "totalViews": 4677068,
+      "avgViews": 93541,
+      "medianViews": 56242,
+      "tier": "secondary",
+      "description": "The number 1 vibe coding channel on Youtube. I'll teach you how to use Claude Code, Codex, and AI even if you've never used them before!\n\nI built a $300,000 a year AI app without writing a single line of code. I'll show you how to do the same.\n\nPlus the latest AI news, tutorials, master classes, and",
+      "whatWorks": [
+        "\"OpenClaw is the most powerful AI tool I’ve ever used in my life. Here’s how to set it up\" (1,087,892 views, 13.48x local median)",
+        "\"Google Antigravity: From Beginner to Expert in 14 Minutes\" (190,108 views, 7.32x local median)",
+        "\"Claude Code for Desktop is the BEST way to build apps with AI EVER\" (140,341 views, 6.44x local median)",
+        "\"The only OpenClaw tutorial you’ll ever need (March 2026 edition)\" (367,504 views, 5.11x local median)",
+        "\"100 hours of OpenClaw lessons in 35 minutes\" (267,981 views, 4.34x local median)",
+        "\"The only Claude Code guide you'll ever need (Opus 4.5)\" (111,102 views, 3.48x local median)",
+        "\"6 OpenClaw use cases I promise will change your life\" (163,287 views, 2.41x local median)",
+        "\"OpenClaw is 100x better with this tool (Mission Control)\" (162,038 views, 2.37x local median)"
+      ],
+      "whatDoesntWork": [
+        "\"ChatGPT 5.2 is INCREDIBLE. Here’s how to use it in 14 minutes\" (20,873 views, 0.54x local median)",
+        "\"How I made $500,000 with Claude Code (and how you can too)\" (40,720 views, 0.49x local median)",
+        "\"Claude Code Mobile just changed AI coding forever (Remote Control)\" (26,963 views, 0.37x local median)",
+        "\"Gemini 3 Pro Deep Think Gives You Super Powers\" (10,484 views, 0.27x local median)",
+        "\"This AI browser works for you 24/7 (FlowithOS guide)\" (4,705 views, 0.13x local median)"
+      ],
+      "topOutliers": [
+        {
+          "title": "OpenClaw is the most powerful AI tool I’ve ever used in my life. Here’s how to set it up",
+          "views": 1087892,
+          "ratio": 13.48,
+          "id": "Qkqe-uRhQJE"
+        },
+        {
+          "title": "Google Antigravity: From Beginner to Expert in 14 Minutes",
+          "views": 190108,
+          "ratio": 7.32,
+          "id": "mbxq88TOxp4"
+        },
+        {
+          "title": "Claude Code for Desktop is the BEST way to build apps with AI EVER",
+          "views": 140341,
+          "ratio": 6.44,
+          "id": "pZ2N7CJFbBk"
+        },
+        {
+          "title": "The only OpenClaw tutorial you’ll ever need (March 2026 edition)",
+          "views": 367504,
+          "ratio": 5.11,
+          "id": "CxErCGVo-oo"
+        },
+        {
+          "title": "100 hours of OpenClaw lessons in 35 minutes",
+          "views": 267981,
+          "ratio": 4.34,
+          "id": "_kZCoW-Qxnc"
+        }
+      ],
+      "uniqueAngle": "The number 1 vibe coding channel on Youtube. I'll teach you how to use Claude Code, Codex, and AI even if you've never used them before!\n\nI built a $300,000 a year AI app without writing a single line",
+      "evolution": {
+        "recentAvgViews": 92356,
+        "olderAvgViews": 94726,
+        "growthDirection": "declining",
+        "recentTopTopics": {
+          "Other": 8,
+          "Claude Code / Anthropic": 6,
+          "General AI": 5
+        },
+        "olderTopTopics": {
+          "Claude Code / Anthropic": 13,
+          "Google AI / Gemini": 4,
+          "Other": 3
+        }
+      }
+    },
+    "nicksaraev": {
+      "name": "Nick Saraev",
+      "subscribers": 386000,
+      "totalVideos": 50,
+      "totalViews": 4796629,
+      "avgViews": 95933,
+      "medianViews": 41242,
+      "tier": "secondary",
+      "description": "Hi 👋 I'm Nick. I make money with AI tools like N8N, Claude Code, and Antigravity—and I teach others how they can too.\n\nI'm not the best in the world, nor are my accomplishments the most impressive... but some people think I have interesting things to say! To that end, this channel is a way to organi",
+      "whatWorks": [
+        "\"CLAUDE CODE FULL COURSE 4 HOURS: Build & Sell (2026)\" (1,282,583 views, 31.56x local median)",
+        "\"AGENTIC WORKFLOWS 6 HOUR COURSE: Beginner to Pro (2026)\" (235,195 views, 6.62x local median)",
+        "\"the n8n killer? AGENTIC WORKFLOWS: Full Beginner's Guide\" (136,986 views, 6.06x local median)",
+        "\"Clawdbot Sucks, Actually\" (192,643 views, 5.42x local median)",
+        "\"I Tried to Sell a New AI Service in 3 Hours (RAW RESULTS)\" (77,292 views, 4.14x local median)",
+        "\"Gemini 3.1 Pro + Antigravity Destroys Every Site Designer\" (245,181 views, 3.57x local median)",
+        "\"How I Would Start AI Consulting in 2026 (If I could start over)\" (47,414 views, 2.28x local median)",
+        "\"Claude Managed Agents Just Dropped, And It Kills n8n\" (162,095 views, 2.11x local median)",
+        "\"How to get SO many leads you don’t know what to do with them\" (41,623 views, 2.03x local median)",
+        "\"It's Dumb, But Makes Getting Clients SO Easy\" (37,288 views, 2.0x local median)"
+      ],
+      "whatDoesntWork": [
+        "\"Opus-4.6 Just Did Something Crazy\" (32,309 views, 0.47x local median)",
+        "\"COLD EMAIL COPYWRITING & OUTREACH Full Course 2026\" (37,518 views, 0.36x local median)",
+        "\"How to Host Agentic Workflows in the Cloud (3 BEST WAYS)\" (15,656 views, 0.35x local median)",
+        "\"Claude Code's New Upgrade: /btw\" (40,425 views, 0.25x local median)",
+        "\"It's Official: AI Makes You Worse At Stuff\" (9,297 views, 0.23x local median)"
+      ],
+      "topOutliers": [
+        {
+          "title": "CLAUDE CODE FULL COURSE 4 HOURS: Build & Sell (2026)",
+          "views": 1282583,
+          "ratio": 31.56,
+          "id": "QoQBzR1NIqI"
+        },
+        {
+          "title": "AGENTIC WORKFLOWS 6 HOUR COURSE: Beginner to Pro (2026)",
+          "views": 235195,
+          "ratio": 6.62,
+          "id": "MxyRjL7NG18"
+        },
+        {
+          "title": "the n8n killer? AGENTIC WORKFLOWS: Full Beginner's Guide",
+          "views": 136986,
+          "ratio": 6.06,
+          "id": "bA-WmidVSGo"
+        },
+        {
+          "title": "Clawdbot Sucks, Actually",
+          "views": 192643,
+          "ratio": 5.42,
+          "id": "esXXuejofgk"
+        },
+        {
+          "title": "I Tried to Sell a New AI Service in 3 Hours (RAW RESULTS)",
+          "views": 77292,
+          "ratio": 4.14,
+          "id": "LQMAnCIIPgM"
+        }
+      ],
+      "uniqueAngle": "Hi 👋 I'm Nick. I make money with AI tools like N8N, Claude Code, and Antigravity—and I teach others how they can too.\n\nI'm not the best in the world, nor are my accomplishments the most impressive... ",
+      "evolution": {
+        "recentAvgViews": 142680,
+        "olderAvgViews": 49186,
+        "growthDirection": "growing",
+        "recentTopTopics": {
+          "Other": 9,
+          "Claude Code / Anthropic": 6,
+          "AI automation": 2
+        },
+        "olderTopTopics": {
+          "AI business / monetization": 10,
+          "AI agents": 5,
+          "General AI": 3
+        }
+      }
+    },
+    "AILABS-393": {
+      "name": "AI LABS",
+      "subscribers": 130000,
+      "totalVideos": 50,
+      "totalViews": 1666951,
+      "avgViews": 33339,
+      "medianViews": 23740,
+      "tier": "secondary",
+      "description": "Welcome to AI Labs, your go-to source for the latest AI tools and models for coding. We explore how AI can save you time in building full-stack applications, making your development process faster and more efficient. Whether you're a beginner or an experienced developer, we help you discover the bes",
+      "whatWorks": [
+        "\"Claude Code's Creator Does This Before Every Single Project\" (192,831 views, 6.29x local median)",
+        "\"Docker Just Fixed 90% of AI Coding By Releasing This\" (84,185 views, 6.19x local median)",
+        "\"5 Ways To Build Beautiful Websites Using Claude Code\" (83,570 views, 4.51x local median)",
+        "\"I Wasn't Ready For What This Does\" (113,780 views, 3.67x local median)",
+        "\"OpenClaw Use Cases That Are Actually Insane\" (67,174 views, 3.48x local median)",
+        "\"Google Just Solved The Greatest Limitation of AI Agents\" (45,925 views, 2.97x local median)",
+        "\"The Greatest Design System I've Ever Used\" (87,919 views, 2.9x local median)",
+        "\"This Just Fixed 90% of AI Coding Errors\" (63,567 views, 2.9x local median)",
+        "\"The Claude Code Limits Problem Is Finally Solved\" (44,767 views, 2.7x local median)",
+        "\"5 Things I Bet You Didn't Know About Antigravity\" (30,823 views, 2.5x local median)"
+      ],
+      "whatDoesntWork": [
+        "\"How to use Claude Code and Gemini Cli Together\" (10,285 views, 0.38x local median)",
+        "\"OpenClaw Agents Just Got Better With This\" (11,746 views, 0.33x local median)",
+        "\"Inngest's New Tool Is Insane For AI Coding\" (9,118 views, 0.32x local median)",
+        "\"Google's Biggest Fail of the year\" (8,985 views, 0.25x local median)",
+        "\"OpenAI's New Release Is WILD\" (5,671 views, 0.2x local median)"
+      ],
+      "topOutliers": [
+        {
+          "title": "Claude Code's Creator Does This Before Every Single Project",
+          "views": 192831,
+          "ratio": 6.29,
+          "id": "B-UXpneKw6M"
+        },
+        {
+          "title": "Docker Just Fixed 90% of AI Coding By Releasing This",
+          "views": 84185,
+          "ratio": 6.19,
+          "id": "ZOutBmRai2M"
+        },
+        {
+          "title": "5 Ways To Build Beautiful Websites Using Claude Code",
+          "views": 83570,
+          "ratio": 4.51,
+          "id": "VGYsHicpp34"
+        },
+        {
+          "title": "I Wasn't Ready For What This Does",
+          "views": 113780,
+          "ratio": 3.67,
+          "id": "XP6TJRbOdGo"
+        },
+        {
+          "title": "OpenClaw Use Cases That Are Actually Insane",
+          "views": 67174,
+          "ratio": 3.48,
+          "id": "hp7n45JqvIw"
+        }
+      ],
+      "uniqueAngle": "Welcome to AI Labs, your go-to source for the latest AI tools and models for coding. We explore how AI can save you time in building full-stack applications, making your development process faster and",
+      "evolution": {
+        "recentAvgViews": 26584,
+        "olderAvgViews": 40094,
+        "growthDirection": "declining",
+        "recentTopTopics": {
+          "Claude Code / Anthropic": 11,
+          "Other": 5,
+          "AI agents": 3
+        },
+        "olderTopTopics": {
+          "Other": 8,
+          "Claude Code / Anthropic": 6,
+          "AI development": 3
+        }
+      }
+    }
+  },
+  "gapAnalysis": {
+    "whatCompetitorsDo": [
+      "Tool tutorials (Claude Code, n8n, Make) dominate — 70% of content",
+      "Target builders, solopreneurs, agencies",
+      "Short-to-medium format 10-30min tutorials",
+      "Monetization angle ($X per month, building agencies)"
+    ],
+    "whatNobodyDoes": [
+      "Chief AI Officer / C-suite strategic content (0% of analyzed content)",
+      "Enterprise AI governance / ROI frameworks for boards",
+      "Structured CAIO certification pathway (yassine-sdiri's Formation IA is closest, 515K views)",
+      "Francophone deep C-level analysis (Samourai is closest but smaller scale)"
+    ],
+    "caioEdge": [
+      "Native Chief AI Officer positioning — not a pivot, the core identity",
+      "Five buyer avatars mapped (CTO SaaS, Consultant, DG PME, Head of Digital, Dev Ambitieux)",
+      "Bilingual from day one (FR strategic + EN technical)",
+      "Ecosystem monetization (community 67€, signature 3500€, mastermind 500€)"
+    ]
+  },
+  "strategy": {
+    "thisWeek": [
+      "Pick ONE Samourai-style philosophical title from the hook formulas and commit to writing its script",
+      "Draft a CAIO-positioned contrarian take (e.g., \"Why Every AI Consultant Is Wrong About SaaS\")",
+      "Batch-record 2 short-form tips (2-5 min) — lowest production cost, tests the thesis fast"
+    ],
+    "thisMonth": [
+      "Ship 4 long-form essay-style videos (20-30 min) using the Samourai template",
+      "Launch 1 tentpole: \"The Complete Guide to Becoming a Chief AI Officer in 2026\" (90+ min)",
+      "Build thumbnail system matching the tonal bar (dark, serif, no emoji, C-level aesthetic)",
+      "Cross-post Samourai-style hooks to LinkedIn for funnel"
+    ],
+    "thisQuarter": [
+      "Publish \"CAIO Certification Roadmap\" multi-part series (10 videos, 20-30 min each)",
+      "Record a 4-hour \"Enterprise AI Operator Playbook\" to compete with nicksaraev's 1.28M Claude Code course",
+      "Establish bilingual track: FR for philosophical/strategic, EN for technical/case-study",
+      "Use the in-house Content Generator for Samourai-style hooks at publish cadence"
+    ]
+  },
+  "dataIntegrity": {
+    "channelsAtFullCatalog": [
+      "SamouraiDansant (23/23 confirmed via yt-dlp)"
+    ],
+    "channelsAt50Cap": [
+      "AILABS-393",
+      "AlexFinnOfficial",
+      "StephenGPope",
+      "nateherk",
+      "nicksaraev",
+      "yassine-sdiri"
+    ],
+    "transcriptCoverage": "20 of 63 outliers have raw transcripts; Samourai transcripts blocked by VPS IP constraint",
+    "note": "Voice-profile analysis derived from titles + channel positioning + view patterns; structural hooks extracted from available transcripts."
+  }
+}
