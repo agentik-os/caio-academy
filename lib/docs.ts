@@ -108,6 +108,13 @@ export const SECTION_META: Record<
       en: "Philosophical perspectives on AI, leadership, and digital transformation.",
     },
   },
+  "content-scripts": {
+    title: { fr: "Content", en: "Content" },
+    tagline: {
+      fr: "Scripts YouTube SamourAI — formations complètes (45-60 min chacune).",
+      en: "SamourAI-voice YouTube scripts — full-length formations (45-60 min each).",
+    },
+  },
   "business-vision": {
     title: { fr: "Business — Vision", en: "Business — Vision" },
     tagline: {
@@ -178,6 +185,7 @@ const SECTIONS: { raw: string; key: string; order: number; root: string }[] = [
   { raw: "09-launch", key: "launch", order: 9, root: CAIO_ROOT },
   { raw: "10-operations", key: "operations", order: 10, root: CAIO_ROOT },
   { raw: "11-content", key: "content", order: 11, root: CAIO_ROOT },
+  { raw: "12-content-scripts", key: "content-scripts", order: 11.5, root: CAIO_ROOT },
   { raw: "02-vision", key: "business-vision", order: 12, root: BIZ_ROOT },
   { raw: "03-strategy", key: "business-strategy", order: 13, root: BIZ_ROOT },
   { raw: "04-blueprint", key: "business-blueprint", order: 14, root: BIZ_ROOT },
@@ -314,12 +322,13 @@ export function getAllDocs(): DocFile[] {
       const slugBase = relDir
         ? `${slugify(relDir)}-${slugify(langSuffix)}`
         : slugify(langSuffix);
-      // dedupe within section — append counter if multiple files collide on slug
-      const dedupeKey = `${section.key}/${slugBase}`;
+      const lang = detectLang(baseName, parsed.content);
+      // dedupe within (section, slug, lang) — FR/EN variants of the same doc
+      // share slugBase and must NOT collide. Only same-lang repeats get a counter.
+      const dedupeKey = `${section.key}/${slugBase}/${lang}`;
       const n = seenSlugs.get(dedupeKey) ?? 0;
       seenSlugs.set(dedupeKey, n + 1);
       const slug = n === 0 ? slugBase : `${slugBase}-${n + 1}`;
-      const lang = detectLang(baseName, parsed.content);
       const title =
         (parsed.data.title as string) ||
         extractTitle(parsed.content, clean.replace(/[-_]/g, " "));
