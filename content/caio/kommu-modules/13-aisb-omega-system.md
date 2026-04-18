@@ -1443,14 +1443,14 @@ graph TB
     subgraph MONITOR["Boucle de monitoring (30s)"]
         M1["Scanner sessions tmux"] --> M2["Mettre a jour le registry"]
         M2 --> M3["Verifier les heartbeats"]
-        M3 --> M4["Detecter transitions working → idle"]
+        M3 --> M4["Detecter transitions working to idle"]
         M4 --> M5["Envoyer notifications"]
         M5 -->|"sleep 30s"| M1
     end
 
     REG["/tmp/aisb-sessions.json"] <--> M2
     HB["~/.aisb/heartbeats/*.beat"] <--> M3
-    TG["Telegram DM"] <-- M5
+    M5 --> TG["Telegram DM"]
 
     style MONITOR fill:#f5f5f5
     style TG fill:#4a9eff,color:white
