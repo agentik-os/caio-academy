@@ -96,14 +96,25 @@ export default async function DocDetail({
   const meta = SECTION_META[section];
   if (!meta) notFound();
 
-  const safeSource = escapeMdx(doc.content);
+  // Strip the leading `# Title` so we don't render two identical H1s
+  // (one in the page header, one at the top of the prose body).
+  const bodySource = doc.content.replace(/^\s*#\s+[^\n]+\n+/, "");
+  const safeSource = escapeMdx(bodySource);
   const { content } = await compileMDX({
     source: safeSource,
     options: {
       parseFrontmatter: false,
       mdxOptions: {
         remarkPlugins: [remarkGfm],
-        rehypePlugins: [[rehypePrettyCode, { theme: "github-light", keepBackground: false }]],
+        rehypePlugins: [
+          [
+            rehypePrettyCode,
+            {
+              theme: { light: "github-light", dark: "github-dark" },
+              keepBackground: false,
+            },
+          ],
+        ],
       },
     },
   });
@@ -129,7 +140,7 @@ export default async function DocDetail({
       </header>
 
       <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_220px]">
-        <Prose className="min-w-0 max-w-none break-words">{content}</Prose>
+        <Prose className="min-w-0 max-w-[72ch] break-words">{content}</Prose>
 
         {toc.length > 0 && (
           <aside className="order-first lg:order-last">

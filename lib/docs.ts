@@ -261,11 +261,12 @@ export function escapeMdx(source: string): string {
       out.push(line);
       continue;
     }
+    // Escape `{`, `}`, and `<` (MDX syntax). Preserve `>` so markdown
+    // blockquote lines (`> ...`) still render as blockquotes.
     const safe = line
       .replace(/\{/g, "&#123;")
       .replace(/\}/g, "&#125;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;");
+      .replace(/</g, "&lt;");
     out.push(safe);
   }
   return out.join("\n");
@@ -273,7 +274,7 @@ export function escapeMdx(source: string): string {
 
 let _cache: DocFile[] | null = null;
 
-const SKIP_FILE_NAMES = new Set(["CLAUDE.md", "AGENTS.md"]);
+const SKIP_FILE_NAMES = new Set(["CLAUDE.md", "AGENTS.md", "README.md"]);
 
 function walkMdFiles(dir: string): string[] {
   const out: string[] = [];
