@@ -1,0 +1,2 @@
+2026-04-18T13:19:15+00:00 /flowaudit START scope=docs-content-section url=https://caio-academy.vercel.app/fr/docs/content
+2026-04-18T13:42:16+00:00: audit complete, 6/6 TOC pass, 404 fixed, deployed cd5459d, score 96.8/100

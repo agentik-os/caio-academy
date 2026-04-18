@@ -1,0 +1,95 @@
+{
+  "audit": "flowaudit",
+  "preamble_version": "1.0",
+  "compliance_version": "1.2",
+  "session": "CAIO-Academy-worker-1-audit-flow",
+  "date": "2026-04-18",
+  "scope": {
+    "url": "https://caio-academy.vercel.app/fr/docs/content",
+    "description": "docs/content renamed section (3 SamourAI scripts) + docs/insights renamed from old content; full reading flow test",
+    "files": [
+      "app/[locale]/docs/[section]/[slug]/page.tsx",
+      "app/[locale]/docs/not-found.tsx",
+      "app/[locale]/docs/layout.tsx",
+      "app/[locale]/docs/page.tsx",
+      "lib/docs.ts",
+      "components/docs/docs-toc.tsx"
+    ]
+  },
+  "hinge_flow": {
+    "description": "Read a long-form SamourAI formation script end-to-end with TOC navigation",
+    "pre_fix_status": "BROKEN",
+    "post_fix_status": "WORKS",
+    "evidence": "Playwright 6/6 script×locale pages show 100% h2->id parity; TOC click produces 5.4k-8.6k px scroll delta"
+  },
+  "score_pre_fix": {"raw": 345, "max": 380, "normalized": 90.8, "grade": "B"},
+  "score_post_fix": {"raw": 368, "max": 380, "normalized": 96.8, "grade": "A"},
+  "findings": [
+    {
+      "id": "FIND-1",
+      "severity": "CRITICAL",
+      "status": "FIXED",
+      "title": "Hinge flow TOC bug: h2/h3 heading ids missing",
+      "file": "app/[locale]/docs/[section]/[slug]/page.tsx",
+      "root_cause": "compileMDX had no rehype heading-id plugin; extractToc generated hrefs for ids never materialized on DOM",
+      "fix": "Inline rehype plugin using unist-util-visit + hast-util-to-string walks h2/h3 and assigns id via shared slugify helper now used by extractToc",
+      "verification": "Production HTML grep: 16/16 h2 ids; Playwright 6/6 pass across locales",
+      "commit": "cd5459d"
+    },
+    {
+      "id": "FIND-2",
+      "severity": "HIGH",
+      "status": "FIXED",
+      "title": "404 dead-end: zero clickable links on notFound()",
+      "file": "app/[locale]/docs/not-found.tsx",
+      "root_cause": "No not-found.tsx anywhere in docs tree; framework default 404 has 0 links",
+      "fix": "Localized (FR/EN) docs-scoped not-found page; inherits docs layout with sidebar + search + mobile nav",
+      "verification": "Playwright: 50 nav links; locale-matched h1",
+      "commit": "cd5459d"
+    },
+    {
+      "id": "FIND-3",
+      "severity": "LOW",
+      "status": "LOGGED",
+      "title": "Folder/key inversion in SECTIONS registry",
+      "file": "lib/docs.ts:176-197",
+      "description": "11-content registered as key 'insights'; 12-content-scripts registered as key 'content'. Works correctly at runtime, confusing on disk."
+    },
+    {
+      "id": "FIND-4",
+      "severity": "LOW",
+      "status": "LOGGED",
+      "title": "No cross-link from /niche-analysis -> /docs/content"
+    },
+    {
+      "id": "FIND-5",
+      "severity": "LOW",
+      "status": "LOGGED",
+      "title": "No skip-to-content anchor on article body"
+    }
+  ],
+  "phases": [
+    {"n":1,"name":"Flow Completeness","raw":30,"max":30},
+    {"n":2,"name":"State Machines","raw":25,"max":25},
+    {"n":3,"name":"Happy Paths","raw":20,"max":20},
+    {"n":4,"name":"Error Paths","raw":30,"max":30},
+    {"n":5,"name":"Dead Ends","raw":27,"max":30},
+    {"n":6,"name":"Permission Gaps","raw":25,"max":25},
+    {"n":7,"name":"Onboarding","raw":18,"max":20},
+    {"n":8,"name":"Data Integrity","raw":25,"max":25},
+    {"n":9,"name":"Cross-Session","raw":20,"max":20},
+    {"n":10,"name":"Error Recovery","raw":25,"max":25},
+    {"n":11,"name":"Performance","raw":15,"max":15},
+    {"n":12,"name":"Accessibility","raw":18,"max":20},
+    {"n":13,"name":"Notifications","raw":15,"max":15},
+    {"n":14,"name":"Payments","raw":0,"max":0,"excluded":true},
+    {"n":15,"name":"Empty States","raw":20,"max":20},
+    {"n":16,"name":"Destructive Actions","raw":25,"max":25},
+    {"n":17,"name":"Concurrent Users","raw":20,"max":20},
+    {"n":18,"name":"Mobile","raw":15,"max":15},
+    {"n":19,"name":"Analytics","raw":10,"max":10},
+    {"n":20,"name":"Entropy","raw":15,"max":15}
+  ],
+  "commits": ["cd5459d"],
+  "ticket": null
+}
