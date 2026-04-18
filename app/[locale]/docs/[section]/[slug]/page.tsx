@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import { compileMDX } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import rehypePrettyCode from "rehype-pretty-code";
+import { visit } from "unist-util-visit";
+import { toString as hastToString } from "hast-util-to-string";
 import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { Prose } from "@/components/prose";
@@ -44,6 +46,28 @@ const T = {
   },
 } as const;
 
+function slugify(text: string): string {
+  return text
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+function rehypeHeadingIds() {
+  return (tree: unknown) => {
+    visit(tree as never, "element", (node: { tagName?: string; properties?: Record<string, unknown> }) => {
+      if (node.tagName !== "h2" && node.tagName !== "h3") return;
+      const props = (node.properties ??= {});
+      if (typeof props.id === "string" && props.id) return;
+      const text = hastToString(node as never).replace(/[`*_]/g, "");
+      const id = slugify(text);
+      if (id) props.id = id;
+    });
+  };
+}
+
 function extractToc(content: string): TocItem[] {
   const toc: TocItem[] = [];
   const lines = content.split("\n");
@@ -58,12 +82,7 @@ function extractToc(content: string): TocItem[] {
     if (!m) continue;
     const level = m[1].length === 2 ? 2 : 3;
     const text = m[2].trim().replace(/[`*_]/g, "");
-    const id = text
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
-      .toLowerCase()
-      .replace(/[^a-z0-9]+/g, "-")
-      .replace(/^-+|-+$/g, "");
+    const id = slugify(text);
     if (!id) continue;
     toc.push({ level, id, text });
   }
@@ -114,6 +133,7 @@ export default async function DocDetail({
               keepBackground: false,
             },
           ],
+          rehypeHeadingIds,
         ],
       },
     },
