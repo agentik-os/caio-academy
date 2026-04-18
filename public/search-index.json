@@ -72,49 +72,49 @@
     "url": "/en/docs/avatars/dev-ambitieux"
   },
   {
-    "id": "en/avatars/dg-pme-2",
+    "id": "en/avatars/dg-pme",
     "title": "Avatar CAIO — la DG PME (EN)",
     "section": "Avatars",
     "sectionKey": "avatars",
     "lang": "en",
     "excerpt": "CAIO Academy — AI Exécutive Décision Maker Track Avatar 05 · la DG PME · SMB Executive",
-    "url": "/en/docs/avatars/dg-pme-2"
+    "url": "/en/docs/avatars/dg-pme"
   },
   {
-    "id": "fr/avatars/consultant-ai-2",
+    "id": "fr/avatars/consultant-ai",
     "title": "Avatar CAIO — le Consultant AI (FR)",
     "section": "Avatars",
     "sectionKey": "avatars",
     "lang": "fr",
     "excerpt": "CAIO Academy — CAIO Monetization Track Avatar 03 · le Consultant AI · Consultant Indépendant",
-    "url": "/fr/docs/avatars/consultant-ai-2"
+    "url": "/fr/docs/avatars/consultant-ai"
   },
   {
-    "id": "fr/avatars/dev-ambitieux-2",
+    "id": "fr/avatars/dev-ambitieux",
     "title": "Avatar CAIO — le Dev Ambitieux (FR)",
     "section": "Avatars",
     "sectionKey": "avatars",
     "lang": "fr",
     "excerpt": "CAIO Academy — From Dev to CAIO Track Avatar 04 · le Dev Ambitieux · Dev/PM ambitieux",
-    "url": "/fr/docs/avatars/dev-ambitieux-2"
+    "url": "/fr/docs/avatars/dev-ambitieux"
   },
   {
-    "id": "en/avatars/head-digital-2",
+    "id": "en/avatars/head-digital",
     "title": "Avatar CAIO — le Head of Digital (EN)",
     "section": "Avatars",
     "sectionKey": "avatars",
     "lang": "en",
     "excerpt": "CAIO Academy — AI Strategy Without Code Track Avatar 02 · le Head of Digital · Head of Digital",
-    "url": "/en/docs/avatars/head-digital-2"
+    "url": "/en/docs/avatars/head-digital"
   },
   {
-    "id": "fr/avatars/cto-saas-2",
+    "id": "fr/avatars/cto-saas",
     "title": "Avatar CAIO — le CTO SaaS (FR)",
     "section": "Avatars",
     "sectionKey": "avatars",
     "lang": "fr",
     "excerpt": "CAIO Academy — AI Systems Architect Track Avatar 01 · le CTO SaaS · CTO SaaS",
-    "url": "/fr/docs/avatars/cto-saas-2"
+    "url": "/fr/docs/avatars/cto-saas"
   },
   {
     "id": "fr/product/system-caio-whitepaper",
@@ -549,130 +549,184 @@
     "url": "/fr/docs/operations/legal-tax-structure"
   },
   {
-    "id": "en/content/philosophy-human-ai-collaboration",
+    "id": "en/insights/philosophy-human-ai-collaboration",
     "title": "The Philosophy of Human-AI Collaboration",
     "section": "Blog & Insights",
-    "sectionKey": "content",
+    "sectionKey": "insights",
     "lang": "en",
     "excerpt": "AI isn't replacing humans — it's creating a new species of collaboration. Like jazz improvisation, the magic happens in the interplay.",
-    "url": "/en/docs/content/philosophy-human-ai-collaboration"
+    "url": "/en/docs/insights/philosophy-human-ai-collaboration"
   },
   {
-    "id": "fr/content/ethics-ai-leadership",
+    "id": "fr/insights/ethics-ai-leadership",
     "title": "L'ethique du leadership IA : un cadre philosophique",
     "section": "Blog & Réflexions",
-    "sectionKey": "content",
+    "sectionKey": "insights",
     "lang": "fr",
     "excerpt": "Le CAIO n'est pas seulement un technologue — c'est un ethicien, un philosophe, un gardien des valeurs humaines dans les systemes IA. Voici le cadre.",
-    "url": "/fr/docs/content/ethics-ai-leadership"
+    "url": "/fr/docs/insights/ethics-ai-leadership"
   },
   {
-    "id": "fr/content/philosophy-human-ai-collaboration-2",
+    "id": "fr/insights/philosophy-human-ai-collaboration",
     "title": "La philosophie de la collaboration humain-IA",
     "section": "Blog & Réflexions",
-    "sectionKey": "content",
+    "sectionKey": "insights",
     "lang": "fr",
     "excerpt": "L'IA ne remplace pas l'humain — elle cree une nouvelle espece de collaboration. Comme l'improvisation jazz, la magie nait de l'interplay.",
-    "url": "/fr/docs/content/philosophy-human-ai-collaboration-2"
+    "url": "/fr/docs/insights/philosophy-human-ai-collaboration"
   },
   {
-    "id": "en/content/automation-to-augmentation",
+    "id": "en/insights/automation-to-augmentation",
     "title": "From Automation to Augmentation: The CAIO Mindset Shift",
     "section": "Blog & Insights",
-    "sectionKey": "content",
+    "sectionKey": "insights",
     "lang": "en",
     "excerpt": "Automation saves time. Augmentation creates new capabilities. The CAIO knows the difference — and it changes everything about AI strategy.",
-    "url": "/en/docs/content/automation-to-augmentation"
+    "url": "/en/docs/insights/automation-to-augmentation"
   },
   {
-    "id": "fr/content/ai-systems-thinking",
+    "id": "fr/insights/ai-systems-thinking",
     "title": "Pensee systemique et IA : pourquoi les outils ne comptent pas, les frameworks si",
     "section": "Blog & Réflexions",
-    "sectionKey": "content",
+    "sectionKey": "insights",
     "lang": "fr",
     "excerpt": "Tout le monde s'obsede sur ChatGPT vs Claude vs Gemini. Le CAIO pense en systemes, pas en outils. Voici pourquoi la pensee framework gagne a chaque fois.",
-    "url": "/fr/docs/content/ai-systems-thinking"
+    "url": "/fr/docs/insights/ai-systems-thinking"
   },
   {
-    "id": "en/content/ethics-ai-leadership-2",
+    "id": "en/insights/ethics-ai-leadership",
     "title": "The Ethics of AI Leadership: A Philosophical Framework",
     "section": "Blog & Insights",
-    "sectionKey": "content",
+    "sectionKey": "insights",
     "lang": "en",
     "excerpt": "The CAIO isn't just a technologist — they're an ethicist, a philosopher, a guardian of human values in AI systems. Here's the framework.",
-    "url": "/en/docs/content/ethics-ai-leadership-2"
+    "url": "/en/docs/insights/ethics-ai-leadership"
   },
   {
-    "id": "en/content/invisible-revolution",
+    "id": "en/insights/invisible-revolution",
     "title": "The Invisible Revolution: How AI is Rewriting Business DNA",
     "section": "Blog & Insights",
-    "sectionKey": "content",
+    "sectionKey": "insights",
     "lang": "en",
     "excerpt": "The real AI revolution isn't in chatbots and dashboards. It's in decision-making patterns, workflow architecture, and organizational nervous systems.",
-    "url": "/en/docs/content/invisible-revolution"
+    "url": "/en/docs/insights/invisible-revolution"
   },
   {
-    "id": "en/content/why-ai-transformations-fail",
+    "id": "en/insights/why-ai-transformations-fail",
     "title": "Why Most AI Transformations Fail (And How to Be the Exception)",
     "section": "Blog & Insights",
-    "sectionKey": "content",
+    "sectionKey": "insights",
     "lang": "en",
     "excerpt": "80% of AI projects fail. Not because of technology — because of leadership, culture, and strategy gaps. Here are the three killers and how to defeat them.",
-    "url": "/en/docs/content/why-ai-transformations-fail"
+    "url": "/en/docs/insights/why-ai-transformations-fail"
   },
   {
-    "id": "en/content/why-csuite-needs-ai-officer",
+    "id": "en/insights/why-csuite-needs-ai-officer",
     "title": "Why Every C-Suite Needs an AI Officer (Not Just a CTO)",
     "section": "Blog & Insights",
-    "sectionKey": "content",
+    "sectionKey": "insights",
     "lang": "en",
     "excerpt": "The CTO manages tech infrastructure. The CAIO manages AI transformation strategy. Different roles, different mindsets — and your board needs both.",
-    "url": "/en/docs/content/why-csuite-needs-ai-officer"
+    "url": "/en/docs/insights/why-csuite-needs-ai-officer"
   },
   {
-    "id": "fr/content/automation-to-augmentation-2",
+    "id": "fr/insights/automation-to-augmentation",
     "title": "De l'automatisation a l'augmentation : le changement de paradigme du CAIO",
     "section": "Blog & Réflexions",
-    "sectionKey": "content",
+    "sectionKey": "insights",
     "lang": "fr",
     "excerpt": "L'automatisation economise du temps. L'augmentation cree de nouvelles capacites. Le CAIO connait la difference — et ca change tout dans la strategie IA.",
-    "url": "/fr/docs/content/automation-to-augmentation-2"
+    "url": "/fr/docs/insights/automation-to-augmentation"
   },
   {
-    "id": "fr/content/why-ai-transformations-fail-2",
+    "id": "fr/insights/why-ai-transformations-fail",
     "title": "Pourquoi la plupart des transformations IA echouent (et comment faire exception)",
     "section": "Blog & Réflexions",
-    "sectionKey": "content",
+    "sectionKey": "insights",
     "lang": "fr",
     "excerpt": "80% des projets IA echouent. Pas a cause de la technologie — a cause de lacunes en leadership, culture et strategie. Voici les trois tueurs et comment les vaincre.",
-    "url": "/fr/docs/content/why-ai-transformations-fail-2"
+    "url": "/fr/docs/insights/why-ai-transformations-fail"
   },
   {
-    "id": "fr/content/invisible-revolution-2",
+    "id": "fr/insights/invisible-revolution",
     "title": "La revolution invisible : comment l'IA reecrit l'ADN des entreprises",
     "section": "Blog & Réflexions",
-    "sectionKey": "content",
+    "sectionKey": "insights",
     "lang": "fr",
     "excerpt": "La vraie revolution IA n'est pas dans les chatbots et les dashboards. Elle est dans les schemas decisionnels, l'architecture des flux et le systeme nerveux organisationnel.",
-    "url": "/fr/docs/content/invisible-revolution-2"
+    "url": "/fr/docs/insights/invisible-revolution"
   },
   {
-    "id": "en/content/ai-systems-thinking-2",
+    "id": "en/insights/ai-systems-thinking",
     "title": "AI Systems Thinking: Why Tools Don't Matter, Frameworks Do",
     "section": "Blog & Insights",
-    "sectionKey": "content",
+    "sectionKey": "insights",
     "lang": "en",
     "excerpt": "Everyone obsesses over ChatGPT vs Claude vs Gemini. The CAIO thinks in systems, not tools. Here's why framework thinking wins every time.",
-    "url": "/en/docs/content/ai-systems-thinking-2"
+    "url": "/en/docs/insights/ai-systems-thinking"
   },
   {
-    "id": "fr/content/why-csuite-needs-ai-officer-2",
+    "id": "fr/insights/why-csuite-needs-ai-officer",
     "title": "Pourquoi chaque comite de direction a besoin d'un AI Officer (et pas seulement d'un CTO)",
     "section": "Blog & Réflexions",
-    "sectionKey": "content",
+    "sectionKey": "insights",
     "lang": "fr",
     "excerpt": "Le CTO gere l'infrastructure technologique. Le CAIO pilote la strategie de transformation IA. Deux roles, deux visions — votre conseil d'administration a besoin des deux.",
-    "url": "/fr/docs/content/why-csuite-needs-ai-officer-2"
+    "url": "/fr/docs/insights/why-csuite-needs-ai-officer"
+  },
+  {
+    "id": "en/content/exit-strategy-math",
+    "title": "€2M, €8M, or €15M — same company, same year",
+    "section": "Content",
+    "sectionKey": "content",
+    "lang": "en",
+    "excerpt": "Two million. Eight million. Fifteen million. Same company. Same year. Same revenue.",
+    "url": "/en/docs/content/exit-strategy-math"
+  },
+  {
+    "id": "fr/content/exit-strategy-math",
+    "title": "€2M, €8M, ou €15M — la même entreprise, la même année",
+    "section": "Content",
+    "sectionKey": "content",
+    "lang": "fr",
+    "excerpt": "Deux millions. Huit millions. Quinze millions. La même entreprise. La même année. Les mêmes revenus.",
+    "url": "/fr/docs/content/exit-strategy-math"
+  },
+  {
+    "id": "en/content/business-plan-an-decennie",
+    "title": "800% in two years: the silent pivot that manufactures Chief AI Officers",
+    "section": "Content",
+    "sectionKey": "content",
+    "lang": "en",
+    "excerpt": "Eight hundred percent. That is the search volume curve for the term \"Chief AI Officer\" between 2023 and 2025. Not ten percent. Not fifty. Eight hundred. And this is not a linguistic trend. It is th...",
+    "url": "/en/docs/content/business-plan-an-decennie"
+  },
+  {
+    "id": "fr/content/path-million-an3",
+    "title": "Le million n'est pas une question de volume. C'est une question d'architecture.",
+    "section": "Content",
+    "sectionKey": "content",
+    "lang": "fr",
+    "excerpt": "€360 000 par an. Pas une campagne. Pas un lancement. Pas même un post LinkedIn. Trente entreprises qui versent €1 000 par mois, chaque mois, sans jamais me redemander la permission. Et c'est la seu...",
+    "url": "/fr/docs/content/path-million-an3"
+  },
+  {
+    "id": "en/content/path-million-an3",
+    "title": "The million is not a volume question. It is an architecture question.",
+    "section": "Content",
+    "sectionKey": "content",
+    "lang": "en",
+    "excerpt": "€360,000 per year. No campaign. No launch. Not even a post. Thirty companies wiring €1,000 per month, every month, without asking me permission. And that single mechanism is the only reason the tra...",
+    "url": "/en/docs/content/path-million-an3"
+  },
+  {
+    "id": "fr/content/business-plan-an-decennie",
+    "title": "800% en deux ans : le pivot silencieux qui fabrique les Chief AI Officers",
+    "section": "Content",
+    "sectionKey": "content",
+    "lang": "fr",
+    "excerpt": "Huit cent pour cent. C'est la courbe de recherche du terme \"Chief AI Officer\" entre 2023 et 2025. Pas dix pour cent. Pas cinquante. Huit cent. Et ce n'est pas une tendance linguistique. C'est le cr...",
+    "url": "/fr/docs/content/business-plan-an-decennie"
   },
   {
     "id": "fr/business-vision/push-million-timeline",
@@ -1216,11 +1270,11 @@
   },
   {
     "id": "fr/business-marketing/actus-ia-semaine",
-    "title": "Actus IA en Bref -- Semaine du 16 Avril 2026",
+    "title": "Actus IA en Bref -- Semaine du 18 Avril 2026",
     "section": "Business — Marketing",
     "sectionKey": "business-marketing",
     "lang": "fr",
-    "excerpt": "PDF : `tools/pdf-generator/output/youtube-content-report.pdf`",
+    "excerpt": "PDF : `tools/pdf-generator/output/youtube-content-report-18-04-2026.pdf`",
     "url": "/fr/docs/business-marketing/actus-ia-semaine"
   },
   {
@@ -2653,6 +2707,105 @@
     "lang": "fr",
     "excerpt": "1. Optimiser ton profil LinkedIn 2. Ecrire ton premier message d'outreach 3. L'envoyer a 10 personnes",
     "url": "/fr/docs/business-archive/01-caio-legacy-research-90-day-launch-plan"
+  },
+  {
+    "id": "fr/business-archive/caio-academy-courses-marc-monetization-caio-monetization-track",
+    "title": "CAIO Academy — CAIO Monetization Track",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "Tu es consultant. Tu factures entre 400 et 700€/jour. Tu livres des missions de qualité — tes clients sont contents, tes recommandations te ramènent 60 % de ton pipeline, et tu as construit une rép...",
+    "url": "/fr/docs/business-archive/caio-academy-courses-marc-monetization-caio-monetization-track"
+  },
+  {
+    "id": "en/business-archive/caio-academy-courses-marc-monetization-caio-monetization-track",
+    "title": "CAIO Academy — CAIO Monetization Track",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "en",
+    "excerpt": "You're a consultant. You bill between €400 and €700/day. You deliver quality work — your clients are happy, referrals bring in 60% of your pipeline, and you've built a solid reputation in your doma...",
+    "url": "/en/docs/business-archive/caio-academy-courses-marc-monetization-caio-monetization-track"
+  },
+  {
+    "id": "en/business-archive/caio-academy-courses-brief",
+    "title": "CAIO Academy — Course Generation Brief",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "en",
+    "excerpt": "Generate 10 complete whitepaper-style course documents (5 avatars × 2 languages FR/EN). Each document: 30-40 pages, markdown format, with Mermaid diagrams.",
+    "url": "/en/docs/business-archive/caio-academy-courses-brief"
+  },
+  {
+    "id": "en/business-archive/caio-academy-courses-isabelle-executive-caio-ai-executive-decision-maker-track",
+    "title": "CAIO Academy — AI Executive Decision Maker Track",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "en",
+    "excerpt": "You run an SME. You have between twenty and two hundred staff, revenue between three and fifty million, a team that holds the fort, a CFO who watches cash, and an overflowing agenda. You have neith...",
+    "url": "/en/docs/business-archive/caio-academy-courses-isabelle-executive-caio-ai-executive-decision-maker-track"
+  },
+  {
+    "id": "fr/business-archive/caio-academy-courses-isabelle-executive-caio-ai-executive-decision-maker-track",
+    "title": "CAIO Academy — AI Executive Decision Maker Track",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "Vous dirigez une PME. Vous avez entre vingt et deux cents collaborateurs, un chiffre d'affaires entre trois et cinquante millions, une équipe qui tient la maison, un DAF qui veille à la trésorerie,...",
+    "url": "/fr/docs/business-archive/caio-academy-courses-isabelle-executive-caio-ai-executive-decision-maker-track"
+  },
+  {
+    "id": "en/business-archive/caio-academy-courses-thomas-cto-caio-ai-systems-architect-track",
+    "title": "CAIO Academy — AI Systems Architect Track",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "en",
+    "excerpt": "You are a CTO. You know how to code. Better still: you know how to get others to code, how to design a system, pick a stack, arbitrate between technical debt and velocity, hire, mentor, hold a quar...",
+    "url": "/en/docs/business-archive/caio-academy-courses-thomas-cto-caio-ai-systems-architect-track"
+  },
+  {
+    "id": "fr/business-archive/caio-academy-courses-thomas-cto-caio-ai-systems-architect-track",
+    "title": "CAIO Academy — AI Systems Architect Track",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "Tu es CTO. Tu sais coder. Mieux : tu sais faire coder les autres, tu sais designer un système, choisir une stack, arbitrer entre la dette technique et la vélocité, recruter, mentorer, tenir un road...",
+    "url": "/fr/docs/business-archive/caio-academy-courses-thomas-cto-caio-ai-systems-architect-track"
+  },
+  {
+    "id": "fr/business-archive/caio-academy-courses-kevin-rise-caio-from-dev-to-caio-track",
+    "title": "CAIO Academy — From Dev to CAIO Track",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "Tu es développeur. Tu sais coder. Tu livres des features qui marchent, tu maîtrises ton IDE, tu comprends les systèmes distribués. Peut-être même que tu as déjà joué avec l'API d'OpenAI, intégré Cl...",
+    "url": "/fr/docs/business-archive/caio-academy-courses-kevin-rise-caio-from-dev-to-caio-track"
+  },
+  {
+    "id": "en/business-archive/caio-academy-courses-kevin-rise-caio-from-dev-to-caio-track",
+    "title": "CAIO Academy — From Dev to CAIO Track",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "en",
+    "excerpt": "You're a developer. You know how to ship code. You deliver features that work, you master your IDE, you understand distributed systems. Maybe you've already experimented with the OpenAI API, integr...",
+    "url": "/en/docs/business-archive/caio-academy-courses-kevin-rise-caio-from-dev-to-caio-track"
+  },
+  {
+    "id": "en/business-archive/caio-academy-courses-sophie-strategy-caio-ai-strategy-without-code-track",
+    "title": "CAIO Academy — AI Strategy Without Code Track",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "en",
+    "excerpt": "There is a category of European executives and senior managers that no one is training properly on artificial intelligence. They are not engineers, data scientists, or developers. They are Chief Ma...",
+    "url": "/en/docs/business-archive/caio-academy-courses-sophie-strategy-caio-ai-strategy-without-code-track"
+  },
+  {
+    "id": "fr/business-archive/caio-academy-courses-sophie-strategy-caio-ai-strategy-without-code-track",
+    "title": "CAIO Academy — AI Strategy Without Code Track",
+    "section": "Archive",
+    "sectionKey": "business-archive",
+    "lang": "fr",
+    "excerpt": "Il existe aujourd'hui en Europe une catégorie de dirigeantes et de managers que personne ne forme correctement à l'intelligence artificielle. Elles ne sont ni ingénieures, ni data scientists, ni dé...",
+    "url": "/fr/docs/business-archive/caio-academy-courses-sophie-strategy-caio-ai-strategy-without-code-track"
   },
   {
     "id": "en/business-archive/07-phantom-empire-legacy-vision",

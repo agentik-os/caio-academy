@@ -101,14 +101,14 @@ export const SECTION_META: Record<
       en: "Legal structure, stack, scaling, metrics.",
     },
   },
-  content: {
+  insights: {
     title: { fr: "Blog & Réflexions", en: "Blog & Insights" },
     tagline: {
       fr: "Perspectives philosophiques sur l'IA, le leadership et la transformation digitale.",
       en: "Philosophical perspectives on AI, leadership, and digital transformation.",
     },
   },
-  "content-scripts": {
+  content: {
     title: { fr: "Content", en: "Content" },
     tagline: {
       fr: "Scripts YouTube SamourAI — formations complètes (45-60 min chacune).",
@@ -184,8 +184,8 @@ const SECTIONS: { raw: string; key: string; order: number; root: string }[] = [
   { raw: "08-marketing", key: "marketing", order: 8, root: CAIO_ROOT },
   { raw: "09-launch", key: "launch", order: 9, root: CAIO_ROOT },
   { raw: "10-operations", key: "operations", order: 10, root: CAIO_ROOT },
-  { raw: "11-content", key: "content", order: 11, root: CAIO_ROOT },
-  { raw: "12-content-scripts", key: "content-scripts", order: 11.5, root: CAIO_ROOT },
+  { raw: "11-content", key: "insights", order: 11, root: CAIO_ROOT },
+  { raw: "12-content-scripts", key: "content", order: 11.5, root: CAIO_ROOT },
   { raw: "02-vision", key: "business-vision", order: 12, root: BIZ_ROOT },
   { raw: "03-strategy", key: "business-strategy", order: 13, root: BIZ_ROOT },
   { raw: "04-blueprint", key: "business-blueprint", order: 14, root: BIZ_ROOT },

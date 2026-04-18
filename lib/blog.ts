@@ -24,7 +24,7 @@ function toBlogPost(doc: DocFile): BlogPost {
 }
 
 function getContentDocs(): DocFile[] {
-  return getAllDocs().filter((d) => d.section === "content");
+  return getAllDocs().filter((d) => d.section === "insights");
 }
 
 /**
