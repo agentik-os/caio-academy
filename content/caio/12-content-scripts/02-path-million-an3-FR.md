@@ -5,7 +5,7 @@
 **Thumbnail text:** Le pivot du million
 **Angle:** philosophique + tech-deep
 **Avatar cible:** all
-**Durée:** 45-60 min · Words: ~7800
+**Durée:** 60-70 min · Words: ~9500
 **Hook formula:** Big specific number + dramatic outcome verb + short second-sentence reframe
 
 ---
@@ -46,7 +46,59 @@ Le saut est donc dissymétrique. Et c'est cette dissymétrie, comprise et calibr
 
 ---
 
-## 6:00 — Levier un : la machine de formation comme locomotive
+## 5:15 — An 1, l'année de validation : la version compacte du modèle
+
+Regardons An 1 isolément. €215 000 à €250 000 de chiffre d'affaires. Une seule année pour valider que le produit tient debout économiquement. À ce stade, l'entreprise est volontairement petite. Un fondateur, pas d'équipe, deux formats commerciaux, une audience qui se construit depuis quelques mois seulement. L'objectif stratégique d'An 1 n'est pas de maximiser le chiffre. C'est de prouver que les hypothèses centrales tiennent — qu'un avatar cible existe, qu'il est prêt à payer un prix premium, qu'une certification a de la valeur, et que les outils pédagogiques produisent des résultats mesurables dans un horizon de douze mois.
+
+Le cœur commercial d'An 1 est la Founding Cohort à €3 500. Trente étudiants dans la première promotion, sélectionnés via un processus de candidature — non pas parce que la demande n'existe pas, mais parce qu'un produit de formation premium à €3 500 ne peut pas se vendre sur un plafond illimité sans dégrader la densité pédagogique. La qualité des pairs à l'intérieur de la cohorte est une composante du produit. Si l'on laisse entrer n'importe qui, on détruit la valeur perçue pour ceux qui sont entrés via candidature exigeante. Ce choix de positionnement — le filtrage par l'entrée — impose immédiatement un plafond de volume, mais il construit un prix-plancher que la concurrence ne peut pas éroder facilement.
+
+Avant la Founding Cohort, la beta payante à €1 500 sert d'antichambre. Ce prix n'est pas le prix du marché. C'est le prix du risque que les vingt premiers pilotes acceptent de courir en s'inscrivant à un produit non stabilisé. Ces vingt pilotes génèrent à peine €30 000 de chiffre d'affaires, mais surtout, ils produisent les premiers témoignages, la première documentation des résultats en conditions réelles, et les premières corrections de trajectoire sur le curriculum. Le ticket €1 500 est un prix pédagogique, pas un prix commercial. Il est structuré pour ne couvrir qu'une fraction du coût réel de l'accompagnement, le reste étant capitalisé sur la Founding Cohort suivante.
+
+Le mix de revenus An 1 se compose de €30 000 de beta payante, €105 000 de Founding Cohort — trente étudiants à €3 500 —, €45 000 à €80 000 de workshops ponctuels facturés à des PME pionnières à €8 000-12 000 par session, plus €35 000 à €60 000 de placements CAIO individuels avec une commission moyenne de €4 000. Le Registry n'existe pas encore en mode abonnement. Les placements se font par entremise directe, warm, sans système. Le fondateur connaît personnellement chaque candidat placé et chaque entreprise cliente. C'est une version boutique du métier — indispensable pour calibrer les processus qui seront, plus tard, industrialisés.
+
+Les avatars An 1 sont concentrés sur trois profils. Consultants AI indépendants qui veulent monter en séniorité et accéder à des missions stratégiques. CTO de scale-up qui doivent structurer leur département IA sur douze à dix-huit mois. Dirigeants de PME qui anticipent la transition sur deux ans et cherchent la bonne personne pour la piloter. Trois profils, dont deux viennent d'une audience LinkedIn qui, à ce stade, représente trois mille à cinq mille followers qualifiés — pas davantage. La conversion se fait en warm — messages directs, appels en un-à-un, petits événements fermés organisés en intime dans trois à cinq villes françaises. Aucun canal publicitaire n'est activé. L'acquisition est manuelle, chaque closing est le produit d'une conversation spécifique, et le rythme d'An 1 ne dépasse pas trois à quatre ventes par mois sur les douze mois de l'exercice.
+
+An 1 est donc l'année où le modèle démontre qu'il peut exister. Le chiffre d'affaires n'est pas extraordinaire, mais il est structurellement propre. Quatre lignes de revenu indépendantes. Une infrastructure de contenu qui tourne avec trois posts LinkedIn hebdomadaires, une newsletter mensuelle puis bimensuelle, et un épisode vidéo ou podcast trimestriel. Aucune ligne de revenu récurrent. C'est important de le noter — An 1 est entièrement transactionnel. Chaque euro encaissé est le produit d'un acte de vente spécifique. L'entreprise n'a pas encore d'actif récurrent, elle a un produit. La différence entre les deux est toute l'histoire des deux années suivantes.
+
+---
+
+## 8:30 — An 2, l'année de bascule : la machine s'industrialise
+
+An 2, 2027, est l'année où la mécanique change de nature. On passe de €215 000-250 000 à €620 000. Le saut est de 2,5 à 3 fois. Regardons de près comment il se fabrique. Aucun événement spectaculaire ne se produit dans l'année. C'est une accumulation de décisions structurelles prises trimestre après trimestre, dont la conséquence cumulée est un changement de régime.
+
+Sur la formation, le passage est quantitatif. On conserve la Founding Cohort à €3 500 — pas de baisse de prix en An 2, parce que la demande prouvée sur An 1 justifie le maintien de la marge unitaire pendant la phase de scaling. Mais on ouvre quatre promotions au lieu d'une. Au total 120 ventes annuelles. C'est dix ventes par mois en moyenne sur les mois sept à vingt-quatre du projet. Le rythme d'une vente tous les trois jours, soutenu par une newsletter qui atteint 2 000 à 3 000 abonnés, des prises de parole trimestrielles en conférence sectorielle, et les premiers articles SEO qui commencent à indexer sur Google en fin d'année. La machine de contenu n'a pas doublé en volume — elle s'est stabilisée et a gagné en profondeur. Trois posts LinkedIn par semaine, une newsletter hebdomadaire, un épisode podcast ou vidéo. Ce qui a doublé, c'est la densité d'audience et le taux de conversion à partir du funnel existant.
+
+Sur les Masterminds, l'ouverture. Le Mastermind Standard à €500 par mois ouvre en Q2 An 2. Objectif trente membres en fin d'année, avec un ramp-up linéaire — cinq en Q2, dix en Q3, vingt en Q4, trente en pic de promotion post-cohorte. €180 000 d'ARR annualisé sur cette seule ligne en mode plein régime, environ €90 000 de chiffre d'affaires reconnu sur An 2 compte tenu du ramp-up. Parallèlement, le Mastermind Premium à €1 500 par mois ouvre en Q2 également, avec cinq places seulement. Ce tier s'adresse aux alumni de la Founding Cohort An 1 qui ont monétisé leur formation et cherchent un niveau d'accompagnement supérieur — les cinq premiers membres sont des anciens de la beta ou de la Founding 1 qui ont acquis en neuf à douze mois les premières références CAIO payantes. Cinq places vendues en deux à trois mois, €45 000 d'ARR reconnu sur An 2.
+
+Sur les workshops, l'ouverture B2B. Huit workshops annuels à €12 000 en moyenne. €96 000. Ce sont principalement des sessions sur site auprès de PME françaises, belges et suisses francophones, deux à trois jours sur place pour former le comité exécutif à la gouvernance AI. Le fondateur anime, il n'y a pas encore de Head of Partnerships pour porter le pipeline. La conversion se construit par warm outbound et par recommandations d'alumni qui ont leur propre réseau d'entreprises intéressées.
+
+Sur le Registry, les pilotes. Les deux premiers pilotes signent en Q1-Q2 An 2, trois autres en Q3-Q4. €45 000 de chiffre d'affaires brut sur cette ligne. Comme on l'a dit précédemment, ce chiffre est négligeable à l'échelle du total An 2 — il représente 7% du chiffre. Mais il produit les cinq études de cas publiques qui seront l'actif commercial d'An 3. Le Registry n'est pas vendu comme un actif en An 2. Il est installé comme un investissement dont le ROI arrive dans douze à dix-huit mois.
+
+Sur les placements, la montée. Douze placements en An 2 avec une commission moyenne de €4 500. €54 000. Le Registry n'est pas encore un système industrialisé, les placements se font toujours par entremise directe du fondateur, à petite échelle.
+
+Sur le pack Systèmes, le lancement en Q3 An 2. Cent packs vendus à €997 soit €99 700. Cette ligne self-service décolle grâce au contenu éditorial déjà produit pour la formation et grâce aux alumni qui recommandent les outils autour desquels ils ont été formés. L'effort marginal par vente est proche de zéro — c'est une ligne de démonstration technique autant qu'une ligne de revenu.
+
+Total An 2 consolidé : €620 000. L'architecture se met en place. La composition du chiffre d'affaires commence à intégrer des lignes récurrentes pour environ 20% du total. La structure humaine de l'entreprise change. An 2 recrute un Community Manager pour les calls de groupe et la modération, un Expert Tech pour le pack Systèmes et les outils, un Content Editor pour absorber la production éditoriale. Le fondateur passe de 100% opérationnel à 60% stratégique sur les six derniers mois de l'année. C'est le pivot silencieux dont parlait le hook. Pas un événement spectaculaire. Pas un coup d'éclat. Juste une série de décisions structurelles prises les unes après les autres, dont la conséquence cumulée est une entreprise qui, à la fin d'An 2, ressemble à une infrastructure et non plus à un freelance premium.
+
+---
+
+## 12:30 — An 3, l'année de consolidation : l'architecture produit ses fruits
+
+An 3 est l'année où tout ce qui a été installé en An 1 et An 2 produit ses fruits. Le saut de €620 000 à €1 050 000 est de 1,7x. Ce n'est pas un doublement spectaculaire. C'est une montée en régime disciplinée. Le chiffre d'affaires augmente, mais c'est la composition qui compte.
+
+La structure des revenus An 3 se déploie sur sept lignes indépendantes. Quatre sont transactionnelles — formation, workshops, placements, pack Systèmes —, trois sont récurrentes — Mastermind Standard, Mastermind Premium, Registry Subscription. Le transactionnel pur représente environ €1 249 400 en mode brut théorique. Le récurrent contractualisé représente environ €720 000 en mode brut. Après application du facteur de prudence 55% sur les lignes les plus incertaines, le total atterrit à €1 050 000 dont environ €420 000 en ARR pur — soit 40% du chiffre d'affaires consolidé en revenu récurrent contractualisé.
+
+Ce seuil de 40% d'ARR est un seuil structurel. Il sépare un projet de services personnels d'une infrastructure. C'est un seuil qui, une fois franchi, fait basculer la valorisation de multiples EBITDA vers des multiples ARR. C'est aussi le seuil qui permet à l'entreprise de survivre à un trimestre commercial médiocre — les €420 000 d'ARR sont pré-encaissés, la pression sur le fondateur pour produire du nouveau revenu transactionnel tombe drastiquement. On passe d'une entreprise qui doit vendre chaque mois pour survivre à une entreprise qui peut choisir quelles ventes elle poursuit et à quel prix.
+
+L'avatar An 3 s'élargit. À côté des consultants AI indépendants, des CTO de scale-up et des dirigeants de PME qui étaient les trois piliers An 1, on voit apparaître deux nouveaux avatars. Premièrement, la DG de PME et d'ETI de 50 à 500 employés qui arrive par la porte Workshop B2B puis bascule sur l'abonnement Registry. Deuxièmement, l'entreprise en scale qui recrute un CAIO interne — elle vient directement par le Registry, attirée par le vivier de profils certifiés et les études de cas publiques des placements An 2. L'élargissement des avatars est une conséquence directe de la maturation de l'infrastructure : on ne vend plus à des individus seulement, on vend à des organisations.
+
+Le pricing An 3 se stabilise également. La formation passe à €3 000 pour maximiser le volume — décision d'architecture commerciale analysée dans le Levier 1 qui va suivre. Le Mastermind Standard reste à €500 par mois, plafonné à trente membres. Le Mastermind Premium reste à €1 500 par mois, plafonné à dix membres. Le Registry Subscription s'installe à €1 000 par mois par entreprise abonnée. Les Workshops passent en moyenne à €15 000 avec une montée progressive vers €20 000-25 000 en fin d'année sur les grands comptes.
+
+Voilà le décor. Nous allons maintenant décortiquer chaque ligne An 3 en profondeur. Quatre leviers. Sept lignes de revenu. Une règle — chaque ligne doit avoir sa propre logique, sa propre mécanique d'acquisition, sa propre asymétrie. Et au-dessus, un pivot stratégique : la bascule progressive du transactionnel vers le récurrent, qui est, au bout du compte, la seule raison pour laquelle un projet de formation devient une entreprise à un million.
+
+---
+
+## 15:30 — Levier un : la machine de formation comme locomotive
 
 La formation reste la locomotive commerciale en An 3. Soyons précis sur le chiffre. Deux cents ventes annuelles, à un prix stabilisé de €3 000, produisent €600 000. Cela représente 57% du plancher €1 050 000. Pour quelqu'un qui regarde de loin, c'est la ligne la plus lisible. C'est aussi la ligne la plus fragile si on la laisse porter seule le poids du million. Voilà pourquoi.
 
@@ -60,7 +112,7 @@ Voilà la locomotive. Six cent mille euros, deux cents étudiants, trois canaux 
 
 ---
 
-## 13:30 — Transition : le problème de la formation
+## 23:00 — Transition : le problème de la formation
 
 Mais la formation, à elle seule, ne crée pas une entreprise à un million.
 
@@ -72,7 +124,7 @@ C'est exactement pour sortir de ce piège que la trajectoire An 3 introduit troi
 
 ---
 
-## 15:30 — Levier deux : le CAIO Registry en abonnement B2B
+## 25:00 — Levier deux : le CAIO Registry en abonnement B2B
 
 C'est le levier central. C'est la mécanique qui fait franchir le cap. Et c'est aussi la seule ligne dont l'installation prend vingt-quatre mois.
 
@@ -94,7 +146,7 @@ Ce n'est pas une opinion. C'est une règle de marché. Et c'est la raison pour l
 
 ---
 
-## 23:00 — Parenthèse : le Registry comme infrastructure défensive
+## 32:30 — Parenthèse : le Registry comme infrastructure défensive
 
 Une autre manière de voir le Registry, c'est de le regarder du point de vue du concurrent.
 
@@ -110,7 +162,7 @@ C'est la raison pour laquelle le Registry vaut sa difficulté. Ce n'est pas la l
 
 ---
 
-## 26:00 — Levier trois : Mastermind Premium et Workshops haut de gamme
+## 35:30 — Levier trois : Mastermind Premium et Workshops haut de gamme
 
 Troisième levier — deux lignes jumelles qui s'adressent à la fraction la plus mature de l'audience.
 
@@ -130,7 +182,7 @@ Ce troisième levier total — €180 000 Premium plus €300 000 Workshops plus
 
 ---
 
-## 33:00 — Levier quatre : placements individuels et pack Systèmes
+## 42:30 — Levier quatre : placements individuels et pack Systèmes
 
 Quatrième levier — deux lignes complémentaires qui complètent la mécanique.
 
@@ -144,7 +196,7 @@ Ces deux lignes additionnées — €349 400 — représentent 33% du plancher. 
 
 ---
 
-## 37:00 — Vue d'ensemble et prudence statistique
+## 46:30 — Vue d'ensemble et prudence statistique
 
 Consolidons. Sept lignes de revenu en An 3. Formation €600 000. Mastermind Standard €180 000. Mastermind Premium €180 000. Workshops B2B €300 000. Registry Subscription €360 000. Placements CAIO €150 000. Pack Systèmes €199 400. Total brut théorique : €1 969 400.
 
@@ -158,7 +210,7 @@ Cette discipline est essentielle. Communiquer sur le plafond brut et ne pas l'at
 
 ---
 
-## 40:00 — Conditions critiques qui doivent tenir dès An 2
+## 49:30 — Conditions critiques qui doivent tenir dès An 2
 
 Cette trajectoire n'est pas une prédiction neutre. Elle repose sur cinq conditions vérifiables qui doivent toutes tenir à la fin d'An 2. Si une seule casse totalement, le cap €1 000 000 glisse d'un an — ce qui n'est pas un drame, mais une révision du calendrier.
 
@@ -176,7 +228,33 @@ Si quatre de ces cinq conditions tiennent et qu'une casse partiellement, la traj
 
 ---
 
-## 44:00 — Sensibilité aux hypothèses
+## 53:30 — Calendrier des jalons : 24 mois de construction trimestre par trimestre
+
+Mettons maintenant une temporalité précise sur la trajectoire. 24 mois de construction entre le début d'An 2 et la fin d'An 3. Huit trimestres. C'est dans ce calendrier que se joue la différence entre une intention stratégique abstraite et une exécution opérationnelle tangible. Une trajectoire qui n'est pas calendarisée trimestre par trimestre n'est qu'une aspiration. Une trajectoire qui l'est devient un programme.
+
+Q1 An 2, janvier à mars 2027. Trois priorités simultanées. Première priorité — consolider les acquis d'An 1. Les trente étudiants Founding Cohort 1 doivent recevoir leur certification en temps et en heure, les études de cas doivent être produites et publiées sur le blog avec métriques mesurables, le curriculum doit être versionné proprement pour la Founding Cohort 2. Deuxième priorité — recruter le Community Manager. C'est le premier recrutement structurel de l'entreprise. Son rôle est de prendre en charge les dynamiques de promotion, les calls de groupe hebdomadaires, la modération de la plateforme Slack ou Discord, et le suivi individuel post-session des étudiants. Sans lui, le fondateur continue à absorber ces tâches et ne peut pas allouer son temps au pipeline B2B et aux premiers pilotes Registry. Troisième priorité — identifier l'Expert Tech. Ce profil doit pouvoir construire, maintenir et documenter les outils techniques qui constitueront le pack Systèmes — monitoring AI, orchestration d'agents, dashboard ROI. Sa première livraison sera la version bêta du pack au Q3. La cadence de formation continue en parallèle avec l'ouverture de la Founding Cohort 2.
+
+Q2 An 2, avril à juin 2027. Le Mastermind Standard ouvre ses portes à €500 par mois. Le Mastermind Premium ouvre ses portes à €1 500 par mois avec cinq places maximum. Le premier workshop B2B a lieu — on filme, on documente, on publie les résultats post-session pour construire le portfolio commercial. Les deux premiers pilotes Registry signent — identifiés via le réseau personnel du fondateur et via des introductions d'alumni influents. Cinquante personnes payantes entre les deux Masterminds d'ici la fin du trimestre, ce qui représente la preuve commerciale que l'audience est monétisable au-delà de la formation ponctuelle. C'est le trimestre de preuve — chaque ligne nouvelle doit prouver, à ce stade, qu'elle trouve son public.
+
+Q3 An 2, juillet à septembre 2027. Trois pilotes Registry supplémentaires signent — cumulé cinq en fin de trimestre, l'objectif An 2 est atteint avec un trimestre d'avance. Le pack Systèmes sort en version publique — d'abord Monitoring AI seul sur Gumroad, puis Orchestration d'agents quelques semaines plus tard, puis Dashboard ROI. Les trois produits sont cross-promus mutuellement, chaque acheteur d'un module reçoit une offre préférentielle sur les deux autres. Le SEO commence à décoller mesurablement — 500 visites organiques par mois en moyenne, avec des pics sur les guides certifiants publiés en début d'année. L'ouverture du canal YouTube ou podcast en parallèle, avec une production de deux épisodes par mois. C'est le trimestre le plus diversifié — on teste des surfaces de contact multiples pour préparer l'An 3 et pour sortir de la dépendance mono-canale sur LinkedIn.
+
+Q4 An 2, octobre à décembre 2027. Le bilan annuel est préparé avec discipline. Les chiffres sont figés mi-décembre pour analyse. Les retours de la Founding Cohort 1 — en cours de mission CAIO depuis douze mois maintenant — sont intégrés dans le curriculum de la Founding Cohort 4 qui ouvrira en Q2 An 3. Le recrutement du Head of Partnerships B2B est lancé. C'est un profil senior — minimum dix ans d'expérience commerciale B2B, idéalement dans la formation professionnelle ou le conseil à haute valeur ajoutée. Le package est structuré sur fixe plus commissions — environ 40% fixe et 60% variable indexé sur l'ARR Registry signé. En parallèle, on prépare la campagne Registry An 3 — pitch deck, études de cas des cinq pilotes An 2, pricing page, collatéral commercial, argumentaires objection-par-objection. Le travail qui, en An 1, était improvisé doit devenir industrialisable en An 3. La campagne ne commencera pas le 2 janvier 2028 avec les mains vides — elle commencera avec des outils prêts et un plan d'attaque qui a été produit pendant que l'équipe An 2 continuait à livrer.
+
+Q1 An 3, janvier à mars 2028. Le Head of Partnerships prend ses fonctions. La chasse Registry devient systématique — quarante entreprises abordées par mois, trois signatures en moyenne, soit neuf à dix entreprises signées ce trimestre. Parallèlement, le Mastermind Premium passe de cinq à huit places, avec trois nouveaux membres admis après entretien — ce sont trois alumni de la Founding Cohort 1 qui ont accompli dix-huit mois de pratique et cherchent le niveau d'accompagnement supérieur. La formation Founding Cohort 3 se déroule en cadence normale — la dernière à €3 500 avant la stabilisation du prix à €3 000 en Q2.
+
+Q2 An 3, avril à juin 2028. Le prix formation se stabilise à €3 000 pour la Founding Cohort 4 qui ouvre en avril. Un nouveau module advanced est lancé — il complète la certification initiale avec une spécialisation verticale, par exemple AI Gouvernance en entreprise de santé, ou AI Orchestration pour fintech. Ce module est optionnel, facturé €1 500 en plus de la formation principale, et il s'adresse aux étudiants qui veulent se positionner sur un segment de marché précis. Cinq nouveaux pilotes Registry signent ce trimestre — dont deux grandes ETI qui représentent un signal de maturation de l'offre. Les premiers alumni de la Founding Cohort 1 qui ont maintenant dix-huit mois de pratique opérationnelle sur leurs missions CAIO commencent à intervenir comme formateurs sur le module advanced. Revenu supplémentaire pour eux — €2 000 par intervention —, renforcement du lien éditorial avec la marque, densification progressive du Registry côté profils actifs.
+
+Q3 An 3, juillet à septembre 2028. La trajectoire accélère. Huit nouveaux pilotes Registry sur le trimestre — cumulé dix-sept depuis début An 3 plus les cinq pilotes An 2 sur le lancement, soit vingt-deux entreprises abonnées au total à fin Q3. Les Workshops Premium à €20 000-25 000 ouvrent pour les grands comptes qui veulent une formation exécutive sur mesure avec un contenu rédigé spécifiquement pour eux. Cette ligne haut de gamme apparaît en fin de cycle — elle demande une préparation commerciale de plusieurs mois, un fondateur dont la crédibilité dans la catégorie est acquise, et une capacité pédagogique à customiser le contenu sans diluer le cœur de la méthode. Le run rate mensuel consolidé atteint €78 000 en septembre.
+
+Q4 An 3, octobre à décembre 2028. Le bilan An 3 est produit en discipline comptable complète. Le cap €1 000 000 est franchi dans le trimestre, avec un run rate mensuel de €85 000 en fin d'année. La revue stratégique An 4-An 5 est menée en décembre avec un conseil restreint. Trois options stratégiques sont évaluées froidement. Option A — exit à un acquéreur du secteur formation, recrutement, ou infrastructure RH, avec une valorisation estimée sur multiple d'ARR entre trois et cinq fois le Registry ARR récurrent plus un multiple sur l'EBITDA transactionnel. Option B — scale-up autonome avec levée de fonds auprès d'un investisseur spécialisé B2B SaaS, pour accélérer le Registry vers cent entreprises abonnées et ouvrir l'international sur l'Europe francophone. Option C — consolidation lente en maintenant le contrôle fondateur sans dilution, avec un objectif €2 000 000 en An 5 sans recrutement agressif et sans pression d'exit. L'option retenue dépend des conditions de marché de fin 2028, des offres qui arrivent ou pas de manière spontanée, et de l'arbitrage personnel du fondateur sur le niveau de dilution acceptable et sur l'appétit au scale-up.
+
+Ce calendrier n'est pas exact au mois près sur chaque tâche. Il est exact dans sa logique de phases. Construction en An 1. Industrialisation en An 2. Consolidation en An 3. Sur chaque trimestre, une ou deux décisions structurelles prises avec le recul nécessaire, avec les personnes recrutées en amont, avec les outils préparés avant le lancement. Sur chaque trimestre, une métrique-clé qui détermine si le trimestre suivant peut tenir son ambition ou s'il faut ajuster. La trajectoire n'est pas garantie parce qu'elle est belle sur le papier. Elle est garantie parce qu'elle est respectée trimestre après trimestre par des acteurs qui savent exactement ce qu'ils ont à produire et dans quel ordre.
+
+Le calendrier est la discipline qui transforme une stratégie en infrastructure.
+
+---
+
+## 58:30 — Sensibilité aux hypothèses
 
 Quatrième angle de lecture. Que se passe-t-il si les hypothèses dérapent ligne par ligne ?
 
@@ -188,7 +266,7 @@ Ce que cette sensibilité révèle, à un niveau supérieur, c'est que la trajec
 
 ---
 
-## 45:00 — L'économie du substrat : capital, compute, et la valeur d'un CAIO placé
+## 60:00 — L'économie du substrat : capital, compute, et la valeur d'un CAIO placé
 
 Il y a une lecture technique qu'il faut faire avant de prendre de la hauteur. Elle concerne ce qui circule réellement, à l'échelle du marché, autour d'un Chief AI Officer certifié et placé.
 
@@ -210,7 +288,7 @@ C'est cette triple lecture — enveloppe d'arbitrage, persistance de l'ARR, base
 
 ---
 
-## 49:00 — Zoom arrière philosophique (4 min 30)
+## 64:00 — Zoom arrière philosophique (4 min 30)
 
 Prenons de la hauteur. La trajectoire que je viens de dérouler n'est pas un plan d'affaires. C'est un cas d'école d'un mouvement plus large dont la signature est en train de se dessiner sous nos yeux — et que la plupart des observateurs ne voient pas parce qu'ils regardent les gadgets et pas le système qui les produit.
 
@@ -234,7 +312,7 @@ Voilà le vrai sujet. Pas le million. Le changement de nature juridique, financi
 
 ---
 
-## 53:30 — Invitation
+## 68:30 — Invitation
 
 Si cette lecture vous intéresse, vous n'êtes pas dans le public du contenu générique. Vous êtes dans le public des opérateurs qui pensent en années et pas en semaines, qui lisent les bilans plutôt que les titres, qui regardent les dépendances structurelles plutôt que les effets de surface. La prochaine fois que quelqu'un vous parlera du million comme d'une question de volume, vous pourrez sourire intérieurement — parce que vous saurez que c'est une question d'architecture. Et que l'architecture se décide douze mois à l'avance, dans la discipline de choisir aujourd'hui les lignes de revenu qui paieront dans trois ans.
 
@@ -246,6 +324,9 @@ Le projet CAIO Academy est conçu pour accompagner exactement ce type d'opérate
 
 - Hook sur plan fixe, caméra fixe, cadre serré. Fond sombre, éclairage de latérale. Pas de b-roll pendant les 25 premières secondes.
 - Timeline An1 → An2 → An3 animée en chyron bas d'écran pendant la section trajectoire. Texte blanc sur fond sombre, transition à trois points fixes.
+- Section An 1 — visuel d'ardoise dépouillée : beta €1 500 / Founding Cohort €3 500 / workshops / placements. Quatre lignes verticales, volumes bas, annotation « transactionnel pur ».
+- Section An 2 — même ardoise qui s'enrichit : apparition Mastermind Standard €500, Mastermind Premium €1 500, pilotes Registry, pack Systèmes. Nouvelle colonne « récurrent émergent » en chyron différent.
+- Section An 3 — ardoise consolidée à sept lignes, avec séparation visuelle transactionnel vs récurrent. Bloc ARR €420 000 surligné.
 - Section Levier 1 — graphique à barres statiques : €3 500 (An 1-2) vs €3 000 (An 3), 120 ventes vs 200 ventes. Tableau CAC/LTV en overlay.
 - Section Levier 2 — schéma biface Registry : à gauche 150 profils certifiés (icônes alignées), à droite 30 entreprises abonnées (logos stylisés), connexion centrale.
 - Chyron « €1 000/mois × 30 entreprises × 12 mois = €360 000 ARR » pendant la démonstration mathématique.
@@ -254,6 +335,7 @@ Le projet CAIO Academy est conçu pour accompagner exactement ce type d'opérate
 - Section Workshops — carte de France avec points animés, montée en gamme du prix.
 - Section Pack Systèmes — trois icônes : Monitoring / Orchestration / Dashboard.
 - Section Vue d'ensemble — tableau consolidé à l'écran plein pendant la récap des sept lignes.
+- Section Calendrier — frise horizontale à huit segments Q1 An 2 → Q4 An 3. Icônes successives : recrutement / ouverture Mastermind / pilotes Registry / pack Systèmes / Head of Partnerships / stabilisation prix / module advanced / bilan. Animation d'avancée segment par segment pendant la narration.
 - Zoom arrière philosophique — filmer en plan large, fondateur assis, fond neutre, tempo ralenti. Pas de b-roll animé pendant cette section, seulement caméra.
 - CTA — retour plan serré identique au hook. Aucune incrustation. Aucun bouton. Juste la parole.
 - Chyron d'ouverture et de fin : « Le pivot du million » en serif blanc sur fond noir.
@@ -266,15 +348,19 @@ Le projet CAIO Academy est conçu pour accompagner exactement ce type d'opérate
 | 0:00 | Hook |
 | 0:30 | Reframing — scale comme architecture |
 | 3:15 | La trajectoire en trois points fixes |
-| 6:00 | Levier un — machine de formation |
-| 13:30 | Transition — le piège du million par la formation |
-| 15:30 | Levier deux — CAIO Registry B2B Subscription |
-| 23:00 | Parenthèse — Registry comme infrastructure défensive |
-| 26:00 | Levier trois — Mastermind Premium et Workshops |
-| 33:00 | Levier quatre — Placements et pack Systèmes |
-| 37:00 | Vue d'ensemble et prudence statistique |
-| 40:00 | Conditions critiques An 2 |
-| 44:00 | Sensibilité aux hypothèses |
-| 45:00 | Substrat économique — capital, compute, enveloppe d'arbitrage CAIO |
-| 49:00 | Zoom arrière philosophique |
-| 53:30 | Invitation |
+| 5:15 | An 1 — l'année de validation |
+| 8:30 | An 2 — l'année de bascule |
+| 12:30 | An 3 — l'année de consolidation |
+| 15:30 | Levier un — machine de formation |
+| 23:00 | Transition — le piège du million par la formation |
+| 25:00 | Levier deux — CAIO Registry B2B Subscription |
+| 32:30 | Parenthèse — Registry comme infrastructure défensive |
+| 35:30 | Levier trois — Mastermind Premium et Workshops |
+| 42:30 | Levier quatre — Placements et pack Systèmes |
+| 46:30 | Vue d'ensemble et prudence statistique |
+| 49:30 | Conditions critiques An 2 |
+| 53:30 | Calendrier des jalons — 24 mois trimestre par trimestre |
+| 58:30 | Sensibilité aux hypothèses |
+| 60:00 | Substrat économique — capital, compute, enveloppe d'arbitrage CAIO |
+| 64:00 | Zoom arrière philosophique |
+| 68:30 | Invitation |
