@@ -1,0 +1,21 @@
+# Generated podcasts (large MP3s — production serves from Vercel Blob)
+public/podcasts/
+
+# Raw research inputs (regenerable, dev-only)
+transcripts/
+raw-data/
+
+# Audit residues
+.debugaudit/
+.uiuxaudit/
+.flowaudit/
+.audit/
+
+# Local Claude state
+.claude/
+
+# One-off scripts at repo root
+build_report.py
+run_analysis.py
+niche-analysis-report.html
+scripts/gen-podcasts-fast.sh
