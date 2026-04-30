@@ -18,6 +18,15 @@
     "url": "/fr/docs/vision/exit-strategy-math"
   },
   {
+    "id": "fr/vision/roadmap-to-100k",
+    "title": "Roadmap to 100k MRR",
+    "section": "Vision",
+    "sectionKey": "vision",
+    "lang": "fr",
+    "excerpt": "Le marché de l'intelligence artificielle pour les entreprises traverse une bascule. Après dix-huit mois d'expérimentations désordonnées, les comités de direction des PME et ETI européennes cherchen...",
+    "url": "/fr/docs/vision/roadmap-to-100k"
+  },
+  {
     "id": "fr/vision/business-plan-2025",
     "title": "CAIO Academy — Business Plan & Vision 2025",
     "section": "Vision",
@@ -1270,11 +1279,11 @@
   },
   {
     "id": "fr/business-marketing/actus-ia-semaine",
-    "title": "Actus IA en Bref -- Semaine du 18 Avril 2026",
+    "title": "Actus IA en Bref -- Semaine du 20 Avril 2026",
     "section": "Business — Marketing",
     "sectionKey": "business-marketing",
     "lang": "fr",
-    "excerpt": "PDF : `tools/pdf-generator/output/youtube-content-report-18-04-2026.pdf`",
+    "excerpt": "1. **\"Anthropic vient de construire une IA trop dangereuse pour la vendre. Ils nous l'ont dit.\"** -- capacity-tier governance comme nouvelle compétence CAIO 2. **\"Sora : 15M/jour brûlés pour 2,1M d...",
     "url": "/fr/docs/business-marketing/actus-ia-semaine"
   },
   {

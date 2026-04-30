@@ -10,7 +10,9 @@
     "search-index": "bun scripts/build-search-index.ts",
     "start": "next start -p 22020",
     "lint": "eslint",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "whitepaper:build": "node scripts/build-whitepapers.mjs",
+    "whitepaper:all": "node scripts/build-whitepapers.mjs --all"
   },
   "dependencies": {
     "@anthropic-ai/claude-agent-sdk": "^0.2.109",
@@ -47,6 +49,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.3",
+    "markdown-it": "^14.1.1",
     "prettier": "^3.8.3",
     "prettier-plugin-tailwindcss": "^0.7.2",
     "tailwindcss": "^4",

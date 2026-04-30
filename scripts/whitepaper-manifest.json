@@ -1,0 +1,132 @@
+[
+  {
+    "id": "01-Roadmap-to-100k",
+    "src": "content/caio/01-vision/04-Roadmap-to-100k.md",
+    "out": "public/whitepapers/01-Roadmap-to-100k.pdf",
+    "title": "Roadmap to 100k MRR",
+    "subtitle": "Stratégie B2C + B2B C-levels avec upsell solutions IA — atteindre 100 000 € de revenu mensuel récurrent en 12 mois",
+    "series": "Stratégie",
+    "author": "CAIO Academy",
+    "edition": "Édition 2026"
+  },
+  {
+    "id": "02-Business-Plan-2025",
+    "src": "content/caio/01-vision/01-Business-Plan-2025.md",
+    "out": "public/whitepapers/02-Business-Plan-2025.pdf",
+    "title": "Business Plan 2025",
+    "subtitle": "Architecture économique, projections financières et hypothèses de croissance de CAIO Academy",
+    "series": "Stratégie",
+    "author": "CAIO Academy",
+    "edition": "Édition 2026"
+  },
+  {
+    "id": "03-Million-Path-3-Year",
+    "src": "content/caio/01-vision/02-Million-Path-An3.md",
+    "out": "public/whitepapers/03-Million-Path-3-Year.pdf",
+    "title": "Million Path — Plan 3 ans",
+    "subtitle": "Trajectoire vers le premier million de revenu annuel récurrent — étapes, garde-fous, points de bascule",
+    "series": "Stratégie",
+    "author": "CAIO Academy",
+    "edition": "Édition 2026"
+  },
+  {
+    "id": "04-Exit-Strategy-Math",
+    "src": "content/caio/01-vision/03-Exit-Strategy-Math.md",
+    "out": "public/whitepapers/04-Exit-Strategy-Math.pdf",
+    "title": "Exit Strategy — La mathématique de la sortie",
+    "subtitle": "Multiples, valorisations et options de sortie pour une edtech B2B+B2C en croissance",
+    "series": "Stratégie",
+    "author": "CAIO Academy",
+    "edition": "Édition 2026"
+  },
+  {
+    "id": "05-System-CAIO-Whitepaper",
+    "src": "content/caio/03-product/01-System-CAIO-Whitepaper.md",
+    "out": "public/whitepapers/05-System-CAIO-Whitepaper.pdf",
+    "title": "Le Système CAIO",
+    "subtitle": "Architecture pédagogique et opérationnelle pour former le Chief AI Officer de demain",
+    "series": "Produit",
+    "author": "CAIO Academy",
+    "edition": "Édition 2026"
+  },
+  {
+    "id": "06-CAIO-Systeme-FR",
+    "src": "content/caio/03-product/02-CAIO-Systeme-FR.md",
+    "out": "public/whitepapers/06-CAIO-Systeme-FR.pdf",
+    "title": "CAIO — Le Système (édition française)",
+    "subtitle": "Méthode complète, modules, livrables et trajectoire d'apprentissage",
+    "series": "Produit",
+    "author": "CAIO Academy",
+    "edition": "Édition 2026"
+  },
+  {
+    "id": "07-Orchestration-Claude-Code",
+    "src": "content/caio/03-product/03-Orchestration-Claude-Code.md",
+    "out": "public/whitepapers/07-Orchestration-Claude-Code.pdf",
+    "title": "Orchestration Claude Code",
+    "subtitle": "Patterns avancés d'orchestration multi-agents pour systèmes IA productifs",
+    "series": "Produit",
+    "author": "CAIO Academy",
+    "edition": "Édition 2026"
+  },
+  {
+    "id": "08-Master-Plan",
+    "src": "content/business/02-vision/01-Master-Plan.md",
+    "out": "public/whitepapers/08-Master-Plan.pdf",
+    "title": "Master Plan",
+    "subtitle": "Plan directeur de l'écosystème CAIO Academy — vision, piliers, étapes-clés",
+    "series": "Vision",
+    "author": "CAIO Academy",
+    "edition": "Édition 2026"
+  },
+  {
+    "id": "09-10-Year-Vision",
+    "src": "content/business/02-vision/02-10-Year-Vision.md",
+    "out": "public/whitepapers/09-10-Year-Vision.pdf",
+    "title": "Vision 10 ans",
+    "subtitle": "Horizon long terme — où CAIO Academy se positionne en 2036 et pourquoi",
+    "series": "Vision",
+    "author": "CAIO Academy",
+    "edition": "Édition 2026"
+  },
+  {
+    "id": "10-Business-Strategy",
+    "src": "content/business/02-vision/03-Business-Strategy.md",
+    "out": "public/whitepapers/10-Business-Strategy.pdf",
+    "title": "Business Strategy",
+    "subtitle": "Choix stratégiques structurants — segmentation, pricing, positionnement, asymétries",
+    "series": "Stratégie",
+    "author": "CAIO Academy",
+    "edition": "Édition 2026"
+  },
+  {
+    "id": "11-Training-Program",
+    "src": "content/caio/07-playbook/01-Training-Program.md",
+    "out": "public/whitepapers/11-Training-Program.pdf",
+    "title": "Programme de Formation CAIO",
+    "subtitle": "Curriculum complet, modules, capstone, certification — détail pédagogique",
+    "series": "Playbook",
+    "author": "CAIO Academy",
+    "edition": "Édition 2026"
+  },
+  {
+    "id": "12-Training-Plans",
+    "src": "content/caio/07-playbook/02-Training-Plans.md",
+    "out": "public/whitepapers/12-Training-Plans.pdf",
+    "title": "Plans de Formation",
+    "subtitle": "Variantes, parcours et durées — adapter le cursus aux profils et contextes",
+    "series": "Playbook",
+    "author": "CAIO Academy",
+    "edition": "Édition 2026"
+  },
+  {
+    "id": "13-Beta-Launch-Roadmap",
+    "src": "content/caio/09-launch/01-Beta-Launch-Roadmap.md",
+    "out": "public/whitepapers/13-Beta-Launch-Roadmap.pdf",
+    "title": "Beta Launch Roadmap",
+    "subtitle": "Plan opérationnel du lancement bêta — séquence, livrables, signaux à mesurer",
+    "series": "Lancement",
+    "author": "CAIO Academy",
+    "edition": "Édition 2026"
+  }
+]

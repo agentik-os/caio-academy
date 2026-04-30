@@ -46,4 +46,28 @@ next-env.d.ts
 # orchestrator local state
 /.orchestrator/*.local.*
 .env*.local
-public/podcasts/
+
+# clerk configuration (can include secrets)
+/.clerk/
+
+# generated podcasts (large MP3s, served from CDN)
+/public/podcasts/
+
+# raw research inputs (regenerable)
+/transcripts/
+/raw-data/
+
+# audit residues (screenshots, scratch reports)
+/.debugaudit/
+/.uiuxaudit/
+/.flowaudit/
+/.audit/
+
+# local Claude state
+/.claude/
+
+# scratch / one-off scripts at repo root
+/build_report.py
+/run_analysis.py
+/niche-analysis-report.html
+/scripts/gen-podcasts-fast.sh
