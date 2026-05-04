@@ -128,5 +128,25 @@
     "series": "Lancement",
     "author": "CAIO Academy",
     "edition": "Édition 2026"
+  },
+  {
+    "id": "14-CAIO-On-Demand-FR",
+    "src": "content/caio/03-product/04-CAIO-On-Demand-FR.md",
+    "out": "public/whitepapers/14-CAIO-On-Demand-FR.pdf",
+    "title": "Chief AI Officer On Demand",
+    "subtitle": "Le système IA centralisé pour C-Levels qui refusent les boîtes noires — offre, méthode, investissement",
+    "series": "Offre",
+    "author": "Agentik OS",
+    "edition": "Édition 2026"
+  },
+  {
+    "id": "15-CAIO-On-Demand-EN",
+    "src": "content/caio/05-courses-en/CAIO-On-Demand-EN.md",
+    "out": "public/whitepapers/15-CAIO-On-Demand-EN.pdf",
+    "title": "Chief AI Officer On Demand",
+    "subtitle": "The centralized AI system for C-Levels who refuse black boxes — offering, method, investment",
+    "series": "Offering",
+    "author": "Agentik OS",
+    "edition": "2026 Edition"
   }
 ]
