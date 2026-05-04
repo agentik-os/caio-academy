@@ -126,6 +126,15 @@
     "url": "/fr/docs/avatars/cto-saas"
   },
   {
+    "id": "fr/product/caio-on-demand",
+    "title": "Chief AI Officer On Demand — Le système IA centralisé pour C-Levels qui refusent les boîtes noires",
+    "section": "Produit",
+    "sectionKey": "product",
+    "lang": "fr",
+    "excerpt": "Pendant deux ans, l'IA générative a été un terrain d'expérimentation toléré. ChatGPT en libre-service dans les équipes, des essais de copilotes ici et là, quelques POC qui finissaient en démo et nu...",
+    "url": "/fr/docs/product/caio-on-demand"
+  },
+  {
     "id": "fr/product/system-caio-whitepaper",
     "title": "Architecture Système et Orchestration IA par Role C-Suite",
     "section": "Produit",
@@ -286,6 +295,15 @@
     "lang": "en",
     "excerpt": "Arbitrage in finance = buy where it's cheap, sell where it's expensive. AI tools arbitrage = identify undervalued tools, connect them intelligently, and create value greater than the sum of its parts.",
     "url": "/en/docs/courses-en/tools-arbitrage"
+  },
+  {
+    "id": "en/courses-en/caio-on-demand",
+    "title": "Chief AI Officer On Demand — The centralized AI system for C-Levels who refuse black boxes",
+    "section": "Courses (EN)",
+    "sectionKey": "courses-en",
+    "lang": "en",
+    "excerpt": "For two years, generative AI was a tolerated playground. ChatGPT used freely across teams, copilot trials here and there, a few POCs that ended as demos and went nowhere. That was acceptable becaus...",
+    "url": "/en/docs/courses-en/caio-on-demand"
   },
   {
     "id": "en/courses-en/ai-for-business-owners",
@@ -547,6 +565,24 @@
     "lang": "fr",
     "excerpt": "LinkedIn est l'unique canal d'acquisition principal des 12 premiers mois. Un bannissement du compte Gareth, un changement d'algorithme defavorable, ou une saturation de niche sur le terme CAIO en f...",
     "url": "/fr/docs/operations/risk-mitigation"
+  },
+  {
+    "id": "en/operations/infrastructure-architecture-en",
+    "title": "Infrastructure & technical architecture -- CAIO Academy",
+    "section": "Operations",
+    "sectionKey": "operations",
+    "lang": "en",
+    "excerpt": "The architecture stacks five layers: access, compute, AI, backend, frontend. Each layer has a single responsibility and a single entry point, which makes the system inspectable, reproducible, and a...",
+    "url": "/en/docs/operations/infrastructure-architecture-en"
+  },
+  {
+    "id": "fr/operations/infrastructure-architecture",
+    "title": "Infrastructure & architecture technique -- CAIO Academy",
+    "section": "Operations",
+    "sectionKey": "operations",
+    "lang": "fr",
+    "excerpt": "L'architecture repose sur cinq couches : acces, calcul, IA, backend, frontend. Chaque couche a une seule responsabilite et un seul point d'entree, ce qui rend le systeme inspectable, reproductible ...",
+    "url": "/fr/docs/operations/infrastructure-architecture"
   },
   {
     "id": "fr/operations/legal-tax-structure",
