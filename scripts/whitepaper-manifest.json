@@ -148,5 +148,25 @@
     "series": "Offering",
     "author": "Agentik OS",
     "edition": "2026 Edition"
+  },
+  {
+    "id": "16-Infrastructure-Architecture-FR",
+    "src": "content/caio/10-operations/06-Infrastructure-Architecture.md",
+    "out": "public/whitepapers/16-Infrastructure-Architecture-FR.pdf",
+    "title": "Architecture Infrastructure CAIO Academy",
+    "subtitle": "VPS dédié, Convex multi-projets, dashboards Next.js par C-Level, allowlist email, orchestration multi-rôles — l'architecture technique complète",
+    "series": "Opérations",
+    "author": "CAIO Academy",
+    "edition": "Édition 2026"
+  },
+  {
+    "id": "17-Infrastructure-Architecture-EN",
+    "src": "content/caio/10-operations/06-Infrastructure-Architecture.en.md",
+    "out": "public/whitepapers/17-Infrastructure-Architecture-EN.pdf",
+    "title": "CAIO Academy Infrastructure Architecture",
+    "subtitle": "Dedicated VPS, multi-project Convex, Next.js dashboards per C-Level, email allowlist, multi-role orchestration — the full technical architecture",
+    "series": "Operations",
+    "author": "CAIO Academy",
+    "edition": "2026 Edition"
   }
 ]
