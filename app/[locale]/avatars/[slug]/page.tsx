@@ -63,10 +63,13 @@ function cleanContent(raw: string): string {
       continue;
     }
     if (/^AGENTIK OS$/i.test(t)) continue;
-    if (/^Agentik \{OS\}$/i.test(t)) continue;
+    if (/^Agentik\s*\{OS\}/i.test(t)) continue;
     if (/^Agentik OS$/i.test(t)) continue;
-    if (/^CAI ?O ACAD E MY/i.test(t)) continue;
+    if (/^CAI\s*O\s+ACADE?\s*MY/i.test(t)) continue;
+    if (/^CAIO Academy\s*[—–-]/i.test(t)) continue;
+    if (/^Avatar \d+\s*[·.\-]/i.test(t)) continue;
     if (/^\d{1,3}$/.test(t) && t.length <= 3) continue;
+    if (/^>\s*Source:\s/i.test(t)) continue;
     if (/^Source:\s/i.test(t)) continue;
     if (/^\d{4}-\d{2}-\d{2}$/.test(t)) continue;
     if (/^(Contents|Table of contents|Table des matières)$/i.test(t)) continue;
@@ -162,6 +165,25 @@ function cleanContent(raw: string): string {
     outLines.push(safe);
   }
   text = outLines.join("\n");
+
+  // --- Pass 5: demote ATX headings so the page hero stays the only H1 -------
+  // Body markdown ships with `# Avatar CAIO — …` plus stray `# X` template
+  // lines inside pseudo-code; demoting by one level keeps semantics valid.
+  const demoted: string[] = [];
+  inFence = false;
+  for (const line of text.split("\n")) {
+    if (line.startsWith("```")) {
+      inFence = !inFence;
+      demoted.push(line);
+      continue;
+    }
+    if (inFence) {
+      demoted.push(line);
+      continue;
+    }
+    demoted.push(line.replace(/^(#{1,5})(\s)/, "$1#$2"));
+  }
+  text = demoted.join("\n");
   return text;
 }
 
