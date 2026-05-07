@@ -62,6 +62,11 @@ export function cleanContent(raw: string, exactBodyTitle?: string): string {
     if (/^CAI\s*O\s*ACAD\s*E?\s*MY/i.test(t)) continue;
     if (/^CAIO Academy\s*[—–-]/i.test(t)) continue;
     if (/^Avatar \d+\s*[·.\-]/i.test(t)) continue;
+    // PDF cover sub-track titles that survive the chrome filter
+    // (e.g. "Without Code Track", "Architect Track", "From Dev to CAIO Track",
+    //  "AI Strategy Without Code Track", "CAIO Monetization Track").
+    if (/^(?:Architect|Without Code|AI Strategy|From Dev to CAIO|CAIO Monetization|AI Executive Decision Maker)\s+Track\s*$/i.test(t)) continue;
+    if (/Track\s*$/.test(t) && t.length < 50 && !/^\d/.test(t)) continue;
     if (/^\d{1,3}$/.test(t) && t.length <= 3) continue;
     // Page-number footers like "6 / 74", "3 / 43" — they ARE single-int
     // SECTION_RE candidates and would otherwise pollute the single-int list
@@ -72,10 +77,12 @@ export function cleanContent(raw: string, exactBodyTitle?: string): string {
     if (/^\d{4}-\d{2}-\d{2}$/.test(t)) continue;
     if (/^(Contents|Table of contents|Table des matières)$/i.test(t)) continue;
     // Demote stray body `# X` H1 (single hash, not `##` etc.) by one level so
-    // the page hero <h1> stays unique. NOTE: this only runs in Pass 1 on the
-    // RAW source — Pass 2 outputs `## N Title` later and is never re-touched.
-    if (/^#(?!#)\s+/.test(line)) {
-      stripped.push(line.replace(/^#(?!#)\s+/, "## "));
+    // the page hero <h1> stays unique. CommonMark allows up to 3 leading
+    // spaces before `#`, so we must match those too — PDF-extracted code
+    // blocks ship with `<space># 1. Scaffold ...` patterns that otherwise
+    // render as `<h1>` and pollute the heading hierarchy.
+    if (/^\s{0,3}#(?!#)\s+/.test(line)) {
+      stripped.push(line.replace(/^(\s{0,3})#(?!#)\s+/, "$1## "));
       continue;
     }
     stripped.push(line);
