@@ -63,6 +63,10 @@ export function cleanContent(raw: string, exactBodyTitle?: string): string {
     if (/^CAIO Academy\s*[—–-]/i.test(t)) continue;
     if (/^Avatar \d+\s*[·.\-]/i.test(t)) continue;
     if (/^\d{1,3}$/.test(t) && t.length <= 3) continue;
+    // Page-number footers like "6 / 74", "3 / 43" — they ARE single-int
+    // SECTION_RE candidates and would otherwise pollute the single-int list
+    // detector and trigger false rejections of legitimate body Module H2s.
+    if (/^\s*\d{1,3}\s*\/\s*\d{1,3}\s*$/.test(line)) continue;
     // Source: blockquote (covers `> Source:` AND bare `Source:`).
     if (/^>?\s*Source:\s/i.test(t)) continue;
     if (/^\d{4}-\d{2}-\d{2}$/.test(t)) continue;

@@ -13,6 +13,7 @@ export function Prose({
         "[&_p]:mb-5 sm:[&_p]:mb-6",
         "[&_h1]:mt-10 [&_h1]:mb-5 [&_h1]:font-serif [&_h1]:text-3xl [&_h1]:font-black [&_h1]:tracking-tight sm:[&_h1]:mt-12 sm:[&_h1]:mb-6 sm:[&_h1]:text-4xl md:[&_h1]:text-5xl",
         "[&_h2]:mt-10 [&_h2]:mb-4 [&_h2]:font-serif [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:tracking-tight sm:[&_h2]:mt-12 sm:[&_h2]:mb-5 sm:[&_h2]:text-3xl",
+        "[&_h2]:border-t-2 [&_h2]:border-[color:var(--color-line)] [&_h2]:pt-8 sm:[&_h2]:pt-10",
         "[&_h3]:mt-8 [&_h3]:mb-3 [&_h3]:font-serif [&_h3]:text-xl [&_h3]:font-bold sm:[&_h3]:mt-10 sm:[&_h3]:mb-4 sm:[&_h3]:text-2xl",
         "[&_h4]:mt-7 [&_h4]:mb-3 [&_h4]:font-serif [&_h4]:text-lg [&_h4]:font-bold sm:[&_h4]:mt-8 sm:[&_h4]:text-xl",
         "[&_pre]:overflow-x-auto [&_pre]:max-w-full",

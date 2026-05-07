@@ -75,7 +75,7 @@ export async function SiteFooter() {
 function FooterColumn({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div>
-      <h2 className="mb-4 font-sans text-xs font-semibold uppercase tracking-wider">{title}</h2>
+      <p className="mb-4 font-sans text-xs font-semibold uppercase tracking-wider">{title}</p>
       <ul className="space-y-2 text-sm text-[color:var(--color-muted)]">{children}</ul>
     </div>
   );
