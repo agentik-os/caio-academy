@@ -24,8 +24,48 @@ export function cleanContent(raw: string, exactBodyTitle?: string): string {
   const PAGE_NUM_TITLE_RE = /^[\/\\]\s*\d+\s*$/;
   // Double-numbered title: "1.1 - Le gap…" inside the captured title field.
   const TITLE_HEAD_SUBNUM_RE = /^(\d+(?:\.\d+){0,3})\s*[-—]\s+/;
+  // UI-106: leading dash inside the captured title (e.g. SECTION_RE on
+  // "1.5 - Livrable" yields title="- Livrable"). Strip to normalize all
+  // promoted heading titles to one format ("X.Y Title", never "X.Y - Title").
+  const LEADING_DASH_RE = /^\s*[-—–]\s+/;
+  // UI-103: template placeholder syntax "[Nom du système]" / "[1 phrase + 1
+  // chiffre business]" — must never become a heading.
+  const PLACEHOLDER_RE = /\[\s*[^\]]+\s*\]/;
+  // UI-102: metadata continuation that follows a Module heading without a
+  // blank line. These are well-known formatting patterns from the source PDF
+  // (`Durée : 1h00`, `Format : workshop`, `Volume : 12 vidéos`); they must
+  // not block heading promotion.
+  const METADATA_CONT_RE = /^(?:Dur[ée]e|Format|Volume|Duration)\s*:/i;
   // Body H1 line that duplicates the page hero (caught explicitly in Pass 1).
   const BODY_H1_AVATAR_RE = /^#\s+Avatar CAIO\s*[—–-]\s+/i;
+
+  // UI-101: fuzzy title normalization for dedup. TOC and body sometimes carry
+  // off-by-one numbering (TOC "1.6 Livrable" vs body "1.5 - Livrable …") —
+  // matching on number+title fails. Number-agnostic key: strip any leading
+  // dash, then strip a leading "X.Y - " section-number prefix (REQUIRED dash;
+  // we must not strip bare leading numbers like "30 / 60 / 90 day checklist"
+  // that are content, not section indicators). Lowercase + collapse whitespace.
+  const normalizeTitle = (s: string): string =>
+    s
+      .replace(/^[\s\-—–]+/, "")
+      .replace(/^\d+(?:\.\d+){0,3}\s*[-—–]\s+/, "")
+      .toLowerCase()
+      .replace(/\s+/g, " ")
+      .trim();
+
+  // UI-105: detect avatar-title tail duplication. When the body PDF carries
+  // headings that re-include the avatar role at the end (e.g.
+  // "0.2 Avatar - le CTO SaaS, CTO SaaS"), the trailing ", X" duplicates the
+  // hero text. Build a regex from `exactBodyTitle` (e.g. "Le CTO SaaS")
+  // stripped of leading articles ("Le", "La", "L'", "The") so we match the
+  // role token alone.
+  const avatarTail = exactBodyTitle
+    ? exactBodyTitle.replace(/^(Le|La|Les|L'|The)\s+/i, "").trim()
+    : "";
+  const escapeRegex = (s: string): string => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const AVATAR_TAIL_RE = avatarTail
+    ? new RegExp(`,\\s*${escapeRegex(avatarTail)}\\s*$`, "i")
+    : null;
 
   // --- Pass 1: strip PDF chrome line-by-line + demote body H1 ----------------
   const stripped: string[] = [];
@@ -90,14 +130,19 @@ export function cleanContent(raw: string, exactBodyTitle?: string): string {
 
   // --- Pass 2: paragraph-level promotion + group orphan code lines ---------
 
-  // Pre-scan A — TOC region: build (number|title) → indices map. Section-
-  // numbered lines that appear MORE THAN ONCE in the file are TOC entries
-  // duplicated by the body version. Drop all but the LAST occurrence.
+  // Pre-scan A — TOC region: build NORMALIZED-TITLE → indices map (UI-101
+  // fuzzy dedup). Section-numbered lines whose normalized title appears more
+  // than once are TOC/body pairs (often with off-by-one numbering between
+  // TOC and body). Drop all but the LAST occurrence — body always comes
+  // after TOC in the source PDF, so "last" prefers the body copy. This also
+  // resolves UI-104 (Module 08 anomaly) by keeping the body occurrence over
+  // the TOC one even when titles differ in numbering or trailing modifier.
   const sectionOccurrences = new Map<string, number[]>();
   for (let i = 0; i < stripped.length; i++) {
     const m = SECTION_RE.exec(stripped[i]);
     if (!m) continue;
-    const key = `${m[1]}|${m[2].trim().toLowerCase()}`;
+    const key = normalizeTitle(m[2]);
+    if (!key) continue;
     const arr = sectionOccurrences.get(key) ?? [];
     arr.push(i);
     sectionOccurrences.set(key, arr);
@@ -112,10 +157,19 @@ export function cleanContent(raw: string, exactBodyTitle?: string): string {
   // Pre-scan B — single-int list detector: indices of "1 X", "2 X", "3 X"
   // candidates. If another single-int candidate appears within ±20 lines, the
   // candidate is part of a table-row / FAQ list — reject the whole sequence.
+  // EXCLUDE TOC fragments (titles starting with "- " or ending in continuation
+  // punctuation) — they're never real headings and would otherwise pollute the
+  // detector, causing legit body module headings (e.g. "1 Module 01 - …") to
+  // be falsely rejected when a TOC table happens to have wrap-leftover lines
+  // like " 04 - Engaging teams …" within ±20 lines.
   const singleIntSet = new Set<number>();
   for (let i = 0; i < stripped.length; i++) {
     const m = SECTION_RE.exec(stripped[i]);
-    if (m && !m[1].includes(".")) singleIntSet.add(i);
+    if (!m || m[1].includes(".")) continue;
+    const candidateTitle = m[2].trim();
+    if (LEADING_DASH_RE.test(candidateTitle)) continue;
+    if (CONTINUATION_END_RE.test(candidateTitle)) continue;
+    singleIntSet.add(i);
   }
   const isInSingleIntList = (i: number): boolean => {
     for (let j = Math.max(i - 20, 0); j <= Math.min(i + 20, stripped.length - 1); j++) {
@@ -164,7 +218,7 @@ export function cleanContent(raw: string, exactBodyTitle?: string): string {
       let title = sec[2].trim();
 
       // === Promotion guards (every reject below traces to an audit finding) ===
-      // (j) TOC region: same (number|title) appears later → drop, body wins.
+      // (j) TOC region: normalized title appears later → drop, body wins.
       const isToc = tocDropIndices.has(i);
       // (b) too-short title (< 3 chars).
       const tooShort = title.length < 3;
@@ -172,22 +226,40 @@ export function cleanContent(raw: string, exactBodyTitle?: string): string {
       const isPageNumTail = /^[\/\\]/.test(title) || PAGE_NUM_TITLE_RE.test(title);
       // (d) continuation punctuation at end (sentence wrapped from prev line).
       const continuesNext = CONTINUATION_END_RE.test(title);
+      // (k) UI-103: template placeholder syntax ("[Nom du système]") — these
+      // are fill-in-the-blank tokens from the source markdown, never real
+      // headings.
+      const hasPlaceholder = PLACEHOLDER_RE.test(title);
       // (a) paragraph-level promotion: blank line above AND blank line below.
       const prevTrim = i > 0 ? stripped[i - 1].trim() : "";
       const nextTrim = i + 1 < stripped.length ? stripped[i + 1].trim() : "";
       const blankAbove = prevTrim === "";
-      const blankBelow = nextTrim === "";
+      // UI-102: relax blankBelow when the next line is a known module
+      // metadata continuation (`Durée : 1h00 · Format … · Volume …`). These
+      // tight-line PDF blocks were causing Modules 01/02/04 to demote to <p>
+      // while Modules 03/05/06/07/08 (which had a blank line before their
+      // metadata) promoted correctly. Treat the metadata line as if it were
+      // a blank: it's a recognized scaffold, not prose continuation.
+      const blankBelow = nextTrim === "" || METADATA_CONT_RE.test(nextTrim);
       // (e) table-row / FAQ list sequence — single-int with siblings nearby.
       const inSingleIntList = !number.includes(".") && isInSingleIntList(i);
 
       const reject =
-        isToc || tooShort || isPageNumTail || continuesNext ||
+        isToc || tooShort || isPageNumTail || continuesNext || hasPlaceholder ||
         !blankAbove || !blankBelow || inSingleIntList;
 
       if (!reject) {
         // (f) strip in-title leading sub-section number ("1.2 1.1 -" → "1.2").
         const innerNum = TITLE_HEAD_SUBNUM_RE.exec(title);
         if (innerNum) title = title.replace(TITLE_HEAD_SUBNUM_RE, "").trim();
+        // (f2) UI-106: strip plain leading dash ("- Livrable" → "Livrable").
+        // SECTION_RE captures "1.5" then lets the dash bleed into the title;
+        // normalize so all promoted headings render as "## NUMBER TITLE",
+        // never "## NUMBER - TITLE".
+        title = title.replace(LEADING_DASH_RE, "").trim();
+        // (l) UI-105: strip avatar-title tail duplication ("…, CTO SaaS"
+        // when avatar = "Le CTO SaaS").
+        if (AVATAR_TAIL_RE) title = title.replace(AVATAR_TAIL_RE, "").trim();
 
         // (g) depth override: 0.x → H2 (pre-chapter); single int → H2;
         //     1.1 → H3; 1.1.1+ → H4.
