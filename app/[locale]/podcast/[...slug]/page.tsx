@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { compileMDX } from "next-mdx-remote/rsc";
+import remarkGfm from "remark-gfm";
 import { setRequestLocale } from "next-intl/server";
 import { ConvexHttpClient } from "convex/browser";
 import { Link } from "@/i18n/navigation";
 import { PageShell } from "@/components/page-shell";
 import { Prose } from "@/components/prose";
-import { getDoc, getNeighbors } from "@/lib/docs";
+import { escapeMdx, getDoc, getNeighbors } from "@/lib/docs";
 import { formatDuration } from "@/lib/podcast";
 import { PodcastPlayer } from "@/components/podcast-player";
 import { GenerateEpisodeButton } from "./generate-button";
@@ -123,6 +125,16 @@ export default async function EpisodePage({
   const ready = podcast?.status === "ready" && !!podcast.audioUrl;
   const pending = podcast?.status === "pending";
 
+  const { content: transcriptContent } = await compileMDX({
+    source: escapeMdx(doc.content),
+    options: {
+      parseFrontmatter: false,
+      mdxOptions: {
+        remarkPlugins: [remarkGfm],
+      },
+    },
+  });
+
   return (
     <PageShell>
       <section className="border-b border-[color:var(--color-line)]">
@@ -195,10 +207,8 @@ export default async function EpisodePage({
           <p className="mb-6 font-sans text-xs font-semibold uppercase tracking-[0.25em] text-[color:var(--color-muted)]">
             {t.transcript}
           </p>
-          <Prose>
-            {doc.content.split("\n\n").map((block, i) => (
-              <p key={i}>{block}</p>
-            ))}
+          <Prose className="min-w-0 max-w-none break-words">
+            {transcriptContent}
           </Prose>
         </div>
       </section>

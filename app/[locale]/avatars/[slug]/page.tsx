@@ -46,14 +46,20 @@ const T = {
   },
 } as const;
 
-// PDF-extracted files carry noisy page artifacts. Strip them conservatively.
+// PDF-extracted files carry noisy page artifacts and lack heading markup.
+// This pipeline:
+//   1. Strips known PDF chrome (running headers, page numbers, ISO dates).
+//   2. Drops bare TOC headers ("Contents", "Table des matières").
+//   3. Promotes "1.2 Title" / "2.5.1 Title" lines into ##/###/#### headings.
+//   4. Wraps consecutive orphan code-import lines into fenced ```ts blocks.
+//   5. Escapes MDX-hostile characters outside code fences.
 function cleanContent(raw: string): string {
-  const lines = raw.split("\n");
-  const kept: string[] = [];
-  for (const line of lines) {
+  // --- Pass 1: strip PDF chrome line-by-line ---------------------------------
+  const stripped: string[] = [];
+  for (const line of raw.split("\n")) {
     const t = line.trim();
     if (!t) {
-      kept.push("");
+      stripped.push("");
       continue;
     }
     if (/^AGENTIK OS$/i.test(t)) continue;
@@ -63,13 +69,81 @@ function cleanContent(raw: string): string {
     if (/^\d{1,3}$/.test(t) && t.length <= 3) continue;
     if (/^Source:\s/i.test(t)) continue;
     if (/^\d{4}-\d{2}-\d{2}$/.test(t)) continue;
-    kept.push(line);
+    if (/^(Contents|Table of contents|Table des matières)$/i.test(t)) continue;
+    stripped.push(line);
   }
-  // Collapse triple blank lines
-  let text = kept.join("\n").replace(/\n{3,}/g, "\n\n");
-  // Escape MDX-hostile characters line-by-line (outside code fences)
-  const outLines: string[] = [];
+
+  // --- Pass 2: promote section numbering + group orphan code lines ----------
+  const SECTION_RE = /^\s*(\d+(?:\.\d+){0,3})\s+(.+?)\s*$/;
+  const CODE_LINE_RE =
+    /^\s*(?:import\s|export\s|const\s|let\s|var\s|function\s|interface\s|type\s|return\s|await\s|async\s|class\s|\}|\);)/;
+
+  const promoted: string[] = [];
   let inFence = false;
+  let codeBuffer: string[] = [];
+
+  const flushCodeBuffer = () => {
+    if (codeBuffer.length === 0) return;
+    // Only wrap if we have at least 2 lines of code-shaped content; otherwise
+    // a single "}" or "const x" is more likely noise — drop it.
+    if (codeBuffer.length >= 2) {
+      promoted.push("");
+      promoted.push("```ts");
+      for (const c of codeBuffer) promoted.push(c.trimStart());
+      promoted.push("```");
+      promoted.push("");
+    }
+    codeBuffer = [];
+  };
+
+  for (const line of stripped) {
+    if (line.startsWith("```")) {
+      flushCodeBuffer();
+      inFence = !inFence;
+      promoted.push(line);
+      continue;
+    }
+    if (inFence) {
+      promoted.push(line);
+      continue;
+    }
+
+    const t = line.trim();
+    const sec = t ? SECTION_RE.exec(line) : null;
+
+    if (sec) {
+      flushCodeBuffer();
+      const number = sec[1];
+      const title = sec[2].trim();
+      // Skip false positives: empty title or purely numeric "title" (page nums).
+      if (title && !/^\d+$/.test(title)) {
+        const dots = (number.match(/\./g) || []).length;
+        const depth = dots === 0 ? 2 : dots === 1 ? 3 : 4;
+        const hashes = "#".repeat(depth);
+        promoted.push("");
+        promoted.push(`${hashes} ${number} ${title}`);
+        promoted.push("");
+        continue;
+      }
+      // fall through to plain treatment if filtered out
+    }
+
+    if (CODE_LINE_RE.test(line)) {
+      codeBuffer.push(line);
+      continue;
+    }
+
+    if (codeBuffer.length > 0) flushCodeBuffer();
+    promoted.push(line);
+  }
+  flushCodeBuffer();
+
+  // --- Pass 3: collapse blank-line runs --------------------------------------
+  let text = promoted.join("\n").replace(/\n{3,}/g, "\n\n");
+
+  // --- Pass 4: escape MDX-hostile characters outside code fences ------------
+  const outLines: string[] = [];
+  inFence = false;
   for (const line of text.split("\n")) {
     if (line.startsWith("```")) {
       inFence = !inFence;
