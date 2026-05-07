@@ -65,7 +65,7 @@ function cleanContent(raw: string): string {
     if (/^AGENTIK OS$/i.test(t)) continue;
     if (/^Agentik\s*\{OS\}/i.test(t)) continue;
     if (/^Agentik OS$/i.test(t)) continue;
-    if (/^CAI\s*O\s+ACADE?\s*MY/i.test(t)) continue;
+    if (/^CAI\s*O\s+ACAD\s*E?\s*MY/i.test(t)) continue;
     if (/^CAIO Academy\s*[—–-]/i.test(t)) continue;
     if (/^Avatar \d+\s*[·.\-]/i.test(t)) continue;
     if (/^\d{1,3}$/.test(t) && t.length <= 3) continue;
@@ -181,7 +181,7 @@ function cleanContent(raw: string): string {
       demoted.push(line);
       continue;
     }
-    demoted.push(line.replace(/^(#{1,5})(\s)/, "$1#$2"));
+    demoted.push(line.replace(/^(\s{0,3})(#{1,5})(\s)/, "$1$2#$3"));
   }
   text = demoted.join("\n");
   return text;
